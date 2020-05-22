@@ -1,0 +1,30 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "My exceptional Nuxt.js project",
+  "author": "Loek Zweers",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-regular-svg-icons": "^5.13.0",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
+    "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.0.0",
+    "nuxt-fontawesome": "^0.4.0"
+  },
+  "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
+  }
+}
