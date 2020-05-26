@@ -3,6 +3,9 @@
 @import '_elements.scss';
 @import '_keyValue.scss';
 @import '_events.scss';
+@import '_formCatering.scss';
+@import '_galleryPost.scss';
+@import '_cateringCard.scss';
 
 *,
 *:before,
@@ -39,6 +42,16 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: 0.5s;
+
+  &:hover {
+    color: #697564;
+  }
+}
+
 img {
   height: auto;
   width: 100%;
@@ -59,16 +72,24 @@ nav {
     background: rgba(0, 0, 0, 0.7);
     padding: 0.6em 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-
-    img {
-      width: 90px;
+    a {
       margin: auto;
       grid-column: 3/4;
+      img {
+        width: 90px;
+      }
     }
 
     .menuBars {
-      justify-self: end;
-      margin-right: 1em;
+      display: none;
+    }
+
+    @media (min-width: 650px) {
+      .menuBars {
+        display: initial;
+        justify-self: end;
+        margin-right: 1em;
+      }
     }
 
     .firstEvent {
@@ -121,12 +142,14 @@ nav {
       padding: 1em 0 1.8em;
       text-transform: uppercase;
 
-      li.list-item {
+      li.list-item a {
         font-size: 0.8em;
         display: grid;
         align-items: center;
         grid-row-gap: 3px;
 
+        text-decoration: none;
+        color: white;
         svg {
           justify-self: center;
         }
@@ -145,7 +168,6 @@ nav {
   display: flex;
   overflow: hidden;
   height: 60vh;
-  margin-bottom: 2.5em;
   background: rgba(0, 0, 0, 0.5);
 
   .homeHeader__image {
@@ -196,6 +218,18 @@ nav {
     .cta {
       display: none;
     }
+
+    @media (min-width: 650px) {
+      .cta {
+        display: flex;
+        justify-content: flex-end;
+        margin: 3em 0 1em;
+
+        a {
+          margin: 0 0 0 3em;
+        }
+      }
+    }
   }
   @media (min-width: 650px) {
     .fullImageHeader {
@@ -206,7 +240,41 @@ nav {
 
 @media (min-width: 650px) {
   .homeHeader {
-    height: 80vh;
+    height: 90vh;
+  }
+}
+
+.imgHeader {
+  position: relative;
+  height: 35vh;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+
+  .imgHeader__image {
+    position: absolute;
+    z-index: -10;
+    left: -70%;
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+  }
+  @media (min-width: 650px) {
+    .imgHeader__image {
+      height: auto;
+      top: -35%;
+      left: 0;
+    }
+  }
+}
+
+main {
+  margin-top: 2.5em;
+}
+
+@media (min-width: 650px) {
+  main {
+    margin-top: 1em;
   }
 }
 
@@ -243,8 +311,23 @@ nav {
   }
 }
 
+.wrapper-1-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.textInfo {
+  margin-top: 1.5em;
+}
+
+@media (min-width: 650px) {
+  .wrapper-1-2 {
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 1.8em;
+  }
+}
+
 footer {
-  //TODO remove padding on desktop
   padding-bottom: 6em;
   &::before,
   &::after {
@@ -329,12 +412,25 @@ footer {
         }
         .socials {
           text-align: center;
+
+          svg {
+            color: white;
+          }
         }
       }
 
       .footer__links {
         font-size: 1em;
         grid-gap: 1.5em;
+
+        a {
+          color: white;
+          transition: 0.3s;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
       }
     }
   }

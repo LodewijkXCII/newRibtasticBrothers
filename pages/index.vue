@@ -2,7 +2,7 @@
   <div>
     <header class="homeHeader">
       <img
-        src="@/assets/img/catering_foodtruck_bbq.jpg"
+        src="@/assets/img/catering_foodtruck_bbq-min.jpg"
         alt=""
         class="homeHeader__image"
       />
@@ -10,13 +10,13 @@
         <h1>De lekkerste Spareribs</h1>
         <h2>met de foodtruck thuis, op een festival of catering</h2>
         <div class="cta">
-          <router-link to="#"
+          <router-link to="#" class="btn btn-primary"
             >Foodtruck <font-awesome-icon :icon="'utensils'"
           /></router-link>
-          <router-link to="#"
+          <router-link to="catering" class="btn btn-primary"
             >Catering <font-awesome-icon :icon="'utensils'"
           /></router-link>
-          <router-link to="#"
+          <router-link to="#" class="btn btn-primary"
             >Bezorging <font-awesome-icon :icon="'bicycle'"
           /></router-link>
         </div>
@@ -31,7 +31,7 @@
     </main>
     <section class="events">
       <!-- <img
-        src="@/assets/img/catering_spareribs_ribtastic.jpg"
+        src="@/assets/img/catering_spareribs_ribtastic_min.jpg"
         alt=""
         class="homeHeader__image"
       /> -->

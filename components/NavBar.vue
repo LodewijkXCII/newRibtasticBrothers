@@ -1,11 +1,13 @@
 <template>
   <nav class="Navbar">
     <div class="topNav">
-      <img
-        src="@/assets/img/logo.png"
-        alt="Ribtastic Brothers Logo"
-        class="Navbar-Brand"
-      />
+      <nuxt-link to="/">
+        <img
+          src="@/assets/img/logo.png"
+          alt="Ribtastic Brothers Logo"
+          class="Navbar-Brand"
+        />
+      </nuxt-link>
       <font-awesome-icon :icon="'bars'" class="menuBars" />
       <div class="firstEvent">
         <p>Eerstvolgend Event</p>
@@ -15,13 +17,19 @@
     <div class="bottomNav">
       <ul class="navList">
         <li class="list-item">
-          <font-awesome-icon :icon="'utensils'" />Foodtruck
+          <nuxt-link to="foodtruck">
+            <font-awesome-icon :icon="'utensils'" />Foodtruck
+          </nuxt-link>
         </li>
         <li class="list-item">
-          <font-awesome-icon :icon="'utensils'" />Catering
+          <nuxt-link to="catering">
+            <font-awesome-icon :icon="'utensils'" />Catering
+          </nuxt-link>
         </li>
         <li class="list-item">
-          <font-awesome-icon :icon="'bicycle'" />Bezorging
+          <nuxt-link to="bezorging">
+            <font-awesome-icon :icon="'bicycle'" />Bezorging
+          </nuxt-link>
         </li>
         <li class="list-item">
           <font-awesome-icon :icon="'bars'" class="menuBars" />

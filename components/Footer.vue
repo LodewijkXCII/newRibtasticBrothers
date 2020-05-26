@@ -33,15 +33,31 @@
         <div class="links__about">
           <h2>Over Ribtastic</h2>
           <ul>
-            <li class="about-link">De Saus</li>
-            <li class="about-link">De Bakfiets</li>
-            <li class="about-link">
-              <nuxt-link to="catering">
+            <li>
+              <nuxt-link to="catering" class="about-link">
+                De Saus
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="catering" class="about-link">
+                De Bakfiets
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="catering" class="about-link">
                 Catering
               </nuxt-link>
             </li>
-            <li class="about-link">Bezorging</li>
-            <li class="about-link">Gallerij</li>
+            <li>
+              <nuxt-link to="catering" class="about-link">
+                Bezorging
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="gallery" class="about-link">
+                Gallerij
+              </nuxt-link>
+            </li>
           </ul>
         </div>
       </div>
