@@ -20,13 +20,13 @@
       <div class="footer__links">
         <div class="links__partner">
           <h2>Partners</h2>
-          <ul v-for="partner in partners" :key="partner">
+          <ul v-for="partner in partners" v-bind:key="partner.id">
             <li class="blog-link">{{ partner.name }}</li>
           </ul>
         </div>
         <div class="links__blog">
           <h2>Blog</h2>
-          <ul v-for="post in posts" :key="post">
+          <ul v-for="post in posts" v-bind:key="post.id">
             <li class="blog-link">{{ post.title }}</li>
           </ul>
         </div>
@@ -34,27 +34,27 @@
           <h2>Over Ribtastic</h2>
           <ul>
             <li>
-              <nuxt-link to="catering" class="about-link">
+              <nuxt-link to="/catering" class="about-link">
                 De Saus
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="catering" class="about-link">
+              <nuxt-link to="/catering" class="about-link">
                 De Bakfiets
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="catering" class="about-link">
+              <nuxt-link to="/catering" class="about-link">
                 Catering
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="catering" class="about-link">
+              <nuxt-link to="/catering" class="about-link">
                 Bezorging
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="gallery" class="about-link">
+              <nuxt-link to="/gallerij" class="about-link">
                 Gallerij
               </nuxt-link>
             </li>
@@ -85,3 +85,110 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+footer {
+  padding-bottom: 6em;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+
+    background: rgb(120, 135, 114);
+    background: $primary-gradient;
+  }
+
+  &::before {
+    height: 1.5em;
+  }
+
+  &::after {
+    height: 3px;
+  }
+
+  .footer__sectionA {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+      margin: 1em;
+      width: 80px;
+    }
+    svg {
+      margin: 0.5em;
+    }
+  }
+
+  .footer__links {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 0.8em;
+    font-size: 0.7em;
+    margin: 0 2em 2em;
+
+    h2 {
+      font-family: $ft-lato;
+      text-transform: uppercase;
+      font-size: 1em;
+      color: white;
+      letter-spacing: normal;
+      text-align: left;
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+        padding-left: 0;
+        margin: 0.2em 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  footer {
+    padding-bottom: 1em;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 1em 0;
+
+      .footer__sectionA {
+        display: initial;
+        justify-content: space-around;
+        align-items: center;
+
+        img {
+          width: 150px;
+        }
+        .socials {
+          text-align: center;
+
+          svg {
+            color: white;
+          }
+        }
+      }
+
+      .footer__links {
+        font-size: 1em;
+        grid-gap: 1.5em;
+
+        a {
+          color: white;
+          transition: 0.3s;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

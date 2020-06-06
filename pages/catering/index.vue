@@ -1,12 +1,6 @@
 <template>
   <div>
-    <div class="imgHeader">
-      <img
-        src="@/assets/img/catering_foodtruck_spareribs-min.jpg"
-        alt=""
-        class="imgHeader__image"
-      />
-    </div>
+    <ImageHeader />
     <div class="container">
       <h1>BBQ Catering</h1>
       <h2>Inclusief Toffe BBQ Bakfiets</h2>
@@ -40,9 +34,19 @@
       <h1>De Pakketten</h1>
       <h2>Voor ieder wat wils</h2>
 
-      <OptionsCatering />
+      <div class="cateringWrapper">
+        <OptionsCatering
+          v-for="catering in catering"
+          :key="catering.id"
+          :name="catering.name"
+          :recommended="catering.recommended"
+          :price="catering.price"
+          :id="catering.id"
+          :cateringProducts="catering.cateringProducts"
+        />
+      </div>
 
-      <nuxt-link to="gallery" class="btn btn-primary"
+      <nuxt-link to="/gallerij" class="btn btn-primary"
         >Impressie gallerij <font-awesome-icon :icon="'images'" />
       </nuxt-link>
     </div>
@@ -55,13 +59,37 @@
   </div>
 </template>
 <script>
-import FormCatering from '~/components/FormCatering.vue'
-import OptionsCatering from '~/components/OptionsCatering.vue'
+import FormCatering from '@/components/FormCatering.vue'
+import OptionsCatering from '@/components/OptionsCatering.vue'
+import ImageHeader from '@/components/ImageHeader.vue'
 
 export default {
+  name: 'Catering',
   components: {
+    ImageHeader,
     FormCatering,
     OptionsCatering
+  },
+
+  data() {
+    return {}
+  },
+  asyncData(context) {
+    return context.app.$axios
+      .get('http://localhost:1337/catering-options')
+      .then(res => {
+        return {
+          catering: res.data.map(co => {
+            return {
+              id: co.id,
+              name: co.name,
+              price: co.price,
+              cateringProducts: co.catering_products,
+              recommended: co.recommended
+            }
+          })
+        }
+      })
   }
 }
 </script>

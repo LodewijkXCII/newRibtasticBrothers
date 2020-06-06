@@ -1,11 +1,6 @@
 <template>
-  <div>
-    <div class="imgHeader">
-      <img
-        src="@/assets/img/catering_foodtruck_spareribs-min.jpg"
-        alt=""
-        class="imgHeader__image"
-      />
+  <section>
+        <ImageHeader />
     </div>
     <div class="container">
       <h1>Gallerij</h1>
@@ -33,51 +28,52 @@
         </p>
       </div>
 
-      <nuxt-link to="catering" class="btn btn-primary"
-        >Bekijk de cateringsmogelijkheden
+      <nuxt-link to="/catering" class="btn btn-primary">
+        Bekijk de cateringsmogelijkheden
         <font-awesome-icon :icon="'utensils'" />
       </nuxt-link>
-
       <div class="galleryWrapper">
-        <div class="galleryPost" v-for="gallery in gallery" :key="gallery">
-          <nuxt-link :to="gallery.link">
-            <img
-              v-bind:src="gallery.thumbnail"
-              v-bind:alt="gallery.title"
-              class="galleryPost__img"
-            />
-            <div class="galleryPost__body">
-              <h3 class="galleryPost__title">{{ gallery.title }}</h3>
-            </div>
-          </nuxt-link>
-        </div>
+        <GalleryBlock
+          v-for="gallery in gallery"
+          :key="gallery.id"
+          :title="gallery.title"
+          :thumbnailImage="gallery.thumbnailImage"
+          :id="gallery.id"
+        />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
+import GalleryBlock from '~/components/GalleryBlock.vue'
+import ImageHeader from '@/components/ImageHeader.vue'
+import axios from '@nuxtjs/axios'
+
 export default {
+  components: {
+    GalleryBlock,
+    ImageHeader,
+  },
   data() {
-    return {
-      gallery: [
-        {
-          title: 'RSC Lustrum',
-          thumbnail: 'https://source.unsplash.com/random/350x230',
-          link: '/#'
-        },
-        {
-          title: 'Catering huwelijk',
-          thumbnail: 'https://source.unsplash.com/random/351x230',
-          link: '/#'
-        },
-        {
-          title: 'Bedrijfscatering Swapfiets',
-          thumbnail: 'https://source.unsplash.com/random/350x231',
-          link: '/#'
+    return {}
+  },
+  asyncData(context) {
+    return context.app.$axios
+      .get('http://localhost:1337/event-galleries')
+      .then(res => {
+        return {
+          gallery: res.data.map(ig => {
+            return {
+              id: ig.id,
+              title: ig.agenda.title,
+              thumbnailImage: ig.thumbnail.url
+            }
+          })
         }
-      ]
-    }
+      })
   }
 }
 </script>
+
+<style lang="scss"></style>

@@ -1,13 +1,13 @@
 <template>
   <div class="eventOverview">
-    <div v-for="event in events" :key="event" class="eventItem">
+    <div v-for="event in events" :key="event.id" class="eventItem">
       <div class="eventItem__date">
         <h6>{{ event.date }}</h6>
       </div>
       <div class="eventItem__info">
         <h4>{{ event.title }}</h4>
-        <small>{{ event.location }}</small>
-        <a :href="event.link">Bekijk event</a>
+        <small>{{ event.locatie }}</small>
+        <a v-if="event.link" :href="event.link">Bekijk event</a>
       </div>
       <div class="eventItem__genre"></div>
     </div>
@@ -21,40 +21,108 @@
 </template>
 
 <script>
+import axios from '@nuxtjs/axios'
+
 export default {
   data() {
     return {
-      events: [
-        {
-          title: 'King-S Festival',
-          date: '27 apr',
-          location: 'Strijp-S, Eindhoven',
-          genre: '@assets/img/icons/bar.png',
-          link: '#'
-        },
-        {
-          title: 'Freshtival',
-          date: '4-6 jun',
-          location: 'Strijp-S, Eindhoven',
-          genre: '@assets/img/icons/bar.png',
-          link: '#'
-        },
-        {
-          title: 'Zegevieren Festival',
-          date: '5 mei',
-          location: 'Strijp-S, Eindhoven',
-          genre: '@assets/img/icons/bar.png',
-          link: '#'
-        },
-        {
-          title: 'Bedrijfs Catering',
-          date: '26 jun',
-          location: 'Strijp-S, Eindhoven',
-          genre: '@assets/img/icons/bar.png',
-          link: '#'
-        }
-      ]
+      events: []
     }
+  },
+  async fetch() {
+    const { data } = await this.$axios.get('http://localhost:1337/events')
+    this.events = data
   }
 }
 </script>
+<style lang="scss">
+section.events {
+  position: relative;
+  margin-top: 2em;
+  background: #1e1e1e;
+
+  //   img {
+  //     position: absolute;
+  //     z-index: -1;
+  //     width: auto;
+  //     height: 100%;
+  //     left: -50%;
+  //   }
+
+  h1 {
+    padding-top: 1em;
+  }
+}
+
+.eventOverview {
+  display: grid;
+  grid-row-gap: 15px;
+  margin: 1em;
+  padding: 1em 0;
+
+  .eventItem {
+    display: grid;
+    grid-template-columns: minmax(100px, auto) 3fr auto;
+    background: rgba(0, 0, 0, 0.5);
+
+    &__date {
+      padding: 1em;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+    }
+
+    &__info {
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h4 {
+        text-transform: uppercase;
+      }
+
+      a {
+        margin-top: 9px;
+        font-size: 0.6em;
+        font-weight: bold;
+        color: $primary-color;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      a::after {
+        content: '';
+        display: inline-block;
+        width: 0.6em;
+        height: 0.6em;
+        border-right: 0.2em solid $primary-color;
+        border-top: 0.2em solid $primary-color;
+        transform: rotate(45deg);
+        margin-right: 0.5em;
+        margin-left: 0.35em;
+      }
+    }
+  }
+  .eventItemCta {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1em;
+    background: rgba($color: $primary-color, $alpha: 0.8);
+    color: #fff;
+
+    h2 {
+      color: white;
+      font-size: 1.5em;
+      letter-spacing: 1.3px;
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  .eventOverview {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+  }
+}
+</style>

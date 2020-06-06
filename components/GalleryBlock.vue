@@ -1,3 +1,38 @@
+<template>
+  <div class="galleryPost">
+    <nuxt-link :to="`/gallerij/${title}`">
+      <img
+        v-bind:src="`http://localhost:1337${thumbnailImage}`"
+        v-bind:alt="title"
+        class="galleryPost__img"
+      />
+      <div class="galleryPost__body">
+        <h3 class="galleryPost__title">{{ title }}</h3>
+      </div>
+    </nuxt-link>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    thumbnailImage: {
+      type: String,
+      required: true
+    },
+    id: {
+      type: Number,
+      required: true
+    }
+  }
+}
+</script>
+
+<style lang="scss">
 .galleryWrapper {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -59,3 +94,4 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+</style>

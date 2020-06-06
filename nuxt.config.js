@@ -14,7 +14,14 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        href:
+          'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700;900&display=swap',
+        rel: 'stylesheet'
+      }
+    ],
     script: [
       {
         src:
@@ -29,11 +36,21 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/main.min.css'],
+  css: [
+    '@/assets/css/main.scss',
+    '@/assets/css/elements.scss',
+    '@/assets/css/config.scss',
+    '@/assets/css/typography.scss'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    {
+      src: '~/plugins/vuex-persist',
+      mode: 'client'
+    }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -44,6 +61,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
     [
       'nuxt-fontawesome',
       {
@@ -60,6 +78,9 @@ export default {
       }
     ]
   ],
+  styleResources: {
+    scss: ['./assets/css/*.scss']
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
