@@ -22,7 +22,7 @@
           <div class="productList__Card--img">
             <img
               :src="
-                `http://localhost:1337${cateringProduct.image.formats.small.url}`
+                `https://ribtasticbrothers.herokuapp.com${cateringProduct.image.formats.small.url}`
               "
               alt=""
             />

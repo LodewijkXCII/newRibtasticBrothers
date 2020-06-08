@@ -14,7 +14,9 @@
           :key="image.id"
         >
           <img
-            :src="`http://localhost:1337${image.formats.small.url}`"
+            :src="
+              `https://ribtasticbrothers.herokuapp.com${image.formats.small.url}`
+            "
             alt=""
           />
         </div>

@@ -76,7 +76,7 @@ export default {
   },
   asyncData(context) {
     return context.app.$axios
-      .get('http://localhost:1337/catering-options')
+      .get('https://ribtasticbrothers.herokuapp.com/catering-options')
       .then(res => {
         return {
           catering: res.data.map(co => {

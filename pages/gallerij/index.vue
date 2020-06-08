@@ -60,7 +60,7 @@ export default {
   },
   asyncData(context) {
     return context.app.$axios
-      .get('http://localhost:1337/event-galleries')
+      .get('https://ribtasticbrothers.herokuapp.com/event-galleries')
       .then(res => {
         return {
           gallery: res.data.map(ig => {
