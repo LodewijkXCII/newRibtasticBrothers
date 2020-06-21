@@ -61,6 +61,17 @@ import KeyValue from '~/components/KeyValue.vue'
 import Events from '~/components/Events.vue'
 
 export default {
+  head: {
+    title: 'The Ribtastic Brothers - De lekkerste spareribs!',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Home page description'
+      }
+    ],
+    noscript: [{ innerHTML: 'Body No Scripts', body: true }]
+  },
   name: 'HomePage',
   components: {
     KeyValue,
@@ -80,6 +91,163 @@ export default {
 </script>
 
 <style lang="scss">
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: $ft-lato;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.container {
+  max-width: $max-width;
+  margin: auto 1em;
+}
+@media (min-width: 650px) {
+  .container {
+    margin: auto;
+    padding: 3em 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: 0.5s;
+
+  &:hover {
+    color: #697564;
+  }
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+.homeHeader {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 60vh;
+  background: rgba(0, 0, 0, 0.5);
+
+  .homeHeader__image {
+    position: absolute;
+    z-index: -10;
+    left: -35%;
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+  }
+
+  @media (min-width: 650px) {
+    .homeHeader__image {
+      height: auto;
+      top: -200px;
+      left: 0;
+    }
+  }
+
+  .fullImageHeader {
+    margin: auto 1em;
+
+    h1 {
+      font-size: 4.5em;
+      font-weight: 400;
+      line-height: 0.9;
+      text-align: right;
+    }
+
+    h2 {
+      font-size: 1.9em;
+      font-weight: 400;
+      line-height: 0.9;
+      text-align: right;
+      color: #fff;
+    }
+
+    @media (min-width: 650px) {
+      h1 {
+        font-size: 10em;
+      }
+      h2 {
+        font-size: 4em;
+      }
+    }
+
+    .cta {
+      display: none;
+    }
+
+    @media (min-width: 650px) {
+      .cta {
+        display: flex;
+        justify-content: flex-end;
+        margin: 3em 0 1em;
+
+        a {
+          margin: 0 0 0 3em;
+        }
+      }
+    }
+  }
+  @media (min-width: 650px) {
+    .fullImageHeader {
+      margin: auto;
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  .homeHeader {
+    height: 90vh;
+  }
+}
+
+main {
+  margin-top: 2.5em;
+}
+
+@media (min-width: 650px) {
+  main {
+    margin-top: 1em;
+  }
+}
+
+.wrapper-1-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.textInfo {
+  margin-top: 1.5em;
+}
+
+@media (min-width: 650px) {
+  .wrapper-1-2 {
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 1.8em;
+  }
+}
+
 .partnersOverview {
   display: grid;
   grid-template-columns: 1fr 1fr;

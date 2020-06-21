@@ -4,10 +4,11 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'The Ribtastic Brothers',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'keywords', content: 'keyword 1, keyword 2' },
       {
         hid: 'description',
         name: 'description',
@@ -36,12 +37,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    '@/assets/css/main.scss',
-    '@/assets/css/elements.scss',
-    '@/assets/css/config.scss',
-    '@/assets/css/typography.scss'
-  ],
+  css: ['@/assets/css/elements.scss', '@/assets/css/config.scss'],
   /*
    ** Plugins to load before mounting the App
    */

@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import GalleryBlock from '~/components/GalleryBlock.vue'
+import GalleryBlock from '@/components/GalleryBlock.vue'
 import ImageHeader from '@/components/ImageHeader.vue'
 import axios from '@nuxtjs/axios'
 
@@ -60,7 +60,7 @@ export default {
   },
   asyncData(context) {
     return context.app.$axios
-      .get('https://ribtasticbrothers.herokuapp.com/event-galleries')
+      .get('http://localhost:1337/event-galleries')
       .then(res => {
         return {
           gallery: res.data.map(ig => {
@@ -76,4 +76,17 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.galleryWrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1em;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 650px) {
+  .galleryWrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+  </style>

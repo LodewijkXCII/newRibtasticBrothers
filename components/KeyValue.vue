@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .trbValues {
   display: grid;
   grid-template-columns: 1fr;
@@ -68,6 +68,7 @@ export default {
 
     .ValueIcon {
       background: $off-white-color;
+      border: 2px solid $off-primary-color;
       width: 100px;
       height: 100px;
       border-radius: 50%;

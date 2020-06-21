@@ -32,4 +32,28 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.imgHeader {
+  position: relative;
+  height: 35vh;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+
+  .imgHeader__image {
+    position: absolute;
+    z-index: -10;
+    left: -70%;
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+  }
+  @media (min-width: 650px) {
+    .imgHeader__image {
+      height: auto;
+      top: -35%;
+      left: 0;
+    }
+  }
+}
+</style>

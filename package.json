@@ -1,7 +1,7 @@
 {
-  "name": "frontend",
+  "name": "The Ribtastic Brothers",
   "version": "1.0.0",
-  "description": "My exceptional Nuxt.js project",
+  "description": "De lekkerste Spareribs met de foodtruck thuis, op een festival of catering",
   "author": "Loek Zweers",
   "private": true,
   "scripts": {

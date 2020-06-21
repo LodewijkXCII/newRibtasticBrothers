@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="footer__links">
-        <div class="links__partner">
+        <!-- <div class="links__partner">
           <h2>Partners</h2>
           <ul v-for="partner in partners" v-bind:key="partner.id">
             <li class="blog-link">{{ partner.name }}</li>
@@ -29,7 +29,7 @@
           <ul v-for="post in posts" v-bind:key="post.id">
             <li class="blog-link">{{ post.title }}</li>
           </ul>
-        </div>
+        </div> -->
         <div class="links__about">
           <h2>Over Ribtastic</h2>
           <ul>
@@ -49,7 +49,7 @@
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/catering" class="about-link">
+              <nuxt-link to="/bestellen" class="about-link">
                 Bezorging
               </nuxt-link>
             </li>
@@ -86,7 +86,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 footer {
   padding-bottom: 6em;
   &::before,
@@ -187,6 +187,9 @@ footer {
             color: $primary-color;
           }
         }
+      }
+      .links-about {
+        grid-column: 3/4;
       }
     }
   }

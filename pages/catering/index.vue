@@ -44,6 +44,10 @@
           :id="catering.id"
           :cateringProducts="catering.cateringProducts"
         />
+        <div class="cateringCard">
+          <h2 class="cateringCard__title">Catering op Maat</h2>
+          <p class="cateringCard__text">Prijs op aanvraag</p>
+        </div>
       </div>
 
       <nuxt-link to="/gallerij" class="btn btn-primary"
@@ -76,7 +80,7 @@ export default {
   },
   asyncData(context) {
     return context.app.$axios
-      .get('https://ribtasticbrothers.herokuapp.com/catering-options')
+      .get('http://localhost:1337/catering-options')
       .then(res => {
         return {
           catering: res.data.map(co => {

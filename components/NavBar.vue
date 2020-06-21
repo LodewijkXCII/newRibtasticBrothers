@@ -1,21 +1,23 @@
 <template>
   <nav class="Navbar">
     <div class="topNav">
-      <nuxt-link to="/">
-        <img
-          src="@/assets/img/logo.png"
-          alt="Ribtastic Brothers Logo"
-          class="Navbar-Brand"
+      <div class="container">
+        <nuxt-link to="/">
+          <img
+            src="@/assets/img/logo.png"
+            alt="Ribtastic Brothers Logo"
+            class="Navbar-Brand"
+          />
+        </nuxt-link>
+        <font-awesome-icon
+          :icon="'bars'"
+          v-on:click="toggleNav"
+          class="menuBars"
+          v-bind:class="{
+            hidden: barsHidden
+          }"
         />
-      </nuxt-link>
-      <font-awesome-icon
-        :icon="'bars'"
-        v-on:click="toggleNav"
-        class="menuBars"
-        v-bind:class="{
-          hidden: barsHidden
-        }"
-      />
+      </div>
       <div class="firstEvent">
         <p>Eerstvolgend Event</p>
         <span>Freshtival</span>
@@ -39,7 +41,7 @@
           </nuxt-link>
         </li>
         <li class="list-item">
-          <nuxt-link to="/bezorging">
+          <nuxt-link to="/bestellen">
             <font-awesome-icon :icon="'bicycle'" />Bezorging
           </nuxt-link>
         </li>
@@ -106,7 +108,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 nav {
   width: 100%;
   position: fixed;
@@ -114,30 +116,35 @@ nav {
 
   .topNav {
     position: relative;
-    display: grid;
-    grid-template-columns: 2fr 1fr 5fr 1fr 2fr;
+    // display: grid;
+    // grid-template-columns: 2fr 1fr 5fr 1fr 2fr;
     justify-content: center;
     align-items: center;
 
     background: rgba(0, 0, 0, 0.7);
     padding: 0.6em 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    a {
-      margin: auto;
-      grid-column: 3/4;
-      img {
-        width: 90px;
-      }
-    }
 
-    .menuBars {
-      display: none;
+    .container {
+      display: flex;
+      padding: 0;
+      a {
+        margin: auto;
+        grid-column: 3/4;
+        img {
+          width: 90px;
+        }
+        .menuBars {
+          display: none;
+        }
+      }
     }
 
     @media (min-width: 650px) {
       .menuBars {
         display: initial;
         justify-self: end;
+        align-self: center;
         margin-right: 1em;
       }
     }
@@ -191,6 +198,7 @@ nav {
       justify-content: space-evenly;
       padding: 1em 0 1.8em;
       text-transform: uppercase;
+      box-sizing: border-box;
 
       li.list-item a {
         font-size: 0.8em;
@@ -200,6 +208,10 @@ nav {
 
         text-decoration: none;
         color: white;
+
+        &:hover {
+          color: $off-primary-color;
+        }
         svg {
           justify-self: center;
         }
@@ -233,7 +245,7 @@ nav {
       }
     }
     .hidden {
-      display: none !important;
+      opacity: 0 !important;
     }
   }
 }

@@ -23,7 +23,7 @@
   </form>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .formCatering {
   display: flex;
   flex-direction: column;

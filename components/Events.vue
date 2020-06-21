@@ -30,14 +30,12 @@ export default {
     }
   },
   async fetch() {
-    const { data } = await this.$axios.get(
-      'https://ribtasticbrothers.herokuapp.com/events'
-    )
+    const { data } = await this.$axios.get('http://localhost:1337/events')
     this.events = data
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 section.events {
   position: relative;
   margin-top: 2em;

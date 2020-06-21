@@ -7,3 +7,46 @@ $primary-gradient: linear-gradient(90deg, rgba(120, 135, 114, 1) 0%, rgba(74, 96
 $max-width: 1115px;
 $ft-bebas: "Bebas Neue", sans-serif;
 $ft-lato: "Lato", sans-serif;
+
+h1,
+h2 {
+    font-family: $ft-bebas;
+    letter-spacing: 0.75px;
+    text-align: center;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: $ft-bebas;
+    color: $primary-color;
+}
+
+h4,
+p {
+    font-family: $ft-lato;
+    line-height: 1.4;
+    margin-bottom: 0.5em;
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-size: 2rem;
+    color: $primary-color;
+}
+
+h4 {
+    color: $primary-color;
+    font-weight: 900;
+}
+
+h6 {
+    font-size: 1.5rem;
+    font-family: $ft-bebas;
+}
