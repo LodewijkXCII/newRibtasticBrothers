@@ -13,10 +13,8 @@
           class="galleryImages__img"
           :key="image.id"
         >
-          <img
-            :src="`http://localhost:1337${image.formats.small.url}`"
-            alt=""
-          />
+          <!-- <p>{{ image.hash }}</p> -->
+          <img :src="`http://localhost:1337${image.url}`" alt="" />
         </div>
       </div>
     </div>

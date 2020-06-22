@@ -10,6 +10,12 @@
         <div class="textInfo">
           <p>{{ catering.description }}</p>
           <n-link to="/catering">Terug naar het overzicht</n-link>
+          <div v-for="image in catering.images" :key="image.id">
+            <img
+              :src="`http://localhost:1337${image.formats.small.url}`"
+              alt=""
+            />
+          </div>
         </div>
       </div>
       <h2>Dit pakket bevat de volgende gerechten:</h2>
@@ -22,7 +28,7 @@
           <div class="productList__Card--img">
             <img
               :src="
-                `https://ribtasticbrothers.herokuapp.com/${cateringProduct.image.formats.small.url}`
+                `http://localhost:1337${cateringProduct.image.formats.small.url}`
               "
               alt=""
             />
@@ -41,11 +47,13 @@
 import axios from '@nuxtjs/axios'
 import ImageHeader from '@/components/ImageHeader.vue'
 import FormCatering from '@/components/FormCatering.vue'
+import SmallGallery from '@/components/SmallGallery.vue'
 
 export default {
   components: {
     ImageHeader,
-    FormCatering
+    FormCatering,
+    SmallGallery
   },
   data() {
     return {}
@@ -63,7 +71,8 @@ export default {
             subTitle: res.data[0].subTitle,
             price: res.data[0].price,
             description: res.data[0].description,
-            cateringProducts: res.data[0].catering_products
+            cateringProducts: res.data[0].catering_products,
+            images: res.data[0].images
           }
         }
       })

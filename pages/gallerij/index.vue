@@ -1,7 +1,7 @@
 <template>
   <section>
-        <ImageHeader />
-    </div>
+    <ImageHeader />
+
     <div class="container">
       <h1>Gallerij</h1>
       <h2>Plaatjes en Daadjes</h2>
@@ -53,7 +53,7 @@ import axios from '@nuxtjs/axios'
 export default {
   components: {
     GalleryBlock,
-    ImageHeader,
+    ImageHeader
   },
   data() {
     return {}
@@ -67,7 +67,7 @@ export default {
             return {
               id: ig.id,
               title: ig.agenda.title,
-              thumbnailImage: ig.thumbnail.url
+              thumbnailImage: ig.thumbnail.formats.thumbnail.url
             }
           })
         }
@@ -89,4 +89,4 @@ export default {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-  </style>
+</style>
