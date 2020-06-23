@@ -1,6 +1,5 @@
 <template>
   <div>
-    <ImageHeader />
     <NavBar />
     <div class="container">
       <h1>Bestel je eigen Do-It-Yourself kit</h1>
@@ -35,7 +34,6 @@
 </template>
 
 <script>
-import ImageHeader from '@/components/ImageHeader.vue'
 import NavBar from '@/components/order/NavBar.vue'
 import OrderFlow from '@/components/order/OrderFlow.vue'
 import FAQ from '@/components/order/FAQ.vue'
@@ -43,7 +41,6 @@ import Product from '@/components/order/Product.vue'
 
 export default {
   components: {
-    ImageHeader,
     OrderFlow,
     NavBar,
     FAQ,

@@ -1,7 +1,5 @@
 <template>
   <section>
-    <ImageHeader />
-
     <div class="container">
       <h1>{{ catering.name }}</h1>
       <h2>{{ catering.subTitle }}</h2>
@@ -45,13 +43,11 @@
 
 <script>
 import axios from '@nuxtjs/axios'
-import ImageHeader from '@/components/ImageHeader.vue'
 import FormCatering from '@/components/FormCatering.vue'
 import SmallGallery from '@/components/SmallGallery.vue'
 
 export default {
   components: {
-    ImageHeader,
     FormCatering,
     SmallGallery
   },

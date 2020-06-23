@@ -1,7 +1,5 @@
 <template>
   <section>
-    <ImageHeader />
-
     <div class="container">
       <h1>{{ gallery.title }}</h1>
       <h2>{{ gallery.locatie }}</h2>
@@ -23,12 +21,9 @@
 
 <script>
 import axios from '@nuxtjs/axios'
-import ImageHeader from '@/components/ImageHeader.vue'
 
 export default {
-  components: {
-    ImageHeader
-  },
+  components: {},
   data() {
     return {}
   },

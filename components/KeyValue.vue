@@ -32,19 +32,19 @@ export default {
         {
           title: 'Bakfiets',
           text:
-            'Een uniek vervoersmiddel waar we heerlijke BBQ gerechten mee kunnen maken. Volledig zelf gemaakt met duurzame materialen.',
+            'Onze zelfgemaakte unieke BBQ Bakfiets waar we heerlijke creaties op kunnen maken. Bestaande uit  duurzame materialen en volledig zelfvoorzienend.',
           icon: 'bicycle'
         },
         {
           title: 'Saus',
           text:
-            'De keuze is niet: Welke saus moet ik kiezen, nee de keuze is welk vlees. Onze saus past overal bij en maakt alles overheerlijk!',
+            'Het geheim van ons succes bestaat voor een deel uit onze heerlijke zelfgemaakte Ribtastic Saus. Een heerlijke zoete kruidencombinatie met een licht pitje. Deze saus maakt ieder gerecht ronduit fantastisch, you wanna try?',
           icon: 'pepper-hot'
         },
         {
           title: 'Duurzaamheid',
           text:
-            'Duurzaamheid zit in onze vezels. Alles wat we doen, doen we met een duurzame gedachten. Zo reduceren we ons gas verbruik jaarlijks',
+            'Duurzaamheid zit diep in onze vezels. Alles wat we doen, doen we met een duurzame gedachte. Dit zie je terug in de materialen die we gebruiken en de CO2 die we jaarlijkse compenseren.',
           icon: 'leaf'
         }
       ]
