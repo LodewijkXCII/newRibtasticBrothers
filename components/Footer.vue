@@ -34,12 +34,12 @@
           <h2>Over Ribtastic</h2>
           <ul>
             <li>
-              <nuxt-link to="/catering" class="about-link">
+              <nuxt-link to="/saus" class="about-link">
                 De Saus
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/catering" class="about-link">
+              <nuxt-link to="/foodtruck" class="about-link">
                 De Bakfiets
               </nuxt-link>
             </li>

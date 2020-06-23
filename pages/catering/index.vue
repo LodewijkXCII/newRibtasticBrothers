@@ -1,9 +1,8 @@
 <template>
   <div>
-    <ImageHeader />
     <div class="container">
       <h1>BBQ Catering</h1>
-      <h2>Inclusief Toffe BBQ Bakfiets</h2>
+      <h2>Inclusief onze unieke BBQ bakfiets</h2>
       <div class="wrapper-1-2">
         <FormCatering />
         <div class="textInfo">
@@ -24,9 +23,8 @@
           </p>
           <p>
             Om toch een soort richtlijn te hanteren, kunnen we over het algemeen
-            twee catering varianten onderscheiden, namelijk Just Meat en All-In.
-            De namen zeggen het eigenlijk al een beetje, maar hieronder per
-            pakket een kleine toelichting en een prijsindicatie.
+            een aantal catering varianten onderscheiden, hieronder per pakket
+            een kleine toelichting en een prijsindicatie.
           </p>
         </div>
       </div>
@@ -65,12 +63,10 @@
 <script>
 import FormCatering from '@/components/FormCatering.vue'
 import OptionsCatering from '@/components/OptionsCatering.vue'
-import ImageHeader from '@/components/ImageHeader.vue'
 
 export default {
   name: 'Catering',
   components: {
-    ImageHeader,
     FormCatering,
     OptionsCatering
   },

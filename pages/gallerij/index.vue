@@ -1,30 +1,19 @@
 <template>
   <section>
-    <ImageHeader />
-
     <div class="container">
       <h1>Gallerij</h1>
       <h2>Plaatjes en Daadjes</h2>
       <div class="textInfo">
         <p>
           Op bijna alle events waar we komen hebben we onze huisfotograaf Lars
-          mee. Hij schiet de mooiste plaatjes die wij maar al te graag op onze
-          socials zetten. We hebben echter alleen ruimte voor zoveel foto's
-          online. Dus willen we graag de overige foto's hier plaatsen. Mocht je
-          een foto willen gebruiken mag dat uiteraard. We zouden het leuk vinden
-          als je ons dat tags via de bekende kanalen.
+          mee. Hij schiet de mooiste plaatjes waarmee we onze feestjes kunnen
+          vereeuwigen. We zetten vaak een aantal plaatjes op onze socials, maar
+          voor de volledige reportage moet je hier zijn. Hopelijk geven
+          onderstaande foto’s een glimpse van wat wij in petto hebben.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed placeat
-          dolorem atque consectetur modi minima praesentium, odio similique
-          quidem ipsam quas eos odit repellat. Libero itaque, corporis saepe cum
-          enim eos consectetur rem molestias, nihil voluptates esse mollitia sit
-          sunt animi reiciendis tempora, possimus dolor quisquam aperiam.
-          Laborum, delectus ratione!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-          laudantium adipisci quam maiores nostrum beatae!
+          Mocht je een foto willen gebruiken mag dat, mits je ons natuurlijk
+          even tagged via de bekende kanalen.
         </p>
       </div>
 
@@ -47,13 +36,11 @@
 
 <script>
 import GalleryBlock from '@/components/GalleryBlock.vue'
-import ImageHeader from '@/components/ImageHeader.vue'
 import axios from '@nuxtjs/axios'
 
 export default {
   components: {
-    GalleryBlock,
-    ImageHeader
+    GalleryBlock
   },
   data() {
     return {}

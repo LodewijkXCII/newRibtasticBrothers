@@ -118,6 +118,12 @@ body {
 .container {
   max-width: $max-width;
   margin: auto 1em;
+
+  &-fluid {
+    max-width: 750px;
+    margin: auto;
+    padding: 3em 0;
+  }
 }
 @media (min-width: 650px) {
   .container {

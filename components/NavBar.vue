@@ -51,11 +51,11 @@
             Contact
           </nuxt-link>
         </li>
-        <li class="list-item mob-hid">
+        <!-- <li class="list-item mob-hid">
           <nuxt-link to="/blog">
             Blog
           </nuxt-link>
-        </li>
+        </li> -->
         <li class="list-item mob-hid">
           <nuxt-link to="/gallerij">
             Gallerij
