@@ -2,7 +2,7 @@
   <div class="galleryPost">
     <nuxt-link :to="`/gallerij/${title}`">
       <img
-        v-bind:src="`http://localhost:1337${thumbnailImage}`"
+        v-bind:src="`https://ribtasticbrothers.herokuapp.com${thumbnailImage}`"
         v-bind:alt="title"
         class="galleryPost__img"
       />

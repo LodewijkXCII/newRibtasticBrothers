@@ -5,10 +5,10 @@
       :key="keyValue.id"
       class="trbValues__Value"
     >
-      <div class="ValueIcon">
+      <div class="trbValues__Value--ValueIcon">
         <font-awesome-icon :icon="keyValue.icon" />
       </div>
-      <div class="ValueText">
+      <div class="trbValues__Value--ValueText">
         <h4>{{ keyValue.title }}</h4>
         <p>
           {{ keyValue.text }}
@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .trbValues {
   display: grid;
   grid-template-columns: 1fr;
@@ -66,7 +66,11 @@ export default {
     margin-top: 2em;
     align-items: center;
 
-    .ValueIcon {
+    &--ValueText {
+      top: 0;
+    }
+
+    &--ValueIcon {
       background: $off-white-color;
       border: 2px solid $off-primary-color;
       width: 100px;
@@ -96,11 +100,15 @@ export default {
 
     &__Value {
       grid-template-columns: 1fr;
+      grid-template-rows: 100px 250px;
       text-align: center;
-      grid-gap: 0.75em;
+      grid-gap: 1em;
       margin-left: 0;
 
-      .ValueIcon {
+      &--ValueText {
+        align-self: start;
+      }
+      &--ValueIcon {
         justify-self: center;
       }
     }

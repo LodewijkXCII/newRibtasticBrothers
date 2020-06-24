@@ -26,14 +26,15 @@ export default {
     script: [
       {
         src:
-          'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+          'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+        type: 'text/css'
       }
     ]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#1e1e1e' },
   /*
    ** Global CSS
    */

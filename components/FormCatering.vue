@@ -32,6 +32,7 @@
   padding: 1.5em 2.5em;
 
   background: $off-black-color;
+  border: 2px solid darken($color: $off-black-color, $amount: 3);
   border-radius: 15px;
   font-size: 0.75em;
 
