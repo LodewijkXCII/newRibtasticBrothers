@@ -147,6 +147,9 @@ footer {
         margin: 0.2em 0;
       }
     }
+    .links__about {
+      grid-column: 3/4;
+    }
   }
 }
 
@@ -187,9 +190,6 @@ footer {
             color: $primary-color;
           }
         }
-      }
-      .links-about {
-        grid-column: 3/4;
       }
     }
   }

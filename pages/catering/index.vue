@@ -36,12 +36,13 @@
         <OptionsCatering
           v-for="catering in catering"
           :key="catering.id"
+          :id="catering.id"
           :name="catering.name"
           :recommended="catering.recommended"
           :price="catering.price"
-          :id="catering.id"
           :cateringProducts="catering.cateringProducts"
         />
+
         <div class="cateringCard">
           <h2 class="cateringCard__title">Catering op Maat</h2>
           <p class="cateringCard__text">Prijs op aanvraag</p>
@@ -76,7 +77,7 @@ export default {
   },
   asyncData(context) {
     return context.app.$axios
-      .get('http://localhost:1337/catering-options')
+      .get('https://ribtasticbrothers.herokuapp.com/catering-options')
       .then(res => {
         return {
           catering: res.data.map(co => {

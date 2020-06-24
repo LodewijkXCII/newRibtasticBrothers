@@ -15,15 +15,26 @@ export default {}
   width: 100%;
   background: $off-black-color;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
   a {
     color: white;
     text-transform: uppercase;
-    margin: 1em 2em;
+    margin: 0.3em 2em;
 
     &:hover {
       color: $off-primary-color;
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  .orderNav {
+    flex-direction: row;
+
+    a {
+      margin: 1em 2.5em;
     }
   }
 }

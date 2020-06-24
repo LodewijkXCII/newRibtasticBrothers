@@ -9,10 +9,10 @@
           <p>{{ catering.description }}</p>
           <n-link to="/catering">Terug naar het overzicht</n-link>
           <div v-for="image in catering.images" :key="image.id">
-            <img
+            <!-- <img
               :src="`http://localhost:1337${image.formats.small.url}`"
               alt=""
-            />
+            /> -->
           </div>
         </div>
       </div>
@@ -24,12 +24,12 @@
           :key="cateringProduct.id"
         >
           <div class="productList__Card--img">
-            <img
+            <!-- <img
               :src="
                 `http://localhost:1337${cateringProduct.image.formats.small.url}`
               "
               alt=""
-            />
+            /> -->
           </div>
           <div class="productList__Card--text">
             <h3>{{ cateringProduct.name }}</h3>
@@ -57,7 +57,7 @@ export default {
   asyncData(context) {
     return context.app.$axios
       .get(
-        `http://localhost:1337/catering-options?name=${context.params.title}`
+        `https://ribtasticbrothers.herokuapp.com/catering-options?name=${context.params.title}`
       )
       .then(res => {
         return {

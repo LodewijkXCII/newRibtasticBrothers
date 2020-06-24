@@ -10,7 +10,7 @@
         <h1>De lekkerste Spareribs</h1>
         <h2>met de foodtruck thuis, op een festival of catering</h2>
         <div class="cta">
-          <router-link to="#" class="btn btn-primary"
+          <router-link to="foodtruck" class="btn btn-primary"
             >Foodtruck <font-awesome-icon :icon="'utensils'"
           /></router-link>
           <router-link to="catering" class="btn btn-primary"
@@ -81,7 +81,7 @@ export default {
   data() {
     return {
       partners: [
-        //TODO partners in de DB
+        //TODO partners in de DB?
         { name: 'Brouwerij Noordt', logo: 'brouwerij_noordt.png' },
         { name: 'El Parador', logo: 'el_parador.png' }
       ]
@@ -118,17 +118,22 @@ body {
 .container {
   max-width: $max-width;
   margin: auto 1em;
+  padding: 1em 0;
 
   &-fluid {
     max-width: 750px;
     margin: auto;
-    padding: 3em 0;
+    padding: 3em 1em;
   }
 }
 @media (min-width: 650px) {
   .container {
     margin: auto;
     padding: 3em 0;
+
+    &-fluid {
+      padding: 3em 0;
+    }
   }
 }
 
@@ -151,7 +156,7 @@ img {
   position: relative;
   display: flex;
   overflow: hidden;
-  height: 60vh;
+  height: 80vh;
   background: rgba(0, 0, 0, 0.5);
 
   .homeHeader__image {
@@ -200,7 +205,11 @@ img {
     }
 
     .cta {
-      display: none;
+      margin: 2em 0;
+
+      .btn {
+        margin: 0.5em auto;
+      }
     }
 
     @media (min-width: 650px) {

@@ -11,7 +11,7 @@
       </div>
       <div class="productCard__image">
         <img
-          :src="`http://localhost:1337${product.image.url}`"
+          :src="`https://ribtasticbrothers.herokuapp.com${product.image.url}`"
           :alt="product.image.alternativeText"
         />
       </div>
@@ -32,7 +32,9 @@ export default {
     }
   },
   async fetch() {
-    const { data } = await this.$axios.get('http://localhost:1337/products')
+    const { data } = await this.$axios.get(
+      'https://ribtasticbrothers.herokuapp.com/products'
+    )
     this.products = data
   }
 }

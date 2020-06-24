@@ -12,7 +12,11 @@
         {{ cateringProduct.name }}
       </li>
     </ul>
-    <nuxt-link :to="`/catering/${name}`">Meer info</nuxt-link>
+    <nuxt-link
+      :to="{ name: 'catering-title', params: { title: encodeURI(name) } }"
+      tag="a"
+      >Meer info</nuxt-link
+    >
   </div>
 </template>
 
@@ -33,10 +37,6 @@ export default {
     },
     recommended: {
       type: Boolean,
-      required: true
-    },
-    id: {
-      type: Number,
       required: true
     }
   }

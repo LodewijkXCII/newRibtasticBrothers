@@ -45,7 +45,11 @@
             <font-awesome-icon :icon="'bicycle'" />Bezorging
           </nuxt-link>
         </li>
-
+        <li class="list-item mob-hid">
+          <nuxt-link to="/gallerij">
+            Gallerij
+          </nuxt-link>
+        </li>
         <li class="list-item mob-hid">
           <nuxt-link to="/contact">
             Contact
@@ -56,11 +60,6 @@
             Blog
           </nuxt-link>
         </li> -->
-        <li class="list-item mob-hid">
-          <nuxt-link to="/gallerij">
-            Gallerij
-          </nuxt-link>
-        </li>
         <li class="list-item">
           <font-awesome-icon :icon="'bars'" class="menuBars" />
         </li>
@@ -123,7 +122,7 @@ nav {
 
     background: rgba(0, 0, 0, 0.7);
     padding: 0.6em 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
 
     .container {
       display: flex;
@@ -188,7 +187,7 @@ nav {
     width: 100%;
 
     background: $off-black-color;
-    box-shadow: 0 -5px 8px rgba(256, 256, 256, 0.2);
+    box-shadow: 0 -5px 4px rgba(48, 48, 48, 0.5);
 
     ul {
       max-width: $max-width;
@@ -210,7 +209,7 @@ nav {
         color: white;
 
         &:hover {
-          color: $off-primary-color;
+          color: black;
         }
         svg {
           justify-self: center;

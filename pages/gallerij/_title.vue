@@ -12,7 +12,10 @@
           :key="image.id"
         >
           <!-- <p>{{ image.hash }}</p> -->
-          <img :src="`http://localhost:1337${image.url}`" alt="" />
+          <img
+            :src="`https://ribtasticbrothers.herokuapp.com/${image.url}`"
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -30,7 +33,9 @@ export default {
 
   asyncData(context) {
     return context.app.$axios
-      .get(`http://localhost:1337/events?title=${context.params.title}`)
+      .get(
+        `https://ribtasticbrothers.herokuapp.com/events?title=${context.params.title}`
+      )
       .then(res => {
         return {
           gallery: {
