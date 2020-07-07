@@ -49,48 +49,46 @@
         </div>
       </div>
 
-      <nuxt-link to="/gallerij" class="btn btn-primary"
-        >Impressie gallerij <font-awesome-icon :icon="'images'" />
+      <nuxt-link to="/gallerij" class="btn btn-primary">
+        Impressie gallerij
+        <font-awesome-icon :icon="'images'" />
       </nuxt-link>
     </div>
-    <div class="smallGallery">
-      <img src="@/assets/img/catering_bbq_1.jpg" alt="Catering_1" />
-      <img src="@/assets/img/catering_bbq_2.jpg" alt="Catering_2" />
-      <img src="@/assets/img/catering_bbq_3.jpg" alt="Catering_3" />
-      <img src="@/assets/img/catering_bbq_4.jpg" alt="Catering_4" />
-    </div>
+    <SmallGallery />
   </div>
 </template>
 <script>
 import FormCatering from '@/components/FormCatering.vue'
 import OptionsCatering from '@/components/OptionsCatering.vue'
+import SmallGallery from '@/components/SmallGallery.vue'
 
 export default {
-  name: 'Catering',
-  components: {
-    FormCatering,
-    OptionsCatering
-  },
+	name: 'Catering',
+	components: {
+		FormCatering,
+		OptionsCatering,
+		SmallGallery
+	},
 
-  data() {
-    return {}
-  },
-  asyncData(context) {
-    return context.app.$axios
-      .get('https://ribtasticbrothers.herokuapp.com/catering-options')
-      .then(res => {
-        return {
-          catering: res.data.map(co => {
-            return {
-              id: co.id,
-              name: co.name,
-              price: co.price,
-              cateringProducts: co.catering_products,
-              recommended: co.recommended
-            }
-          })
-        }
-      })
-  }
+	data() {
+		return {}
+	},
+	asyncData(context) {
+		return context.app.$axios
+			.get('https://ribtasticbrothers.herokuapp.com/catering-options')
+			.then(res => {
+				return {
+					catering: res.data.map(co => {
+						return {
+							id: co.id,
+							name: co.name,
+							price: co.price,
+							cateringProducts: co.catering_products,
+							recommended: co.recommended
+						}
+					})
+				}
+			})
+	}
 }
 </script>

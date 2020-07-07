@@ -21,11 +21,19 @@
         specerijen die ervoor zorgen dat het vlees optimaal tot zijn recht komt.
       </p>
     </div>
+    <SmallGallery />
   </div>
 </template>
 
 <script>
-export default {}
+import SmallGallery from '@/components/SmallGallery.vue'
+
+export default {
+	name: 'Saus',
+	components: {
+		SmallGallery
+	}
+}
 </script>
 
 <style lang="scss"></style>

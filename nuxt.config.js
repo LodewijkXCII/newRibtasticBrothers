@@ -51,7 +51,17 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: [
+    // Simple usage
+    '@nuxtjs/moment',
+
+    // With options
+    ['@nuxtjs/moment', { /* module options */ }]
+  ],
+
+  moment: {
+    locales: ['nl'],
+  },
   /*
    ** Nuxt.js modules
    */
@@ -90,6 +100,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) { }
   }
 }
