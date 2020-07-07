@@ -24,7 +24,7 @@ export default {
     }
   },
   async fetch() {
-    const { data } = await this.$axios.get('http://localhost:1337/faqs')
+    const { data } = await this.$axios.get('https://ribtasticbrothers.herokuapp.com/faqs')
     this.faqs = data
   }
 }
