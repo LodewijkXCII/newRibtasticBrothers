@@ -4,13 +4,13 @@
       <img src="@/assets/img/catering_foodtruck_bbq-min.jpg" alt class="homeHeader__image" />
       <div class="container fullImageHeader">
         <h1>De lekkerste Spareribs</h1>
-        <h2>met de foodtruck thuis, op een festival of catering</h2>
+        <h2>Thuis, op een festival of catering</h2>
         <div class="cta">
           <router-link to="catering" class="btn btn-primary">
             Catering
             <font-awesome-icon :icon="'utensils'" />
           </router-link>
-          <router-link to="#" class="btn btn-primary">
+          <router-link to="#" class="btn btn-line">
             Bezorging
             <font-awesome-icon :icon="'bicycle'" />
           </router-link>

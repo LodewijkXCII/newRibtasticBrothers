@@ -22,14 +22,16 @@
         <font-awesome-icon :icon="'utensils'" />
       </nuxt-link>
     </div>
-    <div class="galleryWrapper">
-      <GalleryBlock
-        v-for="gallery in gallery"
-        :key="gallery.id"
-        :title="gallery.title"
-        :thumbnailImage="gallery.thumbnailImage"
-        :id="gallery.id"
-      />
+    <div class="container">
+      <div class="galleryWrapper">
+        <GalleryBlock
+          v-for="gallery in gallery"
+          :key="gallery.id"
+          :title="gallery.title"
+          :thumbnailImage="gallery.thumbnailImage"
+          :id="gallery.id"
+        />
+      </div>
     </div>
   </section>
 </template>
