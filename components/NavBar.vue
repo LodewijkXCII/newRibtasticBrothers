@@ -27,20 +27,20 @@
       v-bind:class="{ hidden: isHidden }"
     >
       <ul class="navList">
-        <li class="list-item">
-          <nuxt-link to="/foodtruck">
-            <font-awesome-icon :icon="'utensils'" />Foodtruck
+        <!-- <li class="list-item">
+          <nuxt-link to="/gallerij">
+            <font-awesome-icon :icon="'camera'" />Gallerij
           </nuxt-link>
-        </li>
+        </li>-->
         <li class="list-item">
           <nuxt-link to="/catering">
             <font-awesome-icon :icon="'utensils'" />Catering
           </nuxt-link>
         </li>
         <li class="list-item">
-          <nuxt-link to="https://bestellen.ribtasticbrothers.nl">
+          <a href="https://bestellen.ribtasticbrothers.nl">
             <font-awesome-icon :icon="'bicycle'" />Bezorging
-          </nuxt-link>
+          </a>
         </li>
         <li class="list-item mob-hid">
           <nuxt-link to="/gallerij">Gallerij</nuxt-link>
@@ -53,9 +53,6 @@
             Blog
           </nuxt-link>
         </li>-->
-        <li class="list-item">
-          <font-awesome-icon :icon="'bars'" class="menuBars" />
-        </li>
       </ul>
     </div>
   </nav>
@@ -126,15 +123,15 @@ nav {
 				img {
 					width: 90px;
 				}
-				.menuBars {
-					display: none;
-				}
 			}
+		}
+		.menuBars {
+			display: none;
 		}
 
 		@media (min-width: 650px) {
 			.menuBars {
-				display: initial;
+				display: block;
 				justify-self: end;
 				align-self: center;
 				margin-right: 1em;
@@ -201,8 +198,9 @@ nav {
 				text-decoration: none;
 				color: white;
 
-				&:hover {
-					color: black;
+				&:hover,
+				&:active {
+					color: $secondary-color;
 				}
 				svg {
 					justify-self: center;

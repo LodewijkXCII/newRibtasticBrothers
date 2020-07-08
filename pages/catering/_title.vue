@@ -7,12 +7,12 @@
         <FormCatering />
         <div class="textInfo">
           <p>{{ catering.description }}</p>
-          <n-link to="/catering">Terug naar het overzicht</n-link>
+          <n-link to="/catering" class="btn btn-line btn-inline">Terug naar het overzicht</n-link>
           <div v-for="image in catering.images" :key="image.id">
             <!-- <img
               :src="`http://localhost:1337${image.formats.small.url}`"
               alt=""
-            /> -->
+            />-->
           </div>
         </div>
       </div>
@@ -24,12 +24,12 @@
           :key="cateringProduct.id"
         >
           <div class="productList__Card--img">
-            <!-- <img
+            <img
               :src="
-                `http://localhost:1337${cateringProduct.image.formats.small.url}`
+                cateringProduct.image.formats.small.url
               "
-              alt=""
-            /> -->
+              :alt="cateringProduct.name"
+            />
           </div>
           <div class="productList__Card--text">
             <h3>{{ cateringProduct.name }}</h3>
@@ -47,45 +47,44 @@ import FormCatering from '@/components/FormCatering.vue'
 import SmallGallery from '@/components/SmallGallery.vue'
 
 export default {
-  components: {
-    FormCatering,
-    SmallGallery
-  },
-  data() {
-    return {}
-  },
-  asyncData(context) {
-    return context.app.$axios
-      .get(
-        `https://ribtasticbrothers.herokuapp.com/catering-options?name=${context.params.title}`
-      )
-      .then(res => {
-        return {
-          catering: {
-            id: res.data[0].id,
-            name: res.data[0].name,
-            subTitle: res.data[0].subTitle,
-            price: res.data[0].price,
-            description: res.data[0].description,
-            cateringProducts: res.data[0].catering_products,
-            images: res.data[0].images
-          }
-        }
-      })
-  }
+	components: {
+		FormCatering,
+		SmallGallery
+	},
+	data() {
+		return {}
+	},
+	asyncData(context) {
+		return context.app.$axios
+			.get(
+				`https://ribtasticbrothers.herokuapp.com/catering-options?name=${context.params.title}`
+			)
+			.then(res => {
+				return {
+					catering: {
+						id: res.data[0].id,
+						name: res.data[0].name,
+						subTitle: res.data[0].subTitle,
+						price: res.data[0].price,
+						description: res.data[0].description,
+						cateringProducts: res.data[0].catering_products
+					}
+				}
+			})
+	}
 }
 </script>
 
 <style lang="scss">
 .productList {
-  display: grid;
-  grid-gap: 1em;
-  margin: 1em;
+	display: grid;
+	grid-gap: 1em;
+	margin: 1em;
 }
 
 @media (min-width: 650px) {
-  .productList {
-    grid-template-columns: repeat(3, 1fr);
-  }
+	.productList {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 </style>
