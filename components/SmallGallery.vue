@@ -1,14 +1,19 @@
 <template>
   <div class="smallGallery">
-    <img src="@/assets/img/catering_bbq_1.jpg" alt="Catering_1" />
-    <img src="@/assets/img/catering_bbq_2.jpg" alt="Catering_2" />
-    <img src="@/assets/img/catering_bbq_3.jpg" alt="Catering_3" />
-    <img src="@/assets/img/catering_bbq_4.jpg" alt="Catering_4" />
+    <div v-for="image in images" :key="image.index">
+      <img :src="require(`@/assets/img/${image.src}`)" :alt="image.alt" />
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+	data() {
+		return {
+			images: this.$attrs.images
+		}
+	}
+}
 </script>
 
 <style lang="scss">

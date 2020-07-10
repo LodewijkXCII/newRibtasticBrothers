@@ -4,7 +4,6 @@
       <h1>BBQ Catering</h1>
       <h2>Inclusief onze unieke BBQ bakfiets</h2>
       <div class="wrapper-1-2">
-        <FormCatering />
         <div class="textInfo">
           <p>
             Naast het bieden van lekkere BBQ versnaperingen op zonnige dagen aan
@@ -27,6 +26,7 @@
             een kleine toelichting en een prijsindicatie.
           </p>
         </div>
+        <FormCatering />
       </div>
 
       <h1>De Pakketten</h1>
@@ -54,7 +54,7 @@
         <font-awesome-icon :icon="'images'" />
       </nuxt-link>
     </div>
-    <SmallGallery />
+    <SmallGallery :images="images" />
   </div>
 </template>
 <script>
@@ -71,7 +71,14 @@ export default {
 	},
 
 	data() {
-		return {}
+		return {
+			images: [
+				{ src: 'catering_bbq_4.jpg', alt: 'header1' },
+				{ src: 'catering_bbq_1.jpg', alt: 'catering_bbq2' },
+				{ src: 'catering_bbq_2.jpg', alt: 'catering_bbq3' },
+				{ src: 'catering_bbq_3.jpg', alt: 'catering_bbq4' }
+			]
+		}
 	},
 	asyncData(context) {
 		return context.app.$axios
@@ -92,3 +99,4 @@ export default {
 	}
 }
 </script>
+

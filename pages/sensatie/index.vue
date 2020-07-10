@@ -13,7 +13,7 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint, natus eum dignissimos, sed modi similique saepe doloremque accusantium sapiente dolore a, delectus iste suscipit atque. Consectetur aliquid eligendi, eos officia nam numquam laboriosam repellendus totam voluptatem sit ducimus tempora quos facere! Enim sint aliquam natus quas sapiente est doloremque.</p>
     </div>
     <div class="btn btn-line">Catering</div>
-    <SmallGallery />
+    <SmallGallery :images="images" />
   </div>
 </template>
 
@@ -24,6 +24,16 @@ export default {
 	name: 'foodtruck',
 	components: {
 		SmallGallery
+	},
+	data() {
+		return {
+			images: [
+				{ src: 'catering_bbq_4.jpg', alt: 'header1' },
+				{ src: 'catering_bbq_1.jpg', alt: 'catering_bbq2' },
+				{ src: 'catering_bbq_2.jpg', alt: 'catering_bbq3' },
+				{ src: 'catering_bbq_3.jpg', alt: 'catering_bbq4' }
+			]
+		}
 	}
 }
 </script>

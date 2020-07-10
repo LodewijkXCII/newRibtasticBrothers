@@ -4,7 +4,7 @@
       <h1>{{ catering.name }}</h1>
       <h2>{{ catering.subTitle }}</h2>
       <div class="wrapper-1-2">
-        <FormCatering />
+        <FormCatering :option="catering.name" />
         <div class="textInfo">
           <p>{{ catering.description }}</p>
           <n-link to="/catering" class="btn btn-line btn-inline">Terug naar het overzicht</n-link>

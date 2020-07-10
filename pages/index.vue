@@ -10,10 +10,10 @@
             Catering
             <font-awesome-icon :icon="'utensils'" />
           </router-link>
-          <router-link to="#" class="btn btn-line">
+          <a href="https://bestellen.ribtasticbrothers.nl" class="btn btn-line">
             Bezorging
             <font-awesome-icon :icon="'bicycle'" />
-          </router-link>
+          </a>
         </div>
       </div>
     </header>
@@ -36,7 +36,17 @@
         <h1>Onze Partners</h1>
         <div class="partnersOverview">
           <div class="partner" v-for="partner in partners" :key="partner.id">
-            <img :src="require(`~/assets/img/partners/${partner.logo}`)" alt />
+            <a :href="partner.url" target="_blank">
+              <img :src="require(`~/assets/img/partners/${partner.logo}`)" alt />
+            </a>
+          </div>
+          <div class="partner__last">
+            <nuxt-link to="contact">
+              <p>
+                Ook graag samenwerken? Neem
+                contact op
+              </p>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -70,8 +80,21 @@ export default {
 		return {
 			partners: [
 				//TODO partners in de DB?
-				{ name: 'Brouwerij Noordt', logo: 'brouwerij_noordt.png' },
-				{ name: 'El Parador', logo: 'el_parador.png' }
+				{
+					name: 'Brouwerij Noordt',
+					logo: 'brouwerij_noordt.png',
+					url: 'https://www.brouwerijnoordt.nl'
+				},
+				{
+					name: 'El Parador',
+					logo: 'el_parador.png',
+					url: 'https://www.elparador.nl/'
+				},
+				{
+					name: 'Snoei Salades',
+					logo: 'snoeisaladslogo.png',
+					url: 'https://www.snoeisalads.nl/'
+				}
 			]
 		}
 	}
@@ -188,7 +211,7 @@ img {
 				font-size: 10em;
 			}
 			h2 {
-				font-size: 4em;
+				font-size: 3.5em;
 			}
 		}
 
@@ -203,12 +226,19 @@ img {
 				justify-content: flex-end;
 
 				a {
-					margin: 0 0 0 3em;
+					margin: 0;
+					margin-left: 1.5em;
 				}
 			}
 		}
 	}
 	@media (min-width: 650px) {
+		.fullImageHeader {
+			margin: auto auto 0;
+		}
+	}
+
+	@media (min-width: 1400px) {
 		.fullImageHeader {
 			margin: auto;
 		}
@@ -259,12 +289,26 @@ main {
 		width: 100%;
 		height: 100%;
 		display: flex;
-
-		img {
-			width: 80px;
+		a {
 			margin: auto;
 			justify-self: center;
 			padding: 1em;
+			img {
+				width: 80px;
+			}
+		}
+	}
+	.partner__last {
+		background: $off-primary-color;
+		padding: 0.4em;
+		display: flex;
+		a {
+			text-align: center;
+			align-self: center;
+			color: $secondary-color;
+			p {
+				font-size: 0.75rem;
+			}
 		}
 	}
 }

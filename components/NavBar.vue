@@ -105,8 +105,6 @@ nav {
 
 	.topNav {
 		position: relative;
-		// display: grid;
-		// grid-template-columns: 2fr 1fr 5fr 1fr 2fr;
 		justify-content: center;
 		align-items: center;
 

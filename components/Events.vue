@@ -13,8 +13,8 @@
     </div>
     <nuxt-link to="catering">
       <div class="eventItemCta">
-        <h2>Ook graag samenwerken?</h2>
-        <p>Bekijk de mogelijkheden</p>
+        <h2>Heb jij een feestje waar wij bij moeten zijn?</h2>
+        <p>Neem contact met ons op</p>
       </div>
     </nuxt-link>
   </div>
@@ -130,8 +130,14 @@ section.events {
 
 @media (min-width: 650px) {
 	.eventOverview {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		grid-gap: 15px;
+
+		.eventItem,
+		.eventItemCta {
+			width: 60%;
+			margin: auto;
+		}
 	}
 }
 </style>
