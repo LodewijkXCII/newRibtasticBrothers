@@ -1,5 +1,6 @@
 export default {
   mode: 'universal',
+  target: 'static',
   /*
    ** Headers of the page
    */
@@ -38,7 +39,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/elements.scss', '@/assets/css/config.scss'],
+  css: ['@/assets/css/config.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -46,7 +47,8 @@ export default {
     {
       src: '~/plugins/vuex-persist',
       mode: 'client'
-    }
+    },
+
   ],
   /*
    ** Nuxt.js dev-modules
