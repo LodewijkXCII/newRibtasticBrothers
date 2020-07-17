@@ -79,7 +79,6 @@ export default {
 	data() {
 		return {
 			partners: [
-				//TODO partners in de DB?
 				{
 					name: 'Brouwerij Noordt',
 					logo: 'brouwerij_noordt.png',
@@ -137,6 +136,12 @@ body {
 		padding: 3em 1em;
 	}
 }
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	margin: 2rem 0;
+}
 @media (min-width: 650px) {
 	.container {
 		margin: auto;
@@ -145,6 +150,9 @@ body {
 		&-fluid {
 			padding: 3em 0;
 		}
+	}
+	.wrapper {
+		grid-template-columns: 1fr 1fr;
 	}
 }
 

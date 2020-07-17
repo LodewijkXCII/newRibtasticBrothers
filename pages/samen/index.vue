@@ -2,15 +2,24 @@
   <div>
     <div class="container-fluid">
       <h1>Samen</h1>
-      <h2>“May you always be surrounded by good friends and awesome BBQ”</h2>
-      <p>Het geheim van lekker vlees zit voor een groot gedeelte in de voorbereiding en de magie van marinade. Ons vlees wordt daarom met een overvloed van marinade op een ambachtelijke wijze klaargemaakt, zodat de smaaksensatie tot diep in het vlees kan trekken.</p>
-      <p>Met onze goedkeuring bepalen wij of het vlees klaar is voor de BBQ, en bereid kan worden voor onze gasten. Daarna volgt de finale stap in het proces, de Ribtastic Secret Sauce. Met de juiste temperatuur wordt tijdens het grillen de geheime marinade vorstelijke op het vlees gesmeerd zodat de smaaksensatie wordt afgemaakt. Zie hieronder onze heerlijke creaties, you wanna try?</p>
+      <h2 class="qoute">“May you always be surrounded by good friends and awesome BBQ”</h2>
+      <p>Een belangrijk onderdeel van een gezond en geluk leven is het hebben van “meaningfull relationships”. En zeg nu eerlijk, wat is nu een beter moment om lekker te socializen? Precies, lekker tijdens het eten. In veel culturen is men zelfs niets anders gewend, eten doe je samen.</p>
+      <p>Maar dat is niet de enige reden waarom we gelukkiger worden van samen eten. We onderhouden onze vriendschappen en familierelaties en kunnen ook weer nieuwe, bredere gemeenschapsrelaties met elkaar opbouwen. Wij geloven daarom in het geluk van gezamenlijk eten en willen niets liever dan mensen samenbrengen met onze unieke BBQ creaties.</p>
+      <p>Waar wacht je nog op? Nodig je vrienden en familie uit, en organiseer een BBQ!</p>
+    </div>
+    <div class="smallGallery">
+      <!-- TODO Duurzaamheid images toevoegen. (image gallery's aanmaken strapi?) -->
+      <div v-for="image in images" :key="image.index">
+        <img :src="require(`@/assets/img/${image.src}`)" :alt="image.alt" />
+      </div>
+    </div>
+    <div class="container-fluid">
       <h2>Duurzaamheid</h2>
       <p>Samen genieten, is tevens samen zorg dragen. Zorgen voor het opruimen, zorgen voor de afwas, zorgen voor het minimaliseren van je afval en het beperken van jouw impact op het milieu. Wij van Ribtastic Brothers, dragen ons steentje hierin bij. Duurzaamheid zit diep in onze vezels. Alles wat we doen, doen we met een duurzame gedachte.</p>
       <p>Alle producten en materialen die we gebruiken zijn zoveel mogelijk duurzaam. Dit zie je terug in de materialen die we hebben gebruikt voor het maken van onze fiets, in de biologisch afbreekbare verpakkingen en de CO2 die we jaarlijkse compenseren.</p>
       <p>Wij nemen de verantwoordelijkheid om zo duurzaam mogelijk te ondernemen, zodat we samen nog lang kunnen genieten van onze aardekloot.</p>
     </div>
-    <SmallGallery :images="images" />
+    <!-- <SmallGallery :images="images" /> -->
   </div>
 </template>
 

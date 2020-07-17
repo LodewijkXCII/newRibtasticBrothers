@@ -26,7 +26,8 @@ export default {
 					title: 'Service',
 					text:
 						'Wij geloven in het genot van lekker eten en persoonlijke aandacht. Het is ons doel om gasten een smaakbeleving te bezorgen, door ze kennis te laten maken met onze unieke BBQ creaties.',
-					icon: 'trophy'
+					icon: 'trophy',
+					link: 'contact'
 				},
 				{
 					title: 'Smaak',
@@ -63,12 +64,6 @@ export default {
 	margin-top: 2rem;
 
 	&__Value {
-		// display: grid;
-		// grid-template-columns: 1fr 2fr;
-		// grid-gap: 0.5em;
-		// margin-left: 1em;
-		// margin-top: 2em;
-		// align-items: center;
 		margin: auto;
 		display: flex;
 		flex-direction: column;
@@ -113,6 +108,7 @@ export default {
 		margin: 2em 0;
 
 		&__Value {
+			display: grid;
 			grid-template-columns: 1fr;
 			grid-template-rows: 100px 250px;
 			text-align: center;
@@ -121,6 +117,9 @@ export default {
 
 			&--ValueText {
 				align-self: start;
+				p {
+					display: block;
+				}
 			}
 			a,
 			&--ValueIcon {

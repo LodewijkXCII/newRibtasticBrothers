@@ -1,7 +1,8 @@
 <template>
   <div class="smallGallery">
     <div v-for="image in images" :key="image.index">
-      <img :src="require(`@/assets/img/${image.src}`)" :alt="image.alt" />
+      <!-- <img :src="require(`@/assets/img/${image.src}`)" :alt="image.alt" /> -->
+      <img :src="image.formats.small.url" :alt="image.alt" />
     </div>
   </div>
 </template>

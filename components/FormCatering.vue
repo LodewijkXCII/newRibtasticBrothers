@@ -67,12 +67,13 @@ export default {
 				try {
 					this.$axios
 						.$post(
-							'https://ribtasticbrothers.herokuapp.com/email',
+							// 'https://ribtasticbrothers.herokuapp.com/email',
+							'https://cors-anywhere.herokuapp.com/http://localhost:1337/email',
 							{
 								to: 'eat@ribtasticbrothers.nl',
 								subject: `Nieuwe aanvraag offerte!`
-							},
-							{ 'Content-Type': 'application/json' }
+							}
+							// { 'Content-Type': 'x-www-form-urlencoded' }
 						)
 						.then(function(response) {
 							console.log(response)

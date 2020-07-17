@@ -34,7 +34,7 @@ export default {
 	padding: 0.8em 1.5em;
 	border-radius: 10px;
 	text-transform: uppercase;
-	font-size: 1em;
+	font-size: 0.8rem;
 	font-weight: 700;
 
 	max-width: 75%;
@@ -75,6 +75,7 @@ export default {
 	&.btn-inline {
 		margin: 2rem 0;
 		max-width: fit-content;
+		padding: 0;
 	}
 
 	svg {
@@ -84,7 +85,7 @@ export default {
 
 @media (min-width: 650px) {
 	.btn {
-		max-width: 35%;
+		max-width: 25%;
 		margin: 2em auto;
 	}
 }
