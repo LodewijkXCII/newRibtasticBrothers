@@ -3,12 +3,14 @@
     <div class="container">
       <h1>{{ gallery.title }}</h1>
       <h2>{{ gallery.locatie }}</h2>
-      <n-link to="/gallerij" class="btn btn-line btn-inline">Terug naar het overzicht</n-link>
+      <p>{{ gallery.description }}</p>
+      <n-link to="/gallerij" class="btn btn-inline">Terug naar het overzicht</n-link>
 
       <div class="galleryImages">
-        <div v-for="image in gallery.gallery" class="galleryImages__img" :key="image.id">
-          <!-- <p>{{ image.hash }}</p> -->
-          <img :src="image.url" alt />
+        <div v-for="image in gallery.gallery" class="galleryImages__img gallery" :key="image.id">
+          <a :href="image.formats.large.url">
+            <img :src="image.formats.thumbnail.url" alt />
+          </a>
         </div>
       </div>
     </div>
@@ -17,13 +19,23 @@
 
 <script>
 import axios from '@nuxtjs/axios'
+// import SimpleLightbox from 'simplelightbox'
+import SimpleLightbox from '@/assets/js/simplelightbox.js'
 
 export default {
 	components: {},
 	data() {
-		return {}
+		return {
+			options: {}
+		}
 	},
-
+	mounted() {
+		try {
+			new SimpleLightbox('.gallery a', {
+				/* options */
+			})
+		} catch (error) {}
+	},
 	asyncData(context) {
 		return context.app.$axios
 			.get(
@@ -35,7 +47,8 @@ export default {
 						id: res.data[0].id,
 						title: res.data[0].title,
 						locatie: res.data[0].locatie,
-						gallery: res.data[0].event_gallery.images
+						gallery: res.data[0].event_gallery.images,
+						description: res.data[0].event_gallery.description
 					}
 				}
 			})
@@ -44,9 +57,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/css/simplelightbox.css';
 .galleryImages {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 0.6em;
+	grid-template-columns: 1fr;
+	grid-gap: 1em;
+}
+
+@media (min-width: 650px) {
+	.galleryImages {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 </style>

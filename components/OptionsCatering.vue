@@ -16,7 +16,7 @@
     <nuxt-link
       :to="{ name: 'catering-title', params: { title: encodeURI(name) } }"
       tag="a"
-    >Meer info</nuxt-link>
+    >MEER INFO</nuxt-link>
   </div>
 </template>
 

@@ -54,7 +54,7 @@
         <font-awesome-icon :icon="'images'" />
       </nuxt-link>
     </div>
-    <SmallGallery :images="images" />
+    <!-- <SmallGallery :images="images" /> -->
   </div>
 </template>
 <script>

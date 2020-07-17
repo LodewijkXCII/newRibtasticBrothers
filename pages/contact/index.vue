@@ -27,6 +27,9 @@
           </p>
         </div>
       </div>
+      <div class="service">
+        <h2>Ge</h2>
+      </div>
     </div>
     <SmallGallery />
   </section>

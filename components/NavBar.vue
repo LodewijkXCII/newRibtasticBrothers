@@ -9,9 +9,7 @@
           :icon="'bars'"
           v-on:click="toggleNav"
           class="menuBars"
-          v-bind:class="{
-            hidden: barsHidden
-          }"
+          v-bind:class="{ hidden: !isHidden }"
         />
       </div>
       <!-- TODO ADD FIRST EVENT -->
@@ -27,25 +25,16 @@
       v-bind:class="{ hidden: isHidden }"
     >
       <ul class="navList">
-        <!-- <li class="list-item">
-          <nuxt-link to="/gallerij">
-            <font-awesome-icon :icon="'camera'" />Gallerij
-          </nuxt-link>
-        </li>-->
         <li class="list-item">
-          <nuxt-link to="/catering">
-            <font-awesome-icon :icon="'utensils'" />Catering
-          </nuxt-link>
+          <nuxt-link to="/catering">Catering</nuxt-link>
         </li>
         <li class="list-item">
-          <a href="https://bestellen.ribtasticbrothers.nl">
-            <font-awesome-icon :icon="'bicycle'" />Bezorging
-          </a>
+          <a href="https://bestellen.ribtasticbrothers.nl">Bezorging</a>
         </li>
-        <li class="list-item mob-hid">
+        <li class="list-item">
           <nuxt-link to="/gallerij">Gallerij</nuxt-link>
         </li>
-        <li class="list-item mob-hid">
+        <li class="list-item">
           <nuxt-link to="/contact">Contact</nuxt-link>
         </li>
         <!-- <li class="list-item mob-hid">
@@ -68,8 +57,21 @@ export default {
 		}
 	},
 	created() {
-		if (process.client) {
-			window.addEventListener('scroll', this.handleScroll)
+		if (
+			navigator.userAgent.match(/Android/i) ||
+			navigator.userAgent.match(/webOS/i) ||
+			navigator.userAgent.match(/iPhone/i) ||
+			navigator.userAgent.match(/iPad/i) ||
+			navigator.userAgent.match(/iPod/i) ||
+			navigator.userAgent.match(/BlackBerry/i) ||
+			navigator.userAgent.match(/Windows Phone/i)
+		) {
+			this.isHidden = true
+		} else {
+			this.isHidden = false
+			if (process.client) {
+				window.addEventListener('scroll', this.handleScroll)
+			}
 		}
 	},
 	destroyed() {
@@ -79,19 +81,22 @@ export default {
 	},
 	methods: {
 		handleScroll() {
-			const currentScrollY = window.pageYOffset
-			if (this.prevScrollY < currentScrollY) {
-				this.isHidden = true
-				this.barsHidden = false
-			} else {
-				this.isHidden = false
-				this.barsHidden = true
+			const isMobile = window.orientation > -1
+			if (isMobile === false) {
+				const currentScrollY = window.pageYOffset
+				if (this.prevScrollY < currentScrollY) {
+					this.isHidden = true
+					this.barsHidden = false
+				} else {
+					this.isHidden = false
+					this.barsHidden = true
+				}
+				this.prevScrollY = currentScrollY
 			}
-			this.prevScrollY = currentScrollY
 		},
 		toggleNav() {
-			this.barsHidden = true
-			this.isHidden = false
+			this.barsHidden = !this.barsHidden
+			this.isHidden = !this.isHidden
 		}
 	}
 }
@@ -124,7 +129,7 @@ nav {
 			}
 		}
 		.menuBars {
-			display: none;
+			align-self: center;
 		}
 
 		@media (min-width: 650px) {
@@ -169,29 +174,37 @@ nav {
 	}
 
 	.bottomNav {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-
-		background: $off-black-color;
+		background: rgba(0, 0, 0, 0.8);
 		box-shadow: 0 -5px 4px rgba(48, 48, 48, 0.5);
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&.hidden {
+			display: none !important;
+			transition: opacity 3s ease-out;
+			opacity: 0;
+		}
 
-		ul {
+		.navList {
 			max-width: $max-width;
-			margin: 0 auto;
+			margin: auto;
 			list-style: none;
-			display: flex;
 			justify-content: space-evenly;
 			padding: 1em 0 1.8em;
 			text-transform: uppercase;
 			box-sizing: border-box;
 
 			li.list-item a {
-				font-size: 0.8em;
+				font-size: 2em;
 				display: grid;
 				align-items: center;
 				grid-row-gap: 3px;
+				margin: 2rem;
 
 				text-decoration: none;
 				color: white;
@@ -216,16 +229,17 @@ nav {
 			background: $primary-color;
 			box-shadow: 0 5px 8px rgba(256, 256, 256, 0.2);
 			opacity: 1;
-			&.hidden {
-				display: none !important;
-				transition: opacity 3s ease-out;
-				opacity: 0;
-			}
+			height: 100%;
 
-			ul {
+			.navList {
 				padding: 1em;
+				display: flex;
 				.mob-hid {
 					display: inherit;
+				}
+				li.list-item a {
+					margin: 0;
+					font-size: 0.8em;
 				}
 				svg {
 					display: none;
