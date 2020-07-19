@@ -19,23 +19,15 @@
 
 <script>
 import axios from '@nuxtjs/axios'
-// import SimpleLightbox from 'simplelightbox'
-import SimpleLightbox from '@/assets/js/simplelightbox.js'
 
 export default {
-	components: {},
 	data() {
 		return {
-			options: {}
+			options: {},
+			index: null
 		}
 	},
-	mounted() {
-		try {
-			new SimpleLightbox('.gallery a', {
-				/* options */
-			})
-		} catch (error) {}
-	},
+
 	asyncData(context) {
 		return context.app.$axios
 			.get(
@@ -56,7 +48,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 @import '@/assets/css/simplelightbox.css';
 .galleryImages {
 	display: grid;

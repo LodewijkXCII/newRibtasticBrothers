@@ -1,8 +1,7 @@
 <template>
   <div>
+    <ImageHeader v-bind="heading" :image="image" />
     <div class="container-fluid">
-      <h1>Samen</h1>
-      <h2 class="qoute">“May you always be surrounded by good friends and awesome BBQ”</h2>
       <p>Een belangrijk onderdeel van een gezond en geluk leven is het hebben van “meaningfull relationships”. En zeg nu eerlijk, wat is nu een beter moment om lekker te socializen? Precies, lekker tijdens het eten. In veel culturen is men zelfs niets anders gewend, eten doe je samen.</p>
       <p>Maar dat is niet de enige reden waarom we gelukkiger worden van samen eten. We onderhouden onze vriendschappen en familierelaties en kunnen ook weer nieuwe, bredere gemeenschapsrelaties met elkaar opbouwen. Wij geloven daarom in het geluk van gezamenlijk eten en willen niets liever dan mensen samenbrengen met onze unieke BBQ creaties.</p>
       <p>Waar wacht je nog op? Nodig je vrienden en familie uit, en organiseer een BBQ!</p>
@@ -20,24 +19,33 @@
       <p>Wij nemen de verantwoordelijkheid om zo duurzaam mogelijk te ondernemen, zodat we samen nog lang kunnen genieten van onze aardekloot.</p>
     </div>
     <!-- <SmallGallery :images="images" /> -->
+    <div class="btn btn-line">Catering</div>
   </div>
 </template>
 
 <script>
 import SmallGallery from '@/components/SmallGallery.vue'
+import ImageHeader from '@/components/ImageHeader.vue'
 
 export default {
 	name: 'Saus',
 	components: {
-		SmallGallery
+		SmallGallery,
+		ImageHeader
 	},
 	data() {
 		return {
+			heading: {
+				title: 'Samen',
+				subtitle:
+					'May you always be surrounded by\ngood friends and awesome BBQ'
+			},
+			image:
+				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_bakfiets_duurzaamheid_537c9deb06.jpeg',
 			images: [
 				{ src: 'catering_foodtruck_spareribs-min.jpg', alt: 'header1' },
 				{ src: 'header_1.jpg', alt: 'header2' },
-				{ src: 'header_2.jpg', alt: 'header3' },
-				{ src: 'header_3.jpg', alt: 'header4' }
+				{ src: 'header_2.jpg', alt: 'header3' }
 			]
 		}
 	}

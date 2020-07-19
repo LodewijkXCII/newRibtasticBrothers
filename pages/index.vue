@@ -16,6 +16,11 @@
           </a>
         </div>
       </div>
+      <div class="scroll-downs">
+        <div class="mousey">
+          <div class="scroller"></div>
+        </div>
+      </div>
     </header>
     <main>
       <div class="container">
@@ -175,7 +180,7 @@ img {
 	position: relative;
 	display: flex;
 	overflow: hidden;
-	height: 80vh;
+	height: 100vh;
 	background: rgba(0, 0, 0, 0.5);
 
 	.homeHeader__image {
@@ -186,14 +191,6 @@ img {
 		height: 100%;
 		overflow: hidden;
 		background-size: cover;
-	}
-
-	@media (min-width: 650px) {
-		.homeHeader__image {
-			height: auto;
-			top: -200px;
-			left: 0;
-		}
 	}
 
 	.fullImageHeader {
@@ -240,6 +237,49 @@ img {
 			}
 		}
 	}
+
+	.scroll-downs {
+		position: absolute;
+		right: 0;
+		bottom: 30px;
+		left: 0;
+		margin: 0 auto;
+		width: 34px;
+		height: 55px;
+	}
+	.mousey {
+		width: 3px;
+		padding: 10px 15px;
+		height: 35px;
+		border: 2px solid #fff;
+		border-radius: 25px;
+		opacity: 0.75;
+		box-sizing: content-box;
+	}
+	.scroller {
+		width: 3px;
+		height: 10px;
+		border-radius: 25%;
+		background-color: #fff;
+		animation-name: scroll;
+		animation-duration: 2.2s;
+		animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+		animation-iteration-count: infinite;
+	}
+	@keyframes scroll {
+		0% {
+			opacity: 0;
+		}
+		10% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+		100% {
+			transform: translateY(15px);
+			opacity: 0;
+		}
+	}
+
 	@media (min-width: 650px) {
 		.fullImageHeader {
 			margin: auto auto 0;
@@ -255,7 +295,13 @@ img {
 
 @media (min-width: 650px) {
 	.homeHeader {
-		height: 90vh;
+		height: 100vh;
+
+		.homeHeader__image {
+			height: auto;
+			top: -150px;
+			left: 0;
+		}
 	}
 }
 

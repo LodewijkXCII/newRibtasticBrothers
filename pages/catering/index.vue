@@ -1,8 +1,8 @@
 <template>
   <div>
+    <ImageHeader v-bind="heading" :image="image" />
+
     <div class="container">
-      <h1>BBQ Catering</h1>
-      <h2>Inclusief onze unieke BBQ bakfiets</h2>
       <div class="wrapper-1-2">
         <div class="textInfo">
           <p>
@@ -25,6 +25,7 @@
             een aantal catering varianten onderscheiden, hieronder per pakket
             een kleine toelichting en een prijsindicatie.
           </p>
+          <nuxt-link to="sensatie" class="btn btn-line">Bakfiets</nuxt-link>
         </div>
         <FormCatering />
       </div>
@@ -34,7 +35,7 @@
 
       <div class="cateringWrapper">
         <OptionsCatering
-          v-for="catering in catering"
+          v-for="catering in orderedOptions"
           :key="catering.id"
           :id="catering.id"
           :name="catering.name"
@@ -46,6 +47,9 @@
         <div class="cateringCard">
           <h2 class="cateringCard__title">Catering op Maat</h2>
           <p class="cateringCard__text">Prijs op aanvraag</p>
+          <p
+            style="padding-left: 1.5em"
+          >Alles is mogelijk, vraag een offerte op en we komen zo spoedig mogelijk bij je terug.</p>
         </div>
       </div>
 
@@ -59,25 +63,41 @@
 </template>
 <script>
 import FormCatering from '@/components/FormCatering.vue'
+import ImageHeader from '@/components/ImageHeader.vue'
+
 import OptionsCatering from '@/components/OptionsCatering.vue'
 import SmallGallery from '@/components/SmallGallery.vue'
+
+import _ from 'lodash'
 
 export default {
 	name: 'Catering',
 	components: {
 		FormCatering,
 		OptionsCatering,
-		SmallGallery
+		SmallGallery,
+		ImageHeader
 	},
 
 	data() {
 		return {
-			images: [
-				{ src: 'catering_bbq_4.jpg', alt: 'header1' },
-				{ src: 'catering_bbq_1.jpg', alt: 'catering_bbq2' },
-				{ src: 'catering_bbq_2.jpg', alt: 'catering_bbq3' },
-				{ src: 'catering_bbq_3.jpg', alt: 'catering_bbq4' }
-			]
+			heading: {
+				title: 'BBQ Catering',
+				subtitle: 'Inclusief onze unieke BBQ bakfiets'
+			},
+			image:
+				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_saus_spareribs_catering_bee3c0dd5f.jpeg'
+		}
+		images: [
+			{ src: 'catering_bbq_4.jpg', alt: 'header1' },
+			{ src: 'catering_bbq_1.jpg', alt: 'catering_bbq2' },
+			{ src: 'catering_bbq_2.jpg', alt: 'catering_bbq3' },
+			{ src: 'catering_bbq_3.jpg', alt: 'catering_bbq4' }
+		]
+	},
+	computed: {
+		orderedOptions() {
+			return _.sortBy(this.catering, 'price')
 		}
 	},
 	asyncData(context) {

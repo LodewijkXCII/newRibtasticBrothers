@@ -51,21 +51,14 @@
 export default {
 	data() {
 		return {
-			isHidden: false,
+			isHidden: true,
 			barsHidden: true,
 			prevScrollY: 200
 		}
 	},
 	created() {
-		// const isMobile = window.orientation > -1
-		if (!process.client) {
-			console.log('hoi')
-			this.isHidden = true
-		} else {
-			this.isHidden = false
-			if (process.client) {
-				window.addEventListener('scroll', this.handleScroll)
-			}
+		if (process.client) {
+			window.addEventListener('scroll', this.handleScroll)
 		}
 	},
 	destroyed() {
@@ -77,6 +70,7 @@ export default {
 		handleScroll() {
 			const isMobile = window.orientation > -1
 			if (isMobile === false) {
+				this.isHidden = false
 				const currentScrollY = window.pageYOffset
 				if (this.prevScrollY < currentScrollY) {
 					this.isHidden = true
@@ -86,6 +80,8 @@ export default {
 					this.barsHidden = true
 				}
 				this.prevScrollY = currentScrollY
+			} else {
+				this.isHidden = true
 			}
 		},
 		toggleNav() {

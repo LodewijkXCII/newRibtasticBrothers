@@ -1,6 +1,6 @@
 <template>
   <div class="bouwProces container-fluid" style="padding-top: 0">
-    <h1>Test</h1>
+    <h1>Bouw van de fiets</h1>
     <div class="overview">
       <div class="overview__element" v-for="proces in proces" :key="proces.index">
         <div class="overview__element--text">
