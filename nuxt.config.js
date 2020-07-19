@@ -49,6 +49,7 @@ export default {
       mode: 'client'
     },
 
+    '~plugins/vue-gallery.client.js'
   ],
   /*
    ** Nuxt.js dev-modules

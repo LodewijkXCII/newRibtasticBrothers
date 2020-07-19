@@ -1,5 +1,6 @@
 <template>
   <section>
+    <ImageHeader v-bind="heading" :image="image" />
     <div class="container">
       <h1>Contact</h1>
       <div class="wrapper-1-2">
@@ -14,7 +15,7 @@
           <label for="message">Bericht:</label>
           <textarea name="message" id="message" cols="30" rows="5"></textarea>
 
-          <button type="submit" class="btn btn-primary">Verstuur</button>
+          <button type="submit" class="btn btn-primary" style="max-width: 45%;">Verstuur</button>
         </form>
         <div class="textInfo">
           <p>
@@ -27,9 +28,6 @@
           </p>
         </div>
       </div>
-      <div class="service">
-        <h2>Ge</h2>
-      </div>
     </div>
     <SmallGallery />
   </section>
@@ -37,9 +35,21 @@
 
 <script>
 import SmallGallery from '@/components/SmallGallery.vue'
+import ImageHeader from '@/components/ImageHeader.vue'
 export default {
 	components: {
-		SmallGallery
+		SmallGallery,
+		ImageHeader
+	},
+	data() {
+		return {
+			heading: {
+				title: 'Contact',
+				subtitle: 'Voor alle vragen'
+			},
+			image:
+				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_bakfiets_catering_0a41a085fd.jpeg'
+		}
 	}
 }
 </script>

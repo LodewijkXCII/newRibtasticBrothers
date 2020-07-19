@@ -1,8 +1,8 @@
 <template>
   <section>
+    <ImageHeader v-bind="heading" :image="image" />
+
     <div class="container-fluid">
-      <h1>Gallerij</h1>
-      <h2>Plaatjes en Daadjes</h2>
       <div class="textInfo">
         <p>
           Op bijna alle events waar we komen hebben we onze huisfotograaf Lars
@@ -38,14 +38,24 @@
 
 <script>
 import GalleryBlock from '@/components/GalleryBlock.vue'
+import ImageHeader from '@/components/ImageHeader.vue'
+
 import axios from '@nuxtjs/axios'
 
 export default {
 	components: {
-		GalleryBlock
+		GalleryBlock,
+		ImageHeader
 	},
 	data() {
-		return {}
+		return {
+			heading: {
+				title: 'Gallerij',
+				subtitle: 'Plaatjes en Daadjes'
+			},
+			image:
+				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_beach_nesselande_catering_1f5425dfa0.jpeg'
+		}
 	},
 	asyncData(context) {
 		return context.app.$axios

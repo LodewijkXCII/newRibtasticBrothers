@@ -40,11 +40,6 @@ export default {
 			required: true
 		}
 	}
-	// data() {
-	//   return {
-	//     dishes: []
-	//   }
-	// }
 }
 </script>
 

@@ -26,21 +26,21 @@ export default {
 					title: 'Service',
 					text:
 						'Wij geloven in het genot van lekker eten en persoonlijke aandacht. Het is ons doel om gasten een smaakbeleving te bezorgen, door ze kennis te laten maken met onze unieke BBQ creaties.',
-					icon: 'trophy',
+					icon: 'concierge-bell',
 					link: 'contact'
 				},
 				{
 					title: 'Smaak',
 					text:
 						'Taste is everything! We werken daarom enkel met kwaliteitsproducten, nemen onze tijd in de bereiding en maken onze gerechten af met zelfgemaakte bijpassende sauzen. Heb jij ze al eens geprobeerd?',
-					icon: 'bicycle',
+					icon: 'pepper-hot',
 					link: 'smaak'
 				},
 				{
 					title: 'Sensatie',
 					text:
 						'Ribtastic Brothers are like no others. Met ons enthousiast team en uniek zelfgemaakte BBQ bakfiets maken we er altijd een feestje van. Vanuit dit grillmonster kunnen we volledig zelfvoorzienend onze heerlijke creaties bereiden.',
-					icon: 'pepper-hot',
+					icon: 'bicycle',
 					link: 'sensatie'
 				},
 				{

@@ -1,33 +1,32 @@
 <template>
   <div class="imgHeader">
-    <img
-      :src="require(`@/assets/img/${selectedImage.src}`)"
-      :alt="selectedImage.alt"
-      class="imgHeader__image"
-    />
+    <img :src="image" class="imgHeader__image" />
+
+    <div class="imgHeader__heading">
+      <h1>{{ title }}</h1>
+      <h2>{{ subtitle }}</h2>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+	props: {
+		title: {
+			type: String,
+			required: true
+		},
+		subtitle: {
+			type: String,
+			required: true
+		},
+		image: {
+			type: String,
+			required: true
+		}
+	},
 	data() {
-		return {
-			images: [
-				{ src: 'catering_foodtruck_spareribs-min.jpg', alt: 'header1' },
-				{ src: 'header_1.jpg', alt: 'header2' },
-				{ src: 'header_2.jpg', alt: 'header3' },
-				{ src: 'header_3.jpg', alt: 'header4' }
-			],
-			selectedImage: null
-		}
-	},
-	methods: {
-		randomItem(items) {
-			return items[Math.floor(Math.random() * items.length)]
-		}
-	},
-	created() {
-		this.selectedImage = this.randomItem(this.images)
+		return {}
 	}
 }
 </script>
@@ -35,23 +34,34 @@ export default {
 <style lang="scss" scoped>
 .imgHeader {
 	position: relative;
-	height: 40vh;
+	height: 55vh;
 	overflow: hidden;
 	background: rgba(0, 0, 0, 0.2);
 
-	.imgHeader__image {
+	&__image {
 		position: absolute;
 		z-index: -10;
-		left: -70%;
+		left: -190%;
 		width: auto;
 		height: 100%;
 		overflow: hidden;
 		background-size: cover;
 	}
+
+	&__heading {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		margin-top: 75px;
+		h2 {
+			color: white;
+		}
+	}
 	@media (min-width: 650px) {
 		.imgHeader__image {
 			height: auto;
-			top: -35%;
 			left: 0;
 		}
 	}
