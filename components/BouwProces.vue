@@ -25,32 +25,32 @@ export default {
 					image:
 						'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/Tjerk1--0048_479905eee4.png',
 					text:
-						'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates repudiandae iusto necessitatibus excepturi quos voluptatum veniam possimus minus deleniti maxime pariatur rerum dignissimos accusantium enim, odit, laboriosam inventore placeat fugiat, aperiam nisi! Dolor quae sed facilis, neque possimus alias minima!'
+						'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates repudiandae iusto necessitatibus excepturi quos voluptatum veniam possimus minus deleniti maxime pariatur rerum dignissimos accusantium enim, odit, laboriosam inventore placeat fugiat, aperiam nisi! Dolor quae sed facilis, neque possimus alias minima!',
 				},
 				{
 					date: '2019',
 					image:
 						'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/Tjerk1--0048_479905eee4.png',
 					text:
-						'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates repudiandae iusto necessitatibus excepturi quos voluptatum veniam possimus minus deleniti maxime pariatur rerum dignissimos accusantium enim, odit, laboriosam inventore placeat fugiat, aperiam nisi! Dolor quae sed facilis, neque possimus alias minima!'
+						'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates repudiandae iusto necessitatibus excepturi quos voluptatum veniam possimus minus deleniti maxime pariatur rerum dignissimos accusantium enim, odit, laboriosam inventore placeat fugiat, aperiam nisi! Dolor quae sed facilis, neque possimus alias minima!',
 				},
 				{
 					date: '2019',
 					image:
 						'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/Tjerk1--0048_479905eee4.png',
 					text:
-						'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates repudiandae iusto necessitatibus excepturi quos voluptatum veniam possimus minus deleniti maxime pariatur rerum dignissimos accusantium enim, odit, laboriosam inventore placeat fugiat, aperiam nisi! Dolor quae sed facilis, neque possimus alias minima!'
+						'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates repudiandae iusto necessitatibus excepturi quos voluptatum veniam possimus minus deleniti maxime pariatur rerum dignissimos accusantium enim, odit, laboriosam inventore placeat fugiat, aperiam nisi! Dolor quae sed facilis, neque possimus alias minima!',
 				},
 				{
 					date: '2019',
 					image:
 						'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/Tjerk1--0048_479905eee4.png',
 					text:
-						'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates repudiandae iusto necessitatibus excepturi quos voluptatum veniam possimus minus deleniti maxime pariatur rerum dignissimos accusantium enim, odit, laboriosam inventore placeat fugiat, aperiam nisi! Dolor quae sed facilis, neque possimus alias minima!'
-				}
-			]
+						'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptates repudiandae iusto necessitatibus excepturi quos voluptatum veniam possimus minus deleniti maxime pariatur rerum dignissimos accusantium enim, odit, laboriosam inventore placeat fugiat, aperiam nisi! Dolor quae sed facilis, neque possimus alias minima!',
+				},
+			],
 		}
-	}
+	},
 }
 </script>
 
@@ -83,6 +83,13 @@ export default {
 			flex-direction: column;
 			justify-content: center;
 			align-items: left;
+		}
+		&--image {
+			filter: grayscale(100%);
+			&:hover {
+				transform: scale(1.05);
+				transition: 0.5s;
+			}
 		}
 	}
 }

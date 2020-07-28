@@ -11,7 +11,7 @@
     <div class="btn btn-line">
       <nuxt-link to="catering">Catering</nuxt-link>
     </div>
-    <SmallGallery v-bind:images="images" />
+    <SmallGallery v-bind:images="images.image[0].images" />
     <BouwProces />
     <nuxt-link to="catering" class="btn btn-line">Catering</nuxt-link>
   </section>
@@ -24,35 +24,52 @@ import ImageHeader from '@/components/ImageHeader.vue'
 import BouwProces from '@/components/BouwProces.vue'
 
 export default {
+	head: {
+		title: 'Overheerlijke smaak | The Ribtastic Brothers',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Home page description',
+			},
+		],
+		noscript: [{ innerHTML: 'Body No Scripts', body: true }],
+	},
 	name: 'foodtruck',
 	components: {
 		BouwProces,
 		SmallGallery,
-		ImageHeader
+		ImageHeader,
 	},
 	data() {
 		return {
 			heading: {
 				title: 'Bakfiets',
-				subtitle: 'Ons nobel ros'
+				subtitle: 'Ons nobel ros',
 			},
 			image:
 				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_bakfiets_catering_0a41a085fd.jpeg',
 			images: [
-				{
-					src:
-						'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/Pijl_a9cc8e4b3e.png'
-				},
-				{
-					src:
-						'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/DSC_0085_d437ce640d.jpeg'
-				},
-				{
-					src:
-						'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/DSC_0072_bf8b01dbda.jpeg'
-				}
-			]
+				// {
+				// 	src:
+				// 		'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/Pijl_a9cc8e4b3e.png',
+				// },
+				// {
+				// 	src:
+				// 		'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/DSC_0085_d437ce640d.jpeg',
+				// },
+				// {
+				// 	src:
+				// 		'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/DSC_0072_bf8b01dbda.jpeg',
+				// },
+			],
 		}
-	}
+	},
+	async fetch() {
+		const { data } = await this.$axios.get(
+			'https://ribtasticbrothers.herokuapp.com/gallery-images/1'
+		)
+		this.images = data
+	},
 }
 </script>

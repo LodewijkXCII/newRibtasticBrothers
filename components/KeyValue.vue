@@ -27,32 +27,32 @@ export default {
 					text:
 						'Wij geloven in het genot van lekker eten en persoonlijke aandacht. Het is ons doel om gasten een smaakbeleving te bezorgen, door ze kennis te laten maken met onze unieke BBQ creaties.',
 					icon: 'concierge-bell',
-					link: 'contact'
+					link: 'contact',
 				},
 				{
 					title: 'Smaak',
 					text:
 						'Taste is everything! We werken daarom enkel met kwaliteitsproducten, nemen onze tijd in de bereiding en maken onze gerechten af met zelfgemaakte bijpassende sauzen. Heb jij ze al eens geprobeerd?',
 					icon: 'pepper-hot',
-					link: 'smaak'
+					link: 'smaak',
 				},
 				{
 					title: 'Sensatie',
 					text:
 						'Ribtastic Brothers are like no others. Met ons enthousiast team en uniek zelfgemaakte BBQ bakfiets maken we er altijd een feestje van. Vanuit dit grillmonster kunnen we volledig zelfvoorzienend onze heerlijke creaties bereiden.',
 					icon: 'bicycle',
-					link: 'sensatie'
+					link: 'sensatie',
 				},
 				{
 					title: 'Samen',
 					text:
 						'Samen genieten, betekend samen zorg dragen. Alles wat we doen, doen we daarom met een duurzame gedachte. Dit zie je terug in de materialen die we gebruiken en de CO2 die we jaarlijkse compenseren.',
 					icon: 'leaf',
-					link: 'samen'
-				}
-			]
+					link: 'samen',
+				},
+			],
 		}
-	}
+	},
 }
 </script>
 
@@ -86,12 +86,22 @@ export default {
 			height: 100px;
 			border-radius: 50%;
 			text-align: center;
+			transition: 0.3s;
 
 			svg {
 				color: $primary-color;
 				height: 100%;
 				font-size: 2em;
 				margin: auto;
+			}
+			&:hover {
+				background: $off-primary-color;
+				border: 2px solid $secondary-color;
+				transform: scale(1.05);
+				transition: 0.5s;
+				svg {
+					color: $secondary-color;
+				}
 			}
 		}
 

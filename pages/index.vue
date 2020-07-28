@@ -70,15 +70,15 @@ export default {
 			{
 				hid: 'description',
 				name: 'description',
-				content: 'Home page description'
-			}
+				content: 'Home page description',
+			},
 		],
-		noscript: [{ innerHTML: 'Body No Scripts', body: true }]
+		noscript: [{ innerHTML: 'Body No Scripts', body: true }],
 	},
 	name: 'HomePage',
 	components: {
 		KeyValue,
-		Events
+		Events,
 	},
 
 	data() {
@@ -87,21 +87,21 @@ export default {
 				{
 					name: 'Brouwerij Noordt',
 					logo: 'brouwerij_noordt.png',
-					url: 'https://www.brouwerijnoordt.nl'
+					url: 'https://www.brouwerijnoordt.nl',
 				},
 				{
 					name: 'El Parador',
 					logo: 'el_parador.png',
-					url: 'https://www.elparador.nl/'
+					url: 'https://www.elparador.nl/',
 				},
 				{
 					name: 'Snoei Salades',
 					logo: 'snoeisaladslogo.png',
-					url: 'https://www.snoeisalads.nl/'
-				}
-			]
+					url: 'https://www.snoeisalads.nl/',
+				},
+			],
 		}
-	}
+	},
 }
 </script>
 
@@ -349,6 +349,11 @@ main {
 			padding: 1em;
 			img {
 				width: 80px;
+
+				&:hover {
+					transform: scale(1.05);
+					transition: 0.5s;
+				}
 			}
 		}
 	}

@@ -26,27 +26,6 @@
       />
     </div>-->
     <div class="container">
-      <h2>Dit pakket bevat de volgende gerechten:</h2>
-      <div class="productList">
-        <div
-          class="productList__Card"
-          v-for="cateringProduct in catering.cateringProducts"
-          :key="cateringProduct.id"
-        >
-          <div class="productList__Card--img">
-            <img
-              :src="
-                cateringProduct.image.formats.small.url
-              "
-              :alt="cateringProduct.name"
-            />
-          </div>
-          <div class="productList__Card--text">
-            <h3>{{ cateringProduct.name }}</h3>
-            <p>{{ cateringProduct.discription }}</p>
-          </div>
-        </div>
-      </div>
       <h4>
         Geintresseerd?
         <a href="#top">Vraag een offerte op!</a>
@@ -61,9 +40,20 @@ import FormCatering from '@/components/FormCatering.vue'
 import SmallGallery from '@/components/SmallGallery.vue'
 
 export default {
+	head: {
+		title: 'Overheerlijke smaak | The Ribtastic Brothers',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Home page description',
+			},
+		],
+		noscript: [{ innerHTML: 'Body No Scripts', body: true }],
+	},
 	components: {
 		FormCatering,
-		SmallGallery
+		SmallGallery,
 	},
 	data() {
 		return {}
@@ -73,7 +63,7 @@ export default {
 			.get(
 				`https://ribtasticbrothers.herokuapp.com/catering-options?name=${context.params.title}`
 			)
-			.then(res => {
+			.then((res) => {
 				return {
 					catering: {
 						id: res.data[0].id,
@@ -82,11 +72,11 @@ export default {
 						price: res.data[0].price,
 						description: res.data[0].description,
 						images: res.data[0].images,
-						cateringProducts: res.data[0].catering_products
-					}
+						cateringProducts: res.data[0].catering_products,
+					},
 				}
 			})
-	}
+	},
 }
 </script>
 

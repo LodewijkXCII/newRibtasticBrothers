@@ -21,10 +21,21 @@
 import axios from '@nuxtjs/axios'
 
 export default {
+	head: {
+		title: 'Overheerlijke smaak | The Ribtastic Brothers',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Home page description',
+			},
+		],
+		noscript: [{ innerHTML: 'Body No Scripts', body: true }],
+	},
 	data() {
 		return {
 			options: {},
-			index: null
+			index: null,
 		}
 	},
 
@@ -33,18 +44,18 @@ export default {
 			.get(
 				`https://ribtasticbrothers.herokuapp.com/events?title=${context.params.title}`
 			)
-			.then(res => {
+			.then((res) => {
 				return {
 					gallery: {
 						id: res.data[0].id,
 						title: res.data[0].title,
 						locatie: res.data[0].locatie,
 						gallery: res.data[0].event_gallery.images,
-						description: res.data[0].event_gallery.description
-					}
+						description: res.data[0].event_gallery.description,
+					},
 				}
 			})
-	}
+	},
 }
 </script>
 
