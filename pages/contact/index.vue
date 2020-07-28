@@ -37,20 +37,31 @@
 import SmallGallery from '@/components/SmallGallery.vue'
 import ImageHeader from '@/components/ImageHeader.vue'
 export default {
+	head: {
+		title: 'Overheerlijke smaak | The Ribtastic Brothers',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Home page description',
+			},
+		],
+		noscript: [{ innerHTML: 'Body No Scripts', body: true }],
+	},
 	components: {
 		SmallGallery,
-		ImageHeader
+		ImageHeader,
 	},
 	data() {
 		return {
 			heading: {
 				title: 'Contact',
-				subtitle: 'Voor alle vragen'
+				subtitle: 'Voor alle vragen',
 			},
 			image:
-				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_bakfiets_catering_0a41a085fd.jpeg'
+				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_bakfiets_catering_0a41a085fd.jpeg',
 		}
-	}
+	},
 }
 </script>
 

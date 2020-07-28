@@ -17,7 +17,7 @@
 
     <nuxt-link to="catering" class="btn btn-line">Catering</nuxt-link>
 
-    <SmallGallery />
+    <!-- <SmallGallery /> -->
   </section>
 </template>
 
@@ -27,37 +27,48 @@ import ImageHeader from '@/components/ImageHeader.vue'
 import axios from '@nuxtjs/axios'
 
 export default {
+	head: {
+		title: 'Overheerlijke smaak | The Ribtastic Brothers',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Home page description',
+			},
+		],
+		noscript: [{ innerHTML: 'Body No Scripts', body: true }],
+	},
 	name: 'Saus',
 	components: {
 		SmallGallery,
-		ImageHeader
+		ImageHeader,
 	},
 	data() {
 		return {
 			heading: {
 				title: 'Ribtastic Saus',
-				subtitle: 'Onze geheime formule'
+				subtitle: 'Onze geheime formule',
 			},
 			image:
-				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_saus_juicy_f6b768fae5.jpeg'
+				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_saus_juicy_f6b768fae5.jpeg',
 		}
 	},
 	asyncData(context) {
 		return context.app.$axios
 			.get('https://ribtasticbrothers.herokuapp.com/saus')
-			.then(res => {
+			.then((res) => {
 				return {
-					sauzen: res.data.map(saus => {
+					sauzen: res.data.map((saus) => {
 						return {
 							id: saus.id,
 							title: saus.tilte,
 							description: saus.omschrijving,
-							image: saus.afbeelding
+							image: saus.afbeelding,
 						}
-					})
+					}),
 				}
 			})
-	}
+	},
 }
 </script>
 
@@ -74,6 +85,11 @@ export default {
 			flex-direction: column;
 			justify-content: center;
 			margin: 1.5rem 0;
+		}
+
+		img:hover {
+			transform: scale(1.05);
+			transition: 0.5s;
 		}
 	}
 }
@@ -93,12 +109,14 @@ export default {
 					grid-column-start: 2;
 				}
 
-				.saus__text {
+				.saus__text,
+				h2 {
 					grid-column-start: 1;
 					grid-row-start: 1;
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
+					text-align: right;
 				}
 			}
 		}

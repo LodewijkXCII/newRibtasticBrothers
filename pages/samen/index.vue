@@ -28,27 +28,38 @@ import SmallGallery from '@/components/SmallGallery.vue'
 import ImageHeader from '@/components/ImageHeader.vue'
 
 export default {
+	head: {
+		title: 'Overheerlijke smaak | The Ribtastic Brothers',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Home page description',
+			},
+		],
+		noscript: [{ innerHTML: 'Body No Scripts', body: true }],
+	},
 	name: 'Saus',
 	components: {
 		SmallGallery,
-		ImageHeader
+		ImageHeader,
 	},
 	data() {
 		return {
 			heading: {
 				title: 'Samen',
 				subtitle:
-					'May you always be surrounded by\ngood friends and awesome BBQ'
+					'May you always be surrounded by\ngood friends and awesome BBQ',
 			},
 			image:
 				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_bakfiets_duurzaamheid_537c9deb06.jpeg',
 			images: [
 				{ src: 'catering_foodtruck_spareribs-min.jpg', alt: 'header1' },
 				{ src: 'header_1.jpg', alt: 'header2' },
-				{ src: 'header_2.jpg', alt: 'header3' }
-			]
+				{ src: 'header_2.jpg', alt: 'header3' },
+			],
 		}
-	}
+	},
 }
 </script>
 

@@ -26,7 +26,7 @@ import axios from '@nuxtjs/axios'
 export default {
 	data() {
 		return {
-			events: []
+			events: [],
 		}
 	},
 	async fetch() {
@@ -34,7 +34,7 @@ export default {
 			'https://ribtasticbrothers.herokuapp.com/events'
 		)
 		this.events = data
-	}
+	},
 }
 </script>
 <style lang="scss" scoped>
@@ -124,6 +124,11 @@ section.events {
 			color: white;
 			font-size: 1.5em;
 			letter-spacing: 1.3px;
+		}
+
+		&:hover {
+			transform: scale(1.05);
+			transition: 0.5s;
 		}
 	}
 }

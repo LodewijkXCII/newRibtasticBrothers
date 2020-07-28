@@ -4,7 +4,7 @@
       <!-- <img :src="require(`@/assets/img/${image.src}`)" :alt="image.alt" /> -->
       <!-- <img :src="image.formats.small.url" :alt="image.alt" /> -->
 
-      <img :src="image.src" />
+      <img :src="image.url" />
     </div>
   </div>
 </template>
@@ -14,12 +14,12 @@ export default {
 	props: {
 		images: {
 			type: Array,
-			required: true
-		}
+			required: true,
+		},
 	},
 	data() {
 		return {}
-	}
+	},
 }
 </script>
 
