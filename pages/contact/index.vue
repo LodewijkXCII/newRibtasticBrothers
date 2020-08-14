@@ -92,39 +92,6 @@ export default {
   methods: {
     sendContact() {
       console.log('clicked')
-      const data = {
-        name: this.name,
-        company: this.company,
-        email: this.email,
-        message: this.message,
-      }
-      console.log(data)
-      this.$axios
-        .post({
-          baseURL: 'https://api.sendgrid.com/v3/mail/send',
-          headers: {
-            authorization:
-              'Bearer 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',
-            'content-type': 'application/json',
-          },
-          data: {
-            personalizations: [
-              {
-                to: [{ email: 'loekzweers@gmail.com', name: 'John Doe' }],
-                subject: 'Hello, World!',
-              },
-            ],
-            content: [{ type: 'text/plain', value: 'Heya!' }],
-            from: { email: 'sam.smith@example.com', name: 'Sam Smith' },
-            reply_to: { email: 'sam.smith@example.com', name: 'Sam Smith' },
-          },
-        })
-        .then((response) => {
-          console.log(response.data)
-        })
-        .catch((error) => {
-          console.log(error.message)
-        })
     },
   },
 }

@@ -54,14 +54,6 @@ section.events {
   margin-top: 2em;
   background: #1e1e1e;
 
-  //   img {
-  //     position: absolute;
-  //     z-index: -1;
-  //     width: auto;
-  //     height: 100%;
-  //     left: -50%;
-  //   }
-
   h1 {
     padding-top: 1em;
   }
