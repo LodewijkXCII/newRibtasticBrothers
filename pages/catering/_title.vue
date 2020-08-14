@@ -83,36 +83,43 @@ export default {
 
 <style lang="scss">
 .cateringTitle {
-  display: grid;
-  grid-template-columns: 45% 55%;
-  height: 100vh;
-  width: 100%;
-
-  &__left {
-    overflow: hidden;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      height: auto;
-      min-height: 100%;
-      width: 100%;
-    }
-  }
-
   &__right {
-    margin: auto 5rem;
+    margin: 2rem;
+  }
+}
 
-    &--container {
+@media (min-width: 650px) {
+  .cateringTitle {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    height: 100vh;
+    width: 100%;
+
+    &__left {
+      overflow: hidden;
+      height: 100%;
       display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: center;
+      align-items: center;
 
-      &--text {
-        max-width: 400px;
-        align-self: center;
+      img {
+        height: auto;
+        min-height: 100%;
+        width: 100%;
+      }
+    }
+    &__right {
+      margin: auto 5rem;
+
+      &--container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        &--text {
+          max-width: 400px;
+          align-self: center;
+        }
       }
     }
   }

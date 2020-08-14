@@ -63,24 +63,9 @@ export default {
   &__element {
     margin: 3rem 0;
     display: grid;
-    grid-template-columns: 2fr 3fr;
+
     grid-gap: 1.5rem;
     gap: 2.5rem;
-
-    &:nth-child(even) {
-      grid-template-columns: 3fr 2fr;
-      img {
-        grid-column-start: 2;
-      }
-
-      .overview__element--text {
-        grid-column-start: 2;
-        grid-row-start: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-    }
 
     &--text {
       display: flex;
@@ -95,6 +80,29 @@ export default {
       img:hover {
         transform: scale(1.05);
         transition: 0.5s;
+      }
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  .overview {
+    &__element {
+      grid-template-columns: 2fr 3fr;
+
+      &:nth-child(even) {
+        grid-template-columns: 3fr 2fr;
+        img {
+          grid-column-start: 2;
+        }
+
+        .overview__element--text {
+          grid-column-start: 2;
+          grid-row-start: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
       }
     }
   }
