@@ -11,7 +11,13 @@
         <option value="custom">Catering op Maat</option>
       </select>
       <label for="date">Gewenste datum: *</label>
-      <input type="date" name="date" id="date" v-model="registration.date" required />
+      <input
+        type="date"
+        name="date"
+        id="date"
+        v-model="registration.date"
+        required
+      />
       <label for="people">Aantal personen: *</label>
       <input
         type="number"
@@ -25,15 +31,37 @@
       <button class="btn btn-primary" @click.prevent="next()">Aanvragen</button>
     </div>
     <div v-if="step === 2">
-      <h4>Tof dat je intresse hebt, als je de laatste info invult komen we zo snel mogelijk bij je terug!</h4>
+      <h4>
+        Tof dat je intresse hebt, als je de laatste info invult komen we zo snel
+        mogelijk bij je terug!
+      </h4>
       <label for="name">Naam: *</label>
-      <input type="text" name="name" id="name" v-model="registration.name" required />
+      <input
+        type="text"
+        name="name"
+        id="name"
+        v-model="registration.name"
+        required
+      />
       <label for="email">Email: *</label>
-      <input type="email" name="email" id="email" v-model="registration.email" required />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        v-model="registration.email"
+        required
+      />
       <label for="company">Bedrijf:</label>
-      <input type="text" name="company" id="company" v-model="registration.company" />
+      <input
+        type="text"
+        name="company"
+        id="company"
+        v-model="registration.company"
+      />
       <button class="btn btn-line" @click.prevent="prev()">Terug</button>
-      <button type="submit" class="btn btn-primary" @click.prevent="submit()">Versturen</button>
+      <button type="submit" class="btn btn-primary" @click.prevent="submit()">
+        Versturen
+      </button>
     </div>
   </form>
 </template>
@@ -42,110 +70,110 @@
 import axios from '@nuxtjs/axios'
 
 export default {
-	data() {
-		return {
-			step: 1,
-			registration: {
-				option: null,
-				date: null,
-				people: 1,
-				name: '',
-				email: '',
-				company: null
-			}
-		}
-	},
-	methods: {
-		prev() {
-			this.step--
-		},
-		next() {
-			this.step++
-		},
-		submit() {
-			if (this.registration.name && this.registration.email)
-				try {
-					this.$axios
-						.$post(
-							// 'https://ribtasticbrothers.herokuapp.com/email',
-							'https://cors-anywhere.herokuapp.com/http://localhost:1337/email',
-							{
-								to: 'eat@ribtasticbrothers.nl',
-								subject: `Nieuwe aanvraag offerte!`
-							}
-							// { 'Content-Type': 'x-www-form-urlencoded' }
-						)
-						.then(function(response) {
-							console.log(response)
-						})
-						.catch(function(error) {
-							console.log(error)
-						})
-					console.log('submitted')
-				} catch (error) {
-					console.log(error)
-				}
-		}
-	}
+  data() {
+    return {
+      step: 1,
+      registration: {
+        option: null,
+        date: null,
+        people: 1,
+        name: '',
+        email: '',
+        company: null,
+      },
+    }
+  },
+  methods: {
+    prev() {
+      this.step--
+    },
+    next() {
+      this.step++
+    },
+    submit() {
+      if (this.registration.name && this.registration.email)
+        try {
+          this.$axios
+            .$post(
+              'https://ribtasticbrothers.herokuapp.com/email',
+              // 'https://cors-anywhere.herokuapp.com/http://localhost:1337/email',
+              {
+                to: 'eat@ribtasticbrothers.nl',
+                subject: `Nieuwe aanvraag offerte!`,
+              }
+              // { 'Content-Type': 'x-www-form-urlencoded' }
+            )
+            .then(function (response) {
+              console.log(response)
+            })
+            .catch(function (error) {
+              console.log(error)
+            })
+          console.log('submitted')
+        } catch (error) {
+          console.log(error)
+        }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .formCatering {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	margin: 2em 0;
-	padding: 1.5em 2.5em;
+  margin: 2em 0;
+  padding: 1.5em 2.5em;
 
-	background: $off-black-color;
-	border: 2px solid darken($color: $off-black-color, $amount: 3);
-	border-radius: 15px;
-	font-size: 0.75em;
+  background: $off-black-color;
+  border: 2px solid darken($color: $off-black-color, $amount: 3);
+  border-radius: 15px;
+  font-size: 0.75em;
 
-	h2 {
-		margin-bottom: 0.7em;
-	}
+  h2 {
+    margin-bottom: 0.7em;
+  }
 
-	label {
-		margin-bottom: 0.35em;
-	}
-	input,
-	select {
-		margin-bottom: 1em;
-		margin-top: 0.5em;
-		display: block;
-		background: #212121;
-		border: 1px solid #4a6053;
-		border-radius: 10px;
-		padding: 0.8em;
-		color: #fff;
-		font-family: $ft-lato;
-		width: 100%;
-	}
+  label {
+    margin-bottom: 0.35em;
+  }
+  input,
+  select {
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    display: block;
+    background: #212121;
+    border: 1px solid #4a6053;
+    border-radius: 10px;
+    padding: 0.8em;
+    color: #fff;
+    font-family: $ft-lato;
+    width: 100%;
+  }
 
-	button {
-		margin: 1em 0;
-		display: inline;
-	}
+  button {
+    margin: 1em 0;
+    display: inline;
+  }
 
-	input:focus,
-	select:focus {
-		box-shadow: 0 0 10px $primary-color, 0 0 2px #4a6053;
-		outline: none;
-	}
+  input:focus,
+  select:focus {
+    box-shadow: 0 0 10px $primary-color, 0 0 2px #4a6053;
+    outline: none;
+  }
 }
 
 @media (min-width: 650px) {
-	.formCatering {
-		margin: 2em;
-		grid-row: 1;
+  .formCatering {
+    margin: 2em;
+    grid-row: 1;
 
-		button {
-			max-width: 50%;
-			margin: 0;
-			display: inline;
-		}
-	}
+    button {
+      max-width: 50%;
+      margin: 0;
+      display: inline;
+    }
+  }
 }
 </style>

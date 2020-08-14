@@ -1,6 +1,6 @@
 <template>
   <div class="eventOverview">
-    <div v-for="event in events" :key="event.id" class="eventItem">
+    <div v-for="event in upcomingEvents" :key="event.id" class="eventItem">
       <div class="eventItem__date">
         <h6>{{ $moment(event.date).format('dddd DD MMM') }}</h6>
       </div>
@@ -24,125 +24,136 @@
 import axios from '@nuxtjs/axios'
 
 export default {
-	data() {
-		return {
-			events: [],
-		}
-	},
-	async fetch() {
-		const { data } = await this.$axios.get(
-			'https://ribtasticbrothers.herokuapp.com/events'
-		)
-		this.events = data
-	},
+  data() {
+    return {
+      events: [],
+    }
+  },
+  computed: {
+    upcomingEvents() {
+      const today = new Date()
+      console.log(today.toDateString())
+      const upcomingEvents = []
+      const event = this.events.forEach((event) => {
+        upcomingEvents.push(event)
+      })
+      return upcomingEvents
+    },
+  },
+  async fetch() {
+    const { data } = await this.$axios.get(
+      'https://ribtasticbrothers.herokuapp.com/events'
+    )
+    this.events = data
+  },
 }
 </script>
 <style lang="scss" scoped>
 section.events {
-	position: relative;
-	margin-top: 2em;
-	background: #1e1e1e;
+  position: relative;
+  margin-top: 2em;
+  background: #1e1e1e;
 
-	//   img {
-	//     position: absolute;
-	//     z-index: -1;
-	//     width: auto;
-	//     height: 100%;
-	//     left: -50%;
-	//   }
+  //   img {
+  //     position: absolute;
+  //     z-index: -1;
+  //     width: auto;
+  //     height: 100%;
+  //     left: -50%;
+  //   }
 
-	h1 {
-		padding-top: 1em;
-	}
+  h1 {
+    padding-top: 1em;
+  }
 }
 
 .eventOverview {
-	display: grid;
-	grid-row-gap: 15px;
-	margin: 1em;
-	padding: 1em 0;
+  display: grid;
+  grid-row-gap: 15px;
+  margin: 1em;
+  padding: 1em 0;
 
-	.eventItem {
-		display: grid;
-		gap: 5px;
-		grid-template-columns: minmax(60px, 125px) 3fr auto;
-		background: rgba(0, 0, 0, 0.5);
+  .eventItem {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: minmax(60px, 125px) 3fr auto;
+    background: rgba(0, 0, 0, 0.5);
 
-		&__date {
-			padding: 1em;
-			background: rgba(0, 0, 0, 0.3);
-			display: flex;
-			align-items: center;
+    &__date {
+      padding: 1em;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
 
-			h6 {
-				font-size: 1.2rem;
-				white-space: normal;
-				text-align: center;
-			}
-		}
+      h6 {
+        font-size: 1.2rem;
+        white-space: normal;
+        text-align: center;
+      }
+    }
 
-		&__info {
-			padding: 1em;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
+    &__info {
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-			h4 {
-				text-transform: uppercase;
-			}
+      h4 {
+        text-transform: uppercase;
+      }
 
-			a {
-				margin-top: 9px;
-				font-size: 0.6em;
-				font-weight: bold;
-				color: $primary-color;
-				text-decoration: none;
-				text-transform: uppercase;
-			}
-			a::after {
-				content: '';
-				display: inline-block;
-				width: 0.6em;
-				height: 0.6em;
-				border-right: 0.2em solid $primary-color;
-				border-top: 0.2em solid $primary-color;
-				transform: rotate(45deg);
-				margin-right: 0.5em;
-				margin-left: 0.35em;
-			}
-		}
-	}
-	.eventItemCta {
-		flex-direction: column;
-		justify-content: center;
-		text-align: center;
-		padding: 1em;
-		background: rgba($color: $primary-color, $alpha: 0.8);
-		color: #fff;
+      a {
+        margin-top: 9px;
+        font-size: 0.6em;
+        font-weight: bold;
+        color: $primary-color;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      a::after {
+        content: '';
+        display: inline-block;
+        width: 0.6em;
+        height: 0.6em;
+        border-right: 0.2em solid $primary-color;
+        border-top: 0.2em solid $primary-color;
+        transform: rotate(45deg);
+        margin-right: 0.5em;
+        margin-left: 0.35em;
+      }
+    }
+  }
+  .eventItemCta {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1em;
+    background: rgba($color: $primary-color, $alpha: 0.8);
+    color: #fff;
 
-		h2 {
-			color: white;
-			font-size: 1.5em;
-			letter-spacing: 1.3px;
-		}
+    h2 {
+      color: white;
+      font-size: 1.5em;
+      letter-spacing: 1.3px;
+    }
 
-		&:hover {
-			transform: scale(1.05);
-			transition: 0.5s;
-		}
-	}
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.5s;
+    }
+  }
 }
 
 @media (min-width: 650px) {
-	.eventOverview {
-		grid-template-columns: 1fr;
-		grid-gap: 15px;
+  .eventOverview {
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
 
-		.eventItem,
-		.eventItemCta {
-			width: 60%;
-			margin: auto;
-		}
-	}
+    .eventItem,
+    .eventItemCta {
+      width: 60%;
+      margin: auto;
+    }
+  }
 }
 </style>

@@ -14,7 +14,6 @@
         </div>
       </div>
     </div>
-
     <nuxt-link to="catering" class="btn btn-line">Catering</nuxt-link>
 
     <!-- <SmallGallery /> -->
