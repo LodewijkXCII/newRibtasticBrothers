@@ -13,24 +13,24 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         href:
           'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700;900&display=swap',
-        rel: 'stylesheet'
-      }
+        rel: 'stylesheet',
+      },
     ],
     script: [
       {
         src:
           'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
-        type: 'text/css'
-      }
-    ]
+        type: 'text/css',
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -46,10 +46,8 @@ export default {
   plugins: [
     {
       src: '~/plugins/vuex-persist',
-      mode: 'client'
+      mode: 'client',
     },
-
-    '~plugins/vue-gallery.client.js'
   ],
   /*
    ** Nuxt.js dev-modules
@@ -59,7 +57,12 @@ export default {
     '@nuxtjs/moment',
 
     // With options
-    ['@nuxtjs/moment', { /* module options */ }]
+    [
+      '@nuxtjs/moment',
+      {
+        /* module options */
+      },
+    ],
   ],
 
   moment: {
@@ -78,18 +81,18 @@ export default {
         imports: [
           {
             set: '@fortawesome/free-solid-svg-icons',
-            icons: ['fas']
+            icons: ['fas'],
           },
           {
             set: '@fortawesome/free-brands-svg-icons',
-            icons: ['fab']
-          }
-        ]
-      }
-    ]
+            icons: ['fab'],
+          },
+        ],
+      },
+    ],
   ],
   styleResources: {
-    scss: ['./assets/css/*.scss']
+    scss: ['./assets/css/*.scss'],
   },
   /*
    ** Axios module configuration
@@ -103,6 +106,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) { }
-  }
+    extend(config, ctx) {},
+  },
 }

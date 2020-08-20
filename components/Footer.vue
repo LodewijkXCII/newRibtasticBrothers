@@ -49,6 +49,9 @@
             <li>
               <nuxt-link to="/gallerij" class="about-link">Gallerij</nuxt-link>
             </li>
+            <li>
+              <nuxt-link to="/bezorging" class="about-link">Bezorging</nuxt-link>
+            </li>
           </ul>
         </div>
       </div>

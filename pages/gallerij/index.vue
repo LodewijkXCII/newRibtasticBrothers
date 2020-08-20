@@ -27,7 +27,7 @@
         <GalleryBlock
           v-for="gallery in gallery"
           :key="gallery.id"
-          :title="gallery.title"
+          :title="gallery.slug"
           :thumbnailImage="gallery.thumbnailImage"
           :id="gallery.id"
         />
@@ -43,60 +43,60 @@ import ImageHeader from '@/components/ImageHeader.vue'
 import axios from '@nuxtjs/axios'
 
 export default {
-	head: {
-		title: 'Overheerlijke smaak | The Ribtastic Brothers',
-		meta: [
-			{
-				hid: 'description',
-				name: 'description',
-				content: 'Home page description',
-			},
-		],
-		noscript: [{ innerHTML: 'Body No Scripts', body: true }],
-	},
-	components: {
-		GalleryBlock,
-		ImageHeader,
-	},
-	data() {
-		return {
-			heading: {
-				title: 'Gallerij',
-				subtitle: 'Plaatjes en Daadjes',
-			},
-			image:
-				'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_beach_nesselande_catering_1f5425dfa0.jpeg',
-		}
-	},
-	asyncData(context) {
-		return context.app.$axios
-			.get('https://ribtasticbrothers.herokuapp.com/event-galleries')
-			.then((res) => {
-				return {
-					gallery: res.data.map((ig) => {
-						return {
-							id: ig.id,
-							title: ig.agenda.title,
-							thumbnailImage: ig.thumbnail.formats.thumbnail.url,
-						}
-					}),
-				}
-			})
-	},
+  head: {
+    title: 'Overheerlijke smaak | The Ribtastic Brothers',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Home page description',
+      },
+    ],
+    noscript: [{ innerHTML: 'Body No Scripts', body: true }],
+  },
+  components: {
+    GalleryBlock,
+    ImageHeader,
+  },
+  data() {
+    return {
+      heading: {
+        title: 'Gallerij',
+        subtitle: 'Plaatjes en Daadjes',
+      },
+      image:
+        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_brothers_gallerij+(1).jpg',
+    }
+  },
+  asyncData(context) {
+    return context.app.$axios
+      .get('https://ribtasticbrothers.herokuapp.com/event-galleries')
+      .then((res) => {
+        return {
+          gallery: res.data.map((ig) => {
+            return {
+              id: ig.id,
+              title: ig.agenda.title,
+              thumbnailImage: ig.thumbnail.formats.thumbnail.url,
+            }
+          }),
+        }
+      })
+  },
 }
 </script>
 
 <style lang="scss">
 .galleryWrapper {
-	display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	grid-gap: 1em;
-	margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1em;
+  margin-bottom: 1em;
 }
 
 @media (min-width: 650px) {
-	.galleryWrapper {
-		grid-template-columns: repeat(3, 1fr);
-	}
+  .galleryWrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 </style>

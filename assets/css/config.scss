@@ -53,3 +53,26 @@ h6 {
     font-size: 1.5rem;
     font-family: $ft-bebas;
 }
+
+label {
+    margin-bottom: 0.35em;
+}
+input,
+select {
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    display: block;
+    background: #212121;
+    border: 1px solid #4a6053;
+    border-radius: 10px;
+    padding: 0.8em;
+    color: #fff;
+    font-family: $ft-lato;
+    width: 100%;
+}
+
+input:focus,
+select:focus {
+    box-shadow: 0 0 10px $primary-color, 0 0 2px #4a6053;
+    outline: none;
+}

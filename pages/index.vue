@@ -14,10 +14,10 @@
             Catering
             <font-awesome-icon :icon="'utensils'" />
           </router-link>
-          <!-- <a href="https://bestellen.ribtasticbrothers.nl" class="btn btn-line">
+          <router-link to="bezorging" class="btn btn-line">
             Bezorging
             <font-awesome-icon :icon="'bicycle'" />
-          </a> -->
+          </router-link>
         </div>
       </div>
       <div class="scroll-downs">
@@ -34,11 +34,7 @@
       </div>
     </main>
     <section class="events">
-      <!-- <img
-        src="~/assets/img/catering_spareribs_ribtastic-min.jpg"
-        alt
-        class="homeHeader__image"
-      /> -->
+    
       <div class="container">
         <h1>Agenda 2020</h1>
         <Events />

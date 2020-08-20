@@ -27,24 +27,36 @@ export default {
   data() {
     return {
       events: [],
+      upcomingEvents: [],
     }
   },
-  computed: {
-    upcomingEvents() {
-      const today = new Date()
-      console.log(today.toDateString())
-      const upcomingEvents = []
-      const event = this.events.forEach((event) => {
-        upcomingEvents.push(event)
-      })
-      return upcomingEvents
-    },
-  },
+  // computed: {
+  //   upcomingEvents() {
+  //
+  //     let i
+  //     for (i of events) {
+  //       console.log('Hello World')
+  //       this.upcomingEvents.push(i)
+  //     }
+
+  //     // return upcomingEvents
+  //   },
+  // },
   async fetch() {
     const { data } = await this.$axios.get(
-      'https://ribtasticbrothers.herokuapp.com/events'
+      'https://ribtasticbrothers.herokuapp.com/calenders'
     )
-    this.events = data
+
+    this.events = data.sort((a, b) => {
+      a.datum > b.datum ? 1 : -1
+    })
+
+    const today = new Date()
+    const upcomming = data.forEach((event) => {
+      if (event.datum > today.toISOString()) {
+        this.upcomingEvents.push(event)
+      }
+    })
   },
 }
 </script>

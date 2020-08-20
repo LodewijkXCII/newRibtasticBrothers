@@ -28,7 +28,7 @@ import axios from '@nuxtjs/axios'
 export default {
   data() {
     return {
-      products: []
+      products: [],
     }
   },
   async fetch() {
@@ -36,7 +36,7 @@ export default {
       'https://ribtasticbrothers.herokuapp.com/products'
     )
     this.products = data
-  }
+  },
 }
 </script>
 
