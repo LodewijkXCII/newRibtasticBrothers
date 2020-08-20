@@ -85,10 +85,10 @@ export default {
   },
   methods: {
     prev() {
-      this.step--
+      this.step -= 1
     },
     next() {
-      this.step++
+      this.step += 1
     },
     submit() {
       if (this.registration.name && this.registration.email)
@@ -96,12 +96,25 @@ export default {
           this.$axios
             .$post(
               'https://ribtasticbrothers.herokuapp.com/email',
-              // 'https://cors-anywhere.herokuapp.com/http://localhost:1337/email',
+              // 'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
               {
-                to: 'eat@ribtasticbrothers.nl',
-                subject: `Nieuwe aanvraag offerte!`,
+                to: 'loekzweers@gmail.com',
+                from: 'eat@ribtasticbrothers.nl',
+                replyTo: 'eat@ribtasticbrothers.nl',
+                subject: 'Een nieuwe offerte aanvraag!',
+                html: `<h1>Er is een nieuwe aanvraag van ${this.registration.name}</h1>, 
+                <h2>De gegevens zijn als volgt:</h2>
+
+                <ul>
+                <li>Gewenste pakket: ${this.registration.option}</li>
+                <li>Gewenste datum: ${this.registration.date}</li>
+                <li>Aantal personen: ${this.registration.people}</li>
+                <li>Naam: ${this.registration.name}</li>
+                <li>Email: ${this.registration.email}</li>
+                <li>Bedrijf: ${this.registration.company}</li>
+                </ul>
+                `,
               }
-              // { 'Content-Type': 'x-www-form-urlencoded' }
             )
             .then(function (response) {
               console.log(response)
@@ -135,33 +148,33 @@ export default {
     margin-bottom: 0.7em;
   }
 
-  label {
-    margin-bottom: 0.35em;
-  }
-  input,
-  select {
-    margin-bottom: 1em;
-    margin-top: 0.5em;
-    display: block;
-    background: #212121;
-    border: 1px solid #4a6053;
-    border-radius: 10px;
-    padding: 0.8em;
-    color: #fff;
-    font-family: $ft-lato;
-    width: 100%;
-  }
+  // label {
+  //   margin-bottom: 0.35em;
+  // }
+  // input,
+  // select {
+  //   margin-bottom: 1em;
+  //   margin-top: 0.5em;
+  //   display: block;
+  //   background: #212121;
+  //   border: 1px solid #4a6053;
+  //   border-radius: 10px;
+  //   padding: 0.8em;
+  //   color: #fff;
+  //   font-family: $ft-lato;
+  //   width: 100%;
+  // }
 
   button {
     margin: 1em 0;
     display: inline;
   }
 
-  input:focus,
-  select:focus {
-    box-shadow: 0 0 10px $primary-color, 0 0 2px #4a6053;
-    outline: none;
-  }
+  // input:focus,
+  // select:focus {
+  //   box-shadow: 0 0 10px $primary-color, 0 0 2px #4a6053;
+  //   outline: none;
+  // }
 }
 
 @media (min-width: 650px) {

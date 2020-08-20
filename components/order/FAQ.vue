@@ -20,13 +20,15 @@
 export default {
   data() {
     return {
-      faqs: []
+      faqs: [],
     }
   },
   async fetch() {
-    const { data } = await this.$axios.get('https://ribtasticbrothers.herokuapp.com/faqs')
+    const { data } = await this.$axios.get(
+      'https://ribtasticbrothers.herokuapp.com/faqs'
+    )
     this.faqs = data
-  }
+  },
 }
 </script>
 

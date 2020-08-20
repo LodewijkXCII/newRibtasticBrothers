@@ -16,11 +16,9 @@
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "@nuxtjs/axios": "^5.12.0",
-    "jquery": "^3.5.1",
     "lodash": "^4.17.19",
     "nuxt": "^2.13.3",
     "nuxt-fontawesome": "^0.4.0",
-    "vue-gallery": "^2.0.1",
     "vuex-persist": "^2.2.0"
   },
   "devDependencies": {

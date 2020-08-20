@@ -15,15 +15,26 @@
         <form @submit.prevent="sendContact()">
           <h2>Neem contact op!</h2>
           <label for="name">Naam:</label>
-          <input type="text" name="name" id="name" v-model="name" required />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            v-model="contact.name"
+            required
+          />
           <label for="company">Bedrijf:</label>
-          <input type="text" name="company" id="company" v-model="company" />
+          <input
+            type="text"
+            name="company"
+            id="company"
+            v-model="contact.company"
+          />
           <label for="email">Email:</label>
           <input
             type="email"
             name="email"
             id="email"
-            v-model="email"
+            v-model="contact.email"
             required
           />
           <label for="message">Bericht:</label>
@@ -36,7 +47,7 @@
           ></textarea>
 
           <button type="submit" class="btn btn-primary" style="max-width: 45%;">
-            Verstuur
+            {{ buttonMsg }}
           </button>
         </form>
         <div class="belInfo">
@@ -50,12 +61,10 @@
         </div>
       </div>
     </div>
-    <SmallGallery />
   </section>
 </template>
 
 <script>
-import SmallGallery from '@/components/SmallGallery.vue'
 import ImageHeader from '@/components/ImageHeader.vue'
 import axios from '@nuxtjs/axios'
 
@@ -72,26 +81,54 @@ export default {
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
   },
   components: {
-    SmallGallery,
     ImageHeader,
   },
   data() {
     return {
-      name: '',
-      email: '',
-      company: '',
-      message: '',
+      contact: {
+        name: '',
+        email: '',
+        company: '',
+        message: '',
+      },
+      buttonMsg: 'Verstuur',
       heading: {
         title: 'Service',
         subtitle: 'Laat van je horen!',
       },
       image:
-        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_bbq_bakfiets_catering_0a41a085fd.jpeg',
+        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_brothers_contact+(1).jpg',
     }
   },
   methods: {
-    sendContact() {
-      console.log('clicked')
+    async sendContact() {
+      this.buttonMsg = 'Versturen...'
+      if (this.contact.name && this.contact.email)
+        try {
+          const contactSend = await this.$axios.$post(
+            'https://ribtasticbrothers.herokuapp.com/email',
+            // 'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
+            {
+              to: 'loekzweers@gmail.com',
+              from: 'eat@ribtasticbrothers.nl',
+              replyTo: 'eat@ribtasticbrothers.nl',
+              subject: 'Een nieuwe contact formulier aanvraag!',
+              html: `<h1>Er is een nieuwe contactformulier van ${this.contact.name}</h1>,
+                <h2>De gegevens zijn als volgt:</h2>
+                <p>${this.contact.message}</p>
+                <ul>
+                <li>Naam: ${this.contact.name}</li>
+                <li>Email: ${this.contact.email}</li>
+                <li>Bedrijf: ${this.contact.company}</li>
+                </ul>
+                `,
+            }
+          )
+
+          this.buttonMsg = 'Verstuurd'
+        } catch (error) {
+          console.log(error)
+        }
     },
   },
 }
