@@ -98,7 +98,7 @@ export default {
               'https://ribtasticbrothers.herokuapp.com/email',
               // 'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
               {
-                to: 'loekzweers@gmail.com',
+                to: 'eat@ribtasticbrothers.nl',
                 from: 'eat@ribtasticbrothers.nl',
                 replyTo: 'eat@ribtasticbrothers.nl',
                 subject: 'Een nieuwe offerte aanvraag!',

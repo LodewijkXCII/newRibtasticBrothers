@@ -39,6 +39,7 @@
           :key="catering.id"
           :id="catering.id"
           :name="catering.name"
+          :slug="catering.slug"
           :recommended="catering.recommended"
           :price="catering.price"
           :cateringProducts="catering.cateringProducts"
@@ -124,6 +125,7 @@ export default {
               price: co.price,
               cateringProducts: co.catering_products,
               recommended: co.recommended,
+              slug: co.slug,
             }
           }),
         }

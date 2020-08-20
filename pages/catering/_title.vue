@@ -1,7 +1,7 @@
 <template>
   <div class="cateringTitle">
     <section class="cateringTitle__left">
-      <img :src="catering.images[0].url" alt="" />
+      <img :src="catering.image.url" alt="" />
     </section>
     <section class="cateringTitle__right">
       <h1>{{ catering.name }}</h1>
@@ -62,7 +62,7 @@ export default {
   asyncData(context) {
     return context.app.$axios
       .get(
-        `https://ribtasticbrothers.herokuapp.com/catering-options?name=${context.params.title}`
+        `https://ribtasticbrothers.herokuapp.com/catering-options?slug=${context.params.title}`
       )
       .then((res) => {
         return {
@@ -72,7 +72,7 @@ export default {
             subTitle: res.data[0].subTitle,
             price: res.data[0].price,
             description: res.data[0].description,
-            images: res.data[0].images,
+            image: res.data[0].image,
             cateringProducts: res.data[0].catering_products,
           },
         }
