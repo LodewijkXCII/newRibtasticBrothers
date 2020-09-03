@@ -9,15 +9,8 @@
         <div class="cateringTitle__right--container--text" id="top">
           <h2>{{ catering.subTitle }}</h2>
 
-          <!-- <p>{{ catering.description }}</p> -->
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            veniam ab non asperiores saepe. Blanditiis, non cumque iure vero
-            nulla veniam quos ex laborum rerum asperiores. Fugit, dicta in
-            incidunt inventore hic aspernatur impedit atque similique nemo
-            suscipit aliquam consequuntur, aut velit. Optio nostrum earum totam
-            est, dolorem placeat officiis!
-          </p>
+          <div id="editor" v-html="$md.render(catering.discription)"></div>
+
           <n-link to="/catering" class="btn btn-inline"
             >Terug naar het overzicht</n-link
           >
@@ -71,7 +64,7 @@ export default {
             name: res.data[0].name,
             subTitle: res.data[0].subTitle,
             price: res.data[0].price,
-            description: res.data[0].description,
+            discription: res.data[0].discription,
             image: res.data[0].image,
             cateringProducts: res.data[0].catering_products,
           },

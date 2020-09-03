@@ -32,9 +32,9 @@
     <div class="btn btn-line">
       <nuxt-link to="catering">Catering</nuxt-link>
     </div>
-    <SmallGallery v-if="images" v-bind:images="images.image[0].images" />
-    <BouwProces />
-    <nuxt-link to="catering" class="btn btn-line">Catering</nuxt-link>
+    <!-- <SmallGallery v-if="images" v-bind:images="images.image[0].images" /> -->
+    <!-- <BouwProces /> -->
+    <!-- <nuxt-link to="catering" class="btn btn-line">Catering</nuxt-link> -->
   </section>
 </template>
 

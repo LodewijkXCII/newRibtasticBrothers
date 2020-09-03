@@ -1,6 +1,6 @@
 export default {
   mode: 'universal',
-  target: 'static',
+  target: 'server',
   /*
    ** Headers of the page
    */
@@ -74,6 +74,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/markdownit',
     '@nuxtjs/style-resources',
     [
       'nuxt-fontawesome',
@@ -91,6 +92,12 @@ export default {
       },
     ],
   ],
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    injected: true,
+  },
   styleResources: {
     scss: ['./assets/css/*.scss'],
   },
