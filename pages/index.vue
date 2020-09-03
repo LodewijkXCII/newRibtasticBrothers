@@ -34,7 +34,6 @@
       </div>
     </main>
     <section class="events">
-    
       <div class="container">
         <h1>Agenda 2020</h1>
         <Events />
@@ -394,7 +393,7 @@ section.events {
   position: relative;
   margin-top: 2em;
   background: rgba(0, 0, 0, 0.5);
-  background: url(https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/catering_spareribs_ribtastic-min_f5b8b15718.jpeg);
+  background: url(https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/catering_spareribs_ribtastic_min_552c73a808.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

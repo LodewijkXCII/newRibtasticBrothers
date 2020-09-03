@@ -2,7 +2,7 @@
   <div class="eventOverview">
     <div v-for="event in upcomingEvents" :key="event.id" class="eventItem">
       <div class="eventItem__date">
-        <h6>{{ $moment(event.date).format('dddd DD MMM') }}</h6>
+        <h6>{{ $moment(event.datum).format('dddd DD MMM') }}</h6>
       </div>
       <div class="eventItem__info">
         <h4>{{ event.title }}</h4>
@@ -26,7 +26,6 @@ import axios from '@nuxtjs/axios'
 export default {
   data() {
     return {
-      events: [],
       upcomingEvents: [],
     }
   },
@@ -46,11 +45,6 @@ export default {
     const { data } = await this.$axios.get(
       'https://ribtasticbrothers.herokuapp.com/calenders'
     )
-
-    this.events = data.sort((a, b) => {
-      a.datum > b.datum ? 1 : -1
-    })
-
     const today = new Date()
     const upcomming = data.forEach((event) => {
       if (event.datum > today.toISOString()) {

@@ -19,7 +19,7 @@
     </div>
     <div class="container sauzen">
       <div class="saus" v-for="saus in sauzen" :key="saus.id">
-        <img :src="saus.image.formats.small.url" alt />
+        <img :src="saus.image.url" alt />
         <div class="saus__text">
           <h2>{{ saus.title }}</h2>
           <p>{{ saus.description }}</p>
