@@ -1,9 +1,10 @@
 export default {
   mode: 'universal',
-  target: 'server',
+  target: 'static',
   /*
    ** Headers of the page
    */
+
   head: {
     title: 'The Ribtastic Brothers',
     meta: [
