@@ -1,11 +1,11 @@
 <template>
   <div>
     <header class="homeHeader">
-      <img
+      <!-- <img
         src="@/assets/img/catering_foodtruck_bbq-min.jpg"
         alt
         class="homeHeader__image"
-      />
+      /> -->
       <div class="container fullImageHeader">
         <h1>De lekkerste Spareribs</h1>
         <h2>Thuis, op een festival of catering</h2>
@@ -188,15 +188,33 @@ img {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
 
-  .homeHeader__image {
+  &::after {
+    content: '';
+    width: 100%;
+    background: url(https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/catering_foodtruck_bbq-min.jpg);
+    background-attachment: fixed;
+    height: 100vh;
+    opacity: 0.85;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     position: absolute;
-    z-index: -10;
-    left: -35%;
-    width: auto;
-    height: 100%;
-    overflow: hidden;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
   }
+
+  // .homeHeader__image {
+  //   position: absolute;
+  //   z-index: -10;
+  //   left: -35%;
+  //   width: auto;
+  //   height: 100%;
+  //   overflow: hidden;
+  //   background-size: cover;
+  // }
 
   .fullImageHeader {
     margin: auto 1em;
