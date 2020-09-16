@@ -50,7 +50,12 @@
               <nuxt-link to="/gallerij" class="about-link">Gallerij</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/bezorging" class="about-link">Bezorging</nuxt-link>
+              <nuxt-link to="/bezorging" class="about-link"
+                >Bezorging</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link to="/contact" class="about-link">Contact</nuxt-link>
             </li>
           </ul>
         </div>
