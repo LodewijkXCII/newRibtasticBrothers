@@ -60,6 +60,7 @@
         <font-awesome-icon :icon="'images'" />
       </nuxt-link>
     </div>
+    <CateringPartner />
     <!-- <SmallGallery :images="images" /> -->
   </div>
 </template>
@@ -69,6 +70,7 @@ import ImageHeader from '@/components/ImageHeader.vue'
 
 import OptionsCatering from '@/components/OptionsCatering.vue'
 import SmallGallery from '@/components/SmallGallery.vue'
+import CateringPartner from '@/components/CateringPartner.vue'
 
 import _ from 'lodash'
 
@@ -90,6 +92,7 @@ export default {
     OptionsCatering,
     SmallGallery,
     ImageHeader,
+    CateringPartner,
   },
 
   data() {
@@ -114,22 +117,23 @@ export default {
     },
   },
   asyncData(context) {
-    return context.app.$axios
-      .get('https://ribtasticbrothers.herokuapp.com/catering-options')
-      .then((res) => {
-        return {
-          catering: res.data.map((co) => {
-            return {
-              id: co.id,
-              name: co.name,
-              price: co.price,
-              cateringProducts: co.catering_products,
-              recommended: co.recommended,
-              slug: co.slug,
-            }
-          }),
-        }
-      })
+    const cateringOptions =
+      'https://ribtasticbrothers.herokuapp.com/catering-options'
+
+    return context.app.$axios.get(cateringOptions).then((res) => {
+      return {
+        catering: res.data.map((co) => {
+          return {
+            id: co.id,
+            name: co.name,
+            price: co.price,
+            cateringProducts: co.catering_products,
+            recommended: co.recommended,
+            slug: co.slug,
+          }
+        }),
+      }
+    })
   },
 }
 </script>
