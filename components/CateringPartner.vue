@@ -29,8 +29,7 @@ export default {
   },
   async fetch() {
     const { data } = await this.$axios.get(
-      //   'https://ribtasticbrothers.herokuapp.com/catering-partners'
-      'http://localhost:1337/catering-partners'
+      'https://ribtasticbrothers.herokuapp.com/catering-partners'
     )
     const partners = data.forEach((partner) => {
       this.partners.push(partner)
