@@ -46,6 +46,7 @@ export default {
   &__partner {
     margin: 1rem;
     position: relative;
+    display: flex;
 
     &--title {
       opacity: 0;
@@ -69,7 +70,7 @@ export default {
 
     &--img {
       max-width: 100px;
-      display: flex;
+
       margin: auto;
     }
   }
