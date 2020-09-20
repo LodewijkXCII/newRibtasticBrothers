@@ -35,14 +35,8 @@ import SmallGallery from '@/components/SmallGallery.vue'
 
 export default {
   head: {
-    title: 'Overheerlijke smaak | The Ribtastic Brothers',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Home page description',
-      },
-    ],
+    title: `${this.catering.title} | The Ribtastic Brothers`,
+
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
   },
   components: {

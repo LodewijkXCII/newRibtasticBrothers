@@ -40,13 +40,7 @@ import axios from '@nuxtjs/axios'
 export default {
   head: {
     title: 'Overheerlijke smaak | The Ribtastic Brothers',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Home page description',
-      },
-    ],
+
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
   },
   name: 'Saus',

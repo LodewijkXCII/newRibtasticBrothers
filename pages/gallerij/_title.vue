@@ -28,7 +28,7 @@ import axios from '@nuxtjs/axios'
 
 export default {
   head: {
-    title: 'Overheerlijke smaak | The Ribtastic Brothers',
+    title: `${this.gallery.title} | The Ribtastic Brothers`,
     meta: [
       {
         hid: 'description',
