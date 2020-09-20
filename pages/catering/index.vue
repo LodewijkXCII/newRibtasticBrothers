@@ -76,7 +76,7 @@ import _ from 'lodash'
 
 export default {
   head: {
-    title: 'Overheerlijke smaak | The Ribtastic Brothers',
+    title: 'Catering | The Ribtastic Brothers',
     meta: [
       {
         hid: 'description',

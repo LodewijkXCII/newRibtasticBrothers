@@ -57,14 +57,8 @@ import ImageHeader from '@/components/ImageHeader.vue'
 
 export default {
   head: {
-    title: 'Overheerlijke smaak | The Ribtastic Brothers',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Home page description',
-      },
-    ],
+    title: 'Samen Duurzaam | The Ribtastic Brothers',
+
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
   },
   name: 'Saus',

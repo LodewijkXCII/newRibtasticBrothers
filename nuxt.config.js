@@ -1,20 +1,29 @@
 export default {
   mode: 'universal',
-  target: 'static',
+  target: 'server',
+
+  generate: {
+    fallback: true,
+  },
   /*
    ** Headers of the page
    */
-
   head: {
-    title: 'The Ribtastic Brothers',
+    title: 'The Ribtastic Brothers - De lekkerste spareribs!',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'keywords', content: 'keyword 1, keyword 2' },
+      {
+        name: 'keywords',
+        content:
+          'spareribs, catering, foodtruck, bbq, BBQ, barbeque, barbecue, delivery',
+      },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content:
+          process.env.npm_package_description ||
+          'De beste spareribs van de barbecue voor thuis of een festival. Catering met de speciale BBQ-bakfiets mogelijk in all-in of eigen keuze menu!',
       },
     ],
     link: [

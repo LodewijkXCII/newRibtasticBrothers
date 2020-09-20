@@ -41,6 +41,11 @@
 import axios from '@nuxtjs/axios'
 
 export default {
+  head: {
+    title: `Bezorging | The Ribtastic Brothers`,
+
+    noscript: [{ innerHTML: 'Body No Scripts', body: true }],
+  },
   data() {
     return {
       email: '',

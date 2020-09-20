@@ -46,14 +46,8 @@ import BouwProces from '@/components/BouwProces.vue'
 
 export default {
   head: {
-    title: 'Overheerlijke smaak | The Ribtastic Brothers',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Home page description',
-      },
-    ],
+    title: 'Geweldige Sensatie | The Ribtastic Brothers',
+
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
   },
   name: 'foodtruck',

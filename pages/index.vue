@@ -75,7 +75,8 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Home page description',
+        content:
+          'De beste spareribs van de barbecue voor thuis of een festival. Catering met de speciale BBQ-bakfiets mogelijk in all-in of eigen keuze menu!',
       },
     ],
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
