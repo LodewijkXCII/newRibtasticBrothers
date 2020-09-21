@@ -49,7 +49,7 @@ export default {
   asyncData(context) {
     return context.app.$axios
       .get(
-        `https://ribtasticbrothers.herokuapp.com/catering-options?slug=all-in`
+        `https://ribtasticbrothers.herokuapp.com/catering-options?slug=${context.params.title}`
       )
       .then((res) => {
         return {
