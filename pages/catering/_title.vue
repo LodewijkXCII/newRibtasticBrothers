@@ -1,7 +1,7 @@
 <template>
   <div class="cateringTitle">
     <section class="cateringTitle__left">
-      <img :src="catering.image.url" alt="" />
+      <img :src="catering.image.url" alt="" v-if="catering.image !== null" />
     </section>
     <section class="cateringTitle__right">
       <h1>{{ catering.name }}</h1>
@@ -35,7 +35,7 @@ import SmallGallery from '@/components/SmallGallery.vue'
 
 export default {
   head: {
-    title: `${this.catering.title} | The Ribtastic Brothers`,
+    // title: `${this.catering.title} | The Ribtastic Brothers`,
 
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
   },
@@ -49,7 +49,7 @@ export default {
   asyncData(context) {
     return context.app.$axios
       .get(
-        `https://ribtasticbrothers.herokuapp.com/catering-options?slug=${context.params.title}`
+        `https://ribtasticbrothers.herokuapp.com/catering-options?slug=all-in`
       )
       .then((res) => {
         return {
