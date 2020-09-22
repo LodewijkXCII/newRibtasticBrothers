@@ -42,9 +42,9 @@
         <li class="list-item">
           <nuxt-link to="/samen">Samen</nuxt-link>
         </li>
-        <!-- <li class="list-item">
-          <a href="https://bestellen.ribtasticbrothers.nl">Bezorging</a>
-        </li> -->
+        <li class="list-item">
+          <nuxt-link to="/bezorging">Bezorging</nuxt-link>
+        </li>
         <li class="list-item">
           <nuxt-link to="/gallerij">Gallerij</nuxt-link>
         </li>

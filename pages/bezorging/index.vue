@@ -7,8 +7,9 @@
       />
     </section>
     <section class="bezorging__right">
+      <Counter />
       <h1>Comming Soon!</h1>
-      <p>
+      <!-- <p>
         Leuk dat je interesse hebt, vinden we tof!<br />
         Er is even wat miscommunicatie ontstaan tussen ons en de Buik. We zijn
         31 juli namelijk gestopt met het leveren van onze DIY pakketten. 😓😥
@@ -23,7 +24,7 @@
       </p>
       <p>
         Vind je het goed als we je dan weer benaderen voor full experience?
-      </p>
+      </p> -->
       <label for="email">Laat je email achter:</label>
       <input type="email" name="email" id="email" v-model="email" />
       <button
@@ -39,12 +40,15 @@
 
 <script>
 import axios from '@nuxtjs/axios'
+import Counter from '@/components/Counter.vue'
 
 export default {
   head: {
     title: `Bezorging | The Ribtastic Brothers`,
-
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
+  },
+  components: {
+    Counter,
   },
   data() {
     return {
@@ -104,7 +108,8 @@ export default {
     }
     &__right {
       margin: auto;
-      max-width: 500px;
+      max-width: 800px;
+      min-width: 550px;
 
       label {
         font-weight: 700;
