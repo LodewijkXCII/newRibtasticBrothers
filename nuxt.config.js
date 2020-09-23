@@ -1,6 +1,10 @@
 export default {
   mode: 'universal',
+  target: 'server',
 
+  generate: {
+    fallback: true,
+  },
   /*
    ** Headers of the page
    */
