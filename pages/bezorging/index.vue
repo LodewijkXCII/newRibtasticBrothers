@@ -8,7 +8,7 @@
     </section>
     <section class="bezorging__right">
       <Counter />
-      <h1>Comming Soon!</h1>
+      <h1>Coming Soon!</h1>
       <!-- <p>
         Leuk dat je interesse hebt, vinden we tof!<br />
         Er is even wat miscommunicatie ontstaan tussen ons en de Buik. We zijn
