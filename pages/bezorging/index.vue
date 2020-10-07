@@ -36,10 +36,13 @@
         class="bezorging__categorie"
       >
         <div class="bezorging__categorie--image">
-          <img src="http://unsplash.it/800?gravity=center" alt="" />
+          <img
+            :src="`https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/trb_category_${categorie}.jpg`"
+            alt=""
+          />
         </div>
         <div class="bezorgOption">
-          <h3>{{ categorie }}</h3>
+          <h2>{{ categorie }}</h2>
           <div class="bezorgOption__grid">
             <div
               class="bezorgOption__gerecht"
@@ -117,8 +120,8 @@ export default {
   },
 
   async mounted() {
-    const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-products'
-    // 'http://localhost:1337/bezorg-products'
+    // const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-products'
+    const url = 'http://localhost:1337/bezorg-products'
 
     try {
       const { data } = await this.$axios.get(url)
@@ -168,6 +171,10 @@ export default {
 
 .bezorgOption {
   padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   h2 {
     text-align: inherit;
   }
