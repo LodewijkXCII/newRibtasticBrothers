@@ -85,7 +85,7 @@ export default {
 
 @media (min-width: 650px) {
   .btn {
-    max-width: 25%;
+    max-width: 50%;
     margin: 2em auto;
   }
 }

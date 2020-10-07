@@ -34,20 +34,17 @@
         </li>
 
         <li class="list-item">
-          <nuxt-link to="/smaak">Smaak</nuxt-link>
-        </li>
-        <li class="list-item">
-          <nuxt-link to="/sensatie">Sensatie</nuxt-link>
-        </li>
-        <li class="list-item">
-          <nuxt-link to="/samen">Samen</nuxt-link>
-        </li>
-        <li class="list-item">
           <nuxt-link to="/bezorging">Bezorging</nuxt-link>
         </li>
         <li class="list-item">
           <nuxt-link to="/gallerij">Gallerij</nuxt-link>
         </li>
+        <li class="list-item">
+          <a href="#" @click="dropDown()"
+            >Over Ons <font-awesome-icon :icon="['fas', 'angle-down']"
+          /></a>
+        </li>
+
         <li class="list-item">
           <nuxt-link to="/contact">Contact</nuxt-link>
         </li>
@@ -56,6 +53,19 @@
             Blog
           </nuxt-link>
         </li>-->
+      </ul>
+    </div>
+    <div
+      class="bottomNav second"
+      v-if="bottomBar"
+      v-bind:class="{ hidden: !bottomBar }"
+    >
+      <ul class="navList">
+        <li class="list-item"><nuxt-link to="/smaak">Smaak</nuxt-link></li>
+        <li class="list-item">
+          <nuxt-link to="/sensatie">Sensatie</nuxt-link>
+        </li>
+        <li class="list-item"><nuxt-link to="/samen">Samen</nuxt-link></li>
       </ul>
     </div>
   </nav>
@@ -68,6 +78,7 @@ export default {
       isHidden: true,
       barsHidden: true,
       prevScrollY: 200,
+      bottomBar: false,
     }
   },
   created() {
@@ -85,22 +96,30 @@ export default {
       const isMobile = window.orientation > -1
       if (isMobile === false) {
         this.isHidden = false
+        this.bottomBar = false
         const currentScrollY = window.pageYOffset
         if (this.prevScrollY < currentScrollY) {
           this.isHidden = true
           this.barsHidden = false
+          this.bottomBar = false
         } else {
           this.isHidden = false
           this.barsHidden = true
+          this.bottomBar = false
         }
         this.prevScrollY = currentScrollY
       } else {
         this.isHidden = true
+        this.bottomBar = false
       }
     },
     toggleNav() {
       this.barsHidden = !this.barsHidden
       this.isHidden = !this.isHidden
+    },
+    dropDown() {
+      this.isHidden = false
+      this.bottomBar = !this.bottomBar
     },
   },
 }
@@ -188,6 +207,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+
     &.hidden {
       display: none !important;
       transition: opacity 3s ease-out;
@@ -205,7 +225,7 @@ nav {
 
       li.list-item a {
         font-size: 2em;
-        display: grid;
+        display: inline-block;
         align-items: center;
         grid-row-gap: 3px;
         margin: 2rem;
@@ -234,6 +254,9 @@ nav {
       box-shadow: 0 5px 8px rgba(256, 256, 256, 0.2);
       opacity: 1;
       height: 100%;
+      &.second {
+        background: $off-primary-color;
+      }
 
       .navList {
         padding: 1em;
@@ -244,9 +267,10 @@ nav {
         li.list-item a {
           margin: 0;
           font-size: 0.8em;
+          display: inline;
         }
         svg {
-          display: none;
+          margin: 0 0.3rem;
         }
       }
     }

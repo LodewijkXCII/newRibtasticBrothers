@@ -148,33 +148,10 @@ export default {
     margin-bottom: 0.7em;
   }
 
-  // label {
-  //   margin-bottom: 0.35em;
-  // }
-  // input,
-  // select {
-  //   margin-bottom: 1em;
-  //   margin-top: 0.5em;
-  //   display: block;
-  //   background: #212121;
-  //   border: 1px solid #4a6053;
-  //   border-radius: 10px;
-  //   padding: 0.8em;
-  //   color: #fff;
-  //   font-family: $ft-lato;
-  //   width: 100%;
-  // }
-
   button {
     margin: 1em 0;
     display: inline;
   }
-
-  // input:focus,
-  // select:focus {
-  //   box-shadow: 0 0 10px $primary-color, 0 0 2px #4a6053;
-  //   outline: none;
-  // }
 }
 
 @media (min-width: 650px) {
@@ -183,7 +160,7 @@ export default {
     grid-row: 1;
 
     button {
-      max-width: 50%;
+      max-width: 100%;
       margin: 0;
       display: inline;
     }

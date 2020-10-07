@@ -96,7 +96,7 @@ export default {
       }
     }
     &__right {
-      margin: auto 5rem;
+      margin: auto 5%;
 
       &--container {
         display: flex;
