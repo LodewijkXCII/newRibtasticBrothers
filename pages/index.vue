@@ -53,9 +53,7 @@
           </div>
           <div class="partner__last">
             <nuxt-link to="contact">
-              <p>
-                Ook graag samenwerken? Neem contact op
-              </p>
+              <p>Ook graag samenwerken? Neem contact op</p>
             </nuxt-link>
           </div>
         </div>
@@ -180,6 +178,7 @@ a {
 img {
   height: auto;
   width: 100%;
+  display: block;
 }
 
 .homeHeader {

@@ -48,7 +48,7 @@
         <div class="cateringCard">
           <h2 class="cateringCard__title">Catering op Maat</h2>
           <p class="cateringCard__text">Prijs op aanvraag</p>
-          <p style="padding-left: 1.5em;">
+          <p style="padding-left: 1.5em">
             Alles is mogelijk, vraag een offerte op en we komen zo spoedig
             mogelijk bij je terug.
           </p>
@@ -122,14 +122,14 @@ export default {
 
     return context.app.$axios.get(cateringOptions).then((res) => {
       return {
-        catering: res.data.map((co) => {
+        catering: res.data.map((option) => {
           return {
-            id: co.id,
-            name: co.name,
-            price: co.price,
-            cateringProducts: co.catering_products,
-            recommended: co.recommended,
-            slug: co.slug,
+            id: option.id,
+            name: option.name,
+            price: option.price,
+            cateringProducts: option.catering_products,
+            recommended: option.recommended,
+            slug: option.slug,
           }
         }),
       }
