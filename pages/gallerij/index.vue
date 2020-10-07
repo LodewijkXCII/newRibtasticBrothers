@@ -70,7 +70,7 @@ export default {
           gallery: res.data.map((ig) => {
             return {
               id: ig.id,
-              title: ig.agenda.title,
+              title: ig.calender.title,
               thumbnailImage: ig.thumbnail.formats.thumbnail.url,
             }
           }),
