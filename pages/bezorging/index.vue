@@ -5,16 +5,20 @@
       <div class="bezorgIntro__text">
         <h2>Bezorging</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque
-          at corporis, aspernatur natus voluptatem quibusdam maiores expedita
-          eaque nihil unde, ex quam assumenda ipsa totam saepe aperiam,
-          consectetur deleniti. Amet dolorem, earum repellendus obcaecati autem
-          voluptatem architecto optio, dignissimos quasi et modi voluptatibus
-          voluptate non cupiditate assumenda, ratione rem!
+          Ribtastic Brothers bij je thuis? Het kan nu! Na de DIY pakketten gaan
+          we nog een stapje verder met bezorging. Heerlijk warm bij je thuis via
+          Deliveroo of UberEats. Hieronder is ons menu te vinden. Via de links
+          kan je naar de juiste pagina's voor Deliveroo en UberEats gaan.
+          Vergeet ook zeker niet onze introvideo te bekijken!
         </p>
         <div class="delivery_links">
-          <button class="btn btn-primary">Deliveroo</button>
-          <button class="btn btn-primary">UberEats</button>
+          <button class="btn btn-primary">
+            <a
+              href="https://deliveroo.nl/nl/menu/rotterdam/noord/the-ribtastic-brothers"
+            ></a>
+            Deliveroo
+          </button>
+          <button class="btn btn-primary disabled">UberEats</button>
         </div>
       </div>
       <div class="bezorgIntro__video">
