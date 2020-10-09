@@ -57,8 +57,10 @@
                 />
               </div>
               <div class="bezorgOption__gerecht--text">
-                <h4>{{ meal.title }}</h4>
-                <p>{{ meal.korte_omschrijving }}</p>
+                <div>
+                  <h4>{{ meal.title }}</h4>
+                  <p>{{ meal.korte_omschrijving }}</p>
+                </div>
                 <small class="price">&euro; {{ meal.prijs }}</small>
               </div>
             </div>
@@ -155,10 +157,16 @@ export default {
   margin: 3rem 0;
   &__categorie {
     display: grid;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
+    gap: 0.5rem;
+    margin: 4rem 0;
     &:nth-child(even) {
       direction: rtl;
+
+      h4,
+      p,
+      .price {
+        direction: initial;
+      }
     }
   }
 }
@@ -170,7 +178,7 @@ export default {
 }
 
 .bezorgOption {
-  padding-right: 1.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -180,7 +188,7 @@ export default {
   }
   &__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
@@ -188,6 +196,9 @@ export default {
     background: lighten($color: #000000, $amount: 7);
     border-radius: 15px;
     border: 1px solid lighten($color: #000000, $amount: 5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &--img img {
       border-radius: 15px 15px 0 0;
     }
@@ -195,6 +206,10 @@ export default {
     &--text {
       padding: 1rem;
       text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
       h4 {
         margin: 0;
       }
@@ -234,9 +249,11 @@ export default {
     width: 100%;
     &__categorie {
       grid-template-columns: minmax(150px, 25vw) 1fr;
+      gap: 1.5rem;
     }
   }
   .bezorgOption {
+    padding: 0 1.5rem 0;
     &__grid {
       grid-template-columns: repeat(4, 1fr);
     }
