@@ -27,7 +27,8 @@
         <GalleryBlock
           v-for="gallery in gallery"
           :key="gallery.id"
-          :title="gallery.slug"
+          :title="gallery.title"
+          :slug="gallery.slug"
           :thumbnailImage="gallery.thumbnailImage"
           :id="gallery.id"
         />
@@ -45,7 +46,6 @@ import axios from '@nuxtjs/axios'
 export default {
   head: {
     title: 'Geweldige Gallerij | The Ribtastic Brothers',
-
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
   },
   components: {
@@ -58,11 +58,12 @@ export default {
         title: 'Gallerij',
         subtitle: 'Plaatjes en Daadjes',
       },
+
       image:
         'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_brothers_gallerij+(1).jpg',
     }
   },
-  asyncData(context) {
+  async asyncData(context) {
     return context.app.$axios
       .get('https://ribtasticbrothers.herokuapp.com/event-galleries')
       .then((res) => {
@@ -71,6 +72,7 @@ export default {
             return {
               id: ig.id,
               title: ig.calender.title,
+              slug: ig.calender.slug,
               thumbnailImage: ig.thumbnail.formats.thumbnail.url,
             }
           }),
