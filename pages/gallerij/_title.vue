@@ -28,7 +28,7 @@ import axios from '@nuxtjs/axios'
 
 export default {
   head: {
-    // title: `${this.gallery.title} | The Ribtastic Brothers`,
+    title: `${this.gallery.title} | The Ribtastic Brothers`,
     meta: [
       {
         hid: 'description',
@@ -51,7 +51,6 @@ export default {
         `https://ribtasticbrothers.herokuapp.com/event-galleries?calender.slug=${context.params.title}`
       )
       .then((res) => {
-        console.log(res.data)
         return {
           gallery: {
             id: res.data[0].id,

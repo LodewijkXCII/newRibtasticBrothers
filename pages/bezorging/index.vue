@@ -120,8 +120,8 @@ export default {
   },
 
   async mounted() {
-    // const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-products'
-    const url = 'http://localhost:1337/bezorg-products'
+    const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-products'
+    // const url = 'http://localhost:1337/bezorg-products'
 
     try {
       const { data } = await this.$axios.get(url)
