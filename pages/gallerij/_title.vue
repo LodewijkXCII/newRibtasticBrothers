@@ -1,21 +1,21 @@
 <template>
   <section>
-    <div class="container">
+    <div class="container gallery">
       <h1>{{ gallery.title }}</h1>
       <h2>{{ gallery.locatie }}</h2>
-      <p>{{ gallery.description }}</p>
+      <p v-if="gallery.description">{{ gallery.description }}</p>
       <n-link to="/gallerij" class="btn btn-inline"
         >Terug naar het overzicht</n-link
       >
 
       <div class="galleryImages">
         <div
-          v-for="image in gallery.gallery"
+          v-for="image in gallery.galleryImages"
           class="galleryImages__img gallery"
           :key="image.id"
         >
-          <a :href="image.formats.large.url">
-            <img :src="image.formats.thumbnail.url" alt />
+          <a :href="image.formats.medium.url">
+            <img :src="image.formats.small.url" alt />
           </a>
         </div>
       </div>
@@ -28,7 +28,7 @@ import axios from '@nuxtjs/axios'
 
 export default {
   head: {
-    title: `${this.gallery.title} | The Ribtastic Brothers`,
+    // title: `${this.gallery.title} | The Ribtastic Brothers`,
     meta: [
       {
         hid: 'description',
@@ -48,16 +48,17 @@ export default {
   asyncData(context) {
     return context.app.$axios
       .get(
-        `https://ribtasticbrothers.herokuapp.com/events?title=${context.params.title}`
+        `https://ribtasticbrothers.herokuapp.com/event-galleries?calender.slug=${context.params.title}`
       )
       .then((res) => {
+        console.log(res.data)
         return {
           gallery: {
             id: res.data[0].id,
-            title: res.data[0].title,
-            locatie: res.data[0].locatie,
-            gallery: res.data[0].event_gallery.images,
-            description: res.data[0].event_gallery.description,
+            title: res.data[0].calender.title,
+            locatie: res.data[0].calender.locatie,
+            galleryImages: res.data[0].images,
+            description: res.data[0].description,
           },
         }
       })
@@ -67,6 +68,14 @@ export default {
 
 <style>
 @import '@/assets/css/simplelightbox.css';
+
+.container.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10rem;
+}
+
 .galleryImages {
   display: grid;
   grid-template-columns: 1fr;
