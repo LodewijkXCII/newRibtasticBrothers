@@ -81,6 +81,14 @@ export default {
   svg {
     margin-left: 0.5em;
   }
+  &.disabled {
+    opacity: 0.2;
+    background: transparent;
+
+    &:hover {
+      cursor: default;
+    }
+  }
 }
 
 @media (min-width: 650px) {
