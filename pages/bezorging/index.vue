@@ -15,8 +15,9 @@
           <button class="btn btn-primary">
             <a
               href="https://deliveroo.nl/nl/menu/rotterdam/noord/the-ribtastic-brothers"
-            ></a>
-            Deliveroo
+            >
+              Deliveroo
+            </a>
           </button>
           <button class="btn btn-primary disabled">UberEats</button>
         </div>
