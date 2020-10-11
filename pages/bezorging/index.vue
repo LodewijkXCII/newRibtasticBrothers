@@ -12,14 +12,14 @@
           Vergeet ook zeker niet onze introvideo te bekijken!
         </p>
         <div class="delivery_links">
-          <button class="btn btn-primary">
-            <a
-              href="https://deliveroo.nl/nl/menu/rotterdam/noord/the-ribtastic-brothers"
-            >
-              Deliveroo
-            </a>
-          </button>
-          <button class="btn btn-primary disabled">UberEats</button>
+          <a
+            class="btn btn-primary"
+            href="https://deliveroo.nl/nl/menu/rotterdam/noord/the-ribtastic-brothers"
+          >
+            Deliveroo
+          </a>
+
+          <a class="btn btn-primary disabled">UberEats</a>
         </div>
       </div>
       <div class="bezorgIntro__video">
