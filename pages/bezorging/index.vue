@@ -76,13 +76,11 @@
       <div class="radius__text container">
         <h2>Bezorggebied</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ab culpa
-          laborum, fugit unde adipisci natus porro vel sint eveniet nisi
-          dignissimos enim, voluptate nemo a, odit ex nesciunt assumenda non
-          similique. Aperiam tempora culpa provident saepe quaerat itaque unde
-          at architecto accusamus vel vero delectus recusandae sunt, cum dolor
-          laudantium cupiditate incidunt. Suscipit reprehenderit modi illo
-          reiciendis quos culpa?
+          Helaas bezorgen we nog niet in heel nederland. We werken samen met
+          Deliveroo en UberEats om onze bezorging uit te voeren. Zij hebben dan
+          ook een maximaal bezorggebied aangegeven. Dit gebied is 3km van onze
+          keuken vandaan. In de afbeelding hieronder is te zien wat het gebied
+          is waar we bezorgen!
         </p>
       </div>
       <div class="radius__image">
