@@ -10,11 +10,11 @@
         <h1>De lekkerste Spareribs</h1>
         <h2>Thuis, op een festival of catering</h2>
         <div class="cta">
-          <router-link to="catering" class="btn btn-primary">
+          <router-link to="catering" class="btn btn-line">
             Catering
             <font-awesome-icon :icon="'utensils'" />
           </router-link>
-          <router-link to="bezorging" class="btn btn-line">
+          <router-link to="bezorging" class="btn btn-primary">
             Bezorging
             <font-awesome-icon :icon="'bicycle'" />
           </router-link>

@@ -42,33 +42,30 @@
       >
         <div class="bezorging__categorie--image">
           <img
-            :src="`https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/trb_category_${categorie}.jpg`"
+            :src="`https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/trb_category_${categorie.toLowerCase()}.jpg`"
             alt=""
           />
-        </div>
-        <div class="bezorgOption">
           <h2>{{ categorie }}</h2>
-          <div class="bezorgOption__grid">
-            <div
-              class="bezorgOption__gerecht"
-              v-for="meal in gerecht"
-              :key="meal.id"
-            >
-              <div class="bezorgOption__gerecht--img">
-                <img
-                  v-if="meal.image"
-                  :src="meal.image.url"
-                  :alt="meal.image.caption"
-                />
-              </div>
-              <div class="bezorgOption__gerecht--text">
-                <div>
-                  <h4>{{ meal.title }}</h4>
-                  <p>{{ meal.korte_omschrijving }}</p>
-                </div>
-                <small class="price">&euro; {{ meal.prijs }}</small>
-              </div>
+        </div>
+
+        <div
+          class="bezorgOption__gerecht"
+          v-for="meal in gerecht"
+          :key="meal.id"
+        >
+          <div class="bezorgOption__gerecht--img">
+            <img
+              v-if="meal.image"
+              :src="meal.image.url"
+              :alt="meal.image.caption"
+            />
+          </div>
+          <div class="bezorgOption__gerecht--text">
+            <div>
+              <h4>{{ meal.title }}</h4>
+              <p>{{ meal.korte_omschrijving }}</p>
             </div>
+            <small class="price">&euro; {{ meal.prijs.toFixed(2) }}</small>
           </div>
         </div>
       </div>
@@ -77,7 +74,7 @@
       <div class="radius__text container">
         <h2>Bezorggebied</h2>
         <p>
-          Helaas bezorgen we nog niet in heel nederland. We werken samen met
+          Helaas bezorgen we nog niet in heel Nederland. We werken samen met
           Deliveroo en UberEats om onze bezorging uit te voeren. Zij hebben dan
           ook een maximaal bezorggebied aangegeven. Dit gebied is 3km van onze
           keuken vandaan. In de afbeelding hieronder is te zien wat het gebied
@@ -171,6 +168,26 @@ export default {
         direction: initial;
       }
     }
+    &--image {
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      img {
+        height: 100%;
+        width: auto;
+      }
+      h2 {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background: rgba($color: #000000, $alpha: 0.3);
+      }
+    }
   }
 }
 
@@ -251,8 +268,10 @@ export default {
   .bezorging {
     width: 100%;
     &__categorie {
-      grid-template-columns: minmax(150px, 25vw) 1fr;
+      grid-template-columns: repeat(5, minmax(10rem, 1fr));
+      grid-template-rows: 450px;
       gap: 1.5rem;
+      padding: 0 5rem;
     }
   }
   .bezorgOption {
