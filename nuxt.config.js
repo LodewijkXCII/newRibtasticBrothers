@@ -58,6 +58,7 @@ export default {
       src: '~/plugins/vuex-persist',
       mode: 'client',
     },
+    { src: '~plugins/ga.js', mode: 'client' },
   ],
   /*
    ** Nuxt.js dev-modules
