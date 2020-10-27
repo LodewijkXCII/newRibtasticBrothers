@@ -46,7 +46,7 @@
             v-model="message"
           ></textarea>
 
-          <button type="submit" class="btn btn-primary" style="max-width: 45%;">
+          <button type="submit" class="btn btn-primary" style="max-width: 45%">
             {{ buttonMsg }}
           </button>
         </form>
@@ -54,9 +54,7 @@
           <font-awesome-icon icon="phone" />
           <h2>Bel ons!</h2>
 
-          <p>
-            We staan altijd klaar om te antwoorden op alle prangende vragen!
-          </p>
+          <p>We staan klaar om al jouw prangende vragen te beantwoorden!</p>
           <h3>06-18676722</h3>
         </div>
       </div>
