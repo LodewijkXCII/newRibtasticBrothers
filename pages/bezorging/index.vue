@@ -7,9 +7,9 @@
         <p>
           Ribtastic Brothers bij je thuis? Het kan nu! Na de DIY pakketten gaan
           we nog een stapje verder met bezorging. Heerlijk warm bij je thuis via
-          Deliveroo of UberEats. Hieronder is ons menu te vinden. Via de links
-          kan je naar de juiste pagina's voor Deliveroo en UberEats gaan.
-          Vergeet ook zeker niet onze introvideo te bekijken!
+          Deliveroo of UberEats. Verder tref je op deze pagina ons menu en het
+          bezorggebeid. Via onderstaande buttons kom je direct op de juiste
+          bestelpagina's van jouw favoriete bezorgdienst.
         </p>
         <div class="delivery_links">
           <a
@@ -40,7 +40,10 @@
         :key="categorie"
         class="bezorging__categorie"
       >
-        <div class="bezorging__categorie--image">
+        <div
+          class="bezorging__categorie--image"
+          :class="categorie.toLowerCase()"
+        >
           <img
             :src="`https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/trb_category_${categorie.toLowerCase()}.jpg`"
             alt=""
@@ -158,7 +161,7 @@ export default {
   &__categorie {
     display: grid;
     gap: 0.5rem;
-    margin: 4rem 0;
+    margin: 8rem 0;
     &:nth-child(even) {
       direction: rtl;
 
@@ -172,6 +175,11 @@ export default {
       height: 100%;
       overflow: hidden;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      user-select: none;
       img {
         height: 100%;
         width: auto;
@@ -186,6 +194,20 @@ export default {
         align-items: center;
         color: white;
         background: rgba($color: #000000, $alpha: 0.3);
+      }
+
+      &.chicken,
+      &.sides {
+        grid-row: 1/3;
+      }
+      &.spareribs {
+        grid-row: 1/4;
+
+        img {
+          left: -80%;
+          margin-left: -200px;
+          position: absolute;
+        }
       }
     }
   }
