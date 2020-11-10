@@ -259,7 +259,7 @@ nav {
       }
 
       .navList {
-        padding: 1em;
+        padding: 0.5em 0;
         display: flex;
         .mob-hid {
           display: inherit;

@@ -8,29 +8,6 @@
     </section>
     <section class="visitie__right">
       <h1>The Ribtastic Brothers</h1>
-      <ul>
-        <li>Naam: Art van Eeden Petersman</li>
-        <li>EMAIL:eat@ribtasticbrothers.nl</li>
-        <li>TEL:0618676722</li>
-        <li>URL:www.ribtasticbrothers.nl</li>
-      </ul>
-
-      <!-- <p>
-        Leuk dat je interesse hebt, vinden we tof!<br />
-        Er is even wat miscommunicatie ontstaan tussen ons en de Buik. We zijn
-        31 juli namelijk gestopt met het leveren van onze DIY pakketten. 😓😥
-      </p>
-      <p>
-        Dit zodat we nu wat meer tijd hebben om ons te focussen op het up and
-        running krijgen van onze warme maaltijdvisitie. 🤤🍗🍔🚲
-      </p>
-      <p>
-        Halverwege september staat de livegang gepland, en dan kunnen we je nog
-        beter van dienst zijn.
-      </p>
-      <p>
-        Vind je het goed als we je dan weer benaderen voor full experience?
-      </p> -->
 
       <a href="/Ribtastic_Brothers.vcf" class="btn btn-primary"
         >Download contact</a

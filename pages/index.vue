@@ -120,6 +120,7 @@ export default {
 html {
   font-family: $ft-lato;
   font-size: 16px;
+  line-height: 1.75;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -134,6 +135,13 @@ body {
   color: #ffffff;
 }
 
+@media (min-width: 650px) {
+  html {
+    font-size: 19px;
+    line-height: 1.75;
+  }
+}
+
 .container {
   max-width: $max-width;
   margin: auto 1em;
@@ -142,7 +150,7 @@ body {
   &-fluid {
     max-width: 750px;
     margin: auto;
-    padding: 3em 1em;
+    padding: 5em 1em;
   }
 }
 .wrapper {
@@ -236,10 +244,10 @@ img {
 
     @media (min-width: 650px) {
       h1 {
-        font-size: 10em;
+        font-size: 8em;
       }
       h2 {
-        font-size: 3.5em;
+        font-size: 3em;
       }
     }
 
@@ -256,6 +264,7 @@ img {
         a {
           margin: 0;
           margin-left: 1.5em;
+          font-size: 0.65rem;
         }
       }
     }
@@ -354,12 +363,14 @@ main {
     grid-gap: 1.8em;
   }
 }
-
+.partners {
+  margin: 2rem 0;
+}
 .partnersOverview {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
-  margin: 1em;
+  margin: 2rem 0;
 
   .partner {
     background: $off-black-color;
@@ -390,6 +401,7 @@ main {
       color: $secondary-color;
       p {
         font-size: 0.75rem;
+        margin: 0 0.5rem;
       }
     }
   }
