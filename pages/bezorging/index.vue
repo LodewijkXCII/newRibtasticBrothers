@@ -19,7 +19,11 @@
             Deliveroo
           </a>
 
-          <a class="btn btn-primary disabled">UberEats</a>
+          <a
+            class="btn btn-primary"
+            href="https://www.ubereats.com/rotterdam/food-delivery/the-ribtastic-brothers-rotterdam/3s-RdoMYRfuUdjhainvmuA"
+            >UberEats</a
+          >
         </div>
       </div>
       <div class="bezorgIntro__video">
@@ -202,12 +206,6 @@ export default {
       }
       &.spareribs {
         grid-row: 1/4;
-
-        img {
-          left: -80%;
-          margin-left: -200px;
-          position: absolute;
-        }
       }
     }
   }
@@ -241,6 +239,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 1rem 2rem;
     &--img img {
       border-radius: 15px 15px 0 0;
     }
@@ -253,7 +252,10 @@ export default {
       justify-content: space-between;
       height: 100%;
       h4 {
-        margin: 0;
+        font-size: 0.8rem;
+      }
+      p {
+        font-size: 0.7rem;
       }
     }
     &:hover {
@@ -290,7 +292,7 @@ export default {
   .bezorging {
     width: 100%;
     &__categorie {
-      grid-template-columns: repeat(5, minmax(10rem, 1fr));
+      grid-template-columns: repeat(4, minmax(10rem, 1fr));
       grid-template-rows: 450px;
       gap: 1.5rem;
       padding: 0 5rem;
@@ -298,6 +300,15 @@ export default {
   }
   .bezorgOption {
     padding: 0 1.5rem 0;
+    &__gerecht {
+      margin: 0;
+      &--text {
+        h4,
+        p {
+          margin: 0;
+        }
+      }
+    }
     &__grid {
       grid-template-columns: repeat(4, 1fr);
     }

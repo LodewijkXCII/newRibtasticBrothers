@@ -5,7 +5,7 @@
       &euro;{{ price }}
       <span>/persoon</span>
     </p>
-    <p style="padding-left: 1.5em;">BEVAT:</p>
+    <p style="padding-left: 1.5em">BEVAT:</p>
     <ul class="cateringCard__list">
       <li
         v-for="cateringProduct in cateringProducts"
@@ -91,7 +91,7 @@ export default {
       &--item {
         position: relative;
         margin: 0.45em 0;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
 
         &::before {
           content: '';
@@ -147,7 +147,8 @@ export default {
 @media (min-width: 650px) {
   .cateringWrapper {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1em;
+    grid-gap: 1.5em;
+    margin: 0;
   }
 }
 </style>

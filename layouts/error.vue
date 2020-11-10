@@ -1,13 +1,17 @@
 <template>
   <div class="__nuxt-error-page">
     <div class="cateringTitle">
-      <section class="cateringTitle__left">
+      <section class="cateringTitle__leftError">
         <img
           src="https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/no_food_left.jpg"
         />
       </section>
       <section class="cateringTitle__right">
         <h1>{{ message }}</h1>
+        <p>
+          Kan gebeuren uiteraard. Maar via de link hieronder kan je direct terug
+          naar het feestje gaan!
+        </p>
         <div class="cateringTitle__right--container">
           <div class="cateringTitle__right--container--text" id="top">
             <NuxtLink class="error-link" to="/">
@@ -65,7 +69,7 @@ export default {
     height: 100vh;
     width: 100%;
 
-    &__left {
+    &__leftError {
       overflow: hidden;
       height: 100%;
       display: flex;

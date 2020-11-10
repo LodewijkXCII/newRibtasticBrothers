@@ -45,9 +45,11 @@
         Wij nemen de verantwoordelijkheid om zo duurzaam mogelijk te ondernemen,
         zodat we samen nog lang kunnen genieten van onze aardekloot.
       </p>
+      <div class="btn btn-line">
+        <nuxt-link to="catering">Catering</nuxt-link>
+      </div>
     </div>
     <!-- <SmallGallery :images="images" /> -->
-    <div class="btn btn-line">Catering</div>
   </div>
 </template>
 

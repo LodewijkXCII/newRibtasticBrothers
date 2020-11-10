@@ -22,15 +22,11 @@
         over de boulevard. Kortom een perfecte mix tussen onze authenticiteit en
         mobiliteit, zodat iedereen kennis kan maken met de Ribtastic Brothers.
       </p>
-      <p>
-        De fiets is vanaf scratch zelf ontworpen en gebouwd.
-      </p>
-      <p>
-        Have you ever seen something like this?
-      </p>
-    </div>
-    <div class="btn btn-line">
-      <nuxt-link to="catering">Catering</nuxt-link>
+      <p>De fiets is vanaf scratch zelf ontworpen en gebouwd.</p>
+      <p>Have you ever seen something like this?</p>
+      <div class="btn btn-line">
+        <nuxt-link to="catering">Catering</nuxt-link>
+      </div>
     </div>
     <!-- <SmallGallery v-if="images" v-bind:images="images.image[0].images" /> -->
     <!-- <BouwProces /> -->
