@@ -82,7 +82,7 @@
         <h2>Bezorggebied</h2>
         <p>
           Helaas bezorgen we nog niet in heel Nederland. We werken samen met
-          Deliveroo en UberEats om onze bezorging uit te voeren. Zij hebben dan
+          Deliveroo en UberEats om onze Rotterdamse bezorging van alle heerlijke BBQ creaties uit te voeren. Zij hebben dan
           ook een maximaal bezorggebied aangegeven. Dit gebied is 3km van onze
           keuken vandaan. In de afbeelding hieronder is te zien wat het gebied
           is waar we bezorgen!
