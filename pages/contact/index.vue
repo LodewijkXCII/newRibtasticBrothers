@@ -43,7 +43,7 @@
             id="message"
             cols="30"
             rows="5"
-            v-model="message"
+            v-model="contact.message"
           ></textarea>
 
           <button type="submit" class="btn btn-primary" style="max-width: 45%">
@@ -98,11 +98,11 @@ export default {
       if (this.contact.name && this.contact.email)
         try {
           const contactSend = await this.$axios.$post(
-            'https://ribtasticbrothers.herokuapp.com/email',
-            // 'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
+            // 'https://ribtasticbrothers.herokuapp.com/email',
+            'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
             {
               to: 'eat@ribtasticbrothers.nl',
-              from: 'eat@ribtasticbrothers.nl',
+              from: 'contact@ribtasticbrothers.nl',
               replyTo: 'eat@ribtasticbrothers.nl',
               subject: 'Een nieuwe contact formulier aanvraag!',
               html: `<h1>Er is een nieuwe contactformulier van ${this.contact.name}</h1>,
