@@ -3,12 +3,12 @@
     <ImageHeader v-bind="heading" :image="image" />
     <section class="container bezorgIntro">
       <div class="bezorgIntro__text">
-        <h2>Bezorging</h2>
+        <h2>Bezorging via Deliveroo en UberEats</h2>
         <p>
-          Ribtastic Brothers bij je thuis? Het kan nu! Na de DIY pakketten gaan
+          The Ribtastic Brothers bij je thuis? Het kan nu! Na de DIY pakketten gaan
           we nog een stapje verder met bezorging. Heerlijk warm bij je thuis via
           Deliveroo of UberEats. Verder tref je op deze pagina ons menu en het
-          bezorggebeid. Via onderstaande buttons kom je direct op de juiste
+          bezorggebeid van Rotterdam. Via onderstaande buttons kom je direct op de juiste
           bestelpagina's van jouw favoriete bezorgdienst.
         </p>
         <div class="delivery_links">
@@ -117,8 +117,8 @@ export default {
   data() {
     return {
       heading: {
-        title: 'Bezorging',
-        subtitle: 'Zowel bij Deliveroo en UberEats',
+        title: 'Rotterdamse bezorging',
+        subtitle: 'Spareribs, Chicken Wings en meer',
       },
       gerechten: [],
       email: '',
