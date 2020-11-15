@@ -105,7 +105,7 @@ export default {
               from: 'contact@ribtasticbrothers.nl',
               replyTo: 'eat@ribtasticbrothers.nl',
               subject: 'Een nieuwe contact formulier aanvraag!',
-              html: `<h1>Er is een nieuwe contactformulier van ${this.contact.name}</h1>,
+              html: `<h1>Er is een nieuwe contactformulier van ${this.contact.name}</h1>
                 <h2>De gegevens zijn als volgt:</h2>
                 <p>${this.contact.message}</p>
                 <ul>
