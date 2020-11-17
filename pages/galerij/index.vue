@@ -45,7 +45,7 @@ import axios from '@nuxtjs/axios'
 
 export default {
   head: {
-    title: 'Geweldige Gallerij | The Ribtastic Brothers',
+    title: 'Geweldige Galerij | The Ribtastic Brothers',
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
   },
   components: {
@@ -55,7 +55,7 @@ export default {
   data() {
     return {
       heading: {
-        title: 'Gallerij',
+        title: 'Galerij',
         subtitle: 'Plaatjes en Daadjes',
       },
 
