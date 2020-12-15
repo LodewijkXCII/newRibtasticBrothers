@@ -5,11 +5,11 @@
       <div class="bezorgIntro__text">
         <h2>Bezorging via Deliveroo en UberEats</h2>
         <p>
-          The Ribtastic Brothers bij je thuis? Het kan nu! Na de DIY pakketten gaan
-          we nog een stapje verder met bezorging. Heerlijk warm bij je thuis via
-          Deliveroo of UberEats. Verder tref je op deze pagina ons menu en het
-          bezorggebeid van Rotterdam. Via onderstaande buttons kom je direct op de juiste
-          bestelpagina's van jouw favoriete bezorgdienst.
+          The Ribtastic Brothers bij je thuis? Het kan nu! Na de DIY pakketten
+          gaan we nog een stapje verder met bezorging. Heerlijk warm bij je
+          thuis via Deliveroo of UberEats. Verder tref je op deze pagina ons
+          menu en het bezorggebeid van Rotterdam. Via onderstaande buttons kom
+          je direct op de juiste bestelpagina's van jouw favoriete bezorgdienst.
         </p>
         <div class="delivery_links">
           <a
@@ -82,10 +82,10 @@
         <h2>Bezorggebied</h2>
         <p>
           Helaas bezorgen we nog niet in heel Nederland. We werken samen met
-          Deliveroo en UberEats om onze Rotterdamse bezorging van alle heerlijke BBQ creaties uit te voeren. Zij hebben dan
-          ook een maximaal bezorggebied aangegeven. Dit gebied is 3km van onze
-          keuken vandaan. In de afbeelding hieronder is te zien wat het gebied
-          is waar we bezorgen!
+          Deliveroo en UberEats om onze Rotterdamse bezorging van alle heerlijke
+          BBQ creaties uit te voeren. Zij hebben dan ook een maximaal
+          bezorggebied aangegeven. Dit gebied is 3km van onze keuken vandaan. In
+          de afbeelding hieronder is te zien wat het gebied is waar we bezorgen!
         </p>
       </div>
       <div class="radius__image">
@@ -124,7 +124,7 @@ export default {
       email: '',
       message: 'Aanmelden',
       image:
-        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/delivery_ribtastic_brothers.jpg',
+        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/Ribtastic-brothers-bezorging-ubereats-deliveroo.jpg',
     }
   },
 
@@ -202,10 +202,10 @@ export default {
 
       &.chicken,
       &.sides {
-        grid-row: 1/3;
+        grid-row: 1/2;
       }
       &.spareribs {
-        grid-row: 1/4;
+        grid-row: 1/2;
       }
     }
   }
