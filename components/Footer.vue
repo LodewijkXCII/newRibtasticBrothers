@@ -47,7 +47,7 @@
               <nuxt-link to="/catering" class="about-link">Catering</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/gallerij" class="about-link">Gallerij</nuxt-link>
+              <nuxt-link to="/galerij" class="about-link">Galerij</nuxt-link>
             </li>
             <li>
               <nuxt-link to="/bezorging" class="about-link"

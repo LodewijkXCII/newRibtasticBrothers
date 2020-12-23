@@ -1,6 +1,6 @@
 <template>
   <div class="galleryPost">
-    <nuxt-link :to="`/gallerij/${slug}`">
+    <nuxt-link :to="`/galerij/${slug}`">
       <img
         v-bind:src="thumbnailImage"
         v-bind:alt="title"

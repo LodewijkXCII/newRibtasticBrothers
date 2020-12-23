@@ -46,7 +46,7 @@
       >
         <div
           class="bezorging__categorie--image"
-          :class="categorie.toLowerCase()"
+          :class="categorie.toLowerCase().slice(2)"
         >
           <img
             :src="`https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/trb_category_${categorie.toLowerCase()}.jpg`"
@@ -69,8 +69,15 @@
           </div>
           <div class="bezorgOption__gerecht--text">
             <div>
-              <h4>{{ meal.title }}</h4>
-              <p>{{ meal.korte_omschrijving }}</p>
+              <h4>{{ meal.titel }}</h4>
+              <p>{{ meal.omschrijving }}</p>
+              <div v-if="meal.sauzens.length">
+               <p><span>In een van de volgende smaken:</span>
+                <ul v-for="saus in meal.sauzens" :key="saus.id">
+                  <li>{{ saus.titel }}</li>
+                </ul>
+                </p>
+              </div>
             </div>
             <small class="price">&euro; {{ meal.prijs.toFixed(2) }}</small>
           </div>
@@ -129,14 +136,24 @@ export default {
   },
 
   async mounted() {
-    const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-products'
-    // const url = 'http://localhost:1337/bezorg-products'
+    // const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-products'
+    const url = 'http://localhost:1337/bezorg-productens?_sort=categorie,location'
 
     try {
       const { data } = await this.$axios.get(url)
       // sort data by categorie met lodash //
-      const sortedData = _.groupBy(data, (gerecht) => gerecht.categorie)
-      this.gerechten = sortedData
+
+      
+      const sortedData = _.groupBy(data, (gerecht) => gerecht.categorie.slice(2))
+
+    // const sortedData = _(data)
+    //   .groupBy((gerecht) => gerecht.categorie)
+    //   .sortBy((prijs) => data.prijs)
+    //   .value();
+
+console.log(sortedData);
+this.gerechten = sortedData
+      
     } catch (error) {
       console.log(error)
     }
@@ -306,7 +323,34 @@ export default {
         h4,
         p {
           margin: 0;
+        };
+
+        p:last-child {
+          margin-top: 1rem;
         }
+        span {
+          color: $primary-color;
+          font-weight: 700;
+          margin-top: .2rem
+        };
+        li {
+        list-style: none;
+        position: relative;
+        margin: 0.45em 0;
+        font-size: 0.6rem;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 5px;
+          height: 5px;
+          left: -15px;
+          top: 50%;
+          border-radius: 50%;
+          background: $off-primary-color;
+        }
+
+        };
       }
     }
     &__grid {

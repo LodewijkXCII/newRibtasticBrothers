@@ -19,7 +19,7 @@
     </div>
     <div class="container sauzen">
       <div class="saus" v-for="saus in sauzen" :key="saus.id">
-        <img :src="saus.image.url" alt />
+        <img :src="saus.image.url" :alt="saus.title" v-if="saus.image" />
         <div class="saus__text">
           <h2>{{ saus.title }}</h2>
           <p>{{ saus.description }}</p>
@@ -59,20 +59,23 @@ export default {
     }
   },
   asyncData(context) {
-    return context.app.$axios
-      .get('https://ribtasticbrothers.herokuapp.com/saus')
-      .then((res) => {
-        return {
-          sauzen: res.data.map((saus) => {
-            return {
-              id: saus.id,
-              title: saus.title,
-              description: saus.omschrijving,
-              image: saus.afbeelding,
-            }
-          }),
-        }
-      })
+    return (
+      context.app.$axios
+        // .get('https://ribtasticbrothers.herokuapp.com/saus')
+        .get('http://localhost:1337/sauzens')
+        .then((res) => {
+          return {
+            sauzen: res.data.map((saus) => {
+              return {
+                id: saus.id,
+                title: saus.titel,
+                description: saus.omschrijving,
+                image: saus.afbeelding,
+              }
+            }),
+          }
+        })
+    )
   },
 }
 </script>

@@ -37,7 +37,7 @@
           <nuxt-link to="/bezorging">Bezorging</nuxt-link>
         </li>
         <li class="list-item">
-          <nuxt-link to="/gallerij">Gallerij</nuxt-link>
+          <nuxt-link to="/galerij">Galerij</nuxt-link>
         </li>
         <li class="list-item">
           <a href="#" @click="dropDown()"
