@@ -2,7 +2,7 @@
   <div class="delivery">
     <section class="delivery__left">
       <a
-        href="https://www.ubereats.com/rotterdam/food-delivery/the-ribtastic-brothers-rotterdam/3s-RdoMYRfuUdjhainvmuA"
+        href="https://order.ubereats.com/rotterdam/food-delivery/The%20Ribtastic%20Brothers%20-%20Rotterdam/3s-RdoMYRfuUdjhainvmuA/?utm_source=web-restaurant-manager"
       >
         <div class="container">
           <img src="@/assets/img/partners/uberEats.svg" alt="UberEats" />
