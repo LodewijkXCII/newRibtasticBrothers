@@ -61,8 +61,8 @@ export default {
   asyncData(context) {
     return (
       context.app.$axios
-        // .get('https://ribtasticbrothers.herokuapp.com/saus')
-        .get('http://localhost:1337/sauzens')
+        .get('https://ribtasticbrothers.herokuapp.com/sauzens')
+        // .get('http://localhost:1337/sauzens')
         .then((res) => {
           return {
             sauzen: res.data.map((saus) => {

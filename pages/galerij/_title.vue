@@ -48,7 +48,7 @@ export default {
   asyncData(context) {
     return context.app.$axios
       .get(
-        `https://ribtasticbrothers.herokuapp.com/event-galleries?calender.slug=${context.params.title}`
+        `https://ribtasticbrothers.herokuapp.com/event-gallerijs?kalender.slug=${context.params.title}`
       )
       .then((res) => {
         return {

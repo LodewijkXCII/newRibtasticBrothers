@@ -94,11 +94,6 @@ export default {
           url: 'https://www.brouwerijnoordt.nl',
         },
         {
-          name: 'El Parador',
-          logo: 'el_parador.png',
-          url: 'https://www.elparador.nl/',
-        },
-        {
           name: 'Snoei Salades',
           logo: 'snoeisaladslogo.png',
           url: 'https://www.snoeisalads.nl/',

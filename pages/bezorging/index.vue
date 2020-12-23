@@ -62,9 +62,9 @@
         >
           <div class="bezorgOption__gerecht--img">
             <img
-              v-if="meal.image"
-              :src="meal.image.url"
-              :alt="meal.image.caption"
+              v-if="meal.afbeelding"
+              :src="meal.afbeelding.url"
+              :alt="meal.afbeelding.caption"
             />
           </div>
           <div class="bezorgOption__gerecht--text">
@@ -136,23 +136,13 @@ export default {
   },
 
   async mounted() {
-    // const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-products'
-    const url = 'http://localhost:1337/bezorg-productens?_sort=categorie,location'
+    const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-productens?_sort=categorie,location'
+    // const url = 'http://localhost:1337/bezorg-productens?_sort=categorie,location'
 
     try {
-      const { data } = await this.$axios.get(url)
-      // sort data by categorie met lodash //
-
-      
-      const sortedData = _.groupBy(data, (gerecht) => gerecht.categorie.slice(2))
-
-    // const sortedData = _(data)
-    //   .groupBy((gerecht) => gerecht.categorie)
-    //   .sortBy((prijs) => data.prijs)
-    //   .value();
-
-console.log(sortedData);
-this.gerechten = sortedData
+      const { data } = await this.$axios.get(url);
+      /* sort data by categorie met lodash */      
+      this.gerechten = _.groupBy(data, (gerecht) => gerecht.categorie.slice(2));
       
     } catch (error) {
       console.log(error)
@@ -310,7 +300,7 @@ this.gerechten = sortedData
     width: 100%;
     &__categorie {
       grid-template-columns: repeat(4, minmax(10rem, 1fr));
-      grid-template-rows: 450px;
+      grid-template-rows: auto;
       gap: 1.5rem;
       padding: 0 5rem;
     }

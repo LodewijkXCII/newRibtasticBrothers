@@ -118,17 +118,17 @@ export default {
   },
   asyncData(context) {
     const cateringOptions =
-      'https://ribtasticbrothers.herokuapp.com/catering-options'
+      'https://ribtasticbrothers.herokuapp.com/catering-opties'
 
     return context.app.$axios.get(cateringOptions).then((res) => {
       return {
         catering: res.data.map((option) => {
           return {
             id: option.id,
-            name: option.name,
-            price: option.price,
-            cateringProducts: option.catering_products,
-            recommended: option.recommended,
+            name: option.titel,
+            price: option.prijs,
+            cateringProducts: option.catering_productens,
+            recommended: option.aanbevolen,
             slug: option.slug,
           }
         }),

@@ -65,7 +65,7 @@ export default {
   async mounted() {
     try {
       const { data } = await this.$axios.get(
-        'https://ribtasticbrothers.herokuapp.com/gallery-images/1'
+        'https://ribtasticbrothers.herokuapp.com/event-gallerijs/1'
       )
       this.images = data
     } catch (error) {
