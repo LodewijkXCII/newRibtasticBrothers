@@ -49,18 +49,18 @@ export default {
   asyncData(context) {
     return context.app.$axios
       .get(
-        `https://ribtasticbrothers.herokuapp.com/catering-options?slug=${context.params.title}`
+        `https://ribtasticbrothers.herokuapp.com/catering-opties?slug=${context.params.title}`
       )
       .then((res) => {
         return {
           catering: {
             id: res.data[0].id,
-            name: res.data[0].name,
-            subTitle: res.data[0].subTitle,
-            price: res.data[0].price,
-            discription: res.data[0].discription,
-            image: res.data[0].image,
-            cateringProducts: res.data[0].catering_products,
+            name: res.data[0].titel,
+            subTitle: res.data[0].subtitel,
+            price: res.data[0].prijs,
+            discription: res.data[0].omschrijving,
+            image: res.data[0].afbeelding,
+            cateringProducts: res.data[0].catering_productens,
           },
         }
       })

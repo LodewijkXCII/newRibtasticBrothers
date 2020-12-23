@@ -12,7 +12,7 @@
         :key="cateringProduct.id"
         class="cateringCard__list--item"
       >
-        {{ cateringProduct.name }}
+        {{ cateringProduct.titel }}
       </li>
     </ul>
     <nuxt-link :to="{ name: 'catering-title', params: { title: slug } }" tag="a"
