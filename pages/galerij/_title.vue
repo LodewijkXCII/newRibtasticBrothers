@@ -4,7 +4,7 @@
       <h1>{{ gallery.title }}</h1>
       <h2>{{ gallery.locatie }}</h2>
       <p v-if="gallery.description">{{ gallery.description }}</p>
-      <n-link to="/gallerij" class="btn btn-inline"
+      <n-link to="/galerij" class="btn btn-inline"
         >Terug naar het overzicht</n-link
       >
 
@@ -28,7 +28,7 @@ import axios from '@nuxtjs/axios'
 
 export default {
   head: {
-    title: `Gallerij | The Ribtastic Brothers`,
+    title: `Galerij | The Ribtastic Brothers`,
     meta: [
       {
         hid: 'description',

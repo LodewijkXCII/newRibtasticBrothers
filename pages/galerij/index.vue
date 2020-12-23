@@ -13,7 +13,7 @@
         </p>
         <p>
           Mocht je een foto willen gebruiken mag dat, mits je ons natuurlijk
-          even tagged via de bekende kanalen.
+          even tagged via de bekende kanalen...
         </p>
       </div>
 

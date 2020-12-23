@@ -55,8 +55,8 @@
         </div>
       </div>
 
-      <nuxt-link to="/gallerij" class="btn btn-primary">
-        Impressie gallerij
+      <nuxt-link to="/galerij" class="btn btn-primary">
+        Impressie galerij
         <font-awesome-icon :icon="'images'" />
       </nuxt-link>
     </div>
