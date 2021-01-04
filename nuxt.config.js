@@ -102,6 +102,7 @@ export default {
         ],
       },
     ],
+    ['nuxt-sass-resources-loader', ['./assets/css/config.scss']],
   ],
   markdownit: {
     preset: 'default',
