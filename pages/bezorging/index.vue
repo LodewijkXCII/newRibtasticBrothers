@@ -108,7 +108,7 @@
 </template>
 
 <script>
-import axios from '@nuxtjs/axios'
+
 import _ from 'lodash'
 
 import Counter from '@/components/Counter.vue'
