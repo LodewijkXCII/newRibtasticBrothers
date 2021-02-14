@@ -7,9 +7,10 @@
         :key="partner.id"
         class="cateringPartner__partner"
       >
-        <h4 class="cateringPartner__partner--title">{{ partner.Company }}</h4>
+        <h4 class="cateringPartner__partner--title">{{ partner.bedrijf }}</h4>
         <img
-          :src="partner.logo[0].url"
+          v-if="partner.logo"
+          :src="partner.logo.url"
           alt=""
           class="cateringPartner__partner--img"
         />
@@ -19,8 +20,6 @@
 </template>
 
 <script>
-import axios from '@nuxtjs/axios'
-
 export default {
   data() {
     return {
@@ -31,9 +30,7 @@ export default {
     const { data } = await this.$axios.get(
       'https://ribtasticbrothers.herokuapp.com/catering-partners'
     )
-    const partners = data.forEach((partner) => {
-      this.partners.push(partner)
-    })
+    this.partners = data
   },
 }
 </script>
