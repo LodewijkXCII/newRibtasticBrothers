@@ -117,6 +117,13 @@ import ImageHeader from '@/components/ImageHeader.vue'
 export default {
   head: {
     title: `Bezorging | The Ribtastic Brothers`,
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Home page description',
+      },
+    ],
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
   },
   components: {
@@ -138,8 +145,8 @@ export default {
   },
 
   async mounted() {
-    const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-productens?_sort=categorie,location'
-    // const url = 'http://localhost:1337/bezorg-productens?_sort=categorie,location'
+    // const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-productens?_sort=categorie,location'
+    const url = 'http://localhost:1337/bezorg-productens?_sort=categorie,location'
 
     try {
       const { data } = await this.$axios.get(url);
