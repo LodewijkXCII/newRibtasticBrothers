@@ -7,7 +7,7 @@
     >
       <div class="bezorging__categorie--image">
         <img
-          :src="`https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/trb_category_${categorie}.jpg`"
+          :src="`https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/trb_category_${categorie}.jpg`"
           alt=""
         />
       </div>

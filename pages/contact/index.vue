@@ -89,7 +89,7 @@ export default {
         subtitle: 'Laat van je horen!',
       },
       image:
-        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_brothers_contact+(1).jpg',
+        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_contact+(1).jpg',
     }
   },
   methods: {

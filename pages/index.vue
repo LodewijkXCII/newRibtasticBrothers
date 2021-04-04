@@ -194,7 +194,7 @@ img {
   &::after {
     content: '';
     width: 100%;
-    background: url(https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/catering_foodtruck_bbq-min.jpg);
+    background: url(https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/catering_foodtruck_bbq-min.jpg);
     background-attachment: fixed;
     height: 100vh;
     opacity: 0.85;
@@ -418,7 +418,7 @@ section.events {
   position: relative;
   margin-top: 2em;
   background: rgba(0, 0, 0, 0.5);
-  background: url(https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/catering_spareribs_ribtastic_min_552c73a808.jpg);
+  background: url(https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/catering_spareribs_ribtastic_min_552c73a808.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

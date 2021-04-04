@@ -60,7 +60,7 @@ export default {
       },
 
       image:
-        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_brothers_gallerij+(1).jpg',
+        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_gallerij+(1).jpg',
     }
   },
   async asyncData(context) {

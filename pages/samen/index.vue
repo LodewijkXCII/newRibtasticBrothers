@@ -76,7 +76,7 @@ export default {
           'May you always be surrounded by\ngood friends and awesome BBQ',
       },
       image:
-        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_brothers_samen.jpg',
+        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_samen.jpg',
       images: [
         { src: 'catering_foodtruck_spareribs-min.jpg', alt: 'header1' },
         { src: 'header_1.jpg', alt: 'header2' },

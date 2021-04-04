@@ -3,7 +3,7 @@
     <div class="cateringTitle">
       <section class="cateringTitle__leftError">
         <img
-          src="https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/no_food_left.jpg"
+          src="https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/no_food_left.jpg"
         />
       </section>
       <section class="cateringTitle__right">
