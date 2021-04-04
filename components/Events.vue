@@ -5,7 +5,7 @@
         <h6>{{ $moment(event.datum).format('dddd DD MMM') }}</h6>
       </div>
       <div class="eventItem__info">
-        <h4>{{ event.title }}</h4>
+        <h4>{{ event.titel }}</h4>
         <small>{{ event.locatie }}</small>
         <a v-if="event.link" :href="event.link">Bekijk event</a>
       </div>
