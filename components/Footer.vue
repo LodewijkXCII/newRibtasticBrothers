@@ -19,18 +19,6 @@
         </div>
       </div>
       <div class="footer__links">
-        <!-- <div class="links__partner">
-          <h2>Partners</h2>
-          <ul v-for="partner in partners" v-bind:key="partner.id">
-            <li class="blog-link">{{ partner.name }}</li>
-          </ul>
-        </div>
-        <div class="links__blog">
-          <h2>Blog</h2>
-          <ul v-for="post in posts" v-bind:key="post.id">
-            <li class="blog-link">{{ post.title }}</li>
-          </ul>
-        </div>-->
         <div class="links__about">
           <h2>Over Ribtastic</h2>
           <ul>
@@ -67,20 +55,7 @@
 <script>
 export default {
   data() {
-    return {
-      partners: [
-        { name: 'Brouwerij Noordt' },
-        { name: 'El Parador' },
-        { name: 'Fat and Lazy' },
-      ],
-      posts: [
-        { title: 'BBQ, bbq of barbeku?' },
-        { title: 'Wat doen die brothers nou?' },
-        { title: 'De buik schreef over ons!' },
-        { title: 'We hebben een nieuwe saus!' },
-        { title: 'BBQ-en doe je zo' },
-      ],
-    }
+    return {}
   },
 }
 </script>

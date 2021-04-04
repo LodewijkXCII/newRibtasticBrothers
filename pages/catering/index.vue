@@ -104,12 +104,6 @@ export default {
       image:
         'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/ribtastic_brothers_catering+(1).jpg',
     }
-    images: [
-      { src: 'catering_bbq_4.jpg', alt: 'header1' },
-      { src: 'catering_bbq_1.jpg', alt: 'catering_bbq2' },
-      { src: 'catering_bbq_2.jpg', alt: 'catering_bbq3' },
-      { src: 'catering_bbq_3.jpg', alt: 'catering_bbq4' },
-    ]
   },
   computed: {
     orderedOptions() {

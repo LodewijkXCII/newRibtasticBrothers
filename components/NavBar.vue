@@ -48,11 +48,6 @@
         <li class="list-item">
           <nuxt-link to="/contact">Contact</nuxt-link>
         </li>
-        <!-- <li class="list-item mob-hid">
-          <nuxt-link to="/blog">
-            Blog
-          </nuxt-link>
-        </li>-->
       </ul>
     </div>
     <div

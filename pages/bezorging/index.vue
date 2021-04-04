@@ -26,6 +26,12 @@
             href="https://order.ubereats.com/rotterdam/food-delivery/The%20Ribtastic%20Brothers%20-%20Rotterdam/3s-RdoMYRfuUdjhainvmuA/?utm_source=web-restaurant-manager"
             >UberEats</a
           >
+          <a
+            class="btn btn-primary"
+            target="_blank"
+            href="https://www.thuisbezorgd.nl/en/menu/the-ribtastic-brothers"
+            >Thuisbezorgd</a
+          >
         </div>
       </div>
       <div class="bezorgIntro__video">
