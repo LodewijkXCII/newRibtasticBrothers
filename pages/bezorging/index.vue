@@ -146,13 +146,13 @@ export default {
       email: '',
       message: 'Aanmelden',
       image:
-        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/Ribtastic-brothers-bezorging-ubereats-deliveroo.jpg',
+        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/Ribtastic-brothers-bezorging-ubereats-deliveroo.jpg',
     }
   },
 
   async mounted() {
-    // const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-productens?_sort=categorie,location'
-    const url = 'http://localhost:1337/bezorg-productens?_sort=categorie,location'
+    const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-productens?_sort=categorie,location'
+    // const url = 'http://localhost:1337/bezorg-productens?_sort=categorie,location'
 
     try {
       const { data } = await this.$axios.get(url);
