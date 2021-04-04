@@ -35,7 +35,7 @@
     </main>
     <section class="events">
       <div class="container">
-        <h1>Agenda 2020</h1>
+        <h1>Agenda 2021</h1>
         <Events />
       </div>
     </section>
