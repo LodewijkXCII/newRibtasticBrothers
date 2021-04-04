@@ -43,7 +43,7 @@ export default {
   // },
   async fetch() {
     const { data } = await this.$axios.get(
-      'https://ribtasticbrothers.herokuapp.com/calenders'
+      'https://ribtasticbrothers.herokuapp.com/kalenders'
     )
     const today = new Date()
     const upcomming = data.forEach((event) => {
