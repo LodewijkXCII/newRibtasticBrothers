@@ -59,7 +59,7 @@ export default {
         subtitle: 'Ons nobel ros',
       },
       image:
-        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_bbq_bakfiets_catering.jpeg',
+        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_bbq_bakfiets_catering.jpg',
     }
   },
   async mounted() {
