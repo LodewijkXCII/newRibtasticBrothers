@@ -55,7 +55,7 @@ export default {
         subtitle: 'Onze geheime formule',
       },
       image:
-        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_bbq_saus_juicy_f6b768fae5.jpeg',
+        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_bbq_saus_juicy.jpeg',
     }
   },
   asyncData(context) {
