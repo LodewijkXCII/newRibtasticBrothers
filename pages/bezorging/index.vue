@@ -57,7 +57,7 @@
           :class="categorie.toLowerCase().slice(2)"
         >
           <img
-            :src="`https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/trb_category_${categorie.toLowerCase()}.jpg`"
+            :src="`https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/trb_category_${categorie.toLowerCase()}.jpg`"
             alt=""
           />
           <h2>{{ categorie }}</h2>
