@@ -25,6 +25,85 @@ export default {
 </script>
 
 <style lang="scss">
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: $ft-lato;
+  font-size: 16px;
+  line-height: 1.75;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+@media (min-width: 650px) {
+  html {
+    font-size: 19px;
+    line-height: 1.75;
+  }
+}
+
+.container {
+  max-width: $max-width;
+  margin: auto 1em;
+  padding: 1em 0;
+
+  &-fluid {
+    max-width: 750px;
+    margin: auto;
+    padding: 5em 1em;
+  }
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+@media (min-width: 650px) {
+  .container {
+    margin: auto;
+    padding: 3em 0;
+
+    &-fluid {
+      padding: 3em 0;
+    }
+  }
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: 0.5s;
+
+  &:hover {
+    color: #697564;
+  }
+}
+
+img {
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
 .btn {
   cursor: pointer;
   text-decoration: none;
