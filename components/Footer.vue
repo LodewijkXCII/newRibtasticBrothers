@@ -16,6 +16,11 @@
           >
             <font-awesome-icon :icon="['fab', 'instagram']" />
           </a>
+          <a
+            href="mailto:eat@ribtasticbrothers.nlsubject=Website Contact The Ribtastic Brothers"
+          >
+            <font-awesome-icon :icon="['fas', 'envelope']" />
+          </a>
         </div>
       </div>
       <div class="footer__links">
@@ -49,6 +54,11 @@
         </div>
       </div>
     </div>
+    <!-- <div>
+      <p>
+        Copyright The Ribtastic Brothers 2019 - {{ new Date().getFullYear() }}
+      </p>
+    </div> -->
   </footer>
 </template>
 

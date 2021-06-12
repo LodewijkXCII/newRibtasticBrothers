@@ -2,6 +2,10 @@
   <form class="formCatering">
     <div v-if="step === 1">
       <h2>Vraag een offerte op</h2>
+      <h4 style="color: white">
+        Op dit moment is onze email service offline. Neem contact op via
+        06-18676722 voor een offerte!
+      </h4>
       <label for="option">Gewenst pakket: *</label>
       <!-- TODO Options inladen + selected binden -->
       <select name="option" id="option" v-model="registration.option" required>
@@ -32,8 +36,10 @@
     </div>
     <div v-if="step === 2">
       <h4>
-        Tof dat je intresse hebt, als je de laatste info invult komen we zo snel
-        mogelijk bij je terug!
+        <!-- Tof dat je intresse hebt, als je de laatste info invult komen we zo snel
+        mogelijk bij je terug!  -->
+        Op dit moment is onze email service offline. Neem contact op via
+        06-18676722 voor een offerte!
       </h4>
       <label for="name">Naam: *</label>
       <input
@@ -67,8 +73,6 @@
 </template>
 
 <script>
-import axios from '@nuxtjs/axios'
-
 export default {
   data() {
     return {
@@ -102,7 +106,7 @@ export default {
                 from: 'eat@ribtasticbrothers.nl',
                 replyTo: 'eat@ribtasticbrothers.nl',
                 subject: 'Een nieuwe offerte aanvraag!',
-                html: `<h1>Er is een nieuwe aanvraag van ${this.registration.name}</h1>, 
+                html: `<h1>Er is een nieuwe aanvraag van ${this.registration.name}</h1>,
                 <h2>De gegevens zijn als volgt:</h2>
 
                 <ul>

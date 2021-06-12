@@ -35,7 +35,6 @@
 <script>
 import SmallGallery from '@/components/SmallGallery.vue'
 import ImageHeader from '@/components/ImageHeader.vue'
-import axios from '@nuxtjs/axios'
 
 export default {
   head: {

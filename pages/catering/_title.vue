@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import axios from '@nuxtjs/axios'
 import FormCatering from '@/components/FormCatering.vue'
 import SmallGallery from '@/components/SmallGallery.vue'
 
@@ -62,6 +61,7 @@ export default {
             image: res.data[0].afbeelding,
             cateringProducts: res.data[0].catering_productens,
           },
+          e,
         }
       })
   },

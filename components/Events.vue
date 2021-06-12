@@ -21,32 +21,22 @@
 </template>
 
 <script>
-import axios from '@nuxtjs/axios'
-
 export default {
   data() {
     return {
       upcomingEvents: [],
     }
   },
-  // computed: {
-  //   upcomingEvents() {
-  //
-  //     let i
-  //     for (i of events) {
-  //       console.log('Hello World')
-  //       this.upcomingEvents.push(i)
-  //     }
 
-  //     // return upcomingEvents
-  //   },
-  // },
   async fetch() {
-    const { data } = await this.$axios.get(
+    const { data: events } = await this.$axios.get(
       'https://ribtasticbrothers.herokuapp.com/kalenders'
     )
     const today = new Date()
-    const upcomming = data.forEach((event) => {
+
+    const sortedEvents = events.sort((a, b) => (a.datum < b.datum ? -1 : 1))
+
+    sortedEvents.forEach((event) => {
       if (event.datum > today.toISOString()) {
         this.upcomingEvents.push(event)
       }

@@ -27,6 +27,7 @@
       </div>
     </header>
     <main>
+      <!-- <RiderGezocht /> -->
       <div class="container">
         <h1 class="text-center">The Ribtastic Brothers</h1>
         <h2 class="text-center">In het kort</h2>
@@ -35,7 +36,7 @@
     </main>
     <section class="events">
       <div class="container">
-        <h1>Agenda 2021</h1>
+        <h1>Agenda {{ new Date().getFullYear() }}</h1>
         <Events />
       </div>
     </section>
@@ -65,6 +66,7 @@
 <script>
 import KeyValue from '~/components/KeyValue.vue'
 import Events from '~/components/Events.vue'
+import RiderGezocht from '~/components/RiderGezocht.vue'
 
 export default {
   head: {
@@ -83,6 +85,7 @@ export default {
   components: {
     KeyValue,
     Events,
+    RiderGezocht,
   },
 
   data() {
