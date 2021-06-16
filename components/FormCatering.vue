@@ -97,6 +97,10 @@ export default {
     submit() {
       if (this.registration.name && this.registration.email)
         try {
+          /* 
+          Eerst de submit naar Google Analytics
+          */
+
           this.$axios
             .$post(
               'https://ribtasticbrothers.herokuapp.com/email',
