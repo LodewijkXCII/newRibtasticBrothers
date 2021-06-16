@@ -22,11 +22,6 @@ export default {
     title: `Visitekaart | The Ribtastic Brothers`,
     noscript: [{ innerHTML: 'Body No Scripts', body: true }],
   },
-
-  data() {
-    return {}
-  },
-  methods: {},
 }
 </script>
 

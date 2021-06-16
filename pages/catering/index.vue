@@ -25,7 +25,6 @@
             een aantal catering varianten onderscheiden, hieronder per pakket
             een kleine toelichting en een prijsindicatie.
           </p>
-          <nuxt-link to="sensatie" class="btn btn-line">Bakfiets</nuxt-link>
         </div>
         <FormCatering />
       </div>
@@ -54,11 +53,6 @@
           </p>
         </div>
       </div>
-
-      <nuxt-link to="/galerij" class="btn btn-primary">
-        Impressie galerij
-        <font-awesome-icon :icon="'images'" />
-      </nuxt-link>
     </div>
     <CateringPartner />
     <!-- <SmallGallery :images="images" /> -->

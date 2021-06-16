@@ -56,6 +56,7 @@
       v-bind:class="{ hidden: !bottomBar }"
     >
       <ul class="navList">
+        <li class="list-item"><nuxt-link to="/service">Service</nuxt-link></li>
         <li class="list-item"><nuxt-link to="/smaak">Smaak</nuxt-link></li>
         <li class="list-item">
           <nuxt-link to="/sensatie">Sensatie</nuxt-link>

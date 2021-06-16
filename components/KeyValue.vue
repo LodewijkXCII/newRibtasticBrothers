@@ -31,7 +31,7 @@ export default {
           text:
             'Wij geloven in het genot van lekker eten en persoonlijke aandacht. Het is ons doel om gasten een smaakbeleving te bezorgen, door ze kennis te laten maken met onze unieke BBQ creaties.',
           icon: 'concierge-bell',
-          link: 'contact',
+          link: 'service',
         },
         {
           title: 'Smaak',

@@ -19,10 +19,6 @@
             <strong>&euro;{{ catering.price }}</strong> per persoon.
           </p>
         </div>
-        <FormCatering
-          :option="catering.name"
-          class="cateringTitle__right--container--form"
-        />
       </div>
     </section>
   </div>
@@ -46,6 +42,7 @@ export default {
     return {}
   },
   asyncData(context) {
+    console.log(context)
     return context.app.$axios
       .get(
         `https://ribtasticbrothers.herokuapp.com/catering-opties?slug=${context.params.title}`
@@ -61,7 +58,6 @@ export default {
             image: res.data[0].afbeelding,
             cateringProducts: res.data[0].catering_productens,
           },
-          e,
         }
       })
   },
