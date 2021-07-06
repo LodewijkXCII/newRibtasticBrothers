@@ -1,21 +1,21 @@
 <template>
   <section>
     <div class="container gallery">
-      <h1>{{ gallery.title }}</h1>
-      <h2>{{ gallery.locatie }}</h2>
-      <p v-if="gallery.description">{{ gallery.description }}</p>
-      <n-link to="/galerij" class="btn btn-inline"
-        >Terug naar het overzicht</n-link
-      >
+      <h1>{{ event.titel }}</h1>
+      <h2 v-show="event.locatie">{{ event.locatie }}</h2>
+      <p v-show="event.omnschrijving">{{ event.omnschrijving }}</p>
+      <n-link to="/galerij" class="btn btn-inline">
+        Terug naar het overzicht
+      </n-link>
 
       <div class="galleryImages">
         <div
-          v-for="image in gallery.galleryImages"
+          v-for="image in event.afbeeldingen"
           class="galleryImages__img gallery"
           :key="image.id"
         >
           <a :href="image.formats.medium.url">
-            <img :src="image.formats.small.url" alt />
+            <img :src="image.formats.small.url" :alt="image.name" />
           </a>
         </div>
       </div>
@@ -42,25 +42,14 @@ export default {
     return {
       options: {},
       index: null,
+      event: {},
     }
   },
-
-  asyncData(context) {
-    return context.app.$axios
-      .get(
-        `https://ribtasticbrothers.herokuapp.com/event-gallerijs?kalender.slug=${context.params.title}`
-      )
-      .then((res) => {
-        return {
-          gallery: {
-            id: res.data[0].id,
-            title: res.data[0].calender.title,
-            locatie: res.data[0].calender.locatie,
-            galleryImages: res.data[0].images,
-            description: res.data[0].description,
-          },
-        }
-      })
+  async created() {
+    const data = await this.$axios.$get(
+      `https://ribtasticbrothers.herokuapp.com/event-gallerijs?slug=${this.$route.params.title}`
+    )
+    this.event = data[0]
   },
 }
 </script>

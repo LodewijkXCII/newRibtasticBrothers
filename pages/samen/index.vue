@@ -6,19 +6,14 @@
         Een belangrijk onderdeel van een gezond en geluk leven is het hebben van
         “meaningfull relationships”. En zeg nu eerlijk, wat is nu een beter
         moment om lekker te socializen? Precies, lekker tijdens het eten. In
-        veel culturen is men zelfs niets anders gewend, eten doe je samen.
+        veel culturen is men zelfs niets anders gewend; eten doe je samen.
       </p>
       <p>
-        Maar dat is niet de enige reden waarom we gelukkiger worden van samen
-        eten. We onderhouden onze vriendschappen en familierelaties en kunnen
-        ook weer nieuwe, bredere gemeenschapsrelaties met elkaar opbouwen. Wij
-        geloven daarom in het geluk van gezamenlijk eten en willen niets liever
-        dan mensen samenbrengen met onze unieke BBQ creaties.
+        Tijdens het eten onderhouden we onze vriendschappen en familierelaties.
+        Wij geloven daarom in het geluk van gezamenlijk eten en willen niets
+        liever dan mensen samenbrengen met onze unieke BBQ creaties.
       </p>
-      <p>
-        Waar wacht je nog op? Nodig je vrienden en familie uit, en organiseer
-        een BBQ!
-      </p>
+      <p>Waar wacht je nog op? Invite your friends and organize a BBQ!</p>
     </div>
     <div class="smallGallery">
       <!-- TODO Duurzaamheid images toevoegen. (image gallery's aanmaken strapi?) -->
@@ -29,7 +24,7 @@
     <div class="container-fluid">
       <h2>Duurzaamheid</h2>
       <p>
-        Samen genieten, is tevens samen zorg dragen. Zorgen voor het opruimen,
+        Samen genieten, is tevens samen zorgdragen. Zorgen voor het opruimen,
         zorgen voor de afwas, zorgen voor het minimaliseren van je afval en het
         beperken van jouw impact op het milieu. Wij van Ribtastic Brothers,
         dragen ons steentje hierin bij. Duurzaamheid zit diep in onze vezels.
@@ -37,13 +32,13 @@
       </p>
       <p>
         Alle producten en materialen die we gebruiken zijn zoveel mogelijk
-        duurzaam. Dit zie je terug in de materialen die we hebben gebruikt voor
+        duurzaam. Dat zie je terug in de materialen die we hebben gebruikt voor
         het maken van onze fiets, in de biologisch afbreekbare verpakkingen en
-        de CO2 die we jaarlijkse compenseren.
+        de CO2 die we jaarlijks compenseren.
       </p>
       <p>
-        Wij nemen de verantwoordelijkheid om zo duurzaam mogelijk te ondernemen,
-        zodat we samen nog lang kunnen genieten van onze aardekloot.
+        Wij nemen de verantwoordelijkheid om duurzaam te ondernemen, zodat we
+        samen nog lang kunnen genieten van onze aardkloot.
       </p>
       <div class="btn btn-line">
         <nuxt-link to="catering">Catering</nuxt-link>

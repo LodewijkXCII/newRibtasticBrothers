@@ -36,9 +36,9 @@
         <li class="list-item">
           <nuxt-link to="/bezorging">Bezorging</nuxt-link>
         </li>
-        <!-- <li class="list-item">
+        <li class="list-item">
           <nuxt-link to="/galerij">Galerij</nuxt-link>
-        </li> -->
+        </li>
         <li class="list-item">
           <a href="#" @click="dropDown()"
             >Over Ons <font-awesome-icon :icon="['fas', 'angle-down']"

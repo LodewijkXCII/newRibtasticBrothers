@@ -97,31 +97,16 @@ export default {
     submit() {
       if (this.registration.name && this.registration.email)
         try {
-          /* 
+          /*
           Eerst de submit naar Google Analytics
           */
 
           this.$axios
             .$post(
-              'https://ribtasticbrothers.herokuapp.com/email',
+              'https://ribtasticbrothers.herokuapp.com/emails',
               // 'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
               {
-                to: 'eat@ribtasticbrothers.nl',
-                from: 'eat@ribtasticbrothers.nl',
-                replyTo: 'eat@ribtasticbrothers.nl',
-                subject: 'Een nieuwe offerte aanvraag!',
-                html: `<h1>Er is een nieuwe aanvraag van ${this.registration.name}</h1>,
-                <h2>De gegevens zijn als volgt:</h2>
-
-                <ul>
-                <li>Gewenste pakket: ${this.registration.option}</li>
-                <li>Gewenste datum: ${this.registration.date}</li>
-                <li>Aantal personen: ${this.registration.people}</li>
-                <li>Naam: ${this.registration.name}</li>
-                <li>Email: ${this.registration.email}</li>
-                <li>Bedrijf: ${this.registration.company}</li>
-                </ul>
-                `,
+                email: this.registration.email,
               }
             )
             .then(function (response) {

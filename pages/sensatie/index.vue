@@ -4,25 +4,30 @@
 
     <div class="container-fluid">
       <p>
-        Naast smaak is sensatie een belangrijke pijler in onze bedrijfsvoering.
-        Wij zijn pas tevreden als het gezelschap lekker heeft kunnen genieten
-        van onze BBQ creaties en het feestje is geslaagd. We zetten ons
-        enthousiast en volledig in, om bij te kunnen dragen aan het succes. Dat
-        merk je aan onze vibe, en onze uitstraling.
+        Naast smaak is sensatie een belangrijke pijler voor ons. Wij zijn pas
+        tevreden als het gezelschap lekker heeft kunnen genieten van onze BBQ
+        creaties en het feestje is geslaagd. We zetten ons enthousiast en
+        volledig in, om bij te kunnen dragen aan het succes. Dat merk je aan
+        onze vibe, en onze uitstraling.
       </p>
       <p>
-        Over uitstraling gesproken, ons nobel ros. Wat krijg je als je een BBQ,
+        Over uitstraling gesprokenl; ons nobel ros. Wat krijg je als je een BBQ,
         mobiel en opvallend wilt maken?
       </p>
       <p>
-        Precies die vraag hing constant boven ons hoofd gedurende de
-        ontwerpfase. Na flink wat geschrapte ontwerpen en uren buffelen kwam het
-        idee om een BBQ bakfiets te bouwen. Een voertuig groot genoeg om alle
-        benodigde materialen mee te nemen, en klein genoeg om te kunnen flaneren
-        over de boulevard. Kortom een perfecte mix tussen onze authenticiteit en
-        mobiliteit, zodat iedereen kennis kan maken met de Ribtastic Brothers.
+        Precies die vraag hing constant boven ons hoofd. Na flink wat geschrapte
+        ideeën en uren buffelen kwam het ultieme idee om een BBQ bakfiets te
+        bouwen. Een fiets groot genoeg om alle benodigde materialen mee te
+        nemen, en klein genoeg om te kunnen flaneren over de boulevard. Kortom
+        een perfecte mix tussen onze authenticiteit en mobiliteit, zodat
+        iedereen kennis kan maken met de Ribtastic Brothers.
       </p>
-      <p>De fiets is vanaf scratch zelf ontworpen en gebouwd.</p>
+      <p>
+        De fiets is van scratch af aan zelf ontworpen en gebouwd. Mocht het
+        feestje iets groter worden, hebben we ook beschikking over een geweldige
+        smoker!
+      </p>
+      <!-- TODO SET IMAGE OF BAKFIETS AND SMOKER -->
       <p>Have you ever seen something like this?</p>
       <div class="btn btn-line">
         <nuxt-link to="catering">Catering</nuxt-link>

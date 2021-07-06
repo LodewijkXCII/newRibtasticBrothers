@@ -1,15 +1,22 @@
 <template>
   <div class="galleryPost">
-    <nuxt-link :to="`/galerij/${slug}`">
+    <div
+      @click="
+        $router.push({
+          path: `/galerij/${slug}`,
+          params: { id: id, type: type },
+        })
+      "
+    >
       <img
-        v-bind:src="thumbnailImage"
+        v-bind:src="thumbnailImage.url"
         v-bind:alt="title"
         class="galleryPost__img"
       />
       <div class="galleryPost__body">
         <h3 class="galleryPost__title">{{ title }}</h3>
       </div>
-    </nuxt-link>
+    </div>
   </div>
 </template>
 

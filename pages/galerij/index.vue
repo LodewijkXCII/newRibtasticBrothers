@@ -13,7 +13,7 @@
         </p>
         <p>
           Mocht je een foto willen gebruiken mag dat, mits je ons natuurlijk
-          even tagged via de bekende kanalen...
+          even tagt via de bekende kanalen...
         </p>
       </div>
 
@@ -27,10 +27,11 @@
         <GalleryBlock
           v-for="gallery in gallery"
           :key="gallery.id"
-          :title="gallery.title"
+          :title="gallery.titel"
           :slug="gallery.slug"
-          :thumbnailImage="gallery.thumbnailImage"
+          :thumbnailImage="gallery.thumbnail"
           :id="gallery.id"
+          :type="gallery.type"
         />
       </div>
     </div>
@@ -40,8 +41,6 @@
 <script>
 import GalleryBlock from '@/components/GalleryBlock.vue'
 import ImageHeader from '@/components/ImageHeader.vue'
-
-import axios from '@nuxtjs/axios'
 
 export default {
   head: {
@@ -54,6 +53,7 @@ export default {
   },
   data() {
     return {
+      gallery: [],
       heading: {
         title: 'Galerij',
         subtitle: 'Plaatjes en Daadjes',
@@ -63,21 +63,27 @@ export default {
         'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_gallerij+(1).jpg',
     }
   },
-  async asyncData(context) {
-    return context.app.$axios
-      .get('https://ribtasticbrothers.herokuapp.com/event-gallerijs')
-      .then((res) => {
-        return {
-          gallery: res.data.map((ig) => {
-            return {
-              id: ig.id,
-              title: ig.calender.title,
-              slug: ig.calender.slug,
-              thumbnailImage: ig.thumbnail.formats.thumbnail.url,
-            }
-          }),
-        }
-      })
+  async mounted() {
+    const data = await this.$axios.$get(
+      'https://ribtasticbrothers.herokuapp.com/event-gallerijs'
+    )
+
+    this.gallery = data.map((event) => {
+      let setTitel = ''
+      if (event.titel) {
+        setTitel = event.titel
+      } else {
+        setTitel = event.kalender.titel
+      }
+      return {
+        id: event.id,
+        omschrijving: event.omschrijving,
+        titel: setTitel,
+        thumbnail: event.thumbnail,
+        afbeeldingen: event.afbeeldingen,
+        slug: setTitel.toLowerCase(),
+      }
+    })
   },
 }
 </script>

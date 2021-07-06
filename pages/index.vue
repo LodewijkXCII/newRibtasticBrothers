@@ -14,10 +14,13 @@
             Catering
             <font-awesome-icon :icon="'utensils'" />
           </router-link>
-          <router-link to="bezorging" class="btn btn-primary">
+          <a
+            href="https://bestellen.ribtasticbrothers.nl/"
+            class="btn btn-primary"
+          >
             Bezorging
             <font-awesome-icon :icon="'bicycle'" />
-          </router-link>
+          </a>
         </div>
       </div>
       <div class="scroll-downs">
@@ -54,7 +57,7 @@
           </div>
           <div class="partner__last">
             <nuxt-link to="contact">
-              <p>Ook graag samenwerken? Neem contact op</p>
+              <p>Ook graag samenwerken? Klik hier om contact op te nemen</p>
             </nuxt-link>
           </div>
         </div>

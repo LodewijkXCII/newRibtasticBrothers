@@ -14,7 +14,7 @@
     <nuxt-link to="catering">
       <div class="eventItemCta">
         <h2>Heb jij een feestje waar wij bij moeten zijn?</h2>
-        <p>Neem contact met ons op</p>
+        <p>Klik hier om contact met ons op te nemen</p>
       </div>
     </nuxt-link>
   </div>
