@@ -117,7 +117,17 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    common: {
+      Accept: 'application/json, text/plain, */*',
+    },
+    delete: {},
+    get: {},
+    head: {},
+    post: {},
+    put: {},
+    patch: {},
+  },
   /*
    ** Build configuration
    */
