@@ -1,6 +1,6 @@
 <template>
   <section>
-    <ImageHeader v-bind="heading" :image="image" />+
+    <ImageHeader v-bind="heading" :image="image" />
     <div class="container-fluid">
       <div class="textInfo">
         <p>
@@ -96,8 +96,8 @@ export default {
         try {
           await this.$axios.$post(
             // 'http://localhost:1337/email',
-            'https://ribtasticbrothers.herokuapp.com/email',
-            // 'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
+            // 'https://ribtasticbrothers.herokuapp.com/email',
+            'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
             {
               to: 'eat@ribtasticbrothers.nl',
               from: 'contact@ribtasticbrothers.nl',

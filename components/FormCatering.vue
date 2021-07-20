@@ -103,8 +103,8 @@ export default {
 
           this.$axios
             .$post(
-              'https://ribtasticbrothers.herokuapp.com/email',
-              // 'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
+              // 'https://ribtasticbrothers.herokuapp.com/email',
+              'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
               {
                 to: 'eat@ribtasticbrothers.nl',
                 from: 'contact@ribtasticbrothers.nl',
