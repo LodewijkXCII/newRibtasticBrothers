@@ -11,7 +11,7 @@
     </div>
     <div class="container">
       <div class="wrapper">
-        <form @submit.prevent="sendContact()">
+        <!-- <form @submit.prevent="sendContact()">
           <h2>Neem contact op!</h2>
           <label for="name">Naam:</label>
           <input
@@ -48,7 +48,7 @@
           <button type="submit" class="btn btn-primary" style="max-width: 45%">
             {{ buttonMsg }}
           </button>
-        </form>
+        </form> -->
         <div class="belInfo">
           <font-awesome-icon icon="phone" />
           <h2>Bel ons!</h2>
