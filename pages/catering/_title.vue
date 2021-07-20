@@ -45,7 +45,7 @@ export default {
     console.log(context)
     return context.app.$axios
       .get(
-        `https://ribtasticbrothers.herokuapp.com/catering-opties?slug=${context.params.title}`
+        `https://admin.ribtasticbrothers.nl/catering-opties?slug=${context.params.title}`
       )
       .then((res) => {
         return {

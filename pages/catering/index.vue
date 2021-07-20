@@ -105,8 +105,7 @@ export default {
     },
   },
   asyncData(context) {
-    const cateringOptions =
-      'https://ribtasticbrothers.herokuapp.com/catering-opties'
+    const cateringOptions = 'https://admin.ribtasticbrothers.nl/catering-opties'
 
     return context.app.$axios.get(cateringOptions).then((res) => {
       return {

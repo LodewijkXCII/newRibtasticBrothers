@@ -65,7 +65,7 @@ export default {
   },
   async mounted() {
     const data = await this.$axios.$get(
-      'https://ribtasticbrothers.herokuapp.com/event-gallerijs'
+      'https://admin.ribtasticbrothers.nl/event-gallerijs'
     )
 
     this.gallery = data.map((event) => {

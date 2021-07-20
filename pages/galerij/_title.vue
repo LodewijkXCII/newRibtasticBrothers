@@ -47,7 +47,7 @@ export default {
   },
   async created() {
     const data = await this.$axios.$get(
-      `https://ribtasticbrothers.herokuapp.com/event-gallerijs?slug=${this.$route.params.title}`
+      `https://admin.ribtasticbrothers.nl/event-gallerijs?slug=${this.$route.params.title}`
     )
     this.event = data[0]
   },

@@ -151,7 +151,7 @@ export default {
   },
 
   async mounted() {
-    const url = 'https://ribtasticbrothers.herokuapp.com/bezorg-productens?_sort=categorie,location'
+    const url = 'https://admin.ribtasticbrothers.nl/bezorg-productens?_sort=categorie,location'
     // const url = 'http://localhost:1337/bezorg-productens?_sort=categorie,location'
 
     try {

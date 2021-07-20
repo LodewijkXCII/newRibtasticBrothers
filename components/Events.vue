@@ -30,7 +30,7 @@ export default {
 
   async fetch() {
     const { data: events } = await this.$axios.get(
-      'https://ribtasticbrothers.herokuapp.com/kalenders'
+      'https://admin.ribtasticbrothers.nl/kalenders'
     )
     const today = new Date()
 

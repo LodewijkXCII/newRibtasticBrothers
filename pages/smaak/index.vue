@@ -60,7 +60,7 @@ export default {
   asyncData(context) {
     return (
       context.app.$axios
-        .get('https://ribtasticbrothers.herokuapp.com/sauzens')
+        .get('https://admin.ribtasticbrothers.nl/sauzens')
         // .get('http://localhost:1337/sauzens')
         .then((res) => {
           return {
