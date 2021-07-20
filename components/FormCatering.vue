@@ -103,10 +103,24 @@ export default {
 
           this.$axios
             .$post(
-              'https://ribtasticbrothers.herokuapp.com/emails',
+              'https://ribtasticbrothers.herokuapp.com/email',
               // 'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
               {
-                email: this.registration.email,
+                to: 'eat@ribtasticbrothers.nl',
+                from: 'contact@ribtasticbrothers.nl',
+                replyTo: 'eat@ribtasticbrothers.nl',
+                subject: 'Een nieuwe contact formulier aanvraag!',
+                html: `<h1>Er is een nieuwe catering aanvraag van ${this.registration.name}</h1>
+                <h2>De gegevens zijn als volgt:</h2>
+                
+                <ul>
+                <li>Naam: ${this.registration.name}</li>
+                <li>Email: ${this.registration.email}</li>
+                <li>Bedrijf: ${this.registration.company}</li>
+                <li>Datum: ${this.registration.date}</li>
+                <li>Optie: ${this.registration.option}</li>
+                </ul>
+                `,
               }
             )
             .then(function (response) {

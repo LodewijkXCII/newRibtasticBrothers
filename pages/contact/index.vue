@@ -11,7 +11,7 @@
     </div>
     <div class="container">
       <div class="wrapper">
-        <!-- <form @submit.prevent="sendContact()">
+        <form @submit.prevent="sendContact()">
           <h2>Neem contact op!</h2>
           <label for="name">Naam:</label>
           <input
@@ -48,7 +48,7 @@
           <button type="submit" class="btn btn-primary" style="max-width: 45%">
             {{ buttonMsg }}
           </button>
-        </form> -->
+        </form>
         <div class="belInfo">
           <font-awesome-icon icon="phone" />
           <h2>Bel ons!</h2>
@@ -95,6 +95,7 @@ export default {
       if (this.contact.name && this.contact.email)
         try {
           await this.$axios.$post(
+            // 'http://localhost:1337/email',
             'https://ribtasticbrothers.herokuapp.com/email',
             // 'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
             {
