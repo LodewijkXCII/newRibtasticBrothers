@@ -96,8 +96,8 @@ export default {
         try {
           await this.$axios.$post(
             // 'http://localhost:1337/email',
-            // 'https://ribtasticbrothers.herokuapp.com/email',
-            'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
+            'https://ribtasticbrothers.herokuapp.com/email',
+            // 'https://cors-anywhere.herokuapp.com/https://ribtasticbrothers.herokuapp.com/email',
             {
               to: 'eat@ribtasticbrothers.nl',
               from: 'contact@ribtasticbrothers.nl',
@@ -112,6 +112,11 @@ export default {
                 <li>Bedrijf: ${this.contact.company}</li>
                 </ul>
                 `,
+            },
+            {
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+              },
             }
           )
 
