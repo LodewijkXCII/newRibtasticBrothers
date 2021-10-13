@@ -87,6 +87,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/markdownit',
     '@nuxtjs/style-resources',
+
     [
       'nuxt-fontawesome',
       {
@@ -120,6 +121,17 @@ export default {
   axios: {
     credentials: false,
     proxyHeaders: false,
+    headers: {
+      common: {
+        Accept: 'application/x-www-form-urlencoded, text/plain, */*',
+      },
+      delete: {},
+      get: {},
+      head: {},
+      post: {},
+      put: {},
+      patch: {},
+    },
   },
   /*
    ** Build configuration
