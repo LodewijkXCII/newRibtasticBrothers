@@ -118,6 +118,8 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
+    credentials: false,
+    proxyHeaders: false,
     common: {
       Accept: 'application/json, text/plain, */*',
     },
