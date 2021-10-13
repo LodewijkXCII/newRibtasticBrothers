@@ -93,7 +93,7 @@ export default {
     return {
       heading: {
         title: 'BBQ Catering',
-        subtitle: 'Inclusief onze unieke BBQ bakfiets',
+        subtitle: 'Met bakfiets of smoker?',
       },
       image:
         'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_catering+(1).jpg',

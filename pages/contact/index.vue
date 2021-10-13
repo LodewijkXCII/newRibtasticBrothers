@@ -11,7 +11,7 @@
     </div>
     <div class="container">
       <div class="wrapper">
-        <!-- <form @submit.prevent="sendContact()">
+        <form @submit.prevent="sendContact()">
           <h2>Neem contact op!</h2>
           <label for="name">Naam:</label>
           <input
@@ -43,12 +43,13 @@
             cols="30"
             rows="5"
             v-model="contact.message"
+            required
           ></textarea>
 
           <button type="submit" class="btn btn-primary" style="max-width: 45%">
             {{ buttonMsg }}
           </button>
-        </form> -->
+        </form>
         <div class="belInfo">
           <font-awesome-icon icon="phone" />
           <h2>Bel ons!</h2>
@@ -95,23 +96,15 @@ export default {
       if (this.contact.name && this.contact.email)
         try {
           await this.$axios.$post(
-            // 'http://localhost:1337/email',
-            'https://admin.ribtasticbrothers.nl/email',
-            // 'https://cors-anywhere.herokuapp.com/https://admin.ribtasticbrothers.nl/email',
+            'http://localhost:1337/emails/contact',
+            // 'https://admin.ribtasticbrothers.nl/emails/contact',
+
             {
-              to: 'eat@ribtasticbrothers.nl',
-              from: 'contact@ribtasticbrothers.nl',
-              replyTo: 'eat@ribtasticbrothers.nl',
-              subject: 'Een nieuwe contact formulier aanvraag!',
-              html: `<h1>Er is een nieuwe contactformulier van ${this.contact.name}</h1>1
-                <h2>De gegevens zijn als volgt:</h2>
-                <p>${this.contact.message}</p>
-                <ul>
-                <li>Naam: ${this.contact.name}</li>
-                <li>Email: ${this.contact.email}</li>
-                <li>Bedrijf: ${this.contact.company}</li>
-                </ul>
-                `,
+              sendMail: 'eat@ribtasticbrothers.nl',
+              email: this.contact.email,
+              name: this.contact.name,
+              company: this.contact.company,
+              body: this.contact.message,
             }
           )
 

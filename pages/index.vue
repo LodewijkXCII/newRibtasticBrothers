@@ -30,7 +30,7 @@
       </div>
     </header>
     <main>
-      <!-- <RiderGezocht /> -->
+      <RiderGezocht />
       <div class="container">
         <h1 class="text-center">The Ribtastic Brothers</h1>
         <h2 class="text-center">In het kort</h2>

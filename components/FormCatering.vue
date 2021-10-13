@@ -2,12 +2,7 @@
   <form class="formCatering">
     <div v-if="step === 1">
       <h2>Vraag een offerte op</h2>
-      <h4 style="color: white">
-        Op dit moment is onze email service offline. Neem contact op via
-        06-18676722 voor een offerte!
-      </h4>
       <label for="option">Gewenst pakket: *</label>
-      <!-- TODO Options inladen + selected binden -->
       <select name="option" id="option" v-model="registration.option" required>
         <option value="just-meat">Just meat</option>
         <option value="happy-grillin" selected>Happy Grillin</option>
@@ -36,10 +31,8 @@
     </div>
     <div v-if="step === 2">
       <h4>
-        <!-- Tof dat je intresse hebt, als je de laatste info invult komen we zo snel
-        mogelijk bij je terug!  -->
-        Op dit moment is onze email service offline. Neem contact op via
-        06-18676722 voor een offerte!
+        Tof dat je intresse hebt, als je de laatste info invult komen we zo snel
+        mogelijk bij je terug!
       </h4>
       <label for="name">Naam: *</label>
       <input
@@ -55,6 +48,14 @@
         name="email"
         id="email"
         v-model="registration.email"
+        required
+      />
+      <label for="email">Telefoonnummer: *</label>
+      <input
+        type="text"
+        name="phone"
+        id="phone"
+        v-model="registration.phone"
         required
       />
       <label for="company">Bedrijf:</label>
@@ -84,6 +85,7 @@ export default {
         name: '',
         email: '',
         company: null,
+        phone: '',
       },
     }
   },
@@ -103,24 +105,18 @@ export default {
 
           this.$axios
             .$post(
-              // 'https://admin.ribtasticbrothers.nl/email',
-              'https://cors-anywhere.herokuapp.com/https://admin.ribtasticbrothers.nl/email',
+              // 'https://admin.ribtasticbrothers.nl/emails/catering',
+              'http://localhost:1337/emails/catering',
+
               {
-                to: 'eat@ribtasticbrothers.nl',
-                from: 'contact@ribtasticbrothers.nl',
-                replyTo: 'eat@ribtasticbrothers.nl',
-                subject: 'Een nieuwe contact formulier aanvraag!',
-                html: `<h1>Er is een nieuwe catering aanvraag van ${this.registration.name}</h1>
-                <h2>De gegevens zijn als volgt:</h2>
-                
-                <ul>
-                <li>Naam: ${this.registration.name}</li>
-                <li>Email: ${this.registration.email}</li>
-                <li>Bedrijf: ${this.registration.company}</li>
-                <li>Datum: ${this.registration.date}</li>
-                <li>Optie: ${this.registration.option}</li>
-                </ul>
-                `,
+                email: this.registration.email,
+                sendMail: 'eat@ribtasticbrothers.nl',
+                pakket: this.registration.option,
+                name: this.registration.name,
+                company: this.registration.company,
+                personen: this.registration.people,
+                phone: this.registration.phone,
+                datum: this.registration.date,
               }
             )
             .then(function (response) {

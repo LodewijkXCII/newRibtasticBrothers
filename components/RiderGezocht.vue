@@ -4,16 +4,13 @@
       <div class="riderGezocht__icon">
         <font-awesome-icon :icon="'bicycle'" />
       </div>
-      <div>
-        <h1>Riders gezocht!</h1>
+      <div class="riderGezocht__text">
+        <h1>Personeel gezocht!</h1>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos beatae
-          quidem, consequuntur vitae ullam aliquid nostrum modi nulla neque
-          molestias architecto ex vero, fugit expedita, ducimus alias amet
-          ipsum! Quasi fugiat mollitia amet illum magnam, rem culpa maxime
-          debitis sequi! Maxime nemo optio doloribus odit eos voluptatum cum,
-          sed dolorum nisi quibusdam placeat consequuntur officiis ullam aliquam
-          esse nostrum recusandae!
+          Wil jij werken bij het restaurant wat bekend staat om de beste
+          spareribs en de unieke ribsalon? We zijn op zoek naar extra fietsers,
+          maar ook nieuwe collega's in de keuken! Bij intresse neem
+          <nuxt-link to="contact">contact</nuxt-link> met ons op!
         </p>
       </div>
     </div>
@@ -26,7 +23,7 @@ export default {}
 
 <style lang="scss">
 .riderGezochtSecion {
-  background-color: $alert-color;
+  background: $primary-gradient;
   margin-top: -1em;
 }
 .riderGezocht {
@@ -37,7 +34,7 @@ export default {}
 
   &__icon {
     background: #e9e9e9;
-    border: 5px solid $off-alert-color;
+    border: 5px solid $off-primary-color;
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -46,14 +43,21 @@ export default {}
     justify-self: center;
 
     svg {
-      color: $alert-color;
+      color: $primary-color;
       height: 100%;
       font-size: 5em;
       margin: auto;
     }
   }
-  h1 {
-    text-align: left;
+  &__text {
+    h1 {
+      text-align: left;
+    }
+
+    a {
+      color: $off-black-color;
+      font-weight: bold;
+    }
   }
 }
 </style>

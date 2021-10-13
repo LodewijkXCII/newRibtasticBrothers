@@ -34,7 +34,7 @@
         </li>
 
         <li class="list-item">
-          <nuxt-link to="/bezorging">Bezorging</nuxt-link>
+          <a href="https://bestellen.ribtasticbrothers.nl/">Bezorging</a>
         </li>
         <li class="list-item">
           <nuxt-link to="/galerij">Galerij</nuxt-link>
