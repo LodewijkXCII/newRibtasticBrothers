@@ -105,8 +105,8 @@ export default {
 
           this.$axios
             .$post(
-              // 'https://admin.ribtasticbrothers.nl/emails/catering',
-              'http://localhost:1337/emails/catering',
+              'https://admin.ribtasticbrothers.nl/emails/catering',
+              // 'http://localhost:1337/emails/catering',
 
               {
                 email: this.registration.email,

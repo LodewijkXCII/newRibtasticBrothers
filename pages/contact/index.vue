@@ -96,8 +96,8 @@ export default {
       if (this.contact.name && this.contact.email)
         try {
           await this.$axios.$post(
-            'http://localhost:1337/emails/contact',
-            // 'https://admin.ribtasticbrothers.nl/emails/contact',
+            // 'http://localhost:1337/emails/contact',
+            'https://admin.ribtasticbrothers.nl/emails/contact',
 
             {
               sendMail: 'eat@ribtasticbrothers.nl',
