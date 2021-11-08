@@ -10,13 +10,7 @@
         <option value="custom">Catering op Maat</option>
       </select>
       <label for="date">Gewenste datum: *</label>
-      <input
-        type="date"
-        name="date"
-        id="date"
-        v-model="registration.date"
-        required
-      />
+      <input type="date" name="date" id="date" v-model="registration.date" required />
       <label for="people">Aantal personen: *</label>
       <input
         type="number"
@@ -31,40 +25,17 @@
     </div>
     <div v-if="step === 2">
       <h4>
-        Tof dat je intresse hebt, als je de laatste info invult komen we zo snel
-        mogelijk bij je terug!
+        Tof dat je intresse hebt, als je de laatste info invult komen we zo snel mogelijk
+        bij je terug!
       </h4>
       <label for="name">Naam: *</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        v-model="registration.name"
-        required
-      />
+      <input type="text" name="name" id="name" v-model="registration.name" required />
       <label for="email">Email: *</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        v-model="registration.email"
-        required
-      />
+      <input type="email" name="email" id="email" v-model="registration.email" required />
       <label for="email">Telefoonnummer: *</label>
-      <input
-        type="text"
-        name="phone"
-        id="phone"
-        v-model="registration.phone"
-        required
-      />
+      <input type="text" name="phone" id="phone" v-model="registration.phone" required />
       <label for="company">Bedrijf:</label>
-      <input
-        type="text"
-        name="company"
-        id="company"
-        v-model="registration.company"
-      />
+      <input type="text" name="company" id="company" v-model="registration.company" />
       <button class="btn btn-line" @click.prevent="prev()">Terug</button>
       <button type="submit" class="btn btn-primary" @click.prevent="submit()">
         Versturen
@@ -82,19 +53,19 @@ export default {
         option: null,
         date: null,
         people: 1,
-        name: '',
-        email: '',
+        name: "",
+        email: "",
         company: null,
-        phone: '',
+        phone: "",
       },
-    }
+    };
   },
   methods: {
     prev() {
-      this.step -= 1
+      this.step -= 1;
     },
     next() {
-      this.step += 1
+      this.step += 1;
     },
     submit() {
       if (this.registration.name && this.registration.email)
@@ -102,36 +73,49 @@ export default {
           /*
           Eerst de submit naar Google Analytics
           */
+          const headers = {
+            "Access-Control-Allow-Origin": "*",
+          };
+          const body = {
+            email: this.registration.email,
+            sendMail: "eat@ribtasticbrothers.nl",
+            pakket: this.registration.option,
+            name: this.registration.name,
+            company: this.registration.company,
+            personen: this.registration.people,
+            phone: this.registration.phone,
+            datum: this.registration.date,
+          };
+
+          // fetch("/.netlify/functions/node-fetch", body)
+          //   .then(function (response) {
+          //     console.log(response);
+          //   })
+          //   .catch(function (error) {
+          //     console.log(error);
+          //   });
 
           this.$axios
             .$post(
-              'https://admin.ribtasticbrothers.nl/emails/catering',
+              "https://ribtasticbrothers.herokuapp.com/emails/catering",
               // 'http://localhost:1337/emails/catering',
 
-              {
-                email: this.registration.email,
-                sendMail: 'eat@ribtasticbrothers.nl',
-                pakket: this.registration.option,
-                name: this.registration.name,
-                company: this.registration.company,
-                personen: this.registration.people,
-                phone: this.registration.phone,
-                datum: this.registration.date,
-              }
+              body,
+              headers
             )
             .then(function (response) {
-              console.log(response)
+              console.log(response);
             })
             .catch(function (error) {
-              console.log(error)
-            })
-          console.log('submitted')
+              console.log(error);
+            });
+          console.log("submitted");
         } catch (error) {
-          console.log(error)
+          console.log(error);
         }
     },
   },
-}
+};
 </script>
 
 <style lang="scss">
