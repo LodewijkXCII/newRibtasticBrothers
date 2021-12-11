@@ -1,0 +1,179 @@
+<template>
+  <div>
+    <NavBar />
+    <nuxt />
+    <Footer />
+  </div>
+</template>
+
+<script>
+import NavBar from '~/components/NavBar.vue'
+import Footer from '~/components/Footer.vue'
+
+export default {
+  components: {
+    NavBar,
+    Footer,
+  },
+
+  computed: {
+    isHome() {
+      return this.$nuxt.$route.path === '/'
+    },
+  },
+}
+</script>
+
+<style lang="scss">
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: $ft-lato;
+  font-size: 16px;
+  line-height: 1.75;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+@media (min-width: 650px) {
+  html {
+    font-size: 19px;
+    line-height: 1.75;
+  }
+}
+
+.container {
+  max-width: $max-width;
+  margin: auto 1em;
+  padding: 1em 0;
+
+  &-fluid {
+    max-width: 750px;
+    margin: auto;
+    padding: 5em 1em;
+  }
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+@media (min-width: 650px) {
+  .container {
+    margin: auto;
+    padding: 3em 0;
+
+    &-fluid {
+      padding: 3em 0;
+    }
+  }
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: 0.5s;
+
+  &:hover {
+    color: #697564;
+  }
+}
+
+img {
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+.btn {
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.8em 1.5em;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  max-width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto;
+
+  &.btn-primary {
+    background: $primary-color;
+    border: 2px solid $off-primary-color;
+    color: white;
+    box-shadow: 0 6px 8px rgba($color: #000000, $alpha: 0.4);
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+      background: $alert-color;
+      border: 2px solid $off-alert-color;
+      outline: none;
+    }
+  }
+
+  &.btn-line {
+    background: rgba($color: #000000, $alpha: 0.1);
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    box-shadow: 0 6px 8px rgba($color: #000000, $alpha: 0.4);
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+      border: 2px solid $alert-color;
+      outline: none;
+      color: $alert-color;
+      a {
+        color: $alert-color;
+      }
+    }
+  }
+  &.btn-inline {
+    margin: 2rem 0;
+    max-width: fit-content;
+    padding: 0;
+  }
+
+  svg {
+    margin-left: 0.5em;
+  }
+  &.disabled {
+    opacity: 0.2;
+    background: transparent;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  .btn {
+    max-width: 50%;
+    margin: 2em auto;
+  }
+}
+</style>

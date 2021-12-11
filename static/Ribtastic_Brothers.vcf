@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+FN;CHARSET=UTF-8:Art van Eeden Petersman
+N;CHARSET=UTF-8:Eeden Petersman;Art;vab;;
+EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:eat@ribtasticbrothers.nl
+EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:eat@ribtasticbrothers.nl
+TEL;TYPE=WORK,VOICE:0618676722
+ORG;CHARSET=UTF-8:The Ribtastic Brothers
+URL;type=WORK;CHARSET=UTF-8:www.ribtasticbrothers.nl
+REV:2020-10-02T14:15:44.650Z
+END:VCARD

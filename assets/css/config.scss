@@ -1,0 +1,82 @@
+$primary-color: #788772;
+$secondary-color: #fff;
+$off-primary-color: #4a6053;
+$off-white-color: #e9e9e9;
+$off-black-color: #1e1e1e;
+$alert-color: #cc5803;
+$off-alert-color: #aa4a06;
+$primary-gradient: linear-gradient(90deg, rgba(120, 135, 114, 1) 0%, rgba(74, 96, 83, 1) 100%);
+$max-width: 1180px;
+$ft-bebas: "Bebas Neue", sans-serif;
+$ft-lato: "Lato", sans-serif;
+
+h1,
+h2 {
+    font-family: $ft-bebas;
+    letter-spacing: 0.75px;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-family: $ft-bebas;
+    color: $primary-color;
+}
+
+h4,
+p {
+    font-family: $ft-lato;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+    font-size: 1rem;
+}
+
+
+
+h1 {
+    font-weight: normal;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 0.2em;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    color: $primary-color;
+}
+
+h4 {
+    color: $primary-color;
+    font-weight: 900;
+}
+
+h6 {
+    font-size: 1.5rem;
+    font-family: $ft-bebas;
+}
+
+label {
+    margin-bottom: 0.35em;
+}
+input,
+select {
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    display: block;
+    background: #212121;
+    border: 1px solid #4a6053;
+    border-radius: 10px;
+    padding: 0.8em;
+    color: #fff;
+    font-family: $ft-lato;
+    width: 100%;
+}
+
+input:focus,
+select:focus {
+    box-shadow: 0 0 10px $primary-color, 0 0 2px #4a6053;
+    outline: none;
+}
