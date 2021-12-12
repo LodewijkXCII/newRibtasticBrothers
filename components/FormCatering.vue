@@ -1,5 +1,5 @@
 <template>
-  <form class="formCatering" method="POST" netlify name="CateringForm" action="/">
+  <form class="formCatering" method="POST" data-netlify="true" name="CateringForm">
     <input type="hidden" name="form-name" value="CateringForm" />
     <div v-if="step === 1">
       <h2>Vraag een offerte op</h2>
@@ -38,9 +38,8 @@
       <label for="company">Bedrijf:</label>
       <input type="text" name="company" id="company" v-model="registration.company" />
       <button class="btn btn-line" @click.prevent="prev()">Terug</button>
-      <button type="submit" class="btn btn-primary" @click.prevent="submit()">
-        Versturen
-      </button>
+      <!-- <button type="submit" class="btn btn-primary" @click.prevent="submit()"> -->
+      <button type="submit" class="btn btn-primary">Versturen</button>
     </div>
   </form>
 </template>
