@@ -113,7 +113,7 @@ export default {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "multipart/form-data" },
-        body: encode({ "form=name": "contact", body }),
+        body: new URLSearchParams(body).toString(),
       })
         .then(() => console.log("Gelukt!"))
         .catch((error) => alert(error));
