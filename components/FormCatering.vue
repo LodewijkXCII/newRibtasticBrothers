@@ -1,11 +1,6 @@
 <template>
-  <form
-    class="formCatering"
-    method="POST"
-    data-netlify="true"
-    netlify
-    name="CateringForm"
-  >
+  <form class="formCatering" method="POST" netlify name="CateringForm" action="/">
+    <input type="hidden" name="form-name" value="CateringForm" />
     <div v-if="step === 1">
       <h2>Vraag een offerte op</h2>
       <label for="option">Gewenst pakket: *</label>
