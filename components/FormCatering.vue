@@ -3,16 +3,16 @@
     <input type="hidden" name="form-name" value="CateringForm" />
     <div v-if="step === 1">
       <h2>Vraag een offerte op</h2>
-      <label for="option">Gewenst pakket: *</label>
+      <label for="option">Gewenst pakket:</label>
       <select name="option" id="option" v-model="registration.option" required>
         <option value="just-meat">Just meat</option>
         <option value="happy-grillin" selected>Happy Grillin</option>
         <option value="all-in">All-In</option>
         <option value="custom">Catering op Maat</option>
       </select>
-      <label for="date">Gewenste datum: *</label>
+      <label for="date">Gewenste datum:</label>
       <input type="date" name="date" id="date" v-model="registration.date" required />
-      <label for="people">Aantal personen: *</label>
+      <label for="people">Aantal personen:</label>
       <input
         type="number"
         name="people"
@@ -29,11 +29,11 @@
         Tof dat je intresse hebt, als je de laatste info invult komen we zo snel mogelijk
         bij je terug!
       </h4>
-      <label for="name">Naam: *</label>
+      <label for="name">Naam:</label>
       <input type="text" name="name" id="name" v-model="registration.name" required />
-      <label for="email">Email: *</label>
+      <label for="email">Email:</label>
       <input type="email" name="email" id="email" v-model="registration.email" required />
-      <label for="email">Telefoonnummer: *</label>
+      <label for="email">Telefoonnummer:</label>
       <input type="text" name="phone" id="phone" v-model="registration.phone" required />
       <label for="company">Bedrijf:</label>
       <input type="text" name="company" id="company" v-model="registration.company" />
