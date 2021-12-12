@@ -4,14 +4,14 @@
     <div v-if="step === 1">
       <h2>Vraag een offerte op</h2>
       <label for="option">Gewenst pakket:</label>
-      <select name="option" id="option" v-model="registration.option" required>
+      <select name="option" id="option" v-model="contact_option" required>
         <option value="just-meat">Just meat</option>
         <option value="happy-grillin" selected>Happy Grillin</option>
         <option value="all-in">All-In</option>
         <option value="custom">Catering op Maat</option>
       </select>
       <label for="date">Gewenste datum:</label>
-      <input type="date" name="date" id="date" v-model="registration.date" required />
+      <input type="date" name="date" id="date" v-model="contact_date" required />
       <label for="people">Aantal personen:</label>
       <input
         type="number"
@@ -20,7 +20,7 @@
         min="1"
         value="1"
         required
-        v-model.number="registration.people"
+        v-model.number="contact_people"
       />
       <button class="btn btn-primary" @click.prevent="next()">Aanvragen</button>
     </div>
@@ -30,13 +30,13 @@
         bij je terug!
       </h4>
       <label for="name">Naam:</label>
-      <input type="text" name="name" id="name" v-model="registration.name" required />
+      <input type="text" name="name" id="name" v-model="contact_name" required />
       <label for="email">Email:</label>
-      <input type="email" name="email" id="email" v-model="registration.email" required />
+      <input type="email" name="email" id="email" v-model="contact_email" required />
       <label for="email">Telefoonnummer:</label>
-      <input type="text" name="phone" id="phone" v-model="registration.phone" required />
+      <input type="text" name="phone" id="phone" v-model="contact_phone" required />
       <label for="company">Bedrijf:</label>
-      <input type="text" name="company" id="company" v-model="registration.company" />
+      <input type="text" name="company" id="company" v-model="contact_company" />
       <button class="btn btn-line" @click.prevent="prev()">Terug</button>
       <!-- <button type="submit" class="btn btn-primary" @click.prevent="submit()"> -->
       <button type="submit" class="btn btn-primary">Versturen</button>
@@ -49,15 +49,13 @@ export default {
   data() {
     return {
       step: 1,
-      registration: {
-        option: null,
-        date: null,
-        people: 1,
-        name: "",
-        email: "",
-        company: null,
-        phone: "",
-      },
+      contact_option: null,
+      contact_date: null,
+      contact_people: 1,
+      contact_name: "",
+      contact_email: "",
+      contact_company: null,
+      contact_phone: "",
     };
   },
   methods: {
