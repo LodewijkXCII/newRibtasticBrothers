@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head {{ HEAD_ATTRS }}>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    <form name="CateringForm" data-netlify="true" hidden>
+      <select name="option">
+        <option value="just-meat"></option>
+        <option value="happy-grillin"></option>
+        <option value="all-in"></option>
+        <option value="custon"></option>
+      </select>
+      <input type="date" name="date" />
+      <input type="number" name="people" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+    </form>
+    {{ APP }}
+  </body>
+</html>
