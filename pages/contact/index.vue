@@ -12,7 +12,12 @@
     <div class="container">
       <div class="wrapper">
         <!-- <form @submit.prevent="sendContact()"> -->
-        <form name="contact" method="POST" data-netlify="true">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          v-on:submit.prevent="submit"
+        >
           <input type="hidden" name="form-name" value="contact" />
           <h2>Neem contact op!</h2>
           <label for="name">Naam:</label>
@@ -97,6 +102,20 @@ export default {
         } catch (error) {
           console.log(error);
         }
+    },
+    async submit() {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "multipart/form-data" },
+        body: {
+          email: this.contact.email,
+          name: this.contact.name,
+          company: this.contact.company,
+          body: this.contact.message,
+        },
+      })
+        .then(() => console.log("Gelukt!"))
+        .catch((error) => alert(error));
     },
   },
 };
