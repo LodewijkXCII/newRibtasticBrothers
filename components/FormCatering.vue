@@ -1,5 +1,11 @@
 <template>
-  <form class="formCatering" method="POST" data-netlify="true">
+  <form
+    class="formCatering"
+    method="POST"
+    data-netlify="true"
+    netlify
+    name="CateringForm"
+  >
     <div v-if="step === 1">
       <h2>Vraag een offerte op</h2>
       <label for="option">Gewenst pakket: *</label>
@@ -70,46 +76,43 @@ export default {
     submit() {
       if (this.registration.name && this.registration.email)
         try {
-          /*
-          Eerst de submit naar Google Analytics
-          */
-          const headers = {
-            "Access-Control-Allow-Origin": "*",
-          };
-          const body = {
-            email: this.registration.email,
-            sendMail: "eat@ribtasticbrothers.nl",
-            pakket: this.registration.option,
-            name: this.registration.name,
-            company: this.registration.company,
-            personen: this.registration.people,
-            phone: this.registration.phone,
-            datum: this.registration.date,
-          };
-
-          // fetch("/.netlify/functions/node-fetch", body)
+          // /*
+          // Eerst de submit naar Google Analytics
+          // */
+          // const headers = {
+          //   "Access-Control-Allow-Origin": "*",
+          // };
+          // const body = {
+          //   email: this.registration.email,
+          //   sendMail: "eat@ribtasticbrothers.nl",
+          //   pakket: this.registration.option,
+          //   name: this.registration.name,
+          //   company: this.registration.company,
+          //   personen: this.registration.people,
+          //   phone: this.registration.phone,
+          //   datum: this.registration.date,
+          // };
+          // // fetch("/.netlify/functions/node-fetch", body)
+          // //   .then(function (response) {
+          // //     console.log(response);
+          // //   })
+          // //   .catch(function (error) {
+          // //     console.log(error);
+          // //   });
+          // this.$axios
+          //   .$post(
+          //     "https://ribtasticbrothers.herokuapp.com/emails/catering",
+          //     // 'http://localhost:1337/emails/catering',
+          //     body,
+          //     headers
+          //   )
           //   .then(function (response) {
           //     console.log(response);
           //   })
           //   .catch(function (error) {
           //     console.log(error);
           //   });
-
-          this.$axios
-            .$post(
-              "https://ribtasticbrothers.herokuapp.com/emails/catering",
-              // 'http://localhost:1337/emails/catering',
-
-              body,
-              headers
-            )
-            .then(function (response) {
-              console.log(response);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-          console.log("submitted");
+          // console.log("submitted");
         } catch (error) {
           console.log(error);
         }
