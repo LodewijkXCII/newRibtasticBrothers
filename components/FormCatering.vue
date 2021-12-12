@@ -1,5 +1,5 @@
 <template>
-  <form class="formCatering">
+  <form class="formCatering" method="POST" data-netlify="true">
     <div v-if="step === 1">
       <h2>Vraag een offerte op</h2>
       <label for="option">Gewenst pakket: *</label>
