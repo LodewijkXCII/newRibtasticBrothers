@@ -4,38 +4,23 @@
     <div class="container-fluid">
       <div class="textInfo">
         <p>
-          Heb je een vraag, of goed idee? Bel of laat een berichtje achter, we
-          komen namelijk graag in contact.
+          Heb je een vraag, of goed idee? Bel of laat een berichtje achter, we komen
+          namelijk graag in contact.
         </p>
       </div>
     </div>
     <div class="container">
       <div class="wrapper">
-        <form @submit.prevent="sendContact()">
+        <!-- <form @submit.prevent="sendContact()"> -->
+        <form name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
           <h2>Neem contact op!</h2>
           <label for="name">Naam:</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            v-model="contact.name"
-            required
-          />
+          <input type="text" name="name" id="name" v-model="contact.name" required />
           <label for="company">Bedrijf:</label>
-          <input
-            type="text"
-            name="company"
-            id="company"
-            v-model="contact.company"
-          />
+          <input type="text" name="company" id="company" v-model="contact.company" />
           <label for="email">Email:</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            v-model="contact.email"
-            required
-          />
+          <input type="email" name="email" id="email" v-model="contact.email" required />
           <label for="message">Bericht:</label>
           <textarea
             name="message"
@@ -63,12 +48,12 @@
 </template>
 
 <script>
-import ImageHeader from '@/components/ImageHeader.vue'
+import ImageHeader from "@/components/ImageHeader.vue";
 
 export default {
   head: {
-    title: 'Contact | The Ribtastic Brothers',
-    noscript: [{ innerHTML: 'Body No Scripts', body: true }],
+    title: "Contact | The Ribtastic Brothers",
+    noscript: [{ innerHTML: "Body No Scripts", body: true }],
   },
   components: {
     ImageHeader,
@@ -76,45 +61,45 @@ export default {
   data() {
     return {
       contact: {
-        name: '',
-        email: '',
-        company: '',
-        message: '',
+        name: "",
+        email: "",
+        company: "",
+        message: "",
       },
-      buttonMsg: 'Verstuur',
+      buttonMsg: "Verstuur",
       heading: {
-        title: 'Contact',
-        subtitle: 'Laat van je horen!',
+        title: "Contact",
+        subtitle: "Laat van je horen!",
       },
       image:
-        'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_contact+(1).jpg',
-    }
+        "https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_contact+(1).jpg",
+    };
   },
   methods: {
     async sendContact() {
-      this.buttonMsg = 'Versturen...'
+      this.buttonMsg = "Versturen...";
       if (this.contact.name && this.contact.email)
         try {
           await this.$axios.$post(
-            'http://localhost:1337/emails/contact',
+            "http://localhost:1337/emails/contact",
             // 'https://admin.ribtasticbrothers.nl/emails/contact',
 
             {
-              sendMail: 'eat@ribtasticbrothers.nl',
+              sendMail: "eat@ribtasticbrothers.nl",
               email: this.contact.email,
               name: this.contact.name,
               company: this.contact.company,
               body: this.contact.message,
             }
-          )
+          );
 
-          this.buttonMsg = 'Verstuurd'
+          this.buttonMsg = "Verstuurd";
         } catch (error) {
-          console.log(error)
+          console.log(error);
         }
     },
   },
-}
+};
 </script>
 
 <style lang="scss">
