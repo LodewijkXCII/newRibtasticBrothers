@@ -104,15 +104,16 @@ export default {
         }
     },
     async submit() {
+      const body = {
+        email: this.contact.email,
+        name: this.contact.name,
+        company: this.contact.company,
+        body: this.contact.message,
+      };
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "multipart/form-data" },
-        body: {
-          email: this.contact.email,
-          name: this.contact.name,
-          company: this.contact.company,
-          body: this.contact.message,
-        },
+        body: encode({ "form=name": "contact", body }),
       })
         .then(() => console.log("Gelukt!"))
         .catch((error) => alert(error));
