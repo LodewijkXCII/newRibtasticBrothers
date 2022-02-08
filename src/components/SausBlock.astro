@@ -1,0 +1,11 @@
+---
+const {saus} = Astro.props
+---
+
+<div class="saus">
+        <img src={saus.afbeelding.url} alt={saus.title} />
+        <div class="saus__text">
+          <h2>{ saus.titel }</h2>
+          <p>{ saus.omschrijving }</p>
+        </div>
+</div>

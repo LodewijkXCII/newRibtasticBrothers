@@ -1,0 +1,52 @@
+---
+
+import BaseHeading from '../layouts/BaseHeading.astro';
+import NavBar from '../layouts/NavBar.vue'
+import Footer from '../layouts/Footer.astro'
+import HeaderImage from '../components/HeaderImage.astro'
+
+import ContactForm from '../components/ContactForm.vue'
+
+let title = '🚀🚀 Contact - The Ribtastic Brothers';
+let heading = {
+    title: 'Contact',
+        subtitle: 'Laat van je horen!',
+}
+let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_contact+(1).jpg'
+
+---
+
+<html lang="en">
+    <head>
+        <BaseHeading title={title} />
+    </head>
+    <body>
+    <NavBar client:load />
+    <HeaderImage image={headerURL} header={heading}/>
+  <div class="container-fluid">
+      <div class="textInfo">
+        <p>
+          Heb je een vraag, of goed idee? Bel of laat een berichtje achter, we komen
+          namelijk graag in contact.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="wrapper">
+
+        <ContactForm client:load/>
+        <div class="belInfo">
+          <span class="fas fa-phone" />
+          <h2>Bel ons!</h2>
+
+          <p>We staan klaar om al jouw prangende vragen te beantwoorden!</p>
+          <h3>06-43172071</h3>
+        </div>
+      </div>
+    </div>
+
+        <footer>
+            <Footer/>
+        </footer>
+    </body>
+</html> 

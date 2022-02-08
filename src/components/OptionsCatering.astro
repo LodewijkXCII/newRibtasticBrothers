@@ -1,0 +1,21 @@
+---
+const {props}= Astro.props
+
+// TODO SET v-bind:class="{ recommended: recommended }"
+---
+
+<div class="cateringCard" >
+    <h2 class="cateringCard__title">{ props.name }</h2>
+    <p class="cateringCard__text">
+      &euro;{ props.price }
+      <span>/persoon</span>
+    </p>
+    <p style="padding-left: 1.5em">BEVAT:</p>
+    <ul class="cateringCard__list">
+    {props.cateringProducts.map(cP => <li class="cateringCard__list--item">{cP.titel}</li>)}
+      
+    </ul>
+    <a href={`/catering/${props.slug}`}>
+      MEER INFO
+    </a>
+  </div>

@@ -1,0 +1,62 @@
+---
+import NavBar from '../layouts/NavBar.vue'
+import Footer from '../layouts/Footer.astro'
+import BaseHeading from '../layouts/BaseHeading.astro'
+import HeaderImage from '../components/HeaderImage.astro'
+
+import SausBlock from '../components/SausBlock.astro'
+
+let title = '🚀🚀 Smaak - The Ribtastic Brothers';
+let heading = {
+    title: 'Ribtastic Saus',
+        subtitle: 'Onze geheime formule',
+}
+let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_bbq_saus_juicy.jpg'
+
+
+const URL = 'https://admin.ribtasticbrothers.nl/sauzens'
+const response = await fetch(URL)
+const sauzen = await response.json()
+
+---
+
+<html lang="en">
+    <head>
+        <BaseHeading title={title} />
+    </head>
+    <body>
+      <NavBar client:load />
+      <HeaderImage image={headerURL} header={heading}/>
+ <section>
+    
+    <div class="container-fluid">
+      <p>
+        Het geheim van lekker vlees zit voor een groot gedeelte in de
+        voorbereiding en de magie van marinade. Ons vlees wordt daarom met een
+        overvloed van marinade op een ambachtelijke wijze klaargemaakt, zodat de
+        smaaksensatie tot diep in het vlees kan trekken.
+      </p>
+      <p>
+        Met onze goedkeuring bepalen wij of het vlees klaar is voor de BBQ, en
+        bereid kan worden voor onze gasten. Daarna volgt de finale stap in het
+        proces, de Ribtastic Secret Sauce. Met de juiste temperatuur wordt
+        tijdens het grillen de geheime marinade vorstelijke op het vlees
+        gesmeerd zodat de smaaksensatie wordt afgemaakt. Zie hieronder onze
+        heerlijke creaties, you wanna try?
+      </p>
+    </div>
+    <div class="container sauzen">
+                    
+                    {sauzen.map(p => <SausBlock saus={p} />)}
+                    
+    </div>
+    <a href="/catering" class="btn btn-line">Catering</a>
+
+    <!-- <SmallGallery /> -->
+  </section>
+
+   <footer>
+            <Footer/>
+        </footer>
+    </body>
+</html> 

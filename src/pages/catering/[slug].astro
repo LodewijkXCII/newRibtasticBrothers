@@ -1,0 +1,68 @@
+---
+export async function getStaticPaths() {
+    const cateringOptions =
+      "https://admin.ribtasticbrothers.nl/catering-opties";
+    const response = await fetch(cateringOptions);
+    const data = await response.json();
+
+    return data.map(co => {
+        return {
+            params: {slug: co.slug},
+            props: {co}
+        }
+    })
+}
+
+import NavBar from '../../layouts/NavBar.vue'
+import Footer from '../../layouts/Footer.astro'
+import BaseHeading from '../../layouts/BaseHeading.astro'
+
+const {slug} = Astro.request.params;
+const URL = `https://admin.ribtasticbrothers.nl/catering-opties?slug=${slug}`
+const response = await fetch(URL)
+const data = await response.json()
+
+
+const cateringData = data[0]
+let title = '🚀🚀 Galerij - The Ribtastic Brothers';
+
+
+---
+<html lang="en">
+    <head>
+        <BaseHeading title={title} />
+    </head>
+    <body>
+      <NavBar client:load />
+<section>
+<div class="cateringTitle">
+    <section class="cateringTitle__left">
+      <img src={cateringData.afbeelding.url} alt=""/>
+    </section>
+    <section class="cateringTitle__right">
+      <h1>{ cateringData.name }</h1>
+      <div class="cateringTitle__right--container">
+        <div class="cateringTitle__right--container--text" id="top">
+          <h2>{ cateringData.subTitle }</h2>
+<p>
+{cateringData.omschrijving}
+</p>
+          
+
+          <a href="/catering" class="btn btn-inline"
+            >Terug naar het overzicht</a
+          >
+          <p>
+            Prijs vanaf:
+            <strong>&euro;{ cateringData.prijs }</strong> per persoon.
+          </p>
+        </div>
+      </div>
+    </section>
+</div>
+</section>
+     <footer>
+            <Footer/>
+        </footer>
+    </body>
+</html> 

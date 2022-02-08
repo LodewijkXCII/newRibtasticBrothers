@@ -1,0 +1,12 @@
+---
+const {partner} = Astro.props
+---
+
+<div class="cateringPartner__partner">
+        <h4 class="cateringPartner__partner--title">{ partner.bedrijf }</h4>
+        <img
+          src={partner.logo.url}
+          alt=""
+          class="cateringPartner__partner--img"
+        />
+</div>

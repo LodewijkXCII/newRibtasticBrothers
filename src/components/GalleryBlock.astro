@@ -1,0 +1,21 @@
+---
+const {gallery} = Astro.props
+const url = '/galerij/'+gallery.slug
+
+
+
+---
+
+  <div class="galleryPost">
+   <a href={url}>
+      <img
+        src={gallery.thumbnail.url}
+        alt={gallery.title}
+        class="galleryPost__img"
+      />
+      <div class="galleryPost__body">
+        <h3 class="galleryPost__title">{ gallery.titel }</h3>
+        </a>
+      </div>
+    </div>
+  

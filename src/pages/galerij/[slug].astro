@@ -1,0 +1,61 @@
+---
+import NavBar from '../../layouts/NavBar.vue'
+import Footer from '../../layouts/Footer.astro'
+import BaseHeading from '../../layouts/BaseHeading.astro'
+
+import GalleryImage from '../../components/GalleryImage.astro'
+ 
+export async function getStaticPaths() {
+const URL = 'https://admin.ribtasticbrothers.nl/event-gallerijs'
+const response = await fetch(URL)
+const data = await response.json()
+
+    return data.map((post, i) => {
+        return {
+            params: {slug: post.slug},
+            props: {post}
+        }
+    })
+}
+
+const {slug} = Astro.request.params;
+const URL = `https://admin.ribtasticbrothers.nl/event-gallerijs?slug=${slug}`
+const response = await fetch(URL)
+const data = await response.json()
+
+const galleryData = data[0]
+
+
+let title = '🚀🚀 Galerij - The Ribtastic Brothers';
+---
+
+
+<html lang="en">
+    <head>
+        <BaseHeading title={title} />
+    </head>
+    <body>
+      <NavBar client:load />
+<section>
+    <div class="container gallery">
+      <h1>{ galleryData.titel }</h1>
+      <h2>{ galleryData.locatie }</h2>
+      <p>{ galleryData.omschrijving }</p>
+      <a href="/galerij" class="btn btn-inline">
+        Terug naar het overzicht
+      </a>
+
+<div class="galleryImages">
+  {galleryData.afbeeldingen.map(p => 
+          <GalleryImage	 props={p} />)}
+</div>
+          
+
+      
+    </div>
+  </section>
+     <footer>
+            <Footer/>
+        </footer>
+    </body>
+</html> 

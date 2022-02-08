@@ -1,0 +1,67 @@
+---
+import NavBar from '../layouts/NavBar.vue'
+import Footer from '../layouts/Footer.astro'
+import BaseHeading from '../layouts/BaseHeading.astro'
+import HeaderImage from '../components/HeaderImage.astro'
+
+let title = '🚀🚀 Sensatie - The Ribtastic Brothers';
+let heading = {
+    title: 'Sensatie',
+        subtitle: 'Met bakfiets of smoker',
+}
+let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_bbq_bakfiets_catering.jpg'
+
+
+---
+
+<html lang="en">
+    <head>
+        <BaseHeading title={title} />
+    </head>
+    <body>
+      <NavBar client:load />
+      <HeaderImage image={headerURL} header={heading}/>
+   <section>
+    
+
+    <div class="container-fluid">
+      <p>
+        Naast smaak is sensatie een belangrijke pijler voor ons. Wij zijn pas
+        tevreden als het gezelschap lekker heeft kunnen genieten van onze BBQ
+        creaties en het feestje is geslaagd. We zetten ons enthousiast en
+        volledig in, om bij te kunnen dragen aan het succes. Dat merk je aan
+        onze vibe, en onze uitstraling.
+      </p>
+      <p>
+        Over uitstraling gesprokenl; ons nobel ros. Wat krijg je als je een BBQ,
+        mobiel en opvallend wilt maken?
+      </p>
+      <p>
+        Precies die vraag hing constant boven ons hoofd. Na flink wat geschrapte
+        ideeën en uren buffelen kwam het ultieme idee om een BBQ bakfiets te
+        bouwen. Een fiets groot genoeg om alle benodigde materialen mee te
+        nemen, en klein genoeg om te kunnen flaneren over de boulevard. Kortom
+        een perfecte mix tussen onze authenticiteit en mobiliteit, zodat
+        iedereen kennis kan maken met de Ribtastic Brothers.
+      </p>
+      <p>
+        De fiets is van scratch af aan zelf ontworpen en gebouwd. Mocht het
+        feestje iets groter worden, hebben we ook beschikking over een geweldige
+        smoker!
+      </p>
+      <!-- TODO SET IMAGE OF BAKFIETS AND SMOKER -->
+      <p>Have you ever seen something like this?</p>
+      <div class="btn btn-line">
+        <a href="/catering">Catering</a>
+      </div>
+    </div>
+    <!-- <SmallGallery v-if="images" v-bind:images="images.image[0].images" /> -->
+    <!-- <BouwProces /> -->
+    <!-- <nuxt-link to="catering" class="btn btn-line">Catering</nuxt-link> -->
+  </section>
+
+   <footer>
+            <Footer/>
+        </footer>
+    </body>
+</html> 

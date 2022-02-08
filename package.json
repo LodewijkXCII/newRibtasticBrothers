@@ -1,0 +1,23 @@
+{
+  "name": "@example/starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "prettier -w"
+  },
+  "devDependencies": {
+    "@astrojs/renderer-vue": "^0.2.1",
+    "astro": "^0.21.13",
+    "sass": "^1.45.0"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.5.2",
+    "axios": "^0.24.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1"
+  }
+}

@@ -1,0 +1,83 @@
+---
+import NavBar from '../../layouts/NavBar.vue'
+import Footer from '../../layouts/Footer.astro'
+import BaseHeading from '../../layouts/BaseHeading.astro'
+import HeaderImage from '../../components/HeaderImage.astro'
+
+import GalleryBlock from '../../components/GalleryBlock.astro'
+
+let title = '🚀🚀 Galerij - The Ribtastic Brothers';
+let heading = {
+    title: 'Galerij',
+        subtitle: 'Plaatjes en Daadjes',
+}
+let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_gallerij+(1).jpg'
+
+const URL = 'https://admin.ribtasticbrothers.nl/event-gallerijs'
+const response = await fetch(URL)
+const data = await response.json()
+
+
+
+const gallery = data.map((event) => {
+      let setTitel = ''
+      if (event.titel) {
+        setTitel = event.titel
+      } else {
+        setTitel = event.kalender.titel
+      }
+      return {
+        id: event.id,
+        omschrijving: event.omschrijving,
+        titel: setTitel,
+        thumbnail: event.thumbnail,
+        afbeeldingen: event.afbeeldingen,
+        slug: setTitel.toLowerCase(),
+      }
+    })
+
+---
+
+<html lang="en">
+    <head>
+        <BaseHeading title={title} />
+    </head>
+    <body>
+      <NavBar client:load />
+ 
+<HeaderImage image={headerURL} header={heading}/>
+<section>
+    
+    <div class="container-fluid">
+      <div class="textInfo">
+        <p>
+          Op bijna alle events waar we komen hebben we onze huisfotograaf Lars
+          mee. Hij schiet de mooiste plaatjes waarmee we onze feestjes kunnen
+          vereeuwigen. We zetten vaak een aantal plaatjes op onze socials, maar
+          voor de volledige reportage moet je hier zijn. Hopelijk geven
+          onderstaande foto's een glimpse van wat wij in petto hebben.
+        </p>
+        <p>
+          Mocht je een foto willen gebruiken mag dat, mits je ons natuurlijk
+          even tagt via de bekende kanalen...
+        </p>
+      </div>
+
+      <a href="/catering" class="btn btn-primary">
+        Catering
+        <span class="fas fa-utensils"></span>
+      </a>
+    </div>
+    <div class="container">
+      <div class="galleryWrapper">
+                    {gallery.map(p => <GalleryBlock	 gallery={p} />)}
+       
+      </div>
+    </div>
+  </section>
+
+   <footer>
+            <Footer/>
+        </footer>
+    </body>
+</html> 

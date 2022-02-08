@@ -1,0 +1,9 @@
+---
+const {props} = Astro.props
+---
+
+<div class="galleryImages__img gallery">
+<a href={props.formats.medium.url}>
+            <img src={props.formats.small.url} alt={props.name} />
+</a>
+</div>
