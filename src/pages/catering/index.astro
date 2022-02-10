@@ -8,7 +8,7 @@ import HeaderImage from '../../components/HeaderImage.astro'
 import NavBar from '../../layouts/NavBar.vue'
 import Footer from '../../layouts/Footer.astro'
 
-let title = '🚀🚀 Catering - The Ribtastic Brothers';
+let title = 'Catering - The Ribtastic Brothers';
 let heading = {
     title: 'BBQ Catering',
         subtitle: 'Met bakfiets of smoker?',
@@ -26,7 +26,7 @@ const cateringOptions =
       return {
         id: option.id,
         name: option.titel,
-        price: option.prijs,
+        price: option.prijs.toLocaleString(),
         cateringProducts: option.catering_productens,
         recommended: option.aanbevolen,
         slug: option.slug,
@@ -35,7 +35,7 @@ const cateringOptions =
 
 ---
 
-<html lang="en">
+<html lang="nl">
     <head>
         <BaseHeading title={title} />
     </head>
@@ -73,7 +73,7 @@ const cateringOptions =
       <h1>De Pakketten</h1>
       <h2>Voor ieder wat wils</h2>
       <div class="cateringWrapper">
-        {catering.map(c => <OptionsCatering props={c}/>)}
+        {catering.map(c => <OptionsCatering props={c} rec={c.recommended}/>)}
       <div class="cateringCard">
       <h2 class="cateringCard__title">Catering op Maat</h2>
       <p class="cateringCard__text">Prijs op aanvraag</p>
