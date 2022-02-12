@@ -69,12 +69,17 @@ export default {
       this.step += 1;
     },
     async submit() {
+      const axiosConfig = {
+        headers: {
+          "content-type": "application/json",
+          "api-key": `${import.meta.env.PUBLIC_SIB_API_KEY}`,
+        },
+      };
       if (this.contact_name && this.contact_email)
         try {
-          await axios({
-            method: "post",
-            url: "https://api.sendinblue.com/v3/smtp/email",
-            data: {
+          await axios.post(
+            "https://api.sendinblue.com/v3/smtp/email",
+            {
               sender: {
                 name: this.contact_name,
                 email: this.contact_email,
@@ -100,11 +105,8 @@ export default {
               
               </body></html>`,
             },
-            headers: {
-              "content-type": "application/json",
-              "api-key": `${import.meta.env.PUBLIC_SIB_API_KEY}`,
-            },
-          });
+            axiosConfig
+          );
           console.log("hello world");
         } catch (error) {
           console.log(error);

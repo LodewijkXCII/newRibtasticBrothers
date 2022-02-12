@@ -51,13 +51,18 @@ export default {
   },
   methods: {
     async sendContact() {
+      const axiosConfig = {
+        headers: {
+          "content-type": "application/json",
+          "api-key": `${import.meta.env.PUBLIC_SIB_API_KEY}`,
+        },
+      };
       this.buttonMsg = "Versturen...";
       if (this.contact.name && this.contact.email)
         try {
-          await axios({
-            method: "post",
-            url: "https://api.sendinblue.com/v3/smtp/email",
-            data: {
+          await axios.post(
+            "https://api.sendinblue.com/v3/smtp/email",
+            {
               sender: {
                 name: this.contact.name,
                 email: this.contact.email,
@@ -71,16 +76,12 @@ export default {
               subject: "Een nieuw contact formulier is ingevuld",
               htmlContent: `<html><head></head><body><p>Hoi,</p>Er is een contact aanvraag geplaatst. Hiero kan je zien wat de vraag is:</p><p>${this.contact.message}</p></body></html>`,
             },
-            headers: {
-              "content-type": "application/json",
-              "api-key": `${import.meta.env.PUBLIC_SIB_API_KEY}`,
-            },
-          });
+            axiosConfig
+          );
 
-          await axios({
-            method: "post",
-            url: "https://api.sendinblue.com/v3/smtp/email",
-            data: {
+          await axios.post(
+            "https://api.sendinblue.com/v3/smtp/email",
+            {
               sender: {
                 name: "The Ribtastic Brothers",
                 email: "eat@ribtasticbrothers.nl",
@@ -94,11 +95,8 @@ export default {
               subject: "Dankjewel voor je vraag!",
               htmlContent: `<html><head></head><body><p>Hoi ${this.contact.name},</p>Dankjewel voor je intresse. We hebben de veraag in goede orde ontvangen en komen zo snel mogelijk bij je terug! Je verstuurde vraag is: </p><p>${this.contact.message}</p><p>Groetjes, The Ribttastic Brothers</p></body></html>`,
             },
-            headers: {
-              "content-type": "application/json",
-              "api-key": `${import.meta.env.PUBLIC_SIB_API_KEY}`,
-            },
-          });
+            axiosConfig
+          );
           const msg = "Verstuurd";
           setTimeout((this.buttonMsg = msg), 5000);
         } catch (error) {
