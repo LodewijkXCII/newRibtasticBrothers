@@ -72,7 +72,7 @@ export default {
       const axiosConfig = {
         headers: {
           "content-type": "application/json",
-          "api-key": `${import.meta.env.PUBLIC_SIB_API_KEY}`,
+          "api-key": `${import.meta.env.VITE_SIB_API_KEY}`,
         },
       };
       if (this.contact_name && this.contact_email)
