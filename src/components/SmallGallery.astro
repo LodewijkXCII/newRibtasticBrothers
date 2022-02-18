@@ -1,4 +1,10 @@
 ---
 
+const {images} = Astro.props
 ---
 
+<div class="smallGallery">
+    {images.map(i => 
+        <img src={`../assets/img/${i.src}`}/>
+    )}
+</div>

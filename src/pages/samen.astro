@@ -3,6 +3,7 @@ import NavBar from '../layouts/NavBar.vue'
 import Footer from '../layouts/Footer.astro'
 import BaseHeading from '../layouts/BaseHeading.astro'
 import HeaderImage from '../components/HeaderImage.astro'
+import SmallGallery from '../components/SmallGallery.astro'
 
 let title = 'Samen - The Ribtastic Brothers';
 let heading = {
@@ -10,6 +11,13 @@ let heading = {
         subtitle: 'May you always be surrounded by\ngood friends and awesome BBQ',
 }
 let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_samen.jpg'
+
+const images= [
+        { src: 'catering_foodtruck_spareribs-min.jpg', alt: 'header1' },
+        { src: 'header_1.jpg', alt: 'header2' },
+        { src: 'header_2.jpg', alt: 'header3' },
+      ]
+
 
 ---
 
@@ -37,6 +45,7 @@ let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ri
       <p>Waar wacht je nog op? Invite your friends and organize a BBQ!</p>
     </div>
 
+     <SmallGallery images={images} /> 
     <div class="container-fluid">
       <h2>Duurzaamheid</h2>
       <p>
@@ -66,7 +75,6 @@ let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ri
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta nesciunt deleniti sapiente omnis laborum cupiditate voluptates ratione nisi quae illum tenetur fugit aspernatur, ut quia quibusdam tempore voluptatibus maiores unde.
     </p>
     </div>
-    <!-- <SmallGallery :images="images" /> -->
   </section>
 
    <footer>

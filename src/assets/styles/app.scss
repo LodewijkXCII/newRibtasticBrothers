@@ -1143,3 +1143,16 @@ form {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.smallGallery {
+  margin: 1.8em 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.3em;
+}
+
+@media (min-width: 650px) {
+  .smallGallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
