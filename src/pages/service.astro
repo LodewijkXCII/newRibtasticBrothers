@@ -6,8 +6,8 @@ import HeaderImage from '../components/HeaderImage.astro'
 
 let title = 'Service - The Ribtastic Brothers';
 let heading = {
-    title: 'Service',
-        subtitle: 'Enthousiastic is our middle name',
+  title: 'Service',
+  subtitle: 'Enthousiastic is our middle name',
 }
 let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_samen.jpg'
 
@@ -15,17 +15,19 @@ let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ri
 ---
 
 <html lang="en">
-    <head>
-        <BaseHeading title={title} />
-    </head>
-    <body>
-      <NavBar client:load />
-      <HeaderImage image={headerURL} header={heading}/>
-   <section>
-    
+
+<head>
+  <BaseHeading title={title} />
+</head>
+
+<body>
+  <NavBar client:load />
+  <HeaderImage image={headerURL} header={heading} />
+  <section>
+
 
     <div class="container-fluid">
-       <p>
+      <p>
         Waar wij komen en wat wij bereiden, altijd zijn we enthousiast en zetten
         ons voor 110% in om er een feestje van te maken. Vanaf het eerste
         contact tot het opruimen en schoonmaken, wij hebben er plezier in om het
@@ -36,17 +38,18 @@ let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ri
         te laten maken met onze unieke BBQ creaties.
       </p>
       <p>Neem contact met ons op! Don’t you wanna be part of it?</p>
-      
+
       <div class="btn btn-line">
         <a href="/catering">Catering</a>
       </div>
     </div>
-       
-    
+
+
   </section>
 
-   <footer>
-            <Footer/>
-        </footer>
-    </body>
-</html> 
+  <footer>
+    <Footer />
+  </footer>
+</body>
+
+</html>
