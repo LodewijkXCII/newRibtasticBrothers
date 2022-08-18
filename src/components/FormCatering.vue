@@ -40,7 +40,7 @@
       />
       <button class="btn btn-line" @click.prevent="prev()">Terug</button>
       <button class="btn btn-primary" @click.prevent="submit()">
-        Versturen
+        {{ buttonMsg }}
       </button>
     </div>
   </form>
@@ -51,6 +51,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      buttonMsg: "Verstuur",
       step: 1,
       contact_option: null,
       contact_date: null,
@@ -76,22 +77,23 @@ export default {
         },
       };
       if (this.contact_name && this.contact_email)
-        try {
-          await axios.post(
-            "https://api.sendinblue.com/v3/smtp/email",
-            {
-              sender: {
-                name: this.contact_name,
-                email: this.contact_email,
+        this.buttonMsg = "Versturen...";
+      try {
+        await axios.post(
+          "https://api.sendinblue.com/v3/smtp/email",
+          {
+            sender: {
+              name: this.contact_name,
+              email: this.contact_email,
+            },
+            to: [
+              {
+                email: "eat@ribtasticbrothers.nl",
+                name: "The Ribtastic Brothers",
               },
-              to: [
-                {
-                  email: "eat@ribtasticbrothers.nl",
-                  name: "The Ribtastic Brothers",
-                },
-              ],
-              subject: "Een nieuwe catering aanvraaag!",
-              htmlContent: `<html><head></head><body><p>Hoi,</p>Er is een catering aanvraag geplaatst. Hiero kan je zien wat de gegevens zijn:</p>
+            ],
+            subject: "Een nieuwe catering aanvraaag!",
+            htmlContent: `<html><head></head><body><p>Hoi,</p>Er is een catering aanvraag geplaatst. Hiero kan je zien wat de gegevens zijn:</p>
               <p>
               <ul>
                 <li>${this.contact_name}</li>
@@ -104,13 +106,31 @@ export default {
               </ul>
               
               </body></html>`,
+          },
+          axiosConfig
+        );
+        await axios.post(
+          "https://api.sendinblue.com/v3/smtp/email",
+          {
+            sender: {
+              name: "The Ribtastic Brothers",
+              email: "eat@ribtasticbrothers.nl",
             },
-            axiosConfig
-          );
-          console.log("hello world");
-        } catch (error) {
-          console.log(error);
-        }
+            to: [
+              {
+                email: this.contact.email,
+                name: this.contact.name,
+              },
+            ],
+            subject: "Dankjewel voor je catering aanvraag!",
+            htmlContent: `<html><head></head><body><p>Hoi ${this.contact.name},</p>Dankjewel voor je intresse. We hebben de veraag in goede orde ontvangen en komen zo snel mogelijk bij je terug!</p><p>Groetjes, The Ribttastic Brothers</p></body></html>`,
+          },
+          axiosConfig
+        );
+        this.buttonMsg = "Verstuurd...";
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };
