@@ -128,6 +128,14 @@ export default {
           axiosConfig
         );
         this.buttonMsg = "Verstuurd...";
+              this.contact_option: null,
+      this.contact_date: null,
+      this.contact_people: 1,
+      this.contact_name: "",
+      this.contact_email: "",
+      this.contact_company: null,
+      this.contact_phone: "",
+      this.step =1
       } catch (error) {
         console.log(error);
       }
