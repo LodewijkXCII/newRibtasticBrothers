@@ -118,12 +118,12 @@ export default {
             },
             to: [
               {
-                email: this.contact.email,
-                name: this.contact.name,
+                email: this.contact_email,
+                name: this.contact_name,
               },
             ],
             subject: "Dankjewel voor je catering aanvraag!",
-            htmlContent: `<html><head></head><body><p>Hoi ${this.contact.name},</p>Dankjewel voor je intresse. We hebben de veraag in goede orde ontvangen en komen zo snel mogelijk bij je terug!</p><p>Groetjes, The Ribttastic Brothers</p></body></html>`,
+            htmlContent: `<html><head></head><body><p>Hoi ${this.contact_name},</p>Dankjewel voor je intresse. We hebben de veraag in goede orde ontvangen en komen zo snel mogelijk bij je terug!</p><p>Groetjes, The Ribttastic Brothers</p></body></html>`,
           },
           axiosConfig
         );
