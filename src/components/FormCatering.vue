@@ -123,7 +123,7 @@ export default {
               },
             ],
             subject: "Dankjewel voor je catering aanvraag!",
-            htmlContent: `<html><head></head><body><p>Hoi ${this.contact_name},</p>Dankjewel voor je intresse. We hebben de veraag in goede orde ontvangen en komen zo snel mogelijk bij je terug!</p><p>Groetjes, The Ribttastic Brothers</p></body></html>`,
+            htmlContent: `<html><head></head><body><p>Hoi ${this.contact_name},</p>Dankjewel voor je intresse. We hebben de vraag in goede orde ontvangen en komen zo snel mogelijk bij je terug!</p><p>Groetjes, The Ribttastic Brothers</p></body></html>`,
           },
           axiosConfig
         );
