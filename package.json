@@ -15,6 +15,7 @@
     "sass": "^1.45.0"
   },
   "dependencies": {
+    "@astrojs/vue": "^0.4.0",
     "@glidejs/glide": "^3.5.2",
     "axios": "^0.24.0",
     "lodash": "^4.17.21",

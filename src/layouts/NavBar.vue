@@ -15,11 +15,6 @@
           :class="{ hidden: !isHidden }"
         ></span>
       </div>
-      <!-- TODO ADD FIRST EVENT -->
-      <!-- <div class="firstEvent">
-        <p>Eerstvolgend Event</p>
-        <span>Freshtival</span>
-      </div>-->
     </div>
     <div
       class="bottomNav"
@@ -76,12 +71,7 @@ export default {
       bottomBar: false,
     };
   },
-  // created() {
-  //   window.addEventListener("scroll", this.handleScroll);
-  // },
-  // destroyed() {
-  //   window.removeEventListener("scroll", this.handleScroll);
-  // },
+
   methods: {
     handleScroll() {
       const isMobile = window.orientation > -1;

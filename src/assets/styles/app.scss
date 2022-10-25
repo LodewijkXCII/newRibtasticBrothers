@@ -160,6 +160,11 @@ img {
   }
 }
 
+.text-lines {
+  position: relative;
+  @include before-after-line(50%, 140px, 140px, 160px);
+}
+
 h1,
 h2 {
   font-family: $ft-bebas;
@@ -379,7 +384,7 @@ main {
         a {
           margin: 0;
           margin-left: 1.5em;
-          font-size: 0.65rem;
+          font-size: 0.9rem;
         }
       }
     }

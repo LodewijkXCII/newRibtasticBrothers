@@ -1,69 +1,160 @@
 footer {
   padding-bottom: 6em;
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    width: 100%;
-
-    background: rgb(120, 135, 114);
-    background: $primary-gradient;
-  }
 
   &::before {
-    height: 1.5em;
+    @include block-line(1.5em);
   }
-
   &::after {
-    height: 3px;
+    @include block-line(3px);
   }
 
-  .footer__sectionA {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  .footer {
+    width: $max-width;
+    margin: 1em auto;
+    &.footer__section-A {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-around;
+      align-items: center;
 
-    img {
-      margin: 1em;
-      width: 80px;
+      .left {
+        .footer_logo {
+          margin: 1em 0;
+          width: 200px;
+        }
+        span {
+          margin: 0.5em;
+        }
+
+        .buttons {
+          display: flex;
+
+          .btn {
+            margin: auto 1em;
+            margin-left: 0;
+          }
+        }
+        .leerbedrijf {
+          margin: 0;
+          padding: 0;
+
+          img {
+            width: 50px;
+          }
+        }
+
+        blockquote {
+          margin: 2em 0;
+          position: relative;
+          font-size: 0.8rem;
+          font-style: italic;
+
+          &::before {
+            content: "\0022";
+            position: absolute;
+            top: -120px;
+            left: -45px;
+            color: rgba($color: #fff, $alpha: 0.5);
+            font-size: 10rem;
+          }
+        }
+      }
+      .right {
+        display: flex;
+        justify-content: right;
+        position: relative;
+        &__image {
+          height: 150px;
+          max-width: 350px;
+          overflow: hidden;
+          border-radius: 5%;
+          &--image {
+            transform: translateY(-30%);
+          }
+        }
+        &::after {
+          content: "";
+          display: block;
+          width: 300px;
+          height: 100px;
+          background: $primary-gradient;
+          position: absolute;
+          z-index: -10;
+          bottom: -20%;
+          right: -20px;
+          border-radius: 5px;
+        }
+      }
     }
-    span {
-      margin: 0.5em;
+    &.footer__section-B {
+      background: $off-black-color;
+      min-height: 30px;
+      width: 100%;
+
+      & > * {
+        margin: auto;
+        padding: 2em;
+        text-align: center;
+
+        h4 {
+          color: $secondary-color;
+        }
+        .socials {
+          max-width: 400px;
+          position: relative;
+          margin: auto;
+
+          &::before {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: -10px;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            right: -10px;
+          }
+
+          a {
+            color: $secondary-color;
+            margin: 1em;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+
+        ul,
+        li {
+          list-style-type: none;
+        }
+      }
+      &::after {
+        @include block-line(1px);
+      }
+    }
+
+    &.footer__section-C {
+      margin: 2em auto;
     }
 
     .copyright {
+      font-family: monospace;
       font-size: 0.6rem;
       text-align: center;
       text-transform: uppercase;
-    }
-  }
-
-  .footer__links {
-    grid-gap: 0.8em;
-    font-size: 1em;
-    margin: 0 2em 2em;
-
-    h2 {
-      font-family: $ft-lato;
-      text-transform: uppercase;
-      font-size: 1em;
-      color: white;
-      letter-spacing: normal;
-      text-align: left;
-      margin-bottom: 0.5em;
-    }
-
-    ul {
-      padding: 0;
-
-      li {
-        list-style: none;
-        padding-left: 0;
-        margin: 0.2em 0;
-      }
-    }
-    .links__about {
-      grid-column: 3/4;
     }
   }
 }
@@ -88,27 +179,6 @@ footer {
           img {
             max-width: 100px;
             margin: auto;
-          }
-        }
-        .socials {
-          text-align: center;
-
-          span {
-            color: white;
-          }
-        }
-      }
-
-      .footer__links {
-        font-size: 1em;
-        grid-gap: 1.5em;
-
-        a {
-          color: white;
-          transition: 0.3s;
-
-          &:hover {
-            color: $primary-color;
           }
         }
       }
