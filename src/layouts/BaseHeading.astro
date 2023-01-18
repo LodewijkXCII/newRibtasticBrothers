@@ -1,26 +1,38 @@
 ---
-const {title, discription } = Astro.props
-
+const { title, discription } = Astro.props;
 ---
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width initial-scale=1" />
-    <meta
-      name="keywords"
-      content="spareribs, catering, foodtruck, bbq, BBQ, barbeque, barbecue, delivery"
-    />
-    <meta name="discription" content={discription}>
-    <title>{title}</title>
 
-    <link rel="icon" type="image/x-icon" href="../favicon/favicon.ico" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width initial-scale=1" />
+<meta
+  name="keywords"
+  content="spareribs, catering, foodtruck, bbq, BBQ, barbeque, barbecue, delivery"
+/>
+<meta name="discription" content={discription} />
+<title>{title}</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="icon" type="image/x-icon" href="../favicon/favicon.ico" />
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700;900&display=swap"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
-    <link rel="stylesheet" href={Astro.resolve('../assets/styles/config.scss')}>
-    <link rel="stylesheet" href={Astro.resolve('../assets/styles/app.scss')}
-    type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700;900&display=swap"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css"
+/>
+<link rel="stylesheet" href={Astro.resolve("../assets/styles/config.scss")} />
+<link
+  rel="stylesheet"
+  href={Astro.resolve("../assets/styles/app.scss")}
+  type="text/css"
+/>

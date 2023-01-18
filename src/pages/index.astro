@@ -1,130 +1,121 @@
 ---
 // Import Layouts
-import BaseHeading from '../layouts/BaseHeading.astro';
-import NavBar from '../layouts/NavBar.vue'
-import Footer from '../layouts/Footer.astro'
+import BaseHeading from "../layouts/BaseHeading.astro";
+import NavBar from "../layouts/NavBar.vue";
+import Footer from "../layouts/Footer.astro";
 // Import components
-import RiderGezocht from '../components/RiderGezocht.astro';
-import GalleryBlock from '../components/GalleryBlock.astro';
-import FollowBlock from '../components/FollowBlock.astro';
+import RiderGezocht from "../components/RiderGezocht.astro";
+import GalleryBlock from "../components/GalleryBlock.astro";
+import FollowBlock from "../components/FollowBlock.astro";
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
 // It will run during the build, but never in the browser.
 // All variables are available to use in the HTML template below.
-let title = 'The Ribtastic Brothers - De lekkerste spareribs!';
-
+let title = "The Ribtastic Brothers - De lekkerste spareribs!";
 ---
 
 <html lang="en">
+  <head>
+    <BaseHeading title={title} />
+  </head>
 
-<head>
-  <BaseHeading title={title} />
-</head>
-
-<body>
-  <NavBar client:load />
-  <header class="homeHeader">
-    <div class="container fullImageHeader">
-      <h1>De lekkerste Spareribs</h1>
-      <h2>Thuis, op een festival of catering</h2>
-      <div class="cta">
-        <a href="/catering" class="btn btn-primary">
-          Catering
-          <span class="fas fa-utensils"></span>
-        </a>
-        <a href="https://bestellen.ribtasticbrothers.nl/" class="btn btn-primary" target="_blank">
-          Bezorging
-          <span class="fas fa-bicycle"></span>
-        </a>
+  <body>
+    <NavBar client:load />
+    <header class="homeHeader">
+      <div class="container fullImageHeader">
+        <h1>De lekkerste Spareribs</h1>
+        <h2>Thuis, op een festival of catering</h2>
+        <div class="cta">
+          <a href="/catering" class="btn btn-primary">
+            Op je evenement
+            <span class="fas fa-utensils"></span>
+          </a>
+          <a
+            href="https://bestellen.ribtasticbrothers.nl/"
+            class="btn btn-primary"
+            target="_blank"
+          >
+            Direct bestellen
+            <span class="fas fa-bicycle"></span>
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="scroll-downs">
-      <div class="mousey">
-        <div class="scroller"></div>
+      <div class="scroll-downs">
+        <div class="mousey">
+          <div class="scroller"></div>
+        </div>
       </div>
-    </div>
-  </header>
-  <main>
-    <RiderGezocht />
+    </header>
+    <main>
+      <RiderGezocht />
 
-    <div class="container">
-      <h1 class="text-center text-lines">The Ribtastic Brothers</h1>
-      <h2 class="text-center">In het kort</h2>
-      <div class="trbValues">
-        <div class="trbValues__Value">
+      <div class="container">
+        <h1 class="text-center text-lines">The Ribtastic Brothers</h1>
+        <h2 class="text-center">In het kort</h2>
+        <div class="trbValues">
           <a href="/service">
-            <div class="trbValues__Value--ValueIcon">
-              <span class="fas fa-concierge-bell"></span>
+            <div class="trbValues__Value">
+              <div class="trbValues__Value--ValueText">
+                <h3>Service</h3>
+                <p>
+                  Wij geloven in het genot van lekker eten en persoonlijke
+                  aandacht. Het is ons doel om gasten een smaakbeleving te
+                  bezorgen, door ze kennis te laten maken met onze unieke BBQ
+                  creaties.
+                </p>
+              </div>
+              <div class="link">Lees meer...</div>
             </div>
           </a>
-          <div class="trbValues__Value--ValueText">
-            <h4>Service</h4>
-            <p>
-              Wij geloven in het genot van lekker eten en persoonlijke
-              aandacht. Het is ons doel om gasten een smaakbeleving te
-              bezorgen, door ze kennis te laten maken met onze unieke BBQ
-              creaties.
-            </p>
-          </div>
-        </div>
-        <div class="trbValues__Value">
           <a href="/smaak">
-            <div class="trbValues__Value--ValueIcon">
-              <span class="fas fa-pepper-hot"></span>
+            <div class="trbValues__Value">
+              <div class="trbValues__Value--ValueText">
+                <h3>Smaak</h3>
+                <p>
+                  Taste is everything! We werken daarom enkel met
+                  kwaliteitsproducten, nemen onze tijd in de bereiding en maken
+                  onze gerechten af met zelfgemaakte bijpassende sauzen. Heb jij
+                  ze al eens geprobeerd?
+                </p>
+              </div>
+              <div class="link">Lees meer...</div>
             </div>
           </a>
-          <div class="trbValues__Value--ValueText">
-            <h4>Smaak</h4>
-            <p>
-              Taste is everything! We werken daarom enkel met
-              kwaliteitsproducten, nemen onze tijd in de bereiding en maken
-              onze gerechten af met zelfgemaakte bijpassende sauzen. Heb jij
-              ze al eens geprobeerd?
-            </p>
-          </div>
-        </div>
-        <div class="trbValues__Value">
           <a href="/sensatie">
-            <div class="trbValues__Value--ValueIcon">
-              <span class="fas fa-bicycle"></span>
+            <div class="trbValues__Value">
+              <div class="trbValues__Value--ValueText">
+                <h3>Sensatie</h3>
+                <p>
+                  Ribtastic Brothers are like no others. Met ons enthousiast
+                  team en uniek zelfgemaakte BBQ bakfiets maken we er altijd een
+                  feestje van. Vanuit dit grillmonster kunnen we volledig
+                  zelfvoorzienend onze heerlijke creaties bereiden.
+                </p>
+              </div>
+              <div class="link">Lees meer...</div>
             </div>
           </a>
-          <div class="trbValues__Value--ValueText">
-            <h4>Sensatie</h4>
-            <p>
-              Ribtastic Brothers are like no others. Met ons enthousiast
-              team en uniek zelfgemaakte BBQ bakfiets maken we er altijd een
-              feestje van. Vanuit dit grillmonster kunnen we volledig
-              zelfvoorzienend onze heerlijke creaties bereiden.
-            </p>
-          </div>
-        </div>
-        <div class="trbValues__Value">
           <a href="/samen">
-            <div class="trbValues__Value--ValueIcon">
-              <span class="fas fa-leaf"></span>
+            <div class="trbValues__Value">
+              <div class="trbValues__Value--ValueText">
+                <h3>Samen</h3>
+                <p>
+                  Samen genieten, betekend samen zorg dragen. Alles wat we doen,
+                  doen we daarom met een duurzame gedachte. Dit zie je terug in
+                  de materialen die we gebruiken en de CO2 die we jaarlijkse
+                  compenseren.
+                </p>
+              </div>
+              <div class="link">Lees meer...</div>
             </div>
           </a>
-          <div class="trbValues__Value--ValueText">
-            <h4>Samen</h4>
-            <p>
-              Samen genieten, betekend samen zorg dragen. Alles wat we doen,
-              doen we daarom met een duurzame gedachte. Dit zie je terug in
-              de materialen die we gebruiken en de CO2 die we jaarlijkse
-              compenseren.
-            </p>
-          </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-
-  <GalleryBlock />
-  <FollowBlock />
-  <Footer />
-
-</body>
-
+    <GalleryBlock />
+    <FollowBlock />
+    <Footer />
+  </body>
 </html>

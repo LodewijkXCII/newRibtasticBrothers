@@ -54,7 +54,7 @@ footer {
             position: absolute;
             top: -120px;
             left: -45px;
-            color: rgba($color: #fff, $alpha: 0.5);
+            color: rgba($color: #fff, $alpha: 0.2);
             font-size: 10rem;
           }
         }
@@ -162,12 +162,14 @@ footer {
 @media (min-width: 650px) {
   footer {
     padding-bottom: 1em;
+
     .container {
       display: flex;
       justify-content: space-between;
       padding: 1em 0;
 
       .footer__sectionA {
+        width: 100%;
         display: initial;
         justify-content: space-around;
         align-items: center;

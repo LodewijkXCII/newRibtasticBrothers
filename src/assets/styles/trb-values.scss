@@ -1,0 +1,84 @@
+.trbValues {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  &__Value {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    border-block-start: 5px solid;
+    border-inline-start: 5px solid;
+
+    padding: 1.1rem;
+    border-image-source: radial-gradient(
+      circle at top left,
+      rgba(120, 135, 114, 1) 0%,
+      transparent 40%
+    );
+    border-image-slice: 1;
+
+    background: radial-gradient(circle at top left, #000 100%, transparent 0%);
+
+    transition: background 0.5s ease-in, border-image-source 0.5s ease-in;
+
+    &:hover {
+      background: radial-gradient(
+        circle at top left,
+        transparent 0,
+        $off-black-color 100%
+      );
+      border-image-source: radial-gradient(
+        circle at top left,
+        rgba(120, 135, 114, 1) 0%,
+        rgba(74, 96, 83, 1) 100%
+      );
+
+      border-image-slice: 1;
+      cursor: pointer;
+    }
+
+    h3 {
+      margin-bottom: 0.4em;
+      color: $secondary-color;
+    }
+    p {
+      text-align: left;
+      color: $secondary-color;
+    }
+
+    .link {
+      align-self: self-end;
+      color: $primary-color;
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  .trbValues {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5em;
+    margin: 5em 0;
+
+    &__Value {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 370px 40px;
+      grid-gap: 0.5rem;
+      margin-left: 0;
+
+      &--ValueText {
+        align-self: start;
+        p {
+          display: block;
+        }
+      }
+      //   a,
+      //   &--ValueIcon {
+      //     justify-self: center;
+      //   }
+    }
+  }
+}
