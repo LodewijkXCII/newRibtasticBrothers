@@ -28,13 +28,7 @@ export default {
 
     this.partners = data;
   },
-  async mounted() {
-    $(document).ready(function(){
-  $('.your-class').slick({
-    setting-name: setting-value
-  });
-});
-  }
+  async mounted() {},
 };
 </script>
 
