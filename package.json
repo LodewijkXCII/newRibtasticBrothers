@@ -20,6 +20,7 @@
     "axios": "^0.24.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
+    "swiper": "^8.4.6",
     "vue-slick-carousel": "^1.0.6"
   }
 }
