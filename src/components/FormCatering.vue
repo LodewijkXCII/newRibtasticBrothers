@@ -26,11 +26,11 @@
     <div :class="step !== 2 ? '' : 'show'" class="formCatering__Second">
       <h4>Vul de laatste info in en we komen zo snel mogelijk bij je terug!</h4>
       <label for="name">Naam:</label>
-      <input type="text" name="name" id="name" v-model="contact_name" />
+      <input type="text" name="name" id="name" v-model="contact_name" required />
       <label for="email">Email:</label>
-      <input type="email" name="email" id="email" v-model="contact_email" />
+      <input type="email" name="email" id="email" v-model="contact_email"  required />
       <label for="email">Telefoonnummer:</label>
-      <input type="text" name="phone" id="phone" v-model="contact_phone" />
+      <input type="text" name="phone" id="phone" v-model="contact_phone"  required />
       <label for="company">Bedrijf:</label>
       <input
         type="text"
