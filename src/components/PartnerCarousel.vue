@@ -47,13 +47,13 @@ import axios from "axios";
 
 // import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 
-import { Swiper, SwiperSlide } from "swiper/vue";
+// import { Swiper, SwiperSlide } from "swiper/vue";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
 
-import { Pagination, Navigation } from "swiper/vue";
+// import { Pagination, Navigation } from "swiper/vue";
 
 // Import Swiper styles
 

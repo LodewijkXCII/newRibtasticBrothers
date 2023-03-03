@@ -9,13 +9,12 @@ footer {
   }
 
   .footer {
-    width: $max-width;
-    margin: 1em auto;
     &.footer__section-A {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
       justify-content: space-around;
       align-items: center;
+      margin: 0 1.5rem;
 
       .left {
         .footer_logo {
@@ -161,7 +160,12 @@ footer {
 
 @media (min-width: 650px) {
   footer {
+    width: $max-width;
+    margin: 1em auto;
     padding-bottom: 1em;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     .container {
       display: flex;

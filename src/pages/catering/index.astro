@@ -1,24 +1,37 @@
 ---
-import FormCatering from '../../components/FormCatering.vue'
-import CateringParters from '../../components/CateringPartners.astro'
-import PartnerCarousel from '../../components/PartnerCarousel.vue'
+import FormCatering from "../../components/FormCatering.vue";
+import CateringParters from "../../components/CateringPartners.astro";
+// import PartnerCarousel from "../../components/PartnerCarousel.vue";
 
-import BaseHeading from '../../layouts/BaseHeading.astro';
-import OptionsCatering from '../../components/OptionsCatering.astro';
-import HeaderImage from '../../components/HeaderImage.astro'
-import NavBar from '../../layouts/NavBar.vue'
-import Footer from '../../layouts/Footer.astro'
+import BaseHeading from "../../layouts/BaseHeading.astro";
+import OptionsCatering from "../../components/OptionsCatering.astro";
+import HeaderImage from "../../components/HeaderImage.astro";
+import NavBar from "../../layouts/NavBar.vue";
+import Footer from "../../layouts/Footer.astro";
 
-let title = 'Catering - The Ribtastic Brothers';
+let title = "Catering - The Ribtastic Brothers";
 let heading = {
-  title: 'BBQ Catering',
-  subtitle: 'Met bakfiets of smoker?',
-}
-let headerURL = 'https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_catering+(1).jpg'
+  title: "BBQ Catering",
+  subtitle: "Met bakfiets of smoker?",
+};
+let headerURL =
+  "https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_catering+(1).jpg";
 
-
-const cateringOptions =
-  "https://admin.ribtasticbrothers.nl/catering-opties";
+const cateringOptions = "https://admin.ribtasticbrothers.nl/catering-opties";
+const cateringMogelijkheden = [
+  {
+    name: "BBQ Smoker",
+    image: "src/assets/img/jon-tyson-kctt4tL1dkE-unsplash.jpg",
+  },
+  {
+    name: "Foodtruck",
+    image: "src/assets/img/matt-nelson-cTyVIvzQslE-unsplash.jpg",
+  },
+  {
+    name: "Event",
+    image: "src/assets/img/samantha-gades-fIHozNWfcvs-unsplash.jpg",
+  },
+];
 
 const response = await fetch(cateringOptions);
 
@@ -33,21 +46,35 @@ const catering = data.map((option) => {
     slug: option.slug,
   };
 });
-
 ---
 
 <html lang="nl">
+  <head>
+    <BaseHeading title={title} />
+  </head>
 
-<head>
-  <BaseHeading title={title} />
-</head>
+  <body>
+    <NavBar client:load />
+    <HeaderImage image={headerURL} header={heading} />
 
-<body>
-  <NavBar client:load />
-  <HeaderImage image={headerURL} header={heading} />
-  <div class="container">
+    <section class="grid-4">
+      <div class="text" style="margin: auto;">
+        <h1>Catering mogelijkheden</h1>
+        <h2>Echt niet alleen BBQ</h2>
+      </div>
+      {
+        cateringMogelijkheden.map((d) => (
+          <section class="imageCard">
+            <img src={d.image} alt="" class="image" />
+            <div class="title">
+              <h2>{d.name}</h2>
+            </div>
+          </section>
+        ))
+      }
+    </section>
 
-    <div class="wrapper-1-2">
+    <div class="container">
       <div class="textInfo">
         <p>
           Naast het bieden van lekkere BBQ versnaperingen op zonnige dagen aan
@@ -60,40 +87,31 @@ const catering = data.map((option) => {
           Ieder evenement is uniek en vraagt om zijn eigen invulling en
           aankleding. Wij gaan voor de perfecte match en passen onze BBQ
           specialiteiten/diensten daarom graag aan op de exacte wensen van het
-          publiek. Wij voelen de verantwoordelijkheid om uw feest een succes
-          te maken en denken graag actief met u mee. We staan open voor
-          verzoeken en zullen deze uitgebreid in behandeling nemen.
-        </p>
-        <p>
-          Om toch een soort richtlijn te hanteren, kunnen we over het algemeen
-          een aantal catering varianten onderscheiden, hieronder per pakket
-          een kleine toelichting en een prijsindicatie.
+          publiek. Wij voelen de verantwoordelijkheid om uw feest een succes te
+          maken en denken graag actief met u mee. We staan open voor verzoeken
+          en zullen deze uitgebreid in behandeling nemen.
         </p>
       </div>
-      <FormCatering client:load />
     </div>
 
-    <h1>De Pakketten</h1>
+    <!-- <h1>De Pakketten</h1>
     <h2>Voor ieder wat wils</h2>
     <div class="cateringWrapper">
-      {catering.map(c =>
-      <OptionsCatering props={c} rec={c.recommended} />)}
+      {catering.map((c) => <OptionsCatering props={c} rec={c.recommended} />)}
       <div class="cateringCard">
         <h2 class="cateringCard__title">Catering op Maat</h2>
         <p class="cateringCard__text">Prijs op aanvraag</p>
         <p style="padding-left: 1.5em">
-          Alles is mogelijk, vraag een offerte op en we komen zo spoedig mogelijk
-          bij je terug.
+          Alles is mogelijk, vraag een offerte op en we komen zo spoedig
+          mogelijk bij je terug.
         </p>
       </div>
-    </div>
-  </div>
-  <CateringParters client:load />
-  <PartnerCarousel client:load />
+    </div> -->
+    <CateringParters client:load />
+    <!-- <PartnerCarousel client:load /> -->
 
-  <footer>
-    <Footer />
-  </footer>
-</body>
-
+    <footer>
+      <Footer />
+    </footer>
+  </body>
 </html>

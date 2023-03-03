@@ -53,6 +53,14 @@ body {
     padding: 5em 1em;
   }
 }
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 3rem 1rem;
+  grid-gap: 1.5rem;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr;
@@ -845,9 +853,9 @@ form {
   }
   @media (min-width: 650px) {
     .imgHeader__image {
-      height: auto;
       left: 0;
       width: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -1079,5 +1087,39 @@ form {
 @media (min-width: 650px) {
   .smallGallery {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.imageCard {
+  height: 700px;
+  margin-bottom: 2rem;
+  // display: grid;
+  // grid-template-rows: 90% 10%;
+  // grid-gap: 0.5rem;
+  position: relative;
+  display: flex;
+
+  .image {
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    border-radius: 10px;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.02);
+      overflow: hidden;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  .title {
+    position: absolute;
+    align-self: center;
+    width: 40%;
+    left: 30%;
+    border-bottom: 2px solid white;
+    pointer-events: none;
   }
 }
