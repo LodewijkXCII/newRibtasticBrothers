@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   });
 }
 
-const { slug } = Astro.request.params;
+const { slug } = Astro.params;
 const URL = `https://admin.ribtasticbrothers.nl/event-gallerijs?slug=${slug}`;
 const response = await fetch(URL);
 const data = await response.json();
