@@ -1,0 +1,62 @@
+---
+import bbqSmokerImage from "../assets/img/jon-tyson-kctt4tL1dkE-unsplash.jpg";
+import foodtruckImage from "../assets/img/matt-nelson-cTyVIvzQslE-unsplash.jpg";
+
+
+---
+
+<nav class="Navbar">
+  <div class="topNav">
+    <div class="container">
+      <a href="/">
+        <img
+          src="../../assets/img/logo.png"
+          alt="Ribtastic Brothers Logo"
+          class="Navbar-Brand"
+        />
+      </a>
+      <span class="fas fa-bars menuBars"  ></span>
+    </div>
+  </div>
+</nav>
+<div class="nav-wrapper hidden">
+  <div class="nav-item">
+    <img src={bbqSmokerImage} alt="" />
+    <div class="nav-item--link">
+      <div class="nav-item--text">Catering</div>
+      <span class="fas fa-arrow-right"></span>
+    </div>
+  </div>
+  <div class="nav-item">
+    <img src={foodtruckImage} alt="" />
+    <div class="nav-item--link">
+      <div class="nav-item--text">Bezorging</div>
+      <span class="fas fa-arrow-right"></span>
+    </div>
+  </div>
+  <ul class="navList">
+    <li class="list-item">
+      <a href="/over-ons">Over ons</a>
+    </li>
+    <li class="list-item">
+      <a href="/galerij">Galerij</a>
+    </li>
+
+    <li class="list-item">
+      <a href="/werken">Werken bij</a>
+    </li>
+    <li class="list-item">
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  const navBarButton = document.querySelector('span.menuBars')
+  const navBarWrapper = document.querySelector('.nav-wrapper')
+
+  navBarButton.addEventListener('click', () => {
+    console.log(navBarWrapper.classList);
+    navBarWrapper.classList.remove('hidden')
+  })
+</script>

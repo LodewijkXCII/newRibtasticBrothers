@@ -1,7 +1,7 @@
 ---
 // Import Layouts
 import BaseHeading from "../layouts/BaseHeading.astro";
-import NavBar from "../layouts/NavBar.vue";
+import NavBar from "../layouts/NavBar.astro";
 import Footer from "../layouts/Footer.astro";
 // Import components
 import RiderGezocht from "../components/RiderGezocht.astro";
@@ -21,7 +21,7 @@ let title = "The Ribtastic Brothers - De lekkerste spareribs!";
   </head>
 
   <body>
-    <NavBar client:load />
+    <NavBar />
     <header class="homeHeader">
       <div class="container fullImageHeader">
         <h1>De lekkerste Spareribs</h1>

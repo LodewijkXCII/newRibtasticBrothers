@@ -1,10 +1,10 @@
 @import "./config.scss";
+@import "./nav.scss";
 @import "./scroller.css";
 @import "./footer.scss";
 @import "./trb-values.scss";
 @import "./gallery.scss";
 
-@import "../css/app.css";
 @import "./simplelightbox.css";
 
 @import url(https://pro.fontawesome.com/releases/v5.10.0/css/all.css);
@@ -42,6 +42,10 @@ body {
   }
 }
 
+.hidden {
+  display: none !important;
+}
+
 .container {
   max-width: $max-width;
   margin: auto 1em;
@@ -56,9 +60,18 @@ body {
 
 .grid-4 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   margin: 3rem 1rem;
   grid-gap: 1.5rem;
+}
+
+@media (min-width: 650px) {
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 3rem 1rem;
+    grid-gap: 1.5rem;
+  }
 }
 
 .wrapper {
@@ -1091,35 +1104,58 @@ form {
 }
 
 .imageCard {
-  height: 700px;
+  height: 500px;
   margin-bottom: 2rem;
-  // display: grid;
-  // grid-template-rows: 90% 10%;
-  // grid-gap: 0.5rem;
   position: relative;
   display: flex;
 
-  .image {
+  &:hover {
+    opacity: 1;
+    transform: scale(1.02);
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    .imageCard--image {
+      opacity: 1;
+      transition: 0.3s ease-in-out;
+    }
+
+    .imageCard--title {
+      background: rgba(0, 0, 0, 0.45);
+      transition: 0.3s ease-in-out;
+    }
+
+    .imageCard--text {
+      border-bottom: 2px solid $primary-color;
+      color: $off-white-color;
+      transition: 0.3s ease-in-out;
+    }
+  }
+  &--image {
     overflow: hidden;
     width: 100%;
     object-fit: cover;
     opacity: 0.2;
     border-radius: 10px;
-
-    &:hover {
-      opacity: 1;
-      transform: scale(1.02);
-      overflow: hidden;
-      transition: 0.3s ease-in-out;
-    }
   }
 
-  .title {
+  &--title {
     position: absolute;
     align-self: center;
-    width: 40%;
-    left: 30%;
+    width: 100%;
+    padding: 0.75rem;
+  }
+  &--text {
+    width: fit-content;
+    padding-bottom: 2px;
     border-bottom: 2px solid white;
     pointer-events: none;
+    margin: auto;
+  }
+}
+
+@media (min-width: 650px) {
+  .imageCard {
+    height: 700px;
   }
 }

@@ -1,23 +1,23 @@
 ---
-import FormCatering from "../../components/FormCatering.vue";
 import CateringParters from "../../components/CateringPartners.astro";
 // import PartnerCarousel from "../../components/PartnerCarousel.vue";
 
 import BaseHeading from "../../layouts/BaseHeading.astro";
-import OptionsCatering from "../../components/OptionsCatering.astro";
+
 import HeaderImage from "../../components/HeaderImage.astro";
-import NavBar from "../../layouts/NavBar.vue";
+import NavBar from "../../layouts/NavBar.astro";
 import Footer from "../../layouts/Footer.astro";
 
 import bbqSmokerImage from "../../assets/img/jon-tyson-kctt4tL1dkE-unsplash.jpg";
 import foodtruckImage from "../../assets/img/matt-nelson-cTyVIvzQslE-unsplash.jpg";
 import eventImage from "../../assets/img/samantha-gades-fIHozNWfcvs-unsplash.jpg";
 
-let title = "Catering - The Ribtastic Brothers";
+const title = "Catering - The Ribtastic Brothers";
 let heading = {
-  title: "BBQ Catering",
-  subtitle: "Met bakfiets of smoker?",
-};
+    title: 'Sensatie',
+    subtitle: 'Met bakfiets of smoker',
+}
+
 let headerURL =
   "https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_catering+(1).jpg";
 
@@ -58,8 +58,8 @@ const catering = data.map((option) => {
   </head>
 
   <body>
-    <NavBar client:load />
-    <HeaderImage image={headerURL} header={heading} />
+    <NavBar/>
+    <HeaderImage image={headerURL} header={heading}/>
 
     <section class="grid-4">
       <div class="text" style="margin: auto;">
@@ -69,9 +69,9 @@ const catering = data.map((option) => {
       {
         cateringMogelijkheden.map((d) => (
           <section class="imageCard">
-            <img src={d.image} alt="" class="image" />
-            <div class="title">
-              <h2>{d.name}</h2>
+            <img src={d.image} alt="" class="imageCard--image" />
+            <div class="imageCard--title">
+              <h2 class="imageCard--text">{d.name}</h2>
             </div>
           </section>
         ))
@@ -98,20 +98,7 @@ const catering = data.map((option) => {
       </div>
     </div>
 
-    <!-- <h1>De Pakketten</h1>
-    <h2>Voor ieder wat wils</h2>
-    <div class="cateringWrapper">
-      {catering.map((c) => <OptionsCatering props={c} rec={c.recommended} />)}
-      <div class="cateringCard">
-        <h2 class="cateringCard__title">Catering op Maat</h2>
-        <p class="cateringCard__text">Prijs op aanvraag</p>
-        <p style="padding-left: 1.5em">
-          Alles is mogelijk, vraag een offerte op en we komen zo spoedig
-          mogelijk bij je terug.
-        </p>
-      </div>
-    </div> -->
-    <CateringParters client:load />
+    <CateringParters />
     <!-- <PartnerCarousel client:load /> -->
 
     <Footer />

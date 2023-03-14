@@ -1,5 +1,9 @@
 ---
 const { title, discription } = Astro.props;
+
+import '../assets/styles/config.scss'
+import '../assets/styles/app.scss'
+
 ---
 
 <meta charset="UTF-8" />
@@ -20,19 +24,15 @@ const { title, discription } = Astro.props;
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700;900&display=swap"
 />
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-/>
+
 
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css"
 />
-<link rel="stylesheet" href={Astro.resolve("../assets/styles/config.scss")} />
+<link rel="stylesheet" href="/styles/config.scss" />
 <link
   rel="stylesheet"
-  href={Astro.resolve("../assets/styles/app.scss")}
+  href="/styles/app.scss"
   type="text/css"
 />
