@@ -1,34 +1,34 @@
 ---
 import bbqSmokerImage from "../assets/img/jon-tyson-kctt4tL1dkE-unsplash.jpg";
 import foodtruckImage from "../assets/img/matt-nelson-cTyVIvzQslE-unsplash.jpg";
-
-
 ---
 
 <nav class="Navbar">
   <div class="topNav">
-    <div class="container">
-      <a href="/">
-        <img
-          src="../../assets/img/logo.png"
-          alt="Ribtastic Brothers Logo"
-          class="Navbar-Brand"
-        />
-      </a>
-      <span class="fas fa-bars menuBars"  ></span>
+    <a href="/">
+      <img
+        src="../../assets/img/logo.png"
+        alt="Ribtastic Brothers Logo"
+        class="Navbar-Brand"
+      />
+    </a>
+    <div class="topNav--links">
+      <div class="topNav--links_text">menu</div>
+      <span class="fas fa-bars menuBars"></span>
     </div>
   </div>
 </nav>
 <div class="nav-wrapper hidden">
+  <span class="fas fa-times close-nav"></span>
   <div class="nav-item">
-    <img src={bbqSmokerImage} alt="" />
+    <img src={bbqSmokerImage} alt="" class="nav-item--image" />
     <div class="nav-item--link">
       <div class="nav-item--text">Catering</div>
       <span class="fas fa-arrow-right"></span>
     </div>
   </div>
   <div class="nav-item">
-    <img src={foodtruckImage} alt="" />
+    <img src={foodtruckImage} alt="" class="nav-item--image" />
     <div class="nav-item--link">
       <div class="nav-item--text">Bezorging</div>
       <span class="fas fa-arrow-right"></span>
@@ -52,11 +52,17 @@ import foodtruckImage from "../assets/img/matt-nelson-cTyVIvzQslE-unsplash.jpg";
 </div>
 
 <script>
-  const navBarButton = document.querySelector('span.menuBars')
-  const navBarWrapper = document.querySelector('.nav-wrapper')
+  const navBarButton = document.querySelector(".topNav--links");
+  const navBarWrapper = document.querySelector(".nav-wrapper");
+  const closeNavWrapper = document.querySelector(".close-nav");
 
-  navBarButton.addEventListener('click', () => {
+  navBarButton.addEventListener("click", () => {
     console.log(navBarWrapper.classList);
-    navBarWrapper.classList.remove('hidden')
-  })
+    navBarWrapper.classList.remove("hidden");
+  });
+
+  closeNavWrapper.addEventListener("click", () => {
+    console.log("object");
+    navBarWrapper.classList.add("hidden");
+  });
 </script>

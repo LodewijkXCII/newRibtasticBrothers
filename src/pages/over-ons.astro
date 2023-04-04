@@ -1,7 +1,7 @@
 ---
 // Import Layouts
 import BaseHeading from "../layouts/BaseHeading.astro";
-import NavBar from "../layouts/NavBar.vue";
+import NavBar from "../layouts/NavBar.astro";
 import Footer from "../layouts/Footer.astro";
 import HeaderImage from "../components/HeaderImage.astro";
 
@@ -20,18 +20,23 @@ let heading = {
   </head>
 
   <body>
-    <NavBar client:load />
+    <NavBar />
     <HeaderImage image={headerURL} header={heading} />
 
     <main>
-      <div class="container">
-        <ul class="page-nav">
-          <li>Smaak</li>
-          <li>Service</li>
-          <li>Samen</li>
-          <li>Sensatie</li>
-          <li>Geschiedenis</li>
+      <div class="page-nav">
+        <ul class="page-nav--list">
+          <li class="page-nav--item">Direct naar:</li>
+          <li class="page-nav--item">
+            <a href="#"> Smaak</a>
+          </li>
+          <li class="page-nav--item"><a href="#">Service</a></li>
+          <li class="page-nav--item"><a href="#">Samen</a></li>
+          <li class="page-nav--item"><a href="#">Sensatie</a></li>
+          <li class="page-nav--item"><a href="#">Geschiedenis</a></li>
         </ul>
+      </div>
+      <div class="container">
         <div>
           <p>
             Een belangrijk onderdeel van een gezond en geluk leven is het hebben
@@ -47,6 +52,64 @@ let heading = {
             BBQ creaties.
           </p>
           <p>Waar wacht je nog op? Invite your friends and organize a BBQ!</p>
+        </div>
+        <div class="trbValues">
+          <a href="/service">
+            <div class="trbValues__Value">
+              <div class="trbValues__Value--ValueText">
+                <h3>Service</h3>
+                <p>
+                  Wij geloven in het genot van lekker eten en persoonlijke
+                  aandacht. Het is ons doel om gasten een smaakbeleving te
+                  bezorgen, door ze kennis te laten maken met onze unieke BBQ
+                  creaties.
+                </p>
+              </div>
+              <div class="link">Lees meer...</div>
+            </div>
+          </a>
+          <a href="/smaak">
+            <div class="trbValues__Value">
+              <div class="trbValues__Value--ValueText">
+                <h3>Smaak</h3>
+                <p>
+                  Taste is everything! We werken daarom enkel met
+                  kwaliteitsproducten, nemen onze tijd in de bereiding en maken
+                  onze gerechten af met zelfgemaakte bijpassende sauzen. Heb jij
+                  ze al eens geprobeerd?
+                </p>
+              </div>
+              <div class="link">Lees meer...</div>
+            </div>
+          </a>
+          <a href="/sensatie">
+            <div class="trbValues__Value">
+              <div class="trbValues__Value--ValueText">
+                <h3>Sensatie</h3>
+                <p>
+                  Ribtastic Brothers are like no others. Met ons enthousiast
+                  team en uniek zelfgemaakte BBQ bakfiets maken we er altijd een
+                  feestje van. Vanuit dit grillmonster kunnen we volledig
+                  zelfvoorzienend onze heerlijke creaties bereiden.
+                </p>
+              </div>
+              <div class="link">Lees meer...</div>
+            </div>
+          </a>
+          <a href="/samen">
+            <div class="trbValues__Value">
+              <div class="trbValues__Value--ValueText">
+                <h3>Samen</h3>
+                <p>
+                  Samen genieten, betekend samen zorg dragen. Alles wat we doen,
+                  doen we daarom met een duurzame gedachte. Dit zie je terug in
+                  de materialen die we gebruiken en de CO2 die we jaarlijkse
+                  compenseren.
+                </p>
+              </div>
+              <div class="link">Lees meer...</div>
+            </div>
+          </a>
         </div>
       </div>
     </main>

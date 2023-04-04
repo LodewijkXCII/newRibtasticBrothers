@@ -1,24 +1,16 @@
 ---
-import PartnerImage from '../components/PartnerImage.astro'
+import PartnerImage from "../components/PartnerImage.astro";
 
- const URL =
-      'https://admin.ribtasticbrothers.nl/catering-partners?_sort=bedrijf';
+const URL =
+  "https://admin.ribtasticbrothers.nl/catering-partners?_sort=bedrijf";
 
-    const response = await fetch(URL);
-    const allPartners = await response.json()
-
-
+const response = await fetch(URL);
+const allPartners = await response.json();
 ---
 
-
-<section>
-
-    <div class="container">
-        <h2>Bedrijven die je al voor gingen</h2>
-        <div class="cateringPartner">
-                                <!-- Post preview-->
-                    {allPartners.map(p => <PartnerImage partner={p} />)}
-                    <!-- Pager-->
-        </div>
-    </div>
+<section style="overflow: hidden;">
+  <h2>Bedrijven die je al voor gingen</h2>
+  <div class="cateringPartner">
+    {allPartners.map((p) => <PartnerImage partner={p} />)}
+  </div>
 </section>

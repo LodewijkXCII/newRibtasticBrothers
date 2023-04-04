@@ -3,22 +3,33 @@ nav {
   width: 100%;
   position: fixed;
   z-index: 1000;
-  .container {
+
+  .topNav {
     display: flex;
     padding: 0;
+    justify-content: space-between;
+    margin: 0 6rem;
+    &:hover {
+      cursor: pointer;
+    }
     a {
-      margin: auto;
-      grid-column: 3/4;
       img {
         width: 90px;
       }
     }
+    &--links {
+      display: inline-flex;
+      align-items: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
 
-    .menuBars {
-      align-self: center;
+      & > * {
+        padding: 0 0.2rem;
+      }
     }
   }
 }
+
 .nav-wrapper {
   height: 100vh;
   width: 100%;
@@ -32,6 +43,14 @@ nav {
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
+
+  .close-nav {
+    position: absolute;
+    top: 4rem;
+    right: 9rem;
+
+    cursor: pointer;
+  }
 
   .nav-item {
     position: relative;

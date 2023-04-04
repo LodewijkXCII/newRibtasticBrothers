@@ -6,7 +6,7 @@ import Footer from "../layouts/Footer.astro";
 // Import components
 import RiderGezocht from "../components/RiderGezocht.astro";
 import GalleryBlock from "../components/GalleryBlock.astro";
-import FollowBlock from "../components/FollowBlock.astro";
+import ExpertBlock from "../components/ExpertBlock.astro";
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
@@ -51,71 +51,44 @@ let title = "The Ribtastic Brothers - De lekkerste spareribs!";
       <!-- <RiderGezocht /> -->
 
       <div class="container">
-        <h1 class="text-center text-lines">The Ribtastic Brothers</h1>
-        <h2 class="text-center">In het kort</h2>
-        <div class="trbValues">
-          <a href="/service">
-            <div class="trbValues__Value">
-              <div class="trbValues__Value--ValueText">
-                <h3>Service</h3>
-                <p>
-                  Wij geloven in het genot van lekker eten en persoonlijke
-                  aandacht. Het is ons doel om gasten een smaakbeleving te
-                  bezorgen, door ze kennis te laten maken met onze unieke BBQ
-                  creaties.
-                </p>
-              </div>
-              <div class="link">Lees meer...</div>
-            </div>
-          </a>
-          <a href="/smaak">
-            <div class="trbValues__Value">
-              <div class="trbValues__Value--ValueText">
-                <h3>Smaak</h3>
-                <p>
-                  Taste is everything! We werken daarom enkel met
-                  kwaliteitsproducten, nemen onze tijd in de bereiding en maken
-                  onze gerechten af met zelfgemaakte bijpassende sauzen. Heb jij
-                  ze al eens geprobeerd?
-                </p>
-              </div>
-              <div class="link">Lees meer...</div>
-            </div>
-          </a>
-          <a href="/sensatie">
-            <div class="trbValues__Value">
-              <div class="trbValues__Value--ValueText">
-                <h3>Sensatie</h3>
-                <p>
-                  Ribtastic Brothers are like no others. Met ons enthousiast
-                  team en uniek zelfgemaakte BBQ bakfiets maken we er altijd een
-                  feestje van. Vanuit dit grillmonster kunnen we volledig
-                  zelfvoorzienend onze heerlijke creaties bereiden.
-                </p>
-              </div>
-              <div class="link">Lees meer...</div>
-            </div>
-          </a>
-          <a href="/samen">
-            <div class="trbValues__Value">
-              <div class="trbValues__Value--ValueText">
-                <h3>Samen</h3>
-                <p>
-                  Samen genieten, betekend samen zorg dragen. Alles wat we doen,
-                  doen we daarom met een duurzame gedachte. Dit zie je terug in
-                  de materialen die we gebruiken en de CO2 die we jaarlijkse
-                  compenseren.
-                </p>
-              </div>
-              <div class="link">Lees meer...</div>
-            </div>
-          </a>
+        <div class="row">
+          <div class="navigation">
+            <h3>Ga naar:</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://bestellen.ribtasticbrothers.nl"
+                  target="_blank"
+                >
+                  Bestellen
+                </a>
+              </li>
+              <li><a href="/catering">Catering</a></li>
+              <li><a href="/over-ons">Over ons</a></li>
+              <li><a href="/galerij">Galerij</a></li>
+              <li><a href="/werken">Werken bij</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="about">
+            <h1 class="text-center text-lines">The Ribtastic Brothers</h1>
+            <h2 class="text-center">In het kort</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque
+              totam eius reprehenderit quia! Possimus, commodi optio. Ab
+              deserunt error deleniti necessitatibus modi facere, vitae ullam
+              numquam nesciunt itaque neque expedita voluptatum dolor
+              perspiciatis, sapiente voluptatem. Aliquid, iste accusamus impedit
+              voluptatibus minus neque quaerat aliquam, sunt eius excepturi
+              quisquam dignissimos adipisci!
+            </p>
+          </div>
         </div>
       </div>
     </main>
 
     <GalleryBlock />
-    <FollowBlock />
+    <ExpertBlock />
     <Footer />
   </body>
 </html>
