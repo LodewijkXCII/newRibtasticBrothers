@@ -91,6 +91,10 @@ export default {
                 email: "eat@ribtasticbrothers.nl",
                 name: "The Ribtastic Brothers",
               },
+              {
+                email: "kitchen@ribtasticbrothers.nl",
+                name: "Kitchen | The Ribtastic Brothers",
+              },
             ],
             subject: "Een nieuwe catering aanvraaag!",
             htmlContent: `<html><head></head><body><p>Hoi,</p>Er is een catering aanvraag geplaatst. Hiero kan je zien wat de gegevens zijn:</p>
