@@ -92,8 +92,8 @@ export default {
                 name: "The Ribtastic Brothers",
               },
               {
-                email: "kitchen@ribtasticbrothers.nl",
-                name: "Kitchen | The Ribtastic Brothers",
+                email: "lars@ribtasticbrothers.nl",
+                name: "Lars | The Ribtastic Brothers",
               },
             ],
             subject: "Een nieuwe catering aanvraaag!",
