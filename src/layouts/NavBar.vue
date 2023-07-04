@@ -31,10 +31,6 @@
         <li class="list-item">
           <a href="/catering">Catering</a>
         </li>
-
-        <li class="list-item">
-          <a href="https://bestellen.ribtasticbrothers.nl/">Bezorging</a>
-        </li>
         <li class="list-item">
           <a href="/galerij">Galerij</a>
         </li>
