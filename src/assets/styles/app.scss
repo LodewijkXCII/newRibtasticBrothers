@@ -34,13 +34,17 @@ body {
   overflow-x: hidden;
   background-color: #000000;
   color: #ffffff;
-  border: 1rem solid lighten($color: #000000, $amount: 1);
+  border: 0.25rem solid lighten($color: #000000, $amount: 1);
 }
 
 @media (min-width: 650px) {
   html {
     font-size: 19px;
     line-height: 1.75;
+  }
+
+  body {
+    border: 1rem solid lighten($color: #000000, $amount: 1);
   }
 }
 
@@ -63,7 +67,6 @@ body {
 .row {
   display: flex;
   flex-direction: row;
-  align-items: center;
 
   > * {
     padding: 0 2rem;
@@ -120,7 +123,6 @@ a {
 img {
   height: auto;
   width: 100%;
-  display: block;
 }
 
 .btn {
@@ -198,7 +200,8 @@ img {
 
 .text-lines {
   position: relative;
-  @include before-after-line(50%, 0, 0, 160px);
+  @include before-after-line(50%, 15%, 15%, 150px);
+  margin-bottom: 1rem;
 }
 
 h1,
@@ -306,8 +309,13 @@ main {
   position: relative;
   display: flex;
   overflow: hidden;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  height: 80vh;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 0) 100%
+  );
 
   &::after {
     content: "";
@@ -430,8 +438,6 @@ main {
 
 @media (min-width: 650px) {
   .homeHeader {
-    height: 100vh;
-
     .homeHeader__image {
       height: auto;
       top: -150px;
@@ -686,7 +692,7 @@ form {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100px * 33));
   }
 }
 
@@ -695,8 +701,8 @@ form {
   display: flex;
   margin: 0 1rem;
   gap: 1rem;
-
-  animation: 30s linear 0s infinite slideInFromLeft;
+  width: calc((100px + 1rem) * 33);
+  animation: slideInFromLeft 40s linear infinite;
 
   &__partner {
     margin: 1rem;

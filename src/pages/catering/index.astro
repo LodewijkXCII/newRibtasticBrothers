@@ -14,9 +14,9 @@ import eventImage from "../../assets/img/samantha-gades-fIHozNWfcvs-unsplash.jpg
 
 const title = "Catering - The Ribtastic Brothers";
 let heading = {
-    title: 'Sensatie',
-    subtitle: 'Met bakfiets of smoker',
-}
+  title: "Sensatie",
+  subtitle: "Met bakfiets of smoker",
+};
 
 let headerURL =
   "https://ribtastic-brothers.s3.eu-west-2.amazonaws.com/static/ribtastic_brothers_catering+(1).jpg";
@@ -58,8 +58,8 @@ const catering = data.map((option) => {
   </head>
 
   <body>
-    <NavBar/>
-    <HeaderImage image={headerURL} header={heading}/>
+    <NavBar breadcrumb={["catering"]} />
+    <HeaderImage image={headerURL} header={heading} />
 
     <section class="grid-4">
       <div class="text" style="margin: auto;">

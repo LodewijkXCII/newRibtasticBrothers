@@ -12,5 +12,6 @@ const allPartners = await response.json();
   <h2>Bedrijven die je al voor gingen</h2>
   <div class="cateringPartner">
     {allPartners.map((p) => <PartnerImage partner={p} />)}
+    {allPartners.map((p) => <PartnerImage partner={p} />)}
   </div>
 </section>

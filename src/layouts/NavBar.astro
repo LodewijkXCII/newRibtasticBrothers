@@ -1,17 +1,27 @@
 ---
 import bbqSmokerImage from "../assets/img/jon-tyson-kctt4tL1dkE-unsplash.jpg";
 import foodtruckImage from "../assets/img/matt-nelson-cTyVIvzQslE-unsplash.jpg";
+
+const { breadcrumb: data } = Astro.props;
+
+let breadcrumb = [];
+if (data) {
+  breadcrumb = data;
+}
 ---
 
 <nav class="Navbar">
   <div class="topNav">
-    <a href="/">
-      <img
-        src="../../assets/img/logo.png"
-        alt="Ribtastic Brothers Logo"
-        class="Navbar-Brand"
-      />
-    </a>
+    <div class="topNav--left">
+      <a href="/">
+        <img
+          src="../../assets/img/logo.png"
+          alt="Ribtastic Brothers Logo"
+          class="Navbar-Brand"
+        />
+      </a>
+      {breadcrumb.map((i) => <span> {i}</span>)}
+    </div>
     <div class="topNav--links">
       <div class="topNav--links_text">menu</div>
       <span class="fas fa-bars menuBars"></span>
@@ -23,15 +33,19 @@ import foodtruckImage from "../assets/img/matt-nelson-cTyVIvzQslE-unsplash.jpg";
   <div class="nav-item">
     <img src={bbqSmokerImage} alt="" class="nav-item--image" />
     <div class="nav-item--link">
-      <div class="nav-item--text">Catering</div>
-      <span class="fas fa-arrow-right"></span>
+      <a href="/catering">
+        <div class="nav-item--text">Catering</div>
+        <span class="fas fa-arrow-right"></span>
+      </a>
     </div>
   </div>
   <div class="nav-item">
     <img src={foodtruckImage} alt="" class="nav-item--image" />
     <div class="nav-item--link">
-      <div class="nav-item--text">Bezorging</div>
-      <span class="fas fa-arrow-right"></span>
+      <a href="https://bestellen.ribtasticbrothers.nl/" target="_blank">
+        <div class="nav-item--text">Bezorging</div>
+        <span class="fas fa-arrow-right"></span>
+      </a>
     </div>
   </div>
   <ul class="navList">
