@@ -4,7 +4,6 @@
       <h2>Vraag een offerte op</h2>
       <label for="option">Gewenst pakket:</label>
       <select name="option" id="option" v-model="contact_option">
-        <option value="just-meat">Just meat</option>
         <option value="happy-grillin" selected>Happy Grillin</option>
         <option value="all-in">All-In</option>
         <option value="custom">Catering op Maat</option>
