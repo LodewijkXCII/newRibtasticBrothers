@@ -1,0 +1,47 @@
+nav {
+  background-color: #000;
+  width: 100%;
+}
+nav::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1rem;
+  background: var(--primary-gradient);
+  margin-bottom: -1px;
+}
+
+.navbar {
+  position: relative;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  position: absolute;
+  background: #000;
+  width: 150px;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  margin: 1rem;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.nav-item {
+  color: var(--clr-text-white);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: var(--fs-300);
+  padding: 0 0.5rem;
+}

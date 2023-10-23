@@ -1,0 +1,206 @@
+/* color palette from <https://github.com/vuejs/theme> */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@100;400;700;900&display=swap");
+@import url(https://pro.fontawesome.com/releases/v5.10.0/css/all.css);
+
+@import "./card.scss";
+@import "./navbar.scss";
+
+:root {
+  --clr-text: hsl(0, 0%, 0%);
+  --clr-text-black: hsl(0, 0%, 0%);
+  --clr-text-white: hsl(0, 0%, 100%);
+  --clr-background: #e9e9e9;
+  --clr-background-mute: #d0d0d0;
+  --clr-primary: #788772;
+  --clr-secondary: #4a6053;
+  --clr-accent: #cc5803;
+  --clr-accent-mute: #aa4a06;
+
+  --primary-gradient: linear-gradient(
+    90deg,
+    rgba(120, 135, 114, 1) 0%,
+    rgba(74, 96, 83, 1) 100%
+  );
+
+  --ff-base: "Lato", sans-serif;
+  --ff-heading: "Bebas Neue", sans-serif;
+
+  --fs-200: clamp(0.56rem, calc(0.87rem + -0.4vw), 0.79rem);
+  --fs-300: clamp(0.8rem, calc(0.92rem + -0.16vw), 0.89rem);
+  --fs-400: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+  --fs-500: clamp(1.13rem, calc(0.96rem + 0.81vw), 1.59rem);
+  --fs-600: clamp(1.27rem, calc(0.92rem + 1.71vw), 2.25rem);
+  --fs-700: clamp(1.42rem, calc(0.81rem + 3.06vw), 3.18rem);
+  --fs-800: clamp(1.6rem, calc(0.59rem + 5.04vw), 4.5rem);
+  --fs-900: clamp(1.8rem, calc(0.22rem + 7.93vw), 6.36rem);
+}
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-text: hsl(20, 6%, 90%);
+    --clr-background: hsl(0, 7%, 3%);
+    --clr-background-mute: hsl(0, 7%, 15%);
+    --clr-primary: #344c6c;
+    --clr-secondary: #3cc4cc;
+    --clr-accent: #db5461;
+    --clr-accent-green: #3bc14a;
+  }
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  color-scheme: light;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  font-family: var(--ff-base);
+  line-height: 1.6;
+  font-size: var(--fs-400);
+  color: var(--clr-text);
+
+  background: var(--clr-background);
+  /* min-height: 100vh;
+  color: var(--color-text);
+  transition: color 0.5s, background-color 0.5s;
+  font-family: Roboto, sans-serif;
+  font-size: 0.9rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+h1,
+h2 {
+  font-family: var(--ff-heading);
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: var(--fs-700);
+  color: var(--clr-text);
+}
+
+h2 {
+  font-size: var(--fs-600);
+  color: var(--clr-primary);
+  text-align: center;
+}
+h3 {
+  font-family: var(--ff-base);
+  font-size: var(--fs-500);
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+a {
+  color: var(--clr-primary);
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-accent);
+}
+
+// ::marker {
+//   color: var(--clr-accent);
+// }
+
+.btn {
+  background: var(--clr-primary);
+  padding: 0.75rem 1.5rem;
+  width: fit-content;
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+
+  a {
+    color: var(--clr-text-white);
+    text-decoration: none;
+    font-family: var(--ff-heading);
+    font-size: var(--fs-500);
+  }
+}
+
+.container {
+  max-width: 160ch;
+  margin: 0 auto;
+
+  &.wrapper {
+    max-width: 80ch;
+
+    > * + * {
+      margin-top: 1em;
+    }
+  }
+}
+
+.hero-section {
+  max-width: 100%;
+  width: 100%;
+  background-position: top;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 50ch 1fr;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+  h1 {
+    font-size: var(--fs-800);
+  }
+  .subtitle {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-600);
+  }
+}
+
+.hero-images {
+  height: 100%;
+  background: pink;
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 1fr 1fr;
+
+  img {
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .hero-hor {
+    max-height: 500px;
+  }
+
+  .hero-vert {
+    grid-row: 1/3;
+    grid-column: 2/2;
+  }
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}

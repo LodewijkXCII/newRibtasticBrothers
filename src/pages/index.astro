@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionDivider from "../components/SectionDivider.astro";
+import Card from "../components/Card.astro";
+import ImageCard from "../components/ImageCard.astro";
+---
+
+<Layout title="The Ribtastic Brothers">
+  <main>
+    <section class="hero-section">
+      <div class="heading">
+        <h1>De Lekkerste BBQ Gerechten</h1>
+        <p class="subtitle">Inclusief geweldige service en contact</p>
+        <div class="btn btn-primary">
+          <a href="#catering">Offerte aanvragen</a>
+        </div>
+      </div>
+
+      <div class="hero-images">
+        <div class="hero-image hero-hor">
+          <img
+            src="/hm00098.jpg"
+            alt=""
+            style="	position: relative;
+    						right: -200px;
+							z-index: -1;"
+          />
+        </div>
+        <div class="hero-image hero-vert">
+          <img src="/20210618-IMG_1057.jpg" alt="" />
+        </div>
+        <div class="hero-image hero-hor">
+          <img src="/DSC00855.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+    <SectionDivider
+      title="BBQ Catering"
+      subtitle="Kies het pakket wat bij jouw past"
+    />
+
+    <section class="container card-wrapper">
+      <ImageCard title="gezelligheid" href="/hm00098.jpg" />
+      <Card title="Ribtastic" body="" price="32,50" />
+      <Card title="Premium" body="" price="45,50" />
+      <ImageCard title="gezelligheid" href="/DSC00855.jpg" />
+    </section>
+    <div class="container wrapper" style="margin: 3rem auto;">
+      <h2>Waarom Ribtastic?</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id tempora
+        facere eaque, saepe rerum nulla neque labore unde laboriosam,
+        perferendis animi voluptatem, iste blanditiis aliquid dolores vitae
+        similique possimus harum commodi non consectetur pariatur minus quo! Aut
+        aperiam accusantium totam ipsa dignissimos a, fuga earum sapiente ad
+        molestiae exercitationem quos?
+      </p>
+    </div>
+
+    <SectionDivider title="Fine Dining" subtitle="Fingerfood en fine dining" />
+  </main>
+</Layout>

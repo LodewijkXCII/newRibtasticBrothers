@@ -1,0 +1,43 @@
+---
+const { title, subtitle } = Astro.props;
+---
+
+<div>
+  <span class="section-divider"></span>
+  <div class="divider">
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
+  </div>
+</div>
+
+<style lang="scss">
+  @mixin block-line($line-heigth) {
+    content: "";
+    display: block;
+    width: 100%;
+    background: rgb(120, 135, 114);
+    background: var(--primary-gradient);
+    height: $line-heigth;
+  }
+
+  .section-divider {
+    @include block-line(15px);
+  }
+
+  .divider {
+    background: #000;
+    padding: 3rem 0 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .divider h2,
+  .divider p {
+    color: var(--clr-text-white);
+    text-align: center;
+  }
+
+  .divider p {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-500);
+  }
+</style>
