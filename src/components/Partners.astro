@@ -1,0 +1,124 @@
+---
+const URL =
+  "https://admin.ribtasticbrothers.nl/catering-partners?_sort=bedrijf";
+
+const response = await fetch(URL);
+const allPartners = await response.json();
+---
+
+<section class="container wrapper">
+  <p>
+    Van grote multinationals tot aan Eredivisie clubs, wij hebben met veel
+    verschillende mensen en merken samengewerkt.
+  </p>
+  <p class="strong">Wij maken van ieder evenement een Fantastic event!</p>
+</section>
+<div
+  class="scroller"
+  data-direction="left"
+  data-speed="slow"
+  data-animation="true"
+>
+  <div class="scroller__inner">
+    {
+      allPartners.map((partner) => (
+        <img
+          src={partner.logo.url}
+          alt=""
+          class="cateringPartner__partner--img"
+        />
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  // console.log(allPartners);
+  const scrollers = document.querySelectorAll(".scroller");
+  // // If a user hasn't opted in for recuded motion, then we add the animation
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    addAnimation();
+  }
+
+  function addAnimation() {
+    scrollers.forEach((scroller) => {
+      scroller.setAttribute("data-animated", true);
+      // Make an array from the elements within `.scroller-inner`
+      const scrollerInner = scroller.querySelector(".scroller__inner");
+      const scrollerContent = Array.from(scrollerInner.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", true);
+        scrollerInner.appendChild(duplicatedItem);
+      });
+    });
+  }
+</script>
+<style lang="scss">
+  .scroller {
+    max-width: 1200px;
+    margin: 3rem auto;
+  }
+
+  .scroller__inner {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    img {
+      width: 150px;
+      aspect-ratio: 1;
+      overflow: hidden;
+      object-fit: contain;
+    }
+  }
+
+  .scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      var(--clr-background) 30%,
+      var(--clr-background) 70%,
+      transparent
+    );
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      var(--clr-background) 30%,
+      var(--clr-background) 70%,
+      transparent
+    );
+  }
+
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s)
+      var(--_animation-direction, forwards) linear infinite;
+  }
+
+  .scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+
+  .scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+
+  .scroller[data-speed="fast"] {
+    --_animation-duration: 30s;
+  }
+
+  .scroller[data-speed="slow"] {
+    --_animation-duration: 60s;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 1.5rem));
+    }
+  }
+</style>

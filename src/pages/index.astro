@@ -1,5 +1,10 @@
 ---
+// Layouts
 import Layout from "../layouts/Layout.astro";
+
+// Sections
+import Partners from "../components/Partners.astro";
+// Components
 import SectionDivider from "../components/SectionDivider.astro";
 import Card from "../components/Card.astro";
 import ImageCard from "../components/ImageCard.astro";
@@ -19,7 +24,7 @@ import ImageCard from "../components/ImageCard.astro";
       <div class="hero-images">
         <div class="hero-image hero-hor">
           <img
-            src="/hm00098.jpg"
+            src="hm00098.jpg"
             alt=""
             style="	position: relative;
     						right: -200px;
@@ -27,23 +32,24 @@ import ImageCard from "../components/ImageCard.astro";
           />
         </div>
         <div class="hero-image hero-vert">
-          <img src="/20210618-IMG_1057.jpg" alt="" />
+          <img src="20210618-IMG_1057.jpg" alt="" />
         </div>
         <div class="hero-image hero-hor">
-          <img src="/DSC00855.jpg" alt="" />
+          <img src="DSC00855.jpg" alt="" />
         </div>
       </div>
     </section>
     <SectionDivider
       title="BBQ Catering"
       subtitle="Kies het pakket wat bij jouw past"
+      id="catering"
     />
 
     <section class="container card-wrapper">
-      <ImageCard title="gezelligheid" href="/hm00098.jpg" />
+      <ImageCard title="gezelligheid" href="hm00098.jpg" />
       <Card title="Ribtastic" body="" price="32,50" />
       <Card title="Premium" body="" price="45,50" />
-      <ImageCard title="gezelligheid" href="/DSC00855.jpg" />
+      <ImageCard title="gezelligheid" href="DSC00855.jpg" />
     </section>
     <div class="container wrapper" style="margin: 3rem auto;">
       <h2>Waarom Ribtastic?</h2>
@@ -58,5 +64,30 @@ import ImageCard from "../components/ImageCard.astro";
     </div>
 
     <SectionDivider title="Fine Dining" subtitle="Fingerfood en fine dining" />
+    <div class="container wrapper" style="margin: 3rem auto;">
+      <h2>Meer dan een pakket?</h2>
+      <p>
+        Voor de meer chique gelegenheden en fijnere hapjes hebben we naast onze
+        BBQ catering tevens een uitgebreide fine dining experience. Laat onze
+        chefs uw gasten verrassen met bijzondere smaakcombinaties en heerlijke
+        hapjes tijdens uw evenement, ceremonie, gala of ander feestelijke
+        gelegenheid.
+      </p>
+      <p>
+        Naast de verzorging van de catering hebben wij tevens tal val
+        mogelijkheden om uw evenement te plannen en/of aan te kleden. Laat onze
+        eventmanagers het werk uit handen nemen, zodat u zich kunt focussen op
+        de gasten.
+      </p>
+    </div>
+    <section class="container card-wrapper">
+      <ImageCard title="gezelligheid" href="hm00098.jpg" />
+      <Card title="Maatwerk" body="" price="99,95" />
+
+      <ImageCard title="gezelligheid" href="DSC00855.jpg" />
+      <ImageCard title="gezelligheid" href="20210618-IMG_1057.jpg" />
+    </section>
+    <SectionDivider title="Tevreden klanten" subtitle="Hier wil je bij horen" />
+    <Partners />
   </main>
 </Layout>

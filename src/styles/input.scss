@@ -1,0 +1,45 @@
+label {
+  font-weight: 700;
+}
+
+input,
+textarea {
+  border: 2px solid rgba(120, 135, 114, 0.4);
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--ff-base);
+  font-size: var(--fs-400);
+
+  &:focus-within {
+    outline: 2px solid rgba(120, 135, 114, 1);
+  }
+}
+
+form {
+  .btn {
+    margin: auto 0 0 auto;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+
+  &:nth-child(9) {
+    margin-bottom: 2rem;
+  }
+
+  &.error {
+    color: var(--clr-accent);
+
+    input {
+      border: 2px solid rgba(204, 88, 3, 0.4);
+
+      &:focus-within {
+        outline: 2px solid rgba(204, 88, 3, 1);
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 ---
-const { title, subtitle } = Astro.props;
+const { title, subtitle, id } = Astro.props;
 ---
 
-<div>
-  <span class="section-divider"></span>
-  <div class="divider">
+<div id={id} class="section-divider">
+  <span class="divider-heading"></span>
+  <div class="divider-body">
     <h2>{title}</h2>
     <p>{subtitle}</p>
   </div>
@@ -19,24 +19,26 @@ const { title, subtitle } = Astro.props;
     background: var(--primary-gradient);
     height: $line-heigth;
   }
-
   .section-divider {
+    margin: 2rem 0 1rem;
+  }
+  .divider-heading {
     @include block-line(15px);
   }
 
-  .divider {
-    background: #000;
-    padding: 3rem 0 1.5rem;
-    margin-bottom: 3rem;
+  .divider-body {
+    background: rgba(0, 0, 0, 1);
+    padding: clamp(1.5rem, 2vmax, 4rem) 0;
+    margin-bottom: 2rem;
   }
 
-  .divider h2,
-  .divider p {
+  .divider-body h2,
+  .divider-body p {
     color: var(--clr-text-white);
     text-align: center;
   }
 
-  .divider p {
+  .divider-body p {
     font-family: var(--ff-heading);
     font-size: var(--fs-500);
   }

@@ -1,28 +1,29 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 
-import '../styles/style.scss'
+import "../styles/style.scss";
 
-import Navbar from '../components/Navbar.astro'
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-<link rel="icon" type="image/x-icon" href="../favicon/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>//DEVTRB// {title}</title>
-	</head>
-	<body>
-		<Navbar/>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="../favicon/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>//DEVTRB// {title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
 </html>
-

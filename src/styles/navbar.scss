@@ -1,6 +1,7 @@
 nav {
   background-color: #000;
   width: 100%;
+  font-size: var(--fs-500);
 }
 nav::after {
   content: "";
@@ -21,11 +22,12 @@ nav::after {
 .brand-logo {
   position: absolute;
   background: #000;
-  width: 150px;
+  width: 175px;
   aspect-ratio: 1 / 1;
   display: grid;
   align-items: center;
   justify-content: center;
+  padding: 1rem 2rem;
 }
 
 .nav-links {
@@ -44,4 +46,9 @@ nav::after {
   font-weight: 700;
   font-size: var(--fs-300);
   padding: 0 0.5rem;
+
+  a {
+    text-decoration: none;
+    color: var(--clr-text-white);
+  }
 }

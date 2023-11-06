@@ -10,9 +10,9 @@ const { title, body, price } = Astro.props;
 
 <div class="card">
   <div class="card-body">
-    <h2 class="card-title">
+    <h3 class="card-title">
       {title}
-    </h2>
+    </h3>
     <p class="card-text">
       <ul>
         <li>
@@ -36,7 +36,5 @@ const { title, body, price } = Astro.props;
       <span class="price-person">/ persoon</span>
     </div>
   </div>
-  <div class="card-footer">
-    <a href="#">Offerte aanvragen</a>
-  </div>
+  <a href="catering" class="card-footer"> Offerte aanvragen</a>
 </div>

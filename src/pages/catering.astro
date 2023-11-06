@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Catering | The Ribtastic Brothers">
+  <main>
+    <section class="small-hero-section">
+      <h1>Catering</h1>
+      <p class="subtitle">Inclusief geweldige service en contact</p>
+    </section>
+
+    <section class="container wrapper">
+      <h2>Stel je menu samen</h2>
+
+      <div class="selection-card">
+        <div class="selection-card__tabs">
+          <div>Ribtastic</div>
+          <div>Premium</div>
+        </div>
+        <div class="selection-card__body">
+          <div class="selection-card__menu">
+            <h4>Menu</h4>
+          </div>
+          <div class="selection-card__info">
+            <h4>Gegevens</h4>
+            <form action="" autocomplete="off">
+              <div class="input-wrapper">
+                <label for="name">Naam: *</label>
+                <input type="text" name="name" id="name" required />
+              </div>
+              <div class="input-wrapper">
+                <label for="phone">Telefoonnummer: *</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  pattern="[0-9]{2}-[0-9]{8}"
+                  required
+                />
+              </div>
+              <div class="input-wrapper">
+                <label for="email">Email: *</label>
+                <input type="email" name="email" id="email" required />
+              </div>
+              <div class="input-wrapper">
+                <label for="company">Bedrijf:</label>
+                <input type="text" name="company" id="company" />
+              </div>
+              <div class="input-wrapper">
+                <label for="location">Locatie: *</label>
+                <input type="text" name="location" id="location" required />
+              </div>
+              <div class="input-wrapper">
+                <label for="guests">Aantal gasten: *</label>
+                <input type="text" name="guests" id="guests" required />
+              </div>
+              <div class="input-wrapper">
+                <label for="date">Datum: *</label>
+                <input type="date" name="date" id="date" required />
+              </div>
+              <div class="input-wrapper">
+                <label for="additional">Aanvullende diensten:</label>
+                <input type="text" name="additional" id="additional" />
+              </div>
+              <div class="input-wrapper">
+                <label for="extra">Opmerkingen:</label>
+                <textarea name="extra" id="extra" rows="3"></textarea>
+              </div>
+              <div class="btn btn-primary">Offerte aanvragen</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style></style>
