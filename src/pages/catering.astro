@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Dish from "../components/Dish.astro";
+
+import dishes from "../dishes.json";
 ---
 
 <Layout title="Catering | The Ribtastic Brothers">
@@ -9,7 +12,7 @@ import Layout from "../layouts/Layout.astro";
       <p class="subtitle">Inclusief geweldige service en contact</p>
     </section>
 
-    <section class="container wrapper">
+    <section class="container">
       <h2>Stel je menu samen</h2>
 
       <div class="selection-card">
@@ -19,10 +22,31 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="selection-card__body">
           <div class="selection-card__menu">
-            <h4>Menu</h4>
+            <h3>Menu</h3>
+            <h4>Main</h4>
+            {
+              dishes.Dishes.map((dish) => (
+                <Dish name={dish.name} disc={dish.disc} />
+              ))
+            }
+            <h4>Sides</h4>
+            {
+              dishes.Sides.map((dish) => (
+                <Dish name={dish.name} disc={dish.disc} />
+              ))
+            }
+
+            <div class="selection-card__menu--price">
+              <h4>Prijsindicatie:</h4>
+              <span class="price">&euro; 32,50</span>
+              <span class="person">/ Persoon</span>
+              <div class="small">
+                Exclusief transport, personeel en eventuele extra's
+              </div>
+            </div>
           </div>
           <div class="selection-card__info">
-            <h4>Gegevens</h4>
+            <h3>Gegevens</h3>
             <form action="" autocomplete="off">
               <div class="input-wrapper">
                 <label for="name">Naam: *</label>

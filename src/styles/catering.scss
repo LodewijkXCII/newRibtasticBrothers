@@ -1,0 +1,59 @@
+.selection-card {
+  &__body {
+    border-radius: 1rem;
+    padding: 2rem;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+  }
+
+  &__menu {
+    border-right: 3px solid var(--clr-primary);
+    padding-right: 3rem;
+
+    &--price {
+      font-family: var(--ff-heading);
+      text-align: right;
+      line-height: 1;
+      h4 {
+        font-family: var(--ff-base);
+      }
+      .price {
+        font-size: var(--fs-600);
+      }
+      .person {
+        color: var(--clr-primary);
+        margin-left: 1ch;
+      }
+      .small {
+        font-size: var(--fs-300);
+      }
+    }
+  }
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// DISHES SCSS
+.menu-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+
+  &__icon {
+    align-self: center;
+
+    img {
+      width: 24px;
+    }
+  }
+
+  &__text--heading {
+    font-weight: 700;
+  }
+  &__text--body {
+    margin-left: 1ch;
+  }
+}

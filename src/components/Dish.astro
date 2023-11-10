@@ -1,0 +1,13 @@
+---
+const { name, disc } = Astro.props;
+---
+
+<div class="menu-item">
+  <div class="menu-item__icon">
+    <img src="icons/restaurant_black_24dp.svg" alt="menu-item icon" />
+  </div>
+  <div class="menu-item__text">
+    <div class="menu-item__text--heading">{name}</div>
+    <div class="menu-item__text--body">{disc}</div>
+  </div>
+</div>
