@@ -1,8 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Dish from "../components/Dish.astro";
+import FilterItemComp from "../components/FilterItem.astro";
 
 import dishes from "../dishes.json";
+
+const filterItems = [];
+
+dishes.FilterItems.map((item) =>
+  filterItems.push({
+    title: item.title,
+    selected: false,
+  })
+);
 ---
 
 <Layout title="Catering | The Ribtastic Brothers">
@@ -12,13 +22,25 @@ import dishes from "../dishes.json";
       <p class="subtitle">Inclusief geweldige service en contact</p>
     </section>
 
-    <section class="container">
+    <div class="container wrapper">
       <h2>Stel je menu samen</h2>
-
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. At molestiae,
+        ut cumque deleniti aspernatur eum corrupti voluptas assumenda commodi,
+        autem est debitis deserunt! Recusandae consequatur reprehenderit sint.
+        Corporis sint odio, reiciendis excepturi saepe nisi repudiandae
+        blanditiis voluptatem. Velit necessitatibus facilis ullam rerum
+        eligendi! Pariatur quidem aliquid impedit distinctio est delectus
+        officiis vero dicta aliquam alias numquam, veniam, quaerat esse totam?
+      </p>
+    </div>
+    <section class="container">
       <div class="selection-card">
         <div class="selection-card__tabs">
-          <div>Ribtastic</div>
-          <div>Premium</div>
+          <div class="tab active">
+            <span> Ribtastic</span>
+          </div>
+          <div class="tab"><span>Premium</span></div>
         </div>
         <div class="selection-card__body">
           <div class="selection-card__menu">
@@ -43,6 +65,13 @@ import dishes from "../dishes.json";
               <div class="small">
                 Exclusief transport, personeel en eventuele extra's
               </div>
+            </div>
+            <div class="selection-card__menu--filter">
+              {
+                filterItems.map((item) => (
+                  <FilterItemComp title={item.title} icon="plus" />
+                ))
+              }
             </div>
           </div>
           <div class="selection-card__info">
@@ -97,6 +126,6 @@ import dishes from "../dishes.json";
       </div>
     </section>
   </main>
-</Layout>
 
-<style></style>
+  <style></style>
+</Layout>

@@ -1,0 +1,13 @@
+---
+import { Icon } from "astro-icon";
+const { icon, title } = Astro.props;
+const url = `icons/${icon}.svg`;
+---
+
+<div class="filter-item">
+  <div class="filter-item__icon">
+    <Icon name="plus" />
+    <!-- <svg src={url} alt="menu-item icon"></svg> -->
+  </div>
+  <div class="filter-item__text">{title}</div>
+</div>

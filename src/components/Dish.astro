@@ -1,13 +1,39 @@
 ---
+import { Icon } from "astro-icon";
 const { name, disc } = Astro.props;
 ---
 
 <div class="menu-item">
   <div class="menu-item__icon">
-    <img src="icons/restaurant_black_24dp.svg" alt="menu-item icon" />
+    <Icon name="restaurant" />
   </div>
   <div class="menu-item__text">
     <div class="menu-item__text--heading">{name}</div>
     <div class="menu-item__text--body">{disc}</div>
   </div>
 </div>
+
+<style lang="scss">
+  // DISHES SCSS
+  .menu-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+
+    &__icon {
+      padding-top: 5px;
+      fill: var(--clr-secondary);
+
+      svg {
+        width: 24px;
+      }
+    }
+
+    &__text--heading {
+      font-weight: 700;
+    }
+    &__text--body {
+      margin-left: 1ch;
+    }
+  }
+</style>

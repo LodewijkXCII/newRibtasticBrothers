@@ -46,5 +46,6 @@
       "name": "Brood en smeersels",
       "disc": "Onmisbaar bij elke catering."
     }
-  ]
+  ],
+  "FilterItems": [{ "title": "Vega" }, { "title": "Vis" }, { "title": "Halal" }]
 }

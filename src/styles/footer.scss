@@ -3,13 +3,16 @@ footer {
   margin-top: 3rem;
 }
 
-.footer-wrapper {
+.container.wrapper.footer-wrapper {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  justify-content: space-between;
 
   .logo {
     width: 100px;
+    aspect-ratio: 1 / 1;
   }
 
   img {
@@ -27,7 +30,8 @@ blockquote {
   &::before {
     content: "\0022";
     position: absolute;
-    top: -220%;
+    line-height: 0.4;
+    top: 0;
     left: -10%;
     color: rgba(0, 0, 0, 0.1);
     font-size: 10rem;

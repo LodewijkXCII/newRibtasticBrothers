@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@100;400;700;900&display=swap");
 @import url(https://pro.fontawesome.com/releases/v5.10.0/css/all.css);
 
+@import "./mixins.scss";
 @import "./card.scss";
 @import "./navbar.scss";
 @import "./footer.scss";
@@ -24,6 +25,7 @@
     rgba(120, 135, 114, 1) 0%,
     rgba(74, 96, 83, 1) 100%
   );
+  --box-shadow: 0px 5px 15px 5px rgba(74, 96, 83, 0.25);
 
   --ff-base: "Lato", sans-serif;
   --ff-heading: "Bebas Neue", sans-serif;
@@ -158,7 +160,11 @@ a:focus {
 .container {
   max-width: 1800px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
+
+  @include md {
+    padding: 0 1rem;
+  }
 
   &.wrapper {
     max-width: 80ch;
@@ -171,6 +177,7 @@ a:focus {
 
 .hero-section {
   max-width: 100%;
+  min-height: 65vh;
   background-position: top;
   overflow: hidden;
   display: grid;
