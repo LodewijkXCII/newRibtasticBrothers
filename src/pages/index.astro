@@ -8,86 +8,120 @@ import Partners from "../components/Partners.astro";
 import SectionDivider from "../components/SectionDivider.astro";
 import Card from "../components/Card.astro";
 import ImageCard from "../components/ImageCard.astro";
+
+const services = [
+  {
+    name: "Catering",
+    discription:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit reprehenderit, doloribus soluta totam facere consequuntur voluptate ex nostrum velit pariatur.",
+  },
+  {
+    name: "Fine dining",
+    discription:
+      "Voor de meer chique gelegenheden en fijnere hapjes hebben we eenuitgebreide fine dining experience. Laat onze chefs uw gasten verrassen metbijzondere smaakcombinaties en heerlijke hapjes tijdens uw evenement,ceremonie, gala of ander feestelijke gelegenheid.",
+  },
+  {
+    name: "Buffet",
+    discription:
+      "Soms wil je gewoon lekker kunnen opscheppen en dit wel 3 keer herhalen.Daarom bieden wij ook een culinaire ervaring aan met onze uitgebreidebuffetten!",
+  },
+];
 ---
 
 <Layout title="The Ribtastic Brothers">
   <main>
     <section class="hero-section">
       <div class="heading">
-        <h1>De Lekkerste BBQ Gerechten</h1>
+        <h1>Smaken die verbinden, service die verrast!</h1>
         <p class="subtitle">Inclusief geweldige service en contact</p>
         <div class="btn btn-primary">
           <a href="#catering">Offerte aanvragen</a>
         </div>
       </div>
 
-      <div class="hero-images">
-        <div class="hero-image hero-hor">
-          <img
-            src="hm00098.jpg"
-            alt=""
-            style="	position: relative;
-    						right: -200px;
-							z-index: -1;"
-          />
-        </div>
-        <div class="hero-image hero-vert">
-          <img src="20210618-IMG_1057.jpg" alt="" />
-        </div>
-        <div class="hero-image hero-hor">
-          <img src="DSC00855.jpg" alt="" />
-        </div>
+      <div class="blobs">
+        <img src="/svg/hero/blob-haikei_3.svg" alt="" />
+        <img src="/svg/hero/blob-haikei_2.svg" alt="" />
+        <img src="/svg/hero/blob-haikei_1.svg" alt="" />
+        <img src="/img/smoker.png" alt="" class="top-img" />
       </div>
     </section>
-    <SectionDivider
-      title="BBQ Catering"
-      subtitle="Kies het pakket wat bij jouw past"
-      id="catering"
-    />
 
-    <section class="container card-wrapper">
-      <ImageCard title="gezelligheid" href="hm00098.jpg" />
-      <Card title="Ribtastic" body="" price="32,50" />
-      <Card title="Premium" body="" price="45,50" />
-      <ImageCard title="gezelligheid" href="DSC00855.jpg" />
+    <section class="dark diensten">
+      <div class="container card-wrapper">
+        <div class="card title-card">
+          <div class="card-body">
+            <h2 class="card-title">Wat kunnen we voor je klaarmaken?</h2>
+          </div>
+          <img src="hm00098.jpg" alt="" srcset="" class="title-card__image" />
+        </div>
+        {
+          services.map((service) => (
+            <Card title={service.name} body={service.discription} />
+          ))
+        }
+      </div>
     </section>
-    <div class="container wrapper" style="margin: 3rem auto;">
-      <h2>Waarom Ribtastic?</h2>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id tempora
-        facere eaque, saepe rerum nulla neque labore unde laboriosam,
-        perferendis animi voluptatem, iste blanditiis aliquid dolores vitae
-        similique possimus harum commodi non consectetur pariatur minus quo! Aut
-        aperiam accusantium totam ipsa dignissimos a, fuga earum sapiente ad
-        molestiae exercitationem quos?
-      </p>
-    </div>
 
-    <SectionDivider title="Fine Dining" subtitle="Fingerfood en fine dining" />
-    <div class="container wrapper" style="margin: 3rem auto;">
-      <h2>Meer dan een pakket?</h2>
-      <p>
-        Voor de meer chique gelegenheden en fijnere hapjes hebben we naast onze
-        BBQ catering tevens een uitgebreide fine dining experience. Laat onze
-        chefs uw gasten verrassen met bijzondere smaakcombinaties en heerlijke
-        hapjes tijdens uw evenement, ceremonie, gala of ander feestelijke
-        gelegenheid.
-      </p>
-      <p>
-        Naast de verzorging van de catering hebben wij tevens tal val
-        mogelijkheden om uw evenement te plannen en/of aan te kleden. Laat onze
-        eventmanagers het werk uit handen nemen, zodat u zich kunt focussen op
-        de gasten.
-      </p>
+    <div class="container image-wrapper" style="margin: 10rem auto;">
+      <div class="image-wrapper__body">
+        <h2>Waarom Ribtastic?</h2>
+        <p>
+          Omdat we geweldig zijn. Iets met <strong>Samen</strong>, <strong
+            >Sensatie</strong
+          >, <strong>Service</strong> en <strong>Smaak</strong>. Samen met
+          klanten ontwikkelen we menu's die perfect passen bij hun evenementen,
+          van intieme bijeenkomsten tot grandioze vieringen. Onze gepassioneerde
+          chef-koks zorgen voor sensationele gerechten, terwijl onze toegewijde
+          medewerkers een ongeëvenaarde service bieden. Elk detail wordt met
+          zorg behandeld, zodat gasten niet alleen genieten van heerlijk eten,
+          maar ook van de gezamenlijke beleving. Bij ons gaat catering verder
+          dan smaak, het is een samensmelting van emoties en genot.
+        </p>
+        <div class="btn btn-inline">
+          <a href="#catering">Boek ons!</a>
+        </div>
+      </div>
+      <div class="image-wrapper__image">
+        <img src="/img/catering_foodtruck_bbq-min.jpg" alt="" />
+      </div>
     </div>
-    <section class="container card-wrapper">
-      <ImageCard title="gezelligheid" href="hm00098.jpg" />
-      <Card title="Maatwerk" body="" price="99,95" />
+    <section class="dark">
+      <div class="container wrapper">
+        <h2>Contact</h2>
+        <p>
+          Ben je er nog niet helemaal uit? Neem contact met ons op voor extra
+          informatie en we helpen je zo spoedig mogelijk verder.
+        </p>
 
-      <ImageCard title="gezelligheid" href="DSC00855.jpg" />
-      <ImageCard title="gezelligheid" href="20210618-IMG_1057.jpg" />
+        <p>
+          Liever direct telefonisch contact? Gebruik daarvoor het volgende
+          nummer: <strong>06-12345678</strong>
+        </p>
+
+        <form action="sumbit">
+          <div class="input-wrapper">
+            <label for="name">Naam: *</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div class="input-wrapper">
+            <label for="phone">Telefoonnummer: *</label>
+            <input type="tel" name="phone" id="phone" required />
+          </div>
+          <div class="input-wrapper">
+            <label for="email">Email: *</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div class="input-wrapper">
+            <label for="extra">Vraag:</label>
+            <textarea name="extra" id="extra" rows="5"></textarea>
+          </div>
+          <div class="btn btn-primary">Versturen</div>
+        </form>
+        <div></div>
+      </div>
     </section>
-    <SectionDivider title="Tevreden klanten" subtitle="Hier wil je bij horen" />
+
     <Partners />
   </main>
 </Layout>

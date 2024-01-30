@@ -1,0 +1,20 @@
+[
+  {
+    "name": "BBQ Catering",
+    "disc": "Laat ons je BBQ-evenement transformeren in een onvergetelijke smaakervaring. Onze getalenteerde grillmeesters leveren sappige, perfect gegrilde gerechten, terwijl onze service je alle zorgen uit handen neemt. Ontdek de heerlijke wereld van zorgeloos barbecueën met ons cateringteam!",
+    "img": "/img/catering_bbq_4.jpg",
+    "price": "34.50"
+  },
+  {
+    "name": "Fine Dining",
+    "disc": "Voor de meer chique gelegenheden en fijnere hapjes hebben we eenuitgebreide fine dining experience. Laat onze chefs uw gasten verrassen metbijzondere smaakcombinaties en heerlijke hapjes tijdens uw evenement,ceremonie, gala of ander feestelijke gelegenheid.",
+    "img": "/img/catering_bbq_2.jpg",
+    "price": "23.75"
+  },
+  {
+    "name": "Buffet",
+    "disc": "oms wil je gewoon lekker kunnen opscheppen en dit wel 3 keer herhalen.Daarom bieden wij ook een culinaire ervaring aan met onze uitgebreidebuffetten!",
+    "img": "/img/catering_bbq_3.jpg",
+    "price": "24.50"
+  }
+]

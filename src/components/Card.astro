@@ -2,39 +2,19 @@
 interface Props {
   title: string;
   body: string;
-  price: string;
 }
 
-const { title, body, price } = Astro.props;
+const { title, body } = Astro.props;
 ---
 
 <div class="card">
   <div class="card-body">
-    <h3 class="card-title">
+    <h2 class="card-title">
       {title}
-    </h3>
+    </h2>
     <p class="card-text">
-      <ul>
-        <li>
-          Fusce euismod nunc consectetur semper blandit. Integer suscipit at ex
-          eget facilisis. Suspendisse porta ullamcorper velit quis sodales.
-        </li>
-        <li>
-          Quisque justo arcu, volutpat sed lectus sit amet, pharetra scelerisque
-          libero. Aliquam et imperdiet elit. Nunc eget dui luctus, sollicitudin
-          nunc in, dignissim velit.
-        </li>
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, sequi
-          dolorum totam in labore quia.
-        </li>
-      </ul>
+      {body}
     </p>
-    <div class="card-price">
-      Vanaf:
-      <span class="price">&euro; {price}</span>
-      <span class="price-person">/ persoon</span>
-    </div>
   </div>
   <a href="catering" class="card-footer"> Offerte aanvragen</a>
 </div>

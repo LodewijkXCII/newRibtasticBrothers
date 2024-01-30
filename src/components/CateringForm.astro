@@ -1,0 +1,67 @@
+---
+const { menu } = Astro.props;
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+
+    const sendData = {
+      naam: data.get("name"),
+      telefoonnummer: data.get("phone"),
+      email: data.get("email"),
+      bedrijf: data.get("company"),
+      locatie: data.get("location"),
+      aantal_gasten: data.get("gueste"),
+      datum: data.get("date"),
+      aanvullende_diensten: data.get("additional"),
+      opmerkingen: data.get("extra"),
+      menu,
+    };
+    console.log(data, sendData);
+    // TODO DOE IETS MET DE DATA
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<form autocomplete="off" method="POST">
+  <div class="input-wrapper">
+    <label for="name">Naam: *</label>
+    <input type="text" name="name" id="name" required />
+  </div>
+  <div class="input-wrapper">
+    <label for="phone">Telefoonnummer: *</label>
+    <input type="tel" name="phone" id="phone" required />
+  </div>
+  <div class="input-wrapper">
+    <label for="email">Email: *</label>
+    <input type="email" name="email" id="email" required />
+  </div>
+  <div class="input-wrapper">
+    <label for="company">Bedrijf:</label>
+    <input type="text" name="company" id="company" />
+  </div>
+  <div class="input-wrapper">
+    <label for="location">Locatie: *</label>
+    <input type="text" name="location" id="location" required />
+  </div>
+  <div class="input-wrapper">
+    <label for="guests">Aantal gasten: *</label>
+    <input type="text" name="guests" id="guests" required />
+  </div>
+  <div class="input-wrapper">
+    <label for="date">Datum: *</label>
+    <input type="date" name="date" id="date" required />
+  </div>
+  <div class="input-wrapper">
+    <label for="additional">Aanvullende diensten:</label>
+    <input type="text" name="additional" id="additional" />
+  </div>
+  <div class="input-wrapper">
+    <label for="extra">Opmerkingen:</label>
+    <textarea name="extra" id="extra" rows="3"></textarea>
+  </div>
+  <div class="btn btn-primary">Offerte aanvragen</div>
+</form>

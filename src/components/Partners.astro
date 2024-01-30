@@ -1,12 +1,16 @@
 ---
-const URL =
-  "https://admin.ribtasticbrothers.nl/catering-partners?_sort=bedrijf";
+import fetchApi from "../lib/strapi";
 
-const response = await fetch(URL);
-const allPartners = await response.json();
+const partners = await fetchApi({
+  endpoint: "partners", // the content type to fetch
+  query: { populate: "*" },
+  wrappedByKey: "data", // the key to unwrap the response
+});
 ---
 
 <section class="container wrapper">
+  <h2>Tevreden klanten</h2>
+
   <p>
     Van grote multinationals tot aan Eredivisie clubs, wij hebben met veel
     verschillende mensen en merken samengewerkt.
@@ -21,9 +25,12 @@ const allPartners = await response.json();
 >
   <div class="scroller__inner">
     {
-      allPartners.map((partner) => (
+      partners.map((partner) => (
         <img
-          src={partner.logo.url}
+          src={
+            import.meta.env.STRAPI_URL +
+            partner.attributes.Logo.data.attributes.url
+          }
           alt=""
           class="cateringPartner__partner--img"
         />
@@ -33,7 +40,6 @@ const allPartners = await response.json();
 </div>
 
 <script>
-  // console.log(allPartners);
   const scrollers = document.querySelectorAll(".scroller");
   // // If a user hasn't opted in for recuded motion, then we add the animation
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -58,7 +64,7 @@ const allPartners = await response.json();
 <style lang="scss">
   .scroller {
     max-width: 1200px;
-    margin: 3rem auto;
+    margin: 6rem auto;
   }
 
   .scroller__inner {

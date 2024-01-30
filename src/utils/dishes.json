@@ -1,0 +1,47 @@
+{
+  "Dishes": [
+    {
+      "name": "Fall off the bone Spareribs",
+      "disc": "Our signature dish, simply the best"
+    },
+    {
+      "name": "Black Angus (cheese) Burgers",
+      "disc": "Build your own burger! Broodje, burger saus, sla, tomaat en augurk jij bepaald."
+    },
+    {
+      "name": "Juicy Chicken",
+      "disc": "Dikbevleesde kippendijen saté."
+    },
+    {
+      "name": "Korean BBQ Wings",
+      "disc": "Dikbevleesde wings met overheerlijke Korean BBQ saus"
+    },
+    {
+      "name": "Rode mul Filet",
+      "disc": "Met limoen, citroen en gekonfijte tomaat."
+    },
+    {
+      "name": "Gamba Brochettes",
+      "disc": "Onze heerlijke gamba brochettes met een honing/cajun boter."
+    }
+  ],
+  "Sides": [
+    {
+      "name": "Zoete aardappel salade",
+      "disc": "Zoete aardappel met quinoa, granaatappel en feta kaas."
+    },
+    {
+      "name": "Tulum salade",
+      "disc": "Veganistisch, Salade met zwarte rijst, mais, avocado, kikkererwten etc."
+    },
+    {
+      "name": "Rustieke frieten",
+      "disc": "Heerlijke dikke frieten voor erbij."
+    },
+    {
+      "name": "Brood en smeersels",
+      "disc": "Onmisbaar bij elke catering."
+    }
+  ],
+  "FilterItems": [{ "title": "Vega" }, { "title": "Vis" }, { "title": "Halal" }]
+}

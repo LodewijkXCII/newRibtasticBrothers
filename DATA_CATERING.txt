@@ -1,0 +1,35 @@
+<div class="selection-card__menu">
+            <h3>Menu</h3>
+            <h4>Main</h4>
+            {
+              dishes.Dishes.map((dish) => (
+                <Dish name={dish.name} disc={dish.disc} />
+              ))
+            }
+            <h4>Sides</h4>
+            {
+              dishes.Sides.map((dish) => (
+                <Dish name={dish.name} disc={dish.disc} />
+              ))
+            }
+
+            <div class="selection-card__menu--price">
+              <h4>Prijsindicatie:</h4>
+              <span class="price">&euro; {price}</span>
+              <span class="person">/ Persoon</span>
+              <div class="small">
+                Exclusief transport, personeel en eventuele extra's
+              </div>
+            </div>
+            <div class="selection-card__menu--filter">
+              {
+                filterItems.map((item) => (
+                  <FilterItemComp title={item.title} icon="plus" />
+                ))
+              }
+            </div>
+          </div>
+          <div class="selection-card__info">
+            <h3>Gegevens</h3>
+            <CateringForm menu={menu} />
+          </div>

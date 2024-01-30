@@ -13,6 +13,8 @@ nav::after {
 }
 
 .navbar {
+  max-width: 1600px;
+  margin: auto;
   position: relative;
   padding: 0 1rem;
   display: flex;

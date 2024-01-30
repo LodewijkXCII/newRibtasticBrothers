@@ -1,0 +1,123 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Dish from "../../components/Dish.astro";
+import FilterItemComp from "../../components/FilterItem.astro";
+import CateringForm from "../../components/CateringForm.astro";
+
+import dishes from "../../utils/dishes.json";
+import cateringTypes from "../../utils/catering-types.json";
+import { Image } from "astro:assets";
+
+const filterItems = [];
+const price = "32,50";
+
+dishes.FilterItems.map((item) =>
+  filterItems.push({
+    title: item.title,
+    selected: false,
+  })
+);
+
+const menu = [{ gerechten: "abc" }, { sides: "def" }];
+---
+
+<Layout title="Catering | The Ribtastic Brothers">
+  <main>
+    <section class="small-hero-section">
+      <h1>Catering</h1>
+      <p class="subtitle">Inclusief geweldige service en contact</p>
+    </section>
+
+    <div class="container wrapper">
+      <h2>In 4 stappen de lekkerste gerechten!</h2>
+      <div class="catering-explain">
+        <div class="catering-explain__step step-1">
+          <h4>Stap 1</h4>
+          <p>Kies je type catering</p>
+        </div>
+        <div class="catering-explain__step step-2">
+          <h4>Stap 2</h4>
+          <p>Stel je menu samen</p>
+        </div>
+        <div class="catering-explain__step step-3">
+          <h4>Stap 3</h4>
+          <p>Vul je gegevens in</p>
+        </div>
+        <div class="catering-explain__step step-4">
+          <h4>Stap 4</h4>
+          <p>Heerlijk genieten</p>
+        </div>
+      </div>
+
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. At molestiae,
+        ut cumque deleniti aspernatur eum corrupti voluptas assumenda commodi,
+        autem est debitis deserunt! Recusandae consequatur reprehenderit sint.
+        Corporis sint odio, reiciendis excepturi saepe nisi repudiandae
+        blanditiis voluptatem. Velit necessitatibus facilis ullam rerum
+        eligendi! Pariatur quidem aliquid impedit distinctio est delectus
+        officiis vero dicta aliquam alias numquam, veniam, quaerat esse totam?
+      </p>
+    </div>
+    <section class="container">
+      <div class="selection-card">
+        <div class="selection-card__tabs">
+          <div class="tab active">
+            <div class="tab-title">Stap 1</div>
+            <div class="tab-subtitle">Kies je catering</div>
+          </div>
+          <div class="tab">
+            <div class="tab-title">Stap 2</div>
+            <div class="tab-subtitle">Stel je menu samen</div>
+          </div>
+          <div class="tab">
+            <div class="tab-title">Stap 3</div>
+            <div class="tab-subtitle">Vul je gegevens in</div>
+          </div>
+          <div class="tab">
+            <div class="tab-title">Stap 4</div>
+            <div class="tab-subtitle">Heerlijk genieten</div>
+          </div>
+        </div>
+        <div class="selection-card__body">
+          {
+            cateringTypes.map((catering) => (
+              <a
+                href=`/catering/${catering.name
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^\w\s-]/g, '')
+                    .replace(/[\s_-]+/g, '-')
+                    .replace(/^-+|-+$/g, '')}`
+              >
+                <div class="selection-catering">
+                  <img
+                    src={catering.img}
+                    alt="A description of my image."
+                    class="selection-catering__img"
+                  />
+                  <div class="selection-catering__body">
+                    <div class="selection-catering__body--text">
+                      <h3>{catering.name}</h3>
+                      <p>{catering.disc}</p>
+                    </div>
+                    <div class="selection-catering__body--price">
+                      <p>
+                        Vanaf
+                        <span class="price">&euro; {catering.price}</span>
+                        <span class="person"> per persoon</span>
+                        <br />
+                        Exclusief transport, personeel en eventuele extra's
+                      </p>
+                      <div class="small" />
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
